@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="cineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E50914" />
+      <stop offset="100%" stop-color="#FF2E4D" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#E50914" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  <rect width="100" height="100" rx="24" fill="#0D0E15"/>
+  <rect x="2" y="2" width="96" height="96" rx="22" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+  <path d="M38 30 L72 50 L38 70 Z" fill="url(#cineGrad)" filter="url(#glow)"/>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "name": "cinesphere-movie-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Premium Movie Search & Discovery Web Application built with Vanilla JavaScript, Vite, and TMDB API",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "lucide": "^0.475.0",
+    "vite": "^6.1.1"
+  }
+}

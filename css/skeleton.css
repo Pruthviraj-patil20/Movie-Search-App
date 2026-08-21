@@ -1,0 +1,125 @@
+/* ==========================================================================
+   CineSphere Skeleton Shimmer Loading States
+   ========================================================================== */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 0%,
+    var(--bg-elevated) 50%,
+    var(--bg-tertiary) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.6s infinite ease-in-out;
+  border-radius: var(--radius-sm);
+}
+
+[data-theme="light"] .skeleton {
+  background: linear-gradient(
+    90deg,
+    #E9ECF2 0%,
+    #F4F6F9 50%,
+    #E9ECF2 100%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes skeletonShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Skeleton Hero */
+.skeleton-hero {
+  min-height: 70vh;
+  width: 100%;
+  background: var(--bg-secondary);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--navbar-height) + var(--space-8)) var(--space-6) var(--space-12) var(--space-6);
+}
+
+.skeleton-hero-content {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.skeleton-title {
+  height: 48px;
+  width: 80%;
+  border-radius: var(--radius-md);
+}
+
+.skeleton-line {
+  height: 16px;
+  width: 100%;
+  border-radius: var(--radius-xs);
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+.skeleton-btn {
+  height: 46px;
+  width: 150px;
+  border-radius: var(--radius-md);
+}
+
+/* Skeleton Movie Card */
+.skeleton-card {
+  position: relative;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+}
+
+.skeleton-poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+}
+
+.skeleton-card-body {
+  padding: var(--space-3) var(--space-4) var(--space-4) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeleton-card-title {
+  height: 16px;
+  width: 85%;
+  border-radius: var(--radius-xs);
+}
+
+.skeleton-card-meta {
+  height: 12px;
+  width: 50%;
+  border-radius: var(--radius-xs);
+}
+
+/* Skeleton Cast */
+.skeleton-cast {
+  flex: 0 0 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.skeleton-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-full);
+}

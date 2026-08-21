@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover & Search Movies - CineSphere</title>
+  <meta name="description" content="Search across thousands of movies with advanced filters by genre, year, rating, language, and popularity." />
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/movie-card.css" />
+  <link rel="stylesheet" href="/css/search.css" />
+  <link rel="stylesheet" href="/css/skeleton.css" />
+  <link rel="stylesheet" href="/css/modal.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Floating Glass Navbar -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="brand-logo" aria-label="CineSphere Home">
+          <div class="brand-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </div>
+          <span class="brand-logo-text">Cine<span>Sphere</span></span>
+        </a>
+
+        <nav class="navbar-nav" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="search.html" class="nav-link active">Discover</a>
+          <a href="watchlist.html" class="nav-link">
+            Watchlist
+            <span class="nav-badge watchlist-count-badge" data-count="0"></span>
+          </a>
+          <a href="favorites.html" class="nav-link">
+            Favorites
+            <span class="nav-badge favorites-count-badge" data-count="0"></span>
+          </a>
+        </nav>
+
+        <div class="navbar-actions">
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            </svg>
+          </button>
+
+          <button type="button" class="mobile-menu-btn" aria-label="Open Mobile Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer & Overlay -->
+    <div class="mobile-drawer-overlay"></div>
+    <aside class="mobile-drawer" aria-label="Mobile Navigation">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-logo-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </div>
+          <span class="brand-logo-text">Cine<span>Sphere</span></span>
+        </a>
+        <button type="button" class="mobile-drawer-close-btn btn-icon" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link"><span>Home</span></a>
+        <a href="search.html" class="mobile-nav-link active"><span>Discover Movies</span></a>
+        <a href="watchlist.html" class="mobile-nav-link">
+          <span>Watchlist</span>
+          <span class="nav-badge watchlist-count-badge" data-count="0"></span>
+        </a>
+        <a href="favorites.html" class="mobile-nav-link">
+          <span>Favorites</span>
+          <span class="nav-badge favorites-count-badge" data-count="0"></span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Search Header Section -->
+      <section class="search-header-section">
+        <div class="container">
+          <div class="search-header-content">
+            <!-- Search Bar -->
+            <div class="search-input-box">
+              <div class="search-input-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="search-input"
+                class="search-input"
+                placeholder="Search movies by title, actor, or franchise..."
+                autocomplete="off"
+                aria-label="Search movies"
+              />
+              <button type="button" id="search-clear-btn" class="search-clear-btn" aria-label="Clear search">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+
+              <!-- Live Auto-Suggestions -->
+              <div id="search-suggestions" class="search-suggestions-dropdown"></div>
+            </div>
+
+            <!-- Search History Chips -->
+            <div id="search-history-container" class="search-history-container"></div>
+
+            <!-- Filter Toolbar -->
+            <div class="filter-toolbar">
+              <div class="filter-grid">
+                <!-- Genre Filter -->
+                <div class="filter-group">
+                  <label for="filter-genre" class="filter-label">Genre</label>
+                  <select id="filter-genre" class="filter-select">
+                    <option value="">All Genres</option>
+                  </select>
+                </div>
+
+                <!-- Year Filter -->
+                <div class="filter-group">
+                  <label for="filter-year" class="filter-label">Release Year</label>
+                  <select id="filter-year" class="filter-select">
+                    <option value="">Any Year</option>
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2015">2015 - 2017</option>
+                    <option value="2010">2010s</option>
+                    <option value="2000">2000s</option>
+                    <option value="1990">1990s</option>
+                  </select>
+                </div>
+
+                <!-- Minimum Rating Filter -->
+                <div class="filter-group">
+                  <label for="filter-rating" class="filter-label">Min Rating</label>
+                  <select id="filter-rating" class="filter-select">
+                    <option value="">Any Rating</option>
+                    <option value="8.5">★ 8.5+ Masterpieces</option>
+                    <option value="8.0">★ 8.0+ Exceptional</option>
+                    <option value="7.0">★ 7.0+ Great</option>
+                    <option value="6.0">★ 6.0+ Good</option>
+                  </select>
+                </div>
+
+                <!-- Language Filter -->
+                <div class="filter-group">
+                  <label for="filter-language" class="filter-label">Language</label>
+                  <select id="filter-language" class="filter-select">
+                    <option value="">All Languages</option>
+                    <option value="en">English</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ko">Korean</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                    <option value="de">German</option>
+                    <option value="hi">Hindi</option>
+                  </select>
+                </div>
+
+                <!-- Sort Order Filter -->
+                <div class="filter-group">
+                  <label for="filter-sort" class="filter-label">Sort By</label>
+                  <select id="filter-sort" class="filter-select">
+                    <option value="popularity.desc">Most Popular</option>
+                    <option value="vote_average.desc">Highest Rated</option>
+                    <option value="primary_release_date.desc">Newest Releases</option>
+                    <option value="title.asc">Title (A - Z)</option>
+                  </select>
+                </div>
+
+                <!-- Reset Button -->
+                <div class="filter-actions">
+                  <button type="button" id="reset-filters-btn" class="btn btn-secondary btn-sm" style="width: 100%;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/>
+                      <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
+                    </svg>
+                    Reset Filters
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results Grid Section -->
+      <section class="section">
+        <div class="container">
+          <div class="results-header-bar">
+            <h2 id="results-count-text" class="results-count-text">Discovering titles...</h2>
+          </div>
+
+          <div id="search-results-grid" class="movie-grid"></div>
+
+          <div class="pagination-wrap">
+            <button type="button" id="load-more-btn" class="btn btn-secondary btn-lg" style="display: none;">
+              Load More Movies
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <div class="tmdb-attribution">
+            <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+          </div>
+          <p>© 2026 CineSphere. Built with Vanilla JavaScript ES6+.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

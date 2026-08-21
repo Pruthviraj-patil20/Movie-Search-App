@@ -1,0 +1,275 @@
+/* ==========================================================================
+   CineSphere Movie Details Page Styles
+   ========================================================================== */
+
+.movie-details-hero {
+  position: relative;
+  min-height: 70vh;
+  margin-top: calc(var(--navbar-height) * -1);
+  padding-top: calc(var(--navbar-height) + var(--space-8));
+  padding-bottom: var(--space-12);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.details-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.details-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(to right, rgba(8, 9, 12, 0.96) 0%, rgba(8, 9, 12, 0.85) 50%, rgba(8, 9, 12, 0.4) 100%),
+    linear-gradient(to top, var(--bg-primary) 0%, rgba(8, 9, 12, 0.85) 30%, transparent 70%),
+    linear-gradient(to bottom, rgba(8, 9, 12, 0.7) 0%, transparent 30%);
+  z-index: 2;
+}
+
+[data-theme="light"] .details-overlay {
+  background: 
+    linear-gradient(to right, rgba(244, 246, 249, 0.96) 0%, rgba(244, 246, 249, 0.88) 50%, rgba(244, 246, 249, 0.45) 100%),
+    linear-gradient(to top, var(--bg-primary) 0%, rgba(244, 246, 249, 0.85) 30%, transparent 70%),
+    linear-gradient(to bottom, rgba(244, 246, 249, 0.7) 0%, transparent 30%);
+}
+
+.details-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-10);
+  align-items: flex-start;
+}
+
+/* Left Column: Poster */
+.details-poster-wrap {
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-6));
+  aspect-ratio: 2 / 3;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 35px var(--accent-glow);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--bg-secondary);
+}
+
+.details-poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Column: Info & Metadata */
+.details-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.details-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.details-breadcrumbs a {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.details-breadcrumbs a:hover {
+  color: var(--accent-primary);
+}
+
+.details-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.details-title {
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.1;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.details-tagline {
+  font-size: var(--font-size-md);
+  font-style: italic;
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Quick Metrics Row */
+.details-metrics-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.metric-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.metric-item strong {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.metric-star-score {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent-gold);
+  font-weight: var(--font-weight-bold);
+}
+
+.metric-star-score svg {
+  fill: var(--accent-gold);
+}
+
+/* Genre Badges */
+.details-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Action Buttons Bar */
+.details-actions-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+/* Overview Section */
+.details-overview-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.details-section-heading {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.details-overview-text {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Metadata Grid (Budget, Revenue, Status, Companies) */
+.details-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+  background: var(--bg-glass-card);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+}
+
+.meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.meta-value {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+/* Cast Carousel / Grid */
+.cast-slider {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  padding-bottom: var(--space-4);
+  scrollbar-width: none;
+}
+
+.cast-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.cast-card {
+  flex: 0 0 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+
+.cast-photo-wrap {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 2px solid var(--border-medium);
+  background: var(--bg-tertiary);
+  box-shadow: var(--shadow-sm);
+}
+
+.cast-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cast-name {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.cast-character {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.2;
+}

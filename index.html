@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineSphere - Premium Movie Search & Discovery</title>
+  <meta name="description" content="Discover trending movies, watch trailers, explore genres, and curate your personal cinematic watchlist with CineSphere." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/hero.css" />
+  <link rel="stylesheet" href="/css/movie-card.css" />
+  <link rel="stylesheet" href="/css/skeleton.css" />
+  <link rel="stylesheet" href="/css/modal.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Floating Glass Navbar -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo" aria-label="CineSphere Home">
+          <div class="brand-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </div>
+          <span class="brand-logo-text">Cine<span>Sphere</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="navbar-nav" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="search.html" class="nav-link">Discover</a>
+          <a href="watchlist.html" class="nav-link">
+            Watchlist
+            <span class="nav-badge watchlist-count-badge" data-count="0"></span>
+          </a>
+          <a href="favorites.html" class="nav-link">
+            Favorites
+            <span class="nav-badge favorites-count-badge" data-count="0"></span>
+          </a>
+        </nav>
+
+        <!-- Navbar Actions -->
+        <div class="navbar-actions">
+          <!-- Search Trigger -->
+          <a href="search.html" class="navbar-search-btn" aria-label="Quick search movies">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <span>Search...</span>
+            <kbd class="navbar-search-kbd">⌘K</kbd>
+          </a>
+
+          <!-- Theme Toggle -->
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            </svg>
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button type="button" class="mobile-menu-btn" aria-label="Open Mobile Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer & Overlay -->
+    <div class="mobile-drawer-overlay"></div>
+    <aside class="mobile-drawer" aria-label="Mobile Navigation">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-logo-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </div>
+          <span class="brand-logo-text">Cine<span>Sphere</span></span>
+        </a>
+        <button type="button" class="mobile-drawer-close-btn btn-icon" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link active">
+          <span>Home</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+        <a href="search.html" class="mobile-nav-link">
+          <span>Discover Movies</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+        <a href="watchlist.html" class="mobile-nav-link">
+          <span>Watchlist</span>
+          <span class="nav-badge watchlist-count-badge" data-count="0"></span>
+        </a>
+        <a href="favorites.html" class="mobile-nav-link">
+          <span>Favorites</span>
+          <span class="nav-badge favorites-count-badge" data-count="0"></span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section Mount -->
+      <section id="hero-mount" aria-label="Spotlight Feature"></section>
+
+      <!-- Trending Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <span class="section-tagline">Trending Now</span>
+              <h2 class="section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+                </svg>
+                Popular This Week
+              </h2>
+            </div>
+            <div class="section-actions">
+              <div class="toggle-pill-group">
+                <button type="button" class="toggle-pill-btn trending-toggle-btn active" data-window="day">Today</button>
+                <button type="button" class="toggle-pill-btn trending-toggle-btn" data-window="week">This Week</button>
+              </div>
+            </div>
+          </div>
+          <div id="trending-carousel-mount"></div>
+        </div>
+      </section>
+
+      <!-- Popular Movies Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <span class="section-tagline">Global Hits</span>
+              <h2 class="section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                Popular Worldwide
+              </h2>
+            </div>
+            <div class="section-actions">
+              <a href="search.html?sortBy=popularity.desc" class="btn btn-outline btn-sm">Explore All</a>
+            </div>
+          </div>
+          <div id="popular-carousel-mount"></div>
+        </div>
+      </section>
+
+      <!-- Top Rated Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <span class="section-tagline">Masterpieces</span>
+              <h2 class="section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                </svg>
+                Top Rated Classics & Hits
+              </h2>
+            </div>
+            <div class="section-actions">
+              <a href="search.html?sortBy=vote_average.desc&minRating=8" class="btn btn-outline btn-sm">View Top 250</a>
+            </div>
+          </div>
+          <div id="top-rated-carousel-mount"></div>
+        </div>
+      </section>
+
+      <!-- Upcoming Releases Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <span class="section-tagline">In Theaters Soon</span>
+              <h2 class="section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                Upcoming Releases
+              </h2>
+            </div>
+          </div>
+          <div id="upcoming-carousel-mount"></div>
+        </div>
+      </section>
+
+      <!-- Browse By Genre Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <span class="section-tagline">Categories</span>
+              <h2 class="section-title">Explore by Genre</h2>
+            </div>
+          </div>
+          <div id="genres-grid-mount" class="genre-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="app-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="brand-logo">
+              <div class="brand-logo-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+              <span class="brand-logo-text">Cine<span>Sphere</span></span>
+            </a>
+            <p class="footer-tagline">
+              Your premier cinematic destination for discovering new releases, classic masterpieces, trailers, and personal watchlists.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-col-title">Navigation</h4>
+            <div class="footer-links">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="search.html" class="footer-link">Discover Movies</a>
+              <a href="watchlist.html" class="footer-link">Watchlist</a>
+              <a href="favorites.html" class="footer-link">Favorites</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-col-title">Categories</h4>
+            <div class="footer-links">
+              <a href="search.html?genre=28" class="footer-link">Action</a>
+              <a href="search.html?genre=878" class="footer-link">Sci-Fi</a>
+              <a href="search.html?genre=18" class="footer-link">Drama</a>
+              <a href="search.html?genre=35" class="footer-link">Comedy</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-col-title">About TMDB</h4>
+            <div class="footer-links">
+              <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" class="footer-link">TMDB Website</a>
+              <a href="https://developer.themoviedb.org/docs" target="_blank" rel="noopener noreferrer" class="footer-link">API Documentation</a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Repository</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="tmdb-attribution">
+            <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+          </div>
+          <p>© 2026 CineSphere. Crafted with pure Vanilla JavaScript & CSS.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- App Entry Point -->
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

@@ -185,4 +185,3 @@ This product uses the [TMDB API](https://www.themoviedb.org/) but is not endorse
 ## 📜 License
 
 MIT License © 2026 CineSphere.
-# Movie-Search-App
