@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Favorites - CineSphere</title>
-  <meta name="description" content="Explore and manage your favorite movies list on CineSphere." />
+  <meta name="description" content="Explore and manage your favorite movies saved on CineSphere." />
   
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate icon" href="/favicon.ico" />
@@ -40,6 +40,7 @@
 
         <nav class="navbar-nav" aria-label="Main Navigation">
           <a href="index.html" class="nav-link">Home</a>
+          <a href="dashboard.html" class="nav-link">Dashboard</a>
           <a href="search.html" class="nav-link">Discover</a>
           <a href="watchlist.html" class="nav-link">
             Watchlist
@@ -66,6 +67,9 @@
             </svg>
           </button>
 
+          <!-- Top-Right User Section -->
+          <div class="navbar-user-section"></div>
+
           <button type="button" class="mobile-menu-btn" aria-label="Open Mobile Menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
@@ -75,27 +79,24 @@
       </div>
     </header>
 
-    <!-- Mobile Drawer & Overlay -->
+    <!-- Mobile Drawer -->
     <div class="mobile-drawer-overlay"></div>
     <aside class="mobile-drawer" aria-label="Mobile Navigation">
       <div class="mobile-drawer-header">
         <a href="index.html" class="brand-logo">
           <div class="brand-logo-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <polygon points="5 3 19 12 5 21 5 3"/>
-            </svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
           <span class="brand-logo-text">Cine<span>Sphere</span></span>
         </a>
         <button type="button" class="mobile-drawer-close-btn btn-icon" aria-label="Close menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
-
+      <div class="mobile-user-section"></div>
       <nav class="mobile-nav-links">
         <a href="index.html" class="mobile-nav-link"><span>Home</span></a>
+        <a href="dashboard.html" class="mobile-nav-link"><span>Dashboard</span></a>
         <a href="search.html" class="mobile-nav-link"><span>Discover Movies</span></a>
         <a href="watchlist.html" class="mobile-nav-link">
           <span>Watchlist</span>
@@ -116,7 +117,7 @@
             <div class="library-title-group">
               <div class="library-badge-row">
                 <span class="section-tagline">Loved Titles</span>
-                <span id="favorites-header-count" class="library-item-count">0 Favorites</span>
+                <span id="favorites-header-count" class="library-item-count">0 Movies</span>
               </div>
               <h1 class="section-title">My Favorites</h1>
             </div>

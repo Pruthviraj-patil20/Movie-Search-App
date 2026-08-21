@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Dashboard - CineSphere</title>
+  <meta name="description" content="Your personalized CineSphere dashboard with recommendations, recently viewed titles, watchlists, and viewing analytics." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/movie-card.css" />
+  <link rel="stylesheet" href="/css/dashboard.css" />
+  <link rel="stylesheet" href="/css/skeleton.css" />
+  <link rel="stylesheet" href="/css/modal.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="brand-logo" aria-label="CineSphere Home">
+          <div class="brand-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <span class="brand-logo-text">Cine<span>Sphere</span></span>
+        </a>
+
+        <nav class="navbar-nav" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="dashboard.html" class="nav-link active">Dashboard</a>
+          <a href="search.html" class="nav-link">Discover</a>
+          <a href="watchlist.html" class="nav-link">
+            Watchlist
+            <span class="nav-badge watchlist-count-badge" data-count="0"></span>
+          </a>
+          <a href="favorites.html" class="nav-link">
+            Favorites
+            <span class="nav-badge favorites-count-badge" data-count="0"></span>
+          </a>
+        </nav>
+
+        <div class="navbar-actions">
+          <a href="search.html" class="navbar-search-btn" aria-label="Search movies">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <span>Search...</span>
+            <kbd class="navbar-search-kbd">⌘K</kbd>
+          </a>
+
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            </svg>
+          </button>
+
+          <!-- Top-Right User Section -->
+          <div class="navbar-user-section"></div>
+
+          <button type="button" class="mobile-menu-btn" aria-label="Open Mobile Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer-overlay"></div>
+    <aside class="mobile-drawer" aria-label="Mobile Navigation">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-logo-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <span class="brand-logo-text">Cine<span>Sphere</span></span>
+        </a>
+        <button type="button" class="mobile-drawer-close-btn btn-icon" aria-label="Close menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-user-section"></div>
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-link"><span>Home</span></a>
+        <a href="dashboard.html" class="mobile-nav-link active"><span>Dashboard</span></a>
+        <a href="search.html" class="mobile-nav-link"><span>Discover Movies</span></a>
+        <a href="watchlist.html" class="mobile-nav-link">
+          <span>Watchlist</span>
+          <span class="nav-badge watchlist-count-badge" data-count="0"></span>
+        </a>
+        <a href="favorites.html" class="mobile-nav-link">
+          <span>Favorites</span>
+          <span class="nav-badge favorites-count-badge" data-count="0"></span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Welcome Hero Section -->
+      <section class="dashboard-hero">
+        <div class="container">
+          <div class="dashboard-welcome-content">
+            <div>
+              <h1 class="dashboard-greeting">
+                Welcome back, <span id="dashboard-user-name">Film Lover</span> 👋
+              </h1>
+              <p class="dashboard-tagline">Ready to discover your next favorite movie?</p>
+            </div>
+            <div style="display: flex; gap: var(--space-3);">
+              <a href="search.html" class="btn btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Discover Movies
+              </a>
+              <a href="profile.html" class="btn btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                My Profile
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Metrics Grid -->
+          <div class="dashboard-metrics-grid">
+            <div class="metric-widget-card">
+              <div class="metric-icon-wrap emerald">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="metric-details">
+                <div id="dash-stat-watched" class="metric-number">0</div>
+                <div class="metric-label">Movies Watched</div>
+              </div>
+            </div>
+
+            <div class="metric-widget-card">
+              <div class="metric-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <div class="metric-details">
+                <div id="dash-stat-favorites" class="metric-number">0</div>
+                <div class="metric-label">Favorites</div>
+              </div>
+            </div>
+
+            <div class="metric-widget-card">
+              <div class="metric-icon-wrap blue">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div class="metric-details">
+                <div id="dash-stat-watchlist" class="metric-number">0</div>
+                <div class="metric-label">In Watchlist</div>
+              </div>
+            </div>
+
+            <div class="metric-widget-card">
+              <div class="metric-icon-wrap gold">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div class="metric-details">
+                <div id="dash-stat-rating" class="metric-number">NR</div>
+                <div class="metric-label">Avg Rating Given</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Continue Watching & Recently Viewed Section -->
+      <section id="recent-section" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <span class="section-tagline">Pick Up Where You Left Off</span>
+              <h2 class="section-title">Recently Viewed</h2>
+            </div>
+          </div>
+          <div id="dashboard-recent-mount"></div>
+        </div>
+      </section>
+
+      <!-- Recommended For You Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <span id="dashboard-recs-reason" class="section-tagline">Curated Tailored Selection</span>
+              <h2 class="section-title">Recommended For You</h2>
+            </div>
+          </div>
+          <div id="dashboard-recs-mount"></div>
+        </div>
+      </section>
+
+      <!-- My Watchlist Preview Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <span class="section-tagline">To Watch</span>
+              <h2 class="section-title">My Watchlist</h2>
+            </div>
+            <div class="section-actions">
+              <a href="watchlist.html" class="btn btn-outline btn-sm">View All</a>
+            </div>
+          </div>
+          <div id="dashboard-watchlist-mount"></div>
+        </div>
+      </section>
+
+      <!-- My Favorites Preview Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <span class="section-tagline">Loved Titles</span>
+              <h2 class="section-title">My Favorites</h2>
+            </div>
+            <div class="section-actions">
+              <a href="favorites.html" class="btn btn-outline btn-sm">View All</a>
+            </div>
+          </div>
+          <div id="dashboard-favorites-mount"></div>
+        </div>
+      </section>
+
+      <!-- Genre Preferences Analytics Section -->
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="analytics-card">
+            <div class="section-header" style="margin-bottom: var(--space-4);">
+              <div class="section-title-group">
+                <span class="section-tagline">Taste Profile</span>
+                <h2 class="section-title" style="font-size: var(--font-size-xl);">Favorite Genre Breakdown</h2>
+              </div>
+            </div>
+            <div id="dashboard-genre-analytics-mount"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <div class="tmdb-attribution">
+            <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+          </div>
+          <p>© 2026 CineSphere. Crafted with Vanilla JavaScript ES6+.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

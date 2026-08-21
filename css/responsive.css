@@ -84,6 +84,7 @@
   .hero-overview {
     font-size: var(--font-size-sm);
     -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
 
   .hero-actions {

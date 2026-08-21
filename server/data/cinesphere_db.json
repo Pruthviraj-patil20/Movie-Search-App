@@ -1,0 +1,192 @@
+{
+  "users": [
+    {
+      "id": "c6e38da0-1feb-4dc2-a446-eb9914a8b018",
+      "name": "Alice Tester",
+      "email": "alice@example.com",
+      "passwordHash": "$2a$10$YZJEyT.ZrQNb/JnEByfZk.jaipFrU5ON.9EKcCXRNXH/FLaBLRnyW",
+      "profileImage": null,
+      "phone": "",
+      "country": "",
+      "bio": "",
+      "emailVerified": false,
+      "verificationToken": "4766ef8dedd5fd235ee2a22b748e2a0d99ae5144358e5ad1e3d6bb4be7888450",
+      "resetToken": null,
+      "resetTokenExpires": null,
+      "createdAt": "2026-08-21T08:21:08.266Z",
+      "updatedAt": "2026-08-21T08:21:08.266Z"
+    },
+    {
+      "id": "d95689a4-a2ac-465a-bbaa-5aec9ce16a5f",
+      "name": "Bob Tester",
+      "email": "bob@example.com",
+      "passwordHash": "$2a$10$I.yL9XwbjCxl24QbN8DWRu4qpKlKWGBJFWIZdZRpp3xAcTuFdTqnu",
+      "profileImage": null,
+      "phone": "",
+      "country": "",
+      "bio": "",
+      "emailVerified": false,
+      "verificationToken": "51f9dd816c5c6dab703dfd947dc51ec0c330432fc5170f5f4c0dc6a4d7fc835a",
+      "resetToken": null,
+      "resetTokenExpires": null,
+      "createdAt": "2026-08-21T08:21:12.945Z",
+      "updatedAt": "2026-08-21T08:21:12.945Z"
+    },
+    {
+      "id": "b4c16055-1b4d-4650-81d2-c6bbb2ae5532",
+      "name": "Raj patil",
+      "email": "rajpatil25379@gmail.com",
+      "passwordHash": "$2a$10$X4ouV.eJS7cWsPRyYSl3D.J0WSubf3oXEDeBps/lvELX4DnTGgot2",
+      "profileImage": null,
+      "phone": "+917498525619",
+      "country": "India",
+      "bio": "",
+      "emailVerified": false,
+      "verificationToken": "a8eea6a161510a503b2af9dd534487fb32d60c41736036b599b6079b4bceec21",
+      "resetToken": null,
+      "resetTokenExpires": null,
+      "createdAt": "2026-08-21T08:22:25.547Z",
+      "updatedAt": "2026-08-21T08:23:13.289Z"
+    }
+  ],
+  "watchlist": [
+    {
+      "id": "b79a7b93-c151-40a5-a0df-1c58b0309887",
+      "userId": "c6e38da0-1feb-4dc2-a446-eb9914a8b018",
+      "movieId": 27205,
+      "movieData": {
+        "id": 27205,
+        "title": "Inception",
+        "poster_path": "",
+        "backdrop_path": "",
+        "vote_average": 8.4,
+        "release_date": "2010-07-15",
+        "genre_ids": [
+          28,
+          878
+        ]
+      },
+      "createdAt": "2026-08-21T08:21:16.390Z"
+    }
+  ],
+  "favorites": [],
+  "watched_movies": [
+    {
+      "id": "ea7b86db-7644-44dd-871d-501939994d4b",
+      "userId": "c6e38da0-1feb-4dc2-a446-eb9914a8b018",
+      "movieId": 27205,
+      "movieData": {
+        "id": 27205,
+        "title": "Inception",
+        "poster_path": "",
+        "backdrop_path": "",
+        "vote_average": 0,
+        "release_date": "",
+        "genre_ids": [
+          28,
+          878
+        ]
+      },
+      "watchedAt": "2026-08-21T08:21:20.137Z"
+    }
+  ],
+  "recently_viewed": [
+    {
+      "id": "fcee19dc-99bf-4443-bda8-69cb6816c7f9",
+      "userId": "b4c16055-1b4d-4650-81d2-c6bbb2ae5532",
+      "movieId": 27205,
+      "movieData": {
+        "id": 27205,
+        "title": "Inception",
+        "poster_path": "/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg",
+        "backdrop_path": "/8ZTVqvKDQ8emSGUEMjsS4yHAwrp.jpg",
+        "vote_average": 8.4,
+        "release_date": "2010-07-15",
+        "genre_ids": [
+          28,
+          878,
+          12
+        ]
+      },
+      "viewedAt": "2026-08-21T08:24:53.790Z"
+    }
+  ],
+  "movie_ratings": [
+    {
+      "id": "00581f70-fb61-4b50-97d1-d5b93d2baae8",
+      "userId": "c6e38da0-1feb-4dc2-a446-eb9914a8b018",
+      "movieId": 27205,
+      "rating": 10,
+      "movieData": {
+        "id": 27205,
+        "title": "Inception",
+        "poster_path": "",
+        "release_date": "",
+        "genre_ids": [
+          28,
+          878
+        ]
+      },
+      "createdAt": "2026-08-21T08:21:20.129Z",
+      "updatedAt": "2026-08-21T08:21:20.129Z"
+    },
+    {
+      "id": "582dcd65-93b8-4761-9059-7f714ef2c4b8",
+      "userId": "b4c16055-1b4d-4650-81d2-c6bbb2ae5532",
+      "movieId": 27205,
+      "rating": 10,
+      "movieData": {
+        "id": 27205,
+        "title": "Inception",
+        "poster_path": "/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg",
+        "release_date": "2010-07-15",
+        "genre_ids": [
+          28,
+          878,
+          12
+        ]
+      },
+      "createdAt": "2026-08-21T08:25:05.302Z",
+      "updatedAt": "2026-08-21T08:25:05.302Z"
+    }
+  ],
+  "search_history": [],
+  "user_preferences": [
+    {
+      "id": "27d0a52b-51d4-44d2-b55b-fc1ca4c0210c",
+      "userId": "c6e38da0-1feb-4dc2-a446-eb9914a8b018",
+      "theme": "dark",
+      "language": "en",
+      "notifications": {
+        "email": true,
+        "recommendations": true,
+        "watchlistReminders": true,
+        "updates": false
+      }
+    },
+    {
+      "id": "79ef52d1-63b0-4ad3-96d6-d3788909460c",
+      "userId": "d95689a4-a2ac-465a-bbaa-5aec9ce16a5f",
+      "theme": "dark",
+      "language": "en",
+      "notifications": {
+        "email": true,
+        "recommendations": true,
+        "watchlistReminders": true,
+        "updates": false
+      }
+    },
+    {
+      "id": "e851defb-8f19-49aa-8cef-fa474996bc51",
+      "userId": "b4c16055-1b4d-4650-81d2-c6bbb2ae5532",
+      "theme": "dark",
+      "language": "en",
+      "notifications": {
+        "email": true,
+        "recommendations": true,
+        "watchlistReminders": true,
+        "updates": false
+      }
+    }
+  ]
+}

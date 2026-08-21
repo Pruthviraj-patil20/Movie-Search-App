@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify Email - CineSphere</title>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="alternate icon" href="/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/auth.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="ambient-glow"></div>
+
+    <header class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="brand-logo" aria-label="CineSphere Home">
+          <div class="brand-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </div>
+          <span class="brand-logo-text">Cine<span>Sphere</span></span>
+        </a>
+
+        <div class="navbar-actions">
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="auth-page-wrapper">
+      <div class="auth-card" style="text-align: center;">
+        <div class="auth-icon-badge" style="margin: 0 auto var(--space-4) auto;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+
+        <h1 class="auth-title" id="verify-title">Verify Your Email</h1>
+        <p class="auth-desc" id="verify-desc" style="margin-bottom: var(--space-6);">
+          Checking verification token...
+        </p>
+
+        <div id="verify-alert" class="auth-alert" style="justify-content: center;"></div>
+
+        <div id="verify-actions" style="display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-4);">
+          <a href="dashboard.html" id="verify-dashboard-btn" class="btn btn-primary btn-lg" style="display: none;">
+            Go to Dashboard
+          </a>
+          <button type="button" id="resend-verification-btn" class="btn btn-secondary" style="display: none;">
+            Resend Verification Link
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module">
+    import { authService } from './js/services/authService.js';
+    import { getUrlParam } from './js/utils/urlParams.js';
+    import { toast } from './js/components/toast.js';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await authService.init();
+      const token = getUrlParam('token');
+      const titleEl = document.querySelector('#verify-title');
+      const descEl = document.querySelector('#verify-desc');
+      const alertBox = document.querySelector('#verify-alert');
+      const dashBtn = document.querySelector('#verify-dashboard-btn');
+      const resendBtn = document.querySelector('#resend-verification-btn');
+
+      if (token) {
+        try {
+          await authService.verifyEmail(token);
+          titleEl.textContent = 'Email Verified!';
+          descEl.textContent = 'Thank you for verifying your email address. Your account is now fully verified.';
+          alertBox.className = 'auth-alert show alert-success';
+          alertBox.innerHTML = '<span>✓ Email verified successfully</span>';
+          dashBtn.style.display = 'inline-flex';
+        } catch (err) {
+          titleEl.textContent = 'Verification Failed';
+          descEl.textContent = err.message || 'Invalid or expired verification token.';
+          alertBox.className = 'auth-alert show alert-error';
+          alertBox.innerHTML = '<span>Unable to verify email with this link.</span>';
+          resendBtn.style.display = 'inline-flex';
+        }
+      } else {
+        const user = authService.getUser();
+        if (user && user.emailVerified) {
+          titleEl.textContent = 'Email Already Verified';
+          descEl.textContent = 'Your CineSphere email address is already verified.';
+          dashBtn.style.display = 'inline-flex';
+        } else {
+          titleEl.textContent = 'Verify Your Email';
+          descEl.textContent = 'Please check your inbox for the verification link sent when you registered.';
+          resendBtn.style.display = 'inline-flex';
+        }
+      }
+
+      if (resendBtn) {
+        resendBtn.addEventListener('click', async () => {
+          resendBtn.disabled = true;
+          try {
+            const res = await authService.resendVerification();
+            toast.success('Verification email sent!');
+            if (res.verificationUrl) {
+              alertBox.className = 'auth-alert show alert-success';
+              alertBox.innerHTML = `<span>Simulation link: <a href="${res.verificationUrl}" style="text-decoration: underline;">Click here to verify</a></span>`;
+            }
+          } catch (e) {
+            toast.error(e.message || 'Please sign in first to resend verification.');
+          } finally {
+            resendBtn.disabled = false;
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /**
- * Movie Details Page Controller
+ * Movie Details Page Controller with Multi-User Watched & Rating Actions
  */
 
 import { CONFIG } from '../config.js';
@@ -7,10 +7,12 @@ import { getMovieDetails, getRecommendations, getSimilarMovies } from '../api/mo
 import { createMovieCarousel } from '../components/carousel.js';
 import { loader } from '../components/loader.js';
 import { modal } from '../components/modal.js';
+import { ratingModal } from '../components/ratingModal.js';
 import { skeleton } from '../components/skeleton.js';
 import { toast } from '../components/toast.js';
-import { favoriteService, FAVORITES_EVENT } from '../services/favoriteService.js';
-import { watchlistService, WATCHLIST_EVENT } from '../services/watchlistService.js';
+import { favoriteService } from '../services/favoriteService.js';
+import { userMovieService, USER_MOVIES_EVENT } from '../services/userMovieService.js';
+import { watchlistService } from '../services/watchlistService.js';
 import {
   formatCurrency,
   formatDate,
@@ -50,8 +52,11 @@ export async function initMovieDetailsPage() {
     // Set Document Title
     document.title = `${movie.title} (${formatYear(movie.release_date)}) - CineSphere`;
 
+    // Track in recently viewed
+    userMovieService.addRecentlyViewed(movie);
+
     // 1. Render Main Showcase Details
-    renderShowcase(mountEl, movie);
+    await renderShowcase(mountEl, movie);
 
     // 2. Render Cast Members Slider
     if (castMount && movie.credits && movie.credits.cast) {
@@ -104,7 +109,7 @@ export async function initMovieDetailsPage() {
   }
 }
 
-function renderShowcase(container, movie) {
+async function renderShowcase(container, movie) {
   const backdropUrl = getBackdropUrl(movie.backdrop_path, CONFIG.IMAGE_SIZES.BACKDROP_ORIGINAL);
   const posterUrl = getImageUrl(movie.poster_path, CONFIG.IMAGE_SIZES.POSTER_LARGE);
   const title = movie.title || 'Untitled';
@@ -119,8 +124,12 @@ function renderShowcase(container, movie) {
   const originalLanguage = (movie.original_language || 'en').toUpperCase();
   const companies = (movie.production_companies || []).map(c => c.name).join(', ') || 'Independent';
 
-  const isWatch = watchlistService.isInWatchlist(movie.id);
-  const isFav = favoriteService.isFavorite(movie.id);
+  const [isWatch, isFav, isWatched, userRating] = await Promise.all([
+    watchlistService.isInWatchlist(movie.id),
+    favoriteService.isFavorite(movie.id),
+    userMovieService.isWatched(movie.id),
+    userMovieService.getMovieRating(movie.id)
+  ]);
 
   // Genre pills HTML
   const genresHtml = (movie.genres || [])
@@ -216,6 +225,20 @@ function renderShowcase(container, movie) {
               <span id="details-fav-label">${isFav ? 'Favorited' : 'Favorite'}</span>
             </button>
 
+            <button type="button" class="btn btn-secondary ${isWatched ? 'active' : ''}" id="details-watched-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+              </svg>
+              <span id="details-watched-label">${isWatched ? 'Watched' : 'Mark Watched'}</span>
+            </button>
+
+            <button type="button" class="btn btn-secondary" id="details-rate-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="${userRating ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" style="color: var(--accent-gold);">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              <span id="details-rate-label">${userRating ? `Rated ${userRating}/10` : 'Rate Movie'}</span>
+            </button>
+
             <button type="button" class="btn btn-glass btn-icon" id="details-share-btn" title="Share Movie" aria-label="Share movie link">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
@@ -261,8 +284,8 @@ function renderShowcase(container, movie) {
   // Watchlist Toggle
   const watchBtn = container.querySelector('#details-watchlist-btn');
   const watchLabel = container.querySelector('#details-watchlist-label');
-  watchBtn.addEventListener('click', () => {
-    const added = watchlistService.toggleWatchlist(movie);
+  watchBtn.addEventListener('click', async () => {
+    const added = await watchlistService.toggleWatchlist(movie);
     watchBtn.classList.toggle('active', added);
     watchLabel.textContent = added ? 'In Watchlist' : 'Add to Watchlist';
     const svg = watchBtn.querySelector('svg');
@@ -278,8 +301,8 @@ function renderShowcase(container, movie) {
   // Favorite Toggle
   const favBtn = container.querySelector('#details-favorite-btn');
   const favLabel = container.querySelector('#details-fav-label');
-  favBtn.addEventListener('click', () => {
-    const added = favoriteService.toggleFavorite(movie);
+  favBtn.addEventListener('click', async () => {
+    const added = await favoriteService.toggleFavorite(movie);
     favBtn.classList.toggle('active', added);
     favLabel.textContent = added ? 'Favorited' : 'Favorite';
     const svg = favBtn.querySelector('svg');
@@ -289,6 +312,40 @@ function renderShowcase(container, movie) {
       toast.success(`"${title}" added to Favorites`);
     } else {
       toast.info(`"${title}" removed from Favorites`);
+    }
+  });
+
+  // Watched Toggle
+  const watchedBtn = container.querySelector('#details-watched-btn');
+  const watchedLabel = container.querySelector('#details-watched-label');
+  watchedBtn.addEventListener('click', async () => {
+    const currentlyWatched = await userMovieService.isWatched(movie.id);
+    if (currentlyWatched) {
+      await userMovieService.removeFromWatched(movie.id);
+      watchedBtn.classList.remove('active');
+      watchedLabel.textContent = 'Mark Watched';
+      toast.info(`Removed "${title}" from watched history`);
+    } else {
+      await userMovieService.markAsWatched(movie);
+      watchedBtn.classList.add('active');
+      watchedLabel.textContent = 'Watched';
+      toast.success(`Marked "${title}" as watched!`);
+    }
+  });
+
+  // Rate Movie Button -> Modal
+  const rateBtn = container.querySelector('#details-rate-btn');
+  const rateLabel = container.querySelector('#details-rate-label');
+  rateBtn.addEventListener('click', () => {
+    ratingModal.open(movie);
+  });
+
+  onEvent(USER_MOVIES_EVENT, (e) => {
+    if (e.detail.type === 'rating' && e.detail.movieId === movie.id) {
+      const score = e.detail.rating;
+      rateLabel.textContent = score ? `Rated ${score}/10` : 'Rate Movie';
+      const svg = rateBtn.querySelector('svg');
+      svg.setAttribute('fill', score ? 'currentColor' : 'none');
     }
   });
 
@@ -305,9 +362,7 @@ function renderShowcase(container, movie) {
       try {
         await navigator.share(shareData);
         return;
-      } catch (err) {
-        // User cancelled or share failed, fallback to clipboard
-      }
+      } catch (err) {}
     }
 
     try {
