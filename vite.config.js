@@ -1,4 +1,3 @@
-import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -6,39 +5,27 @@ export default defineConfig({
   publicDir: 'public',
   server: {
     port: 5173,
-    open: false,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3001',
-        changeOrigin: true,
-        secure: false
-      },
-      '/uploads': {
-        target: 'http://localhost:3001',
-        changeOrigin: true,
-        secure: false
-      }
-    }
+    open: false
   },
   build: {
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        search: resolve(__dirname, 'search.html'),
-        movie: resolve(__dirname, 'movie.html'),
-        watchlist: resolve(__dirname, 'watchlist.html'),
-        favorites: resolve(__dirname, 'favorites.html'),
-        dashboard: resolve(__dirname, 'dashboard.html'),
-        profile: resolve(__dirname, 'profile.html'),
-        settings: resolve(__dirname, 'settings.html'),
-        login: resolve(__dirname, 'login.html'),
-        signup: resolve(__dirname, 'signup.html'),
-        forgotPassword: resolve(__dirname, 'forgot-password.html'),
-        resetPassword: resolve(__dirname, 'reset-password.html'),
-        verifyEmail: resolve(__dirname, 'verify-email.html'),
-        notFound: resolve(__dirname, '404.html')
+        main: 'index.html',
+        search: 'search.html',
+        movie: 'movie.html',
+        watchlist: 'watchlist.html',
+        favorites: 'favorites.html',
+        dashboard: 'dashboard.html',
+        profile: 'profile.html',
+        settings: 'settings.html',
+        login: 'login.html',
+        signup: 'signup.html',
+        forgotPassword: 'forgot-password.html',
+        resetPassword: 'reset-password.html',
+        verifyEmail: 'verify-email.html',
+        notFound: '404.html'
       }
     }
   }

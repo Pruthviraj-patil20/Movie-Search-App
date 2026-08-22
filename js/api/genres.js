@@ -4,8 +4,8 @@
 
 import { tmdbFetch } from './tmdb.js';
 
-// Pre-populated default genres in case of network issues
-const DEFAULT_GENRES = [
+// Pre-populated default genres
+export const DEFAULT_GENRES = [
   { id: 28, name: "Action" },
   { id: 12, name: "Adventure" },
   { id: 16, name: "Animation" },
@@ -27,7 +27,8 @@ const DEFAULT_GENRES = [
   { id: 37, name: "Western" }
 ];
 
-let genresMapCache = null;
+// Pre-cached Map for instantaneous synchronous lookups
+let genresMapCache = new Map(DEFAULT_GENRES.map(g => [g.id, g.name]));
 
 /**
  * Fetch list of official TMDB movie genres
@@ -38,7 +39,11 @@ export async function getMovieGenres() {
       cacheTtlMs: 1000 * 60 * 60 * 24, // 24hr cache
       fallback: { genres: DEFAULT_GENRES }
     });
-    return data.genres || DEFAULT_GENRES;
+    if (data && Array.isArray(data.genres)) {
+      genresMapCache = new Map(data.genres.map(g => [g.id, g.name]));
+      return data.genres;
+    }
+    return DEFAULT_GENRES;
   } catch (error) {
     return DEFAULT_GENRES;
   }
@@ -48,20 +53,19 @@ export async function getMovieGenres() {
  * Get map of genre ID to genre name
  */
 export async function getGenreMap() {
-  if (genresMapCache) return genresMapCache;
+  if (genresMapCache && genresMapCache.size > 0) return genresMapCache;
   const genres = await getMovieGenres();
   genresMapCache = new Map(genres.map(g => [g.id, g.name]));
   return genresMapCache;
 }
 
 /**
- * Format an array of genre IDs into human-readable string (e.g. "Action, Sci-Fi")
+ * Format an array of genre IDs into human-readable string (e.g. "Action • Sci-Fi")
  */
 export async function formatGenreNames(genreIds = [], limit = 3) {
   if (!genreIds || genreIds.length === 0) return 'Cinema';
-  const map = await getGenreMap();
   const names = genreIds
-    .map(id => map.get(id))
+    .map(id => genresMapCache.get(Number(id)))
     .filter(Boolean)
     .slice(0, limit);
   return names.length ? names.join(' • ') : 'Cinema';

@@ -1,5 +1,6 @@
 /**
- * Navbar Component Controller with Real-Time User Authentication & Profile Dropdown
+ * Navbar Component Controller with LocalStorage Auth & Profile Dropdown
+ * Pure frontend - no backend API required. Uses localStorage for auth state.
  */
 
 import { authService, AUTH_EVENT } from '../services/authService.js';
@@ -226,7 +227,7 @@ export function initNavbar() {
 
   // 4. Theme Toggle Functionality
   const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
-  
+
   const updateThemeIcons = (currentTheme) => {
     const isDark = currentTheme === 'dark';
     themeToggleBtns.forEach(btn => {

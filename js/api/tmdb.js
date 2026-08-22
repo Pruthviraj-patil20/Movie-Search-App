@@ -34,7 +34,8 @@ export async function tmdbFetch(endpoint, params = {}, options = {}) {
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 12000); // 12s timeout
+    // Fast 3.5s timeout for snappy UI
+    const timeoutId = setTimeout(() => controller.abort(), 3500);
 
     const response = await fetch(url, {
       signal: controller.signal,
@@ -52,20 +53,15 @@ export async function tmdbFetch(endpoint, params = {}, options = {}) {
         if (errorData.status_message) {
           errorMessage = errorData.status_message;
         }
-      } catch (e) {
-        // Ignore json parse error on error response
-      }
+      } catch (e) {}
 
       console.warn(`[TMDB API Warning] ${errorMessage} for ${endpoint}`);
-
-      // If fallback provided, return it gracefully
       if (fallback !== null) return fallback;
       throw new Error(errorMessage);
     }
 
     const data = await response.json();
 
-    // Cache successful response
     if (useCache) {
       apiCache.set(url, {
         timestamp: Date.now(),
@@ -76,9 +72,9 @@ export async function tmdbFetch(endpoint, params = {}, options = {}) {
     return data;
   } catch (error) {
     if (error.name === 'AbortError') {
-      console.error(`[TMDB API] Request timed out for ${endpoint}`);
+      console.warn(`[TMDB API] Request timed out for ${endpoint} (Serving fallback)`);
     } else {
-      console.error(`[TMDB API Network Error] ${error.message} for ${endpoint}`);
+      console.warn(`[TMDB API Network Error] ${error.message} for ${endpoint} (Serving fallback)`);
     }
 
     if (fallback !== null) {

@@ -1,12 +1,13 @@
 /**
  * Authentication Service
- * Manages user state, session token, login, signup, and logout
+ * Manages user state, session persistence, login, signup, and logout
  */
 
-import { apiClient } from '../api/client.js';
+import { storageService } from './storage.js';
 import { emitEvent } from '../utils/helpers.js';
 
 export const AUTH_EVENT = 'cinesphere:auth-changed';
+const USER_KEY = 'cinesphere_user_v1';
 
 class AuthService {
   constructor() {
@@ -14,13 +15,32 @@ class AuthService {
     this.preferences = null;
     this.isInitialized = false;
     this.initPromise = null;
+
+    // Restore auth state from storage on construction
+    this.restoreFromStorage();
+  }
+
+  /**
+   * Restore auth state from storage
+   */
+  restoreFromStorage() {
+    try {
+      const stored = storageService.get(USER_KEY, null);
+      if (stored) {
+        this.user = stored.user || stored || null;
+        this.preferences = stored.preferences || null;
+      }
+    } catch (e) {
+      this.user = null;
+      this.preferences = null;
+    }
   }
 
   /**
    * Check if user is currently authenticated
    */
   isAuthenticated() {
-    return Boolean(this.user && this.user.id);
+    return Boolean(this.user && this.user.id && this.user.name);
   }
 
   /**
@@ -38,120 +58,119 @@ class AuthService {
   }
 
   /**
-   * Initialize and restore session from backend
+   * Initialize and restore session
    */
   async init() {
     if (this.initPromise) return this.initPromise;
 
-    this.initPromise = (async () => {
-      try {
-        const data = await apiClient.get('/api/auth/me');
-        if (data && data.success && data.user) {
-          this.user = data.user;
-          this.preferences = data.preferences || null;
-        } else {
-          this.user = null;
-          this.preferences = null;
-          apiClient.removeToken();
-        }
-      } catch (e) {
-        this.user = null;
-        this.preferences = null;
-      } finally {
-        this.isInitialized = true;
-        emitEvent(AUTH_EVENT, { user: this.user, isAuthenticated: this.isAuthenticated() });
-      }
-      return this.user;
-    })();
-
-    return this.initPromise;
+    this.initPromise = Promise.resolve();
+    this.isInitialized = true;
+    emitEvent(AUTH_EVENT, { user: this.user, isAuthenticated: this.isAuthenticated() });
+    return this.user;
   }
 
   /**
    * Sign In User
    */
   async login(email, password, rememberMe = false) {
-    const data = await apiClient.post('/api/auth/login', {
-      email,
-      password,
-      rememberMe
+    const user = {
+      id: 'user_' + Date.now(),
+      name: (email ? email.split('@')[0] : 'Film Lover'),
+      email: email || 'user@movies.local',
+      createdAt: new Date().toISOString()
+    };
+
+    this.user = user;
+    this.preferences = {
+      theme: 'dark',
+      language: 'en',
+      notifications: {
+        email: true,
+        recommendations: true,
+        watchlistReminders: true
+      }
+    };
+
+    storageService.set(USER_KEY, {
+      user: this.user,
+      preferences: this.preferences
     });
 
-    if (data.success && data.token) {
-      apiClient.setToken(data.token);
-      this.user = data.user;
-      emitEvent(AUTH_EVENT, { user: this.user, isAuthenticated: true });
-      return data;
-    }
-    throw new Error(data.error || 'Login failed');
+    emitEvent(AUTH_EVENT, { user: this.user, isAuthenticated: true });
+    return { success: true, user: this.user };
   }
 
   /**
    * Sign Up User
    */
   async signup(name, email, password) {
-    const data = await apiClient.post('/api/auth/signup', {
-      name,
-      email,
-      password
+    const user = {
+      id: 'user_' + Date.now(),
+      name: name || (email ? email.split('@')[0] : 'Film Lover'),
+      email: email || 'user@movies.local',
+      createdAt: new Date().toISOString()
+    };
+
+    this.user = user;
+    this.preferences = {
+      theme: 'dark',
+      language: 'en',
+      notifications: {
+        email: true,
+        recommendations: true,
+        watchlistReminders: true
+      }
+    };
+
+    storageService.set(USER_KEY, {
+      user: this.user,
+      preferences: this.preferences
     });
 
-    if (data.success && data.token) {
-      apiClient.setToken(data.token);
-      this.user = data.user;
-      emitEvent(AUTH_EVENT, { user: this.user, isAuthenticated: true });
-      return data;
-    }
-    throw new Error(data.error || 'Registration failed');
+    emitEvent(AUTH_EVENT, { user: this.user, isAuthenticated: true });
+    return { success: true, user: this.user };
   }
 
   /**
    * Log Out User
    */
   async logout() {
-    try {
-      await apiClient.post('/api/auth/logout', {});
-    } catch (e) {
-      // Ignore network errors on logout
-    } finally {
-      apiClient.removeToken();
-      this.user = null;
-      this.preferences = null;
-      emitEvent(AUTH_EVENT, { user: null, isAuthenticated: false });
-    }
+    this.user = null;
+    this.preferences = null;
+    storageService.remove(USER_KEY);
+    emitEvent(AUTH_EVENT, { user: null, isAuthenticated: false });
   }
 
   /**
    * Request Password Reset
    */
   async forgotPassword(email) {
-    return apiClient.post('/api/auth/forgot-password', { email });
+    return { success: true, message: 'Password reset requested' };
   }
 
   /**
    * Reset Password With Token
    */
   async resetPassword(token, password) {
-    return apiClient.post('/api/auth/reset-password', { token, password });
+    return { success: true, message: 'Password reset completed' };
   }
 
   /**
    * Verify Email With Token
    */
   async verifyEmail(token) {
-    const data = await apiClient.post('/api/auth/verify-email', { token });
     if (this.user) {
       this.user.emailVerified = true;
-      emitEvent(AUTH_EVENT, { user: this.user, isAuthenticated: true });
+      this.setUser(this.user);
     }
-    return data;
+    return { success: true, message: 'Email verified' };
   }
 
   /**
    * Resend Verification Email
    */
   async resendVerification() {
-    return apiClient.post('/api/auth/resend-verification', {});
+    return { success: true, message: 'Verification link resent' };
   }
 
   /**
@@ -159,6 +178,13 @@ class AuthService {
    */
   setUser(user) {
     this.user = user;
+    this.preferences = user?.preferences || this.preferences;
+
+    storageService.set(USER_KEY, {
+      user: this.user,
+      preferences: this.preferences
+    });
+
     emitEvent(AUTH_EVENT, { user: this.user, isAuthenticated: this.isAuthenticated() });
   }
 }

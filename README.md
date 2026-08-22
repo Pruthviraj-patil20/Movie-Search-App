@@ -1,187 +1,203 @@
-# 🎬 CineSphere — Premium Movie Search & Discovery Platform
+# Movie Search App
 
-![CineSphere Banner](https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80)
+## Features
 
-> A modern, cinematic movie discovery web application inspired by the visual elegance of Apple TV+, Netflix, and HBO Max. Built entirely with **HTML5, CSS3, Vanilla JavaScript (ES6+ Modules), TMDB API, Vite, and LocalStorage** — zero external UI frameworks or runtime dependencies.
+- **Movie Discovery**: Browse trending, popular, top-rated, and upcoming movies
+- **Search**: Search movies by title with debounced input
+- **Filters**: Filter by genre, release year, minimum rating, language, sort by
+- **Movie Details**: Full cinematic view with overview, cast, similar movies
+- **Trailer Player**: Watch YouTube trailers in a premium modal
+- **Watchlist**: Save movies to watchlist, persists in localStorage
+- **Favorites**: Add movies to favorites, separate localStorage storage
+- **Dark/Light Theme**: Cinematic dark mode with system preference detection
+- **Responsive Design**: Works on desktop, tablet, and mobile
+- **Skeleton Loading**: Premium shimmer animations during data loading
+- **Error States**: Professional error messages when things go wrong
+- **Toast Notifications**: Success and error messages with animations
+- **Share Feature**: Copy movie URL to clipboard or Web Share API
+- **Accessibility**: Semantic HTML, ARIA labels, keyboard navigation, focus states
 
----
+## Tech Stack
 
-## 🌟 Highlights & Key Features
+- **HTML5** - Semantic markup
+- **CSS3** - Custom properties, variables, responsive design
+- **Vanilla JavaScript ES6+** - ES modules, no frameworks
+- **Vite** - Fast dev server and build
+- **TMDB API** - The Movie Database API
+- **localStorage** - Client-side data persistence
+- **Lucide Icons** - Modern icon set
 
-- **Cinematic Visual Design**: Obsidian & charcoal deep surfaces, subtle glassmorphic blur navigation, fine gradient accents, and micro-animations.
-- **Dynamic Spotlight Hero**: Full-width trending movie hero with backdrop fade masks, official trailer modal player, and quick watchlist bookmarking.
-- **Interactive Multi-Row Carousels**: Trending (with Day / Week toggle), Popular Worldwide, Top Rated Hits, Upcoming In Theaters, and Browse by Genre.
-- **Debounced Live Search & Discovery**:
-  - Live search suggestions dropdown with instant previews
-  - Saved search history pills persisted to LocalStorage
-  - Advanced multi-criteria filters: **Genre, Release Year, Minimum TMDB Rating, Language, and Sorting**
-- **Rich Movie Details (`movie.html?id=ID`)**:
-  - Full-screen dynamic backdrop hero
-  - High-res poster & metadata specs (Runtime, Release Date, Status, Age Certification, Budget, Box Office Revenue, Production Companies)
-  - Top Cast Slider with avatar photos and character roles
-  - Embedded 16:9 YouTube Official Trailer modal with keyboard ESC and click-outside dismissal
-  - Web Share API integration with automatic fallback to clipboard copy toast
-  - Similar Movies & Curated Recommendations carousels
-- **Personal Library Persistence**:
-  - **Watchlist (`watchlist.html`)** and **Favorites (`favorites.html`)** stored in `localStorage`
-  - Real-time navbar badge counters that sync instantly across tabs and pages
-  - In-library live search, sorting (Recently Added, Rating, Release Year, Title), and batch clear
-- **Light & Dark Theme Engine**: Handcrafted dual-theme system with persistent storage and system `prefers-color-scheme` adaptation.
-- **Shimmer Skeleton Loading**: Custom CSS shimmer skeletons for all card, carousel, hero, and details states to eliminate layout shifts (CLS).
-- **Graceful Error Handling & Fallbacks**: Intelligent offline and demo fallback datasets ensuring the app never crashes even during network disruptions.
-- **100% Responsive & Accessible**: Custom CSS media queries for desktop, laptop, tablet, and mobile with ARIA compliance and focus indicators.
-
----
-
-## 📂 Architecture & Directory Structure
+## Project Architecture
 
 ```
 movie-search-app/
-├── index.html               # Home page (Hero spotlight, carousels, genre cards)
-├── search.html              # Search & discovery page (Live filters, search history, grid)
-├── movie.html               # Movie details page (Backdrop, specs, cast, trailer, recommendations)
-├── watchlist.html           # Personal Watchlist page (Filter, sort, batch remove)
-├── favorites.html           # Personal Favorites page (Filter, sort, batch remove)
-├── 404.html                 # Cinematic 404 error page
-│
-├── .env                     # Vite environment variables (API keys)
-├── .env.example             # Example environment template
-├── .gitignore               # Ignored files and directories
-├── README.md                # Project documentation
-├── package.json             # Project metadata and build scripts
-├── vite.config.js           # Multi-page Rollup input configuration
+├── index.html          # Home page - hero, trending, popular, top-rated, upcoming, genres
+├── search.html         # Search page - advanced search with filters
+├── movie.html          # Movie details page - full cinematic view
+├── watchlist.html      # Watchlist page - LocalStorage persistence
+├── favorites.html      # Favorites page - LocalStorage persistence
+├── dashboard.html      # Personal dashboard - stats, recently viewed, recommendations
+├── 404.html            # Custom 404 page
+├── .env               # TMDB API configuration
+├── .env.example       # Environment variable examples
+├── package.json       # Vite + lucide only (no framework deps)
+├── vite.config.js     # Vite configuration
+├── css/               # 17 CSS files - design system, components, pages
+│   ├── variables.css  # Design tokens (colors, typography, spacing, shadows)
+│   ├── reset.css      # CSS reset
+│   ├── main.css       # Core styles
+│   ├── components.css # Component base styles
+│   ├── navbar.css     # Navigation bar styling
+│   ├── hero.css       # Hero section styling
+│   ├── movie-card.css # Movie card styling
+│   ├── movie-details.css # Movie details page styling
+│   ├── search.css     # Search page styling
+│   ├── watchlist.css  # Watchlist page styling
+│   ├── skeleton.css   # Loading skeleton animations
+│   ├── modal.css      # Modal/styling
+│   ├── ratingModal.css # Rating modal styling
+│   ├── settings.css   # Settings page styling
+│   ├── profile.css    # Profile page styling
+│   ├── watchlist.css  # Watchlist page secondary styling
+│   └── responsive.css # Responsive design media queries
+├── js/
+│   ├── app.js         # Main bootstrapper - initializes theme, auth, routes
+│   ├── config.js      # Configuration - TMDB endpoints, image sizes, storage keys
+│   │
+│   ├── api/           # TMDB API layer with demo data fallbacks
+│   │   ├── tmdb.js    # Base fetch with caching, timeout, error handling
+│   │   ├── movies.js  # Movie queries (trending, popular, search, discover, etc.)
+│   │   ├── genres.js  # Genre list with defaults
+│   │   └── videos.js  # Trailer extraction
+│   │
+│   ├── services/      # localStorage-powered services
+│   │   ├── authService.js      # Pure frontend auth (localStorage)
+│   │   ├── userMovieService.js # Watchlist/favorites/watched/ratings history
+│   │   ├── analyticsService.js # Stats from localStorage data
+│   │   ├── themeService.js     # Dark/light theme persistence
+│   │   ├── userService.js      # Profile, avatar, preferences
+│   │   ├── watchlistService.js # Watchlist operations
+│   │   └── favoriteService.js  # Favorites operations
+│   │
+│   ├── pages/         # Page controllers
+│   │   ├── home.js          # Home page controller
+│   │   ├── search.js        # Search page controller
+│   │   ├── movieDetails.js  # Movie details controller
+│   │   ├── watchlist.js     # Watchlist page controller
+│   │   ├── favorites.js     # Favorites page controller
+│   │   └── dashboard.js     # Dashboard controller
+│   │
+│   ├── components/    # Reusable UI components
+│   │   ├── navbar.js        # Glass navigation with auth state
+│   │   ├── hero.js          # Cinematic hero banner
+│   │   ├── movieCard.js     # Reusable movie card component
+│   │   ├── movieGrid.js     # Movie grid layout
+│   │   ├── carousel.js      # Horizontal movie carousel
+│   │   ├── modal.js         # YouTube trailer modal
+│   │   ├── loader.js        # Progress bar loader
+│   │   ├── skeleton.js      # Shimmer loading animations
+│   │   ├── toast.js         # Toast notifications
+│   │   └── emptyState.js    # Empty state illustrations
+│   │
+│   └── utils/         # Utilities
+│       ├── helpers.js       # DOM helpers, event emission
+│       ├── formatters.js    # Rating, year, runtime formatters
+│       ├── debounce.js      # Input debouncing
+│       ├── urlParams.js     # URL query parameter handling
+│       └── validators.js    # Input validation
 │
 ├── assets/
-│   ├── images/
-│   └── icons/
+│   ├── images/          # Poster placeholder images
+│   └── icons/           # Icon assets
 │
-├── css/
-│   ├── reset.css            # CSS reset and normalization
-│   ├── variables.css        # Design tokens, themes (Dark/Light), typography, spacing
-│   ├── main.css             # Base layout, buttons, badges, section headers, footer
-│   ├── components.css       # Shared UI components (glass panels, rating pills, chips, progress bar)
-│   ├── navbar.css           # Floating glass header and responsive mobile drawer
-│   ├── hero.css             # Cinematic full-width hero spotlight
-│   ├── movie-card.css       # Unified movie card component with hover actions
-│   ├── movie-details.css    # Details hero, metadata grid, cast slider
-│   ├── search.css           # Big search bar, suggestions dropdown, filter toolbar
-│   ├── watchlist.css        # Library header, search/sort toolbar, removal animations
-│   ├── skeleton.css         # Shimmer loading placeholders
-│   ├── modal.css            # Accessible video trailer modal dialog
-│   └── responsive.css       # Granular responsive media queries
-│
-├── js/
-│   ├── app.js               # Global application bootstrapper and route dispatcher
-│   ├── config.js            # Configuration, image sizes, fallback constants
-│   │
-│   ├── api/
-│   │   ├── tmdb.js          # Core fetch client with cache and error handling
-│   │   ├── movies.js        # Trending, Popular, Top Rated, Details, Discover endpoints
-│   │   ├── genres.js        # Genre fetching and mapping utilities
-│   │   └── videos.js        # Video trailer extraction
-│   │
-│   ├── components/
-│   │   ├── navbar.js        # Navbar controller, theme switch, badge sync
-│   │   ├── hero.js          # Hero banner renderer
-│   │   ├── movieCard.js     # Universal movie card component
-│   │   ├── movieGrid.js     # Responsive grid generator
-│   │   ├── carousel.js      # Smooth horizontal scroll carousel with controls
-│   │   ├── modal.js         # Trailer video modal controller
-│   │   ├── loader.js        # Top loading bar simulator
-│   │   ├── skeleton.js      # Skeleton HTML generators
-│   │   ├── toast.js         # Accessible toast notification manager
-│   │   └── emptyState.js    # Cinematic empty state placeholders
-│   │
-│   ├── pages/
-│   │   ├── home.js          # Home page data fetching and rendering
-│   │   ├── search.js        # Live search, filters, and pagination logic
-│   │   ├── movieDetails.js  # Movie details, cast, similar and recommendations
-│   │   ├── watchlist.js     # Watchlist controller and storage sync
-│   │   └── favorites.js     # Favorites controller and storage sync
-│   │
-│   ├── services/
-│   │   ├── storage.js       # Safe LocalStorage wrapper
-│   │   ├── watchlistService.js # Watchlist state manager & event emitter
-│   │   ├── favoriteService.js  # Favorites state manager & event emitter
-│   │   └── themeService.js     # Dark/Light theme manager
-│   │
-│   └── utils/
-│       ├── helpers.js       # Image URLs, DOM helpers, event emitters
-│       ├── formatters.js    # Runtime, currency, dates, ratings formatting
-│       ├── debounce.js      # Input debounce utility
-│       ├── urlParams.js     # URL query string helpers
-│       └── validators.js    # Input sanitizers and validators
-│
-└── public/
-    ├── favicon.svg          # Cinematic vector icon
-    ├── favicon.ico          # Fallback icon
-    └── robots.txt           # SEO robots instructions
+├── 404.html
+├── .gitignore
+├── README.md
+└── package.json
 ```
 
----
+## Installation
 
-## 🚀 Getting Started
+```bash
+# Install dependencies
+npm install
 
-### Prerequisites
-- Node.js (v18 or higher recommended)
-- npm or yarn or pnpm
+# Start development server
+npm run dev
 
-### Installation
+# Build for production
+npm run build
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/movie-search-app.git
-   cd movie-search-app
-   ```
+# Preview production build
+npm run preview
+```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+## Environment Variables
 
-3. **Configure Environment Variables:**
-   Copy `.env.example` to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-   Add your TMDB API key:
-   ```env
-   VITE_TMDB_API_KEY=your_tmdb_api_key_here
-   VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
-   VITE_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/
-   ```
+Create a `.env` file in the project root:
 
-   > **Note on Security**: `VITE_` variables in client-side Vite applications are bundled and accessible in browser client code. For production commercial deployments requiring secret credentials or authenticated user tokens, a lightweight serverless proxy backend (e.g. Cloudflare Workers, Next.js API Routes, or Node.js Express) should be used to protect private keys.
+```
+VITE_TMDB_API_KEY=YOUR_TMDB_API_KEY_HERE
+VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
+VITE_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/
+```
 
-4. **Start Development Server:**
-   ```bash
-   npm run dev
-   ```
-   Open your browser at `http://localhost:5173`.
+**Important**: The `VITE_` prefixed variables are exposed to the browser. This is acceptable for TMDB API keys since they have built-in rate limiting and IP restrictions. For production applications requiring truly secret credentials, a backend proxy should be used.
 
-5. **Build for Production:**
-   ```bash
-   npm run build
-   ```
-   The optimized multi-page production bundle will be output to `/dist`.
+To get a TMDB API key:
+1. Go to https://www.themoviedb.org/ and create an account
+2. Apply for an API key in the Settings section
+3. Use the default base URLs above
 
----
+## Running Locally
 
-## 🎨 Design Philosophy & Accessibility
+```bash
+# Development with hot module replacement
+npm run dev
 
-- **Cinematic Palette**: Balanced contrast adhering to WCAG AA guidelines with `#08090C` charcoal background and `#E50914` electric ruby accent.
-- **Glassmorphism**: `backdrop-filter: blur(16px)` with subtle 1px border highlights for a floating, layered look.
-- **Keyboard Navigation**: Full keyboard tab accessibility, focus outlines (`:focus-visible`), and shortcuts (press `/` or `⌘K` anywhere to search).
-- **Reduced Motion Support**: Obeys `@media (prefers-reduced-motion: reduce)` to disable heavy animations for sensitive users.
+# Open http://localhost:5173 in your browser
 
----
+# Build for production
+npm run build
 
-## 📄 TMDB Attribution
+# Preview the build
+npm run preview
+```
 
-This product uses the [TMDB API](https://www.themoviedb.org/) but is not endorsed or certified by TMDB. All movie images, posters, metadata, and logos are property of their respective copyright owners and The Movie Database.
+## Folder Structure
 
----
+The project follows a modular architecture with strict separation of concerns:
 
-## 📜 License
+- **api/** - TMDB API integration with error handling and demo fallbacks
+- **services/** - localStorage-powered data persistence (no backend needed)
+- **pages/** - Page-specific controllers that orchestrate the UI
+- **components/** - Reusable UI components (card, carousel, modal, etc.)
+- **utils/** - Helper functions and formatting utilities
+- **css/** - Design tokens and component-specific styles
 
-MIT License © 2026 CineSphere.
+All JavaScript uses ES module imports/exports, keeping responsibilities separated.
+
+## Screenshots
+
+*(Add screenshots of each page here for the portfolio)*
+
+## Features Roadmap
+
+- [ ] Integration with TMDB API key
+- [ ] User accounts with email/password authentication
+- [ ] Advanced filtering with more criteria
+- [ ] Infinite scroll and pagination
+- [ ] Movie recommendations engine
+- [ ] Social sharing with custom Og tags
+
+## Folder Structure
+
+See the architecture section above for the complete directory layout.
+
+## Author
+
+Built with premium cinematic design and vanilla JavaScript ES6+.
+
+## License
+
+MIT License - feel free to use this as a portfolio project or starting point.
