@@ -9,6 +9,7 @@ export const storageService = {
    */
   get(key, fallbackValue = null) {
     try {
+      if (typeof window === 'undefined' || typeof localStorage === 'undefined') return fallbackValue;
       const item = localStorage.getItem(key);
       if (item === null || item === undefined) return fallbackValue;
       return JSON.parse(item);
@@ -23,6 +24,7 @@ export const storageService = {
    */
   set(key, value) {
     try {
+      if (typeof window === 'undefined' || typeof localStorage === 'undefined') return false;
       localStorage.setItem(key, JSON.stringify(value));
       return true;
     } catch (error) {
@@ -36,6 +38,7 @@ export const storageService = {
    */
   remove(key) {
     try {
+      if (typeof window === 'undefined' || typeof localStorage === 'undefined') return false;
       localStorage.removeItem(key);
       return true;
     } catch (error) {
@@ -49,6 +52,7 @@ export const storageService = {
    */
   clear() {
     try {
+      if (typeof window === 'undefined' || typeof localStorage === 'undefined') return false;
       localStorage.clear();
       return true;
     } catch (error) {

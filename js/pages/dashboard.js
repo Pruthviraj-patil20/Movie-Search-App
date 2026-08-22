@@ -1,5 +1,7 @@
 /**
  * Personalized Dashboard Page Controller
+ * Handles stats, recently viewed, recommendations, watchlist, and favorites
+ * with proper error fallbacks for both guest and authenticated users.
  */
 
 import { getGenreMap } from '../api/genres.js';
@@ -38,7 +40,7 @@ export async function initDashboardPage() {
   const statWatchlist = document.querySelector('#dash-stat-watchlist');
   const statRating = document.querySelector('#dash-stat-rating');
 
-  // Insert Skeletons
+  // Insert Skeletons immediately
   if (recentMount) recentMount.innerHTML = skeleton.carousel();
   if (recsMount) recsMount.innerHTML = skeleton.carousel();
   if (watchlistMount) watchlistMount.innerHTML = skeleton.carousel();
@@ -50,114 +52,37 @@ export async function initDashboardPage() {
     // 1. Calculate & Render Stats
     if (isAuth) {
       analyticsService.getUserStats().then(stats => {
-        if (statWatched) statWatched.textContent = stats.totalWatched;
-        if (statFavorites) statFavorites.textContent = stats.totalFavorites;
-        if (statWatchlist) statWatchlist.textContent = stats.totalWatchlist;
+        if (statWatched) statWatched.textContent = stats.totalWatched || 0;
+        if (statFavorites) statFavorites.textContent = stats.totalFavorites || 0;
+        if (statWatchlist) statWatchlist.textContent = stats.totalWatchlist || 0;
         if (statRating) statRating.textContent = stats.averageRating > 0 ? `${stats.averageRating} ★` : 'NR';
 
         if (genreAnalyticsMount && stats.genreCounts) {
           renderGenreAnalytics(genreAnalyticsMount, stats.genreCounts);
         }
+      }).catch(() => {
+        renderDashboardStatsFallback();
       });
     } else {
-      // Local Guest Stats Calculation
-      const localWatched = userMovieService.getWatched();
-      const localFavs = userMovieService.getFavorites();
-      const localWatchlist = userMovieService.getWatchlist();
-      const localRatings = userMovieService.getRatings();
-
-      const avgScore = localRatings.length > 0
-        ? (localRatings.reduce((sum, r) => sum + (r.rating || 0), 0) / localRatings.length).toFixed(1)
-        : 0;
-
-      if (statWatched) statWatched.textContent = localWatched.length;
-      if (statFavorites) statFavorites.textContent = localFavs.length;
-      if (statWatchlist) statWatchlist.textContent = localWatchlist.length;
-      if (statRating) statRating.textContent = Number(avgScore) > 0 ? `${avgScore} ★` : 'NR';
-
-      // Local Genre Breakdown
-      const genreCounts = {};
-      [...localFavs, ...localWatched, ...localWatchlist].forEach(m => {
-        const gids = m.genre_ids || (m.genres ? m.genres.map(g => g.id) : []);
-        gids.forEach(gid => {
-          genreCounts[gid] = (genreCounts[gid] || 0) + 1;
-        });
-      });
-
-      if (genreAnalyticsMount) {
-        renderGenreAnalytics(genreAnalyticsMount, genreCounts);
-      }
+      renderDashboardStatsFallback();
     }
 
     // 2. Load Recently Viewed & Continue Watching
-    const recentMovies = userMovieService.getRecentlyViewed();
-    if (recentMount) {
-      recentMount.innerHTML = '';
-      if (recentMovies.length > 0) {
-        recentMount.appendChild(
-          createMovieCarousel(recentMovies, { title: 'Recently Viewed' })
-        );
-      } else {
-        const sec = document.querySelector('#recent-section');
-        if (sec) sec.style.display = 'none';
-      }
-    }
+    loadRecentlyViewed(recentMount);
 
     // 3. Load Personalized Recommendations
-    recommendationService.getPersonalizedRecommendations().then(recs => {
-      if (recsMount && recs.movies && recs.movies.length > 0) {
-        recsMount.innerHTML = '';
-        if (recsReasonEl && recs.reason) {
-          recsReasonEl.textContent = recs.reason;
-        }
-        recsMount.appendChild(
-          createMovieCarousel(recs.movies, { title: 'Recommended For You' })
-        );
-      }
-    });
+    await loadPersonalizedRecommendations(recsMount, recsReasonEl);
 
     // 4. Load Watchlist
-    const watchlistMovies = userMovieService.getWatchlist();
-    if (watchlistMount) {
-      watchlistMount.innerHTML = '';
-      if (watchlistMovies.length > 0) {
-        watchlistMount.appendChild(
-          createMovieCarousel(watchlistMovies.slice(0, 16), { title: 'My Watchlist' })
-        );
-      } else {
-        watchlistMount.appendChild(
-          createEmptyState({
-            icon: 'bookmark',
-            title: 'Your Watchlist is empty',
-            description: 'Save movies you plan to watch to see them here.',
-            actionText: 'Discover Movies',
-            actionHref: 'search.html'
-          })
-        );
-      }
-    }
+    loadWatchlistPreview(watchlistMount);
 
     // 5. Load Favorites
-    const favoriteMovies = userMovieService.getFavorites();
-    if (favoritesMount) {
-      favoritesMount.innerHTML = '';
-      if (favoriteMovies.length > 0) {
-        favoritesMount.appendChild(
-          createMovieCarousel(favoriteMovies.slice(0, 16), { title: 'My Favorites' })
-        );
-      } else {
-        favoritesMount.appendChild(
-          createEmptyState({
-            icon: 'heart',
-            title: 'No Favorites Yet',
-            description: 'Add movies to your favorites by tapping the heart icon.',
-            actionText: 'Explore Trending',
-            actionHref: 'index.html'
-          })
-        );
-      }
-    }
+    loadFavoritesPreview(favoritesMount);
 
+    // 6. Load Genre Analytics (if not already rendered via auth stats)
+    if (!isAuth && genreAnalyticsMount) {
+      await loadGenreAnalytics(genreAnalyticsMount);
+    }
   } catch (error) {
     console.error('[Dashboard] Error rendering dashboard:', error);
   } finally {
@@ -165,8 +90,154 @@ export async function initDashboardPage() {
   }
 }
 
-async function renderGenreAnalytics(container, genreCounts) {
-  const genreMap = await getGenreMap();
+/**
+ * Render stats fallback using local user movie data
+ */
+function renderDashboardStatsFallback() {
+  const statWatched = document.querySelector('#dash-stat-watched');
+  const statFavorites = document.querySelector('#dash-stat-favorites');
+  const statWatchlist = document.querySelector('#dash-stat-watchlist');
+  const statRating = document.querySelector('#dash-stat-rating');
+
+  const localWatched = userMovieService.getWatched();
+  const localFavs = userMovieService.getFavorites();
+  const localWatchlist = userMovieService.getWatchlist();
+  const localRatings = userMovieService.getRatings();
+
+  const avgScore = localRatings.length > 0
+    ? (localRatings.reduce((sum, r) => sum + (r.rating || 0), 0) / localRatings.length).toFixed(1)
+    : 0;
+
+  if (statWatched) statWatched.textContent = localWatched.length;
+  if (statFavorites) statFavorites.textContent = localFavs.length;
+  if (statWatchlist) statWatchlist.textContent = localWatchlist.length;
+  if (statRating) statRating.textContent = Number(avgScore) > 0 ? `${avgScore} ★` : 'NR';
+}
+
+/**
+ * Load recently viewed movies
+ */
+function loadRecentlyViewed(mountEl) {
+  const recentMovies = userMovieService.getRecentlyViewed();
+  if (mountEl) {
+    mountEl.innerHTML = '';
+    if (recentMovies.length > 0) {
+      mountEl.appendChild(
+        createMovieCarousel(recentMovies, { title: 'Recently Viewed' })
+      );
+    } else {
+      const sec = document.querySelector('#recent-section');
+      if (sec) sec.style.display = 'none';
+    }
+  }
+}
+
+/**
+ * Load personalized recommendations with error handling
+ */
+async function loadPersonalizedRecommendations(mountEl, reasonEl) {
+  try {
+    const recs = await recommendationService.getPersonalizedRecommendations();
+    if (mountEl && recs.movies && recs.movies.length > 0) {
+      mountEl.innerHTML = '';
+      if (reasonEl && recs.reason) {
+        reasonEl.textContent = recs.reason;
+      }
+      mountEl.appendChild(
+        createMovieCarousel(recs.movies, { title: 'Recommended For You' })
+      );
+    }
+  } catch (error) {
+    console.warn('[Dashboard] Recommendations failed:', error);
+    if (mountEl) {
+      mountEl.innerHTML = '';
+      if (reasonEl) {
+        reasonEl.textContent = 'Curated selection';
+      }
+    }
+  }
+}
+
+/**
+ * Load watchlist preview
+ */
+function loadWatchlistPreview(mountEl) {
+  const watchlistMovies = userMovieService.getWatchlist();
+  if (mountEl) {
+    mountEl.innerHTML = '';
+    if (watchlistMovies.length > 0) {
+      mountEl.appendChild(
+        createMovieCarousel(watchlistMovies.slice(0, 16), { title: 'My Watchlist' })
+      );
+    } else {
+      mountEl.appendChild(
+        createEmptyState({
+          icon: 'bookmark',
+          title: 'Your Watchlist is empty',
+          description: 'Save movies you plan to watch to see them here.',
+          actionText: 'Discover Movies',
+          actionHref: 'search.html'
+        })
+      );
+    }
+  }
+}
+
+/**
+ * Load favorites preview
+ */
+function loadFavoritesPreview(mountEl) {
+  const favoriteMovies = userMovieService.getFavorites();
+  if (mountEl) {
+    mountEl.innerHTML = '';
+    if (favoriteMovies.length > 0) {
+      mountEl.appendChild(
+        createMovieCarousel(favoriteMovies.slice(0, 16), { title: 'My Favorites' })
+      );
+    } else {
+      mountEl.appendChild(
+        createEmptyState({
+          icon: 'heart',
+          title: 'No Favorites Yet',
+          description: 'Add movies to your favorites by tapping the heart icon.',
+          actionText: 'Explore Trending',
+          actionHref: 'index.html'
+        })
+      );
+    }
+  }
+}
+
+/**
+ * Load genre analytics breakdown
+ */
+async function loadGenreAnalytics(mountEl) {
+  if (!mountEl) return;
+
+  try {
+    const genreMap = await getGenreMap();
+    const genreCounts = {};
+
+    const localWatched = userMovieService.getWatched();
+    const localFavs = userMovieService.getFavorites();
+    const localWatchlist = userMovieService.getWatchlist();
+
+    [...localFavs, ...localWatched, ...localWatchlist].forEach(m => {
+      const gids = m.genre_ids || (m.genres ? m.genres.map(g => g.id) : []);
+      gids.forEach(gid => {
+        genreCounts[gid] = (genreCounts[gid] || 0) + 1;
+      });
+    });
+
+    renderGenreAnalytics(mountEl, genreCounts, genreMap);
+  } catch (error) {
+    console.error('[Dashboard] Genre analytics error:', error);
+    mountEl.innerHTML = `<p style="font-size: 0.85rem; color: var(--text-muted); padding: 0.5rem 0;">Unable to load genre breakdown.</p>`;
+  }
+}
+
+async function renderGenreAnalytics(container, genreCounts, preloadedMap = null) {
+  const genreMap = preloadedMap || (await getGenreMap());
   const entries = Object.entries(genreCounts);
 
   if (entries.length === 0) {

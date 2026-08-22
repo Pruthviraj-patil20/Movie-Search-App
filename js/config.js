@@ -3,10 +3,12 @@
  * Manages environment variables, TMDB endpoints, and image resolutions
  */
 
+const env = (typeof import.meta !== 'undefined' && import.meta.env) ? import.meta.env : {};
+
 export const CONFIG = {
-  API_KEY: import.meta.env.VITE_TMDB_API_KEY || 'c3590dc2e74e64f89d316cb6beafbc60',
-  BASE_URL: import.meta.env.VITE_TMDB_BASE_URL || 'https://api.themoviedb.org/3',
-  IMAGE_BASE_URL: import.meta.env.VITE_TMDB_IMAGE_BASE_URL || 'https://image.tmdb.org/t/p/',
+  API_KEY: env.VITE_TMDB_API_KEY || 'c3590dc2e74e64f89d316cb6beafbc60',
+  BASE_URL: env.VITE_TMDB_BASE_URL || 'https://api.themoviedb.org/3',
+  IMAGE_BASE_URL: env.VITE_TMDB_IMAGE_BASE_URL || 'https://image.tmdb.org/t/p/',
   
   // Image Quality Presets
   IMAGE_SIZES: {

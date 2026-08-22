@@ -25,9 +25,11 @@ class UserMovieService {
     this.loadFromStorage();
 
     // Re-sync when auth state changes
-    window.addEventListener(AUTH_EVENT, () => {
-      this.handleAuthChange();
-    });
+    if (typeof window !== 'undefined') {
+      window.addEventListener(AUTH_EVENT, () => {
+        this.handleAuthChange();
+      });
+    }
   }
 
   loadFromStorage() {
