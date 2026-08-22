@@ -2,7 +2,7 @@
 
 ## Summary
 
-Successfully converted the CineSphere Movie Search App from a Node.js/Express backend application to a **pure frontend application** using only HTML, CSS, and Vanilla JavaScript.
+Successfully converted the CineSphere Movie Search App from a Node.js/Express backend application to a **pure frontend application** using only HTML, CSS, and JavaScript.
 
 ### What Was Removed
 - `server/` directory (15 files): Express server, database, auth middleware, API routes, security utilities

@@ -21,7 +21,7 @@
 
 - **HTML5** - Semantic markup
 - **CSS3** - Custom properties, variables, responsive design
-- **Vanilla JavaScript ES6+** - ES modules, no frameworks
+- **JavaScript** - ES modules, no frameworks
 - **Vite** - Fast dev server and build
 - **TMDB API** - The Movie Database API
 - **localStorage** - Client-side data persistence
@@ -196,7 +196,7 @@ See the architecture section above for the complete directory layout.
 
 ## Author
 
-Built with premium cinematic design and vanilla JavaScript ES6+.
+Built with premium cinematic design and JavaScript.
 
 ## License
 
