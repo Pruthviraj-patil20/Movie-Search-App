@@ -1,130 +1,178 @@
 /**
  * Multi-User Movie Data Service
- * Bridges to backend API when authenticated and provides seamless fallback
+ * Maintains instantaneous in-memory caches and syncs to backend API when authenticated.
  */
 
 import { apiClient } from '../api/client.js';
 import { CONFIG } from '../config.js';
 import { emitEvent } from '../utils/helpers.js';
-import { authService } from './authService.js';
+import { authService, AUTH_EVENT } from './authService.js';
 import { storageService } from './storage.js';
 
 export const USER_MOVIES_EVENT = 'cinesphere:user-movies-updated';
 
 class UserMovieService {
   constructor() {
-    // In-memory caches
-    this.watchlistCache = null;
-    this.favoritesCache = null;
-    this.watchedCache = null;
-    this.ratingsCache = null;
+    // Synchronous In-Memory State
+    this.watchlist = [];
+    this.favorites = [];
+    this.watched = [];
+    this.ratings = [];
+    this.recentlyViewed = [];
+    this.searchHistory = [];
 
-    // Reset caches on auth state change
-    window.addEventListener('cinesphere:auth-changed', () => {
-      this.clearCaches();
+    // Load from local storage initially
+    this.loadFromStorage();
+
+    // Re-sync when auth state changes
+    window.addEventListener(AUTH_EVENT, () => {
+      this.handleAuthChange();
     });
   }
 
-  clearCaches() {
-    this.watchlistCache = null;
-    this.favoritesCache = null;
-    this.watchedCache = null;
-    this.ratingsCache = null;
+  loadFromStorage() {
+    this.watchlist = storageService.get(CONFIG.STORAGE_KEYS.WATCHLIST, []);
+    this.favorites = storageService.get(CONFIG.STORAGE_KEYS.FAVORITES, []);
+    this.watched = storageService.get('cinesphere_watched_v1', []);
+    this.ratings = storageService.get('cinesphere_ratings_v1', []);
+    this.recentlyViewed = storageService.get('cinesphere_recent_v1', []);
+    this.searchHistory = storageService.get(CONFIG.STORAGE_KEYS.SEARCH_HISTORY, []);
+  }
+
+  saveToStorage() {
+    storageService.set(CONFIG.STORAGE_KEYS.WATCHLIST, this.watchlist);
+    storageService.set(CONFIG.STORAGE_KEYS.FAVORITES, this.favorites);
+    storageService.set('cinesphere_watched_v1', this.watched);
+    storageService.set('cinesphere_ratings_v1', this.ratings);
+    storageService.set('cinesphere_recent_v1', this.recentlyViewed);
+    storageService.set(CONFIG.STORAGE_KEYS.SEARCH_HISTORY, this.searchHistory);
+  }
+
+  async handleAuthChange() {
+    if (authService.isAuthenticated()) {
+      await this.syncFromServer();
+    } else {
+      this.loadFromStorage();
+    }
+  }
+
+  async syncFromServer() {
+    if (!authService.isAuthenticated()) return;
+
+    try {
+      const [watchRes, favRes, watchedRes, ratingsRes, recentRes, historyRes] = await Promise.allSettled([
+        apiClient.get('/api/user-movies/watchlist'),
+        apiClient.get('/api/user-movies/favorites'),
+        apiClient.get('/api/user-movies/watched'),
+        apiClient.get('/api/user-movies/ratings'),
+        apiClient.get('/api/user-movies/recent'),
+        apiClient.get('/api/user-movies/search-history')
+      ]);
+
+      if (watchRes.status === 'fulfilled' && watchRes.value.data) {
+        this.watchlist = watchRes.value.data;
+      }
+      if (favRes.status === 'fulfilled' && favRes.value.data) {
+        this.favorites = favRes.value.data;
+      }
+      if (watchedRes.status === 'fulfilled' && watchedRes.value.data) {
+        this.watched = watchedRes.value.data;
+      }
+      if (ratingsRes.status === 'fulfilled' && ratingsRes.value.data) {
+        this.ratings = ratingsRes.value.data;
+      }
+      if (recentRes.status === 'fulfilled' && recentRes.value.data) {
+        this.recentlyViewed = recentRes.value.data;
+      }
+      if (historyRes.status === 'fulfilled' && historyRes.value.data) {
+        this.searchHistory = historyRes.value.data;
+      }
+
+      this.saveToStorage();
+      emitEvent(USER_MOVIES_EVENT, { action: 'sync' });
+      emitEvent('cinesphere:watchlist-updated', { count: this.watchlist.length });
+      emitEvent('cinesphere:favorites-updated', { count: this.favorites.length });
+    } catch (e) {
+      console.warn('[UserMovieService] Sync warning:', e);
+    }
   }
 
   // ==========================================
   // WATCHLIST
   // ==========================================
 
-  async getWatchlist() {
-    if (authService.isAuthenticated()) {
-      if (this.watchlistCache) return this.watchlistCache;
-      try {
-        const res = await apiClient.get('/api/user-movies/watchlist');
-        this.watchlistCache = res.data || [];
-        return this.watchlistCache;
-      } catch (e) {
-        return [];
-      }
-    }
-    return storageService.get(CONFIG.STORAGE_KEYS.WATCHLIST, []);
+  getWatchlist() {
+    return Array.isArray(this.watchlist) ? [...this.watchlist] : [];
   }
 
-  async isInWatchlist(movieId) {
-    const list = await this.getWatchlist();
+  isInWatchlist(movieId) {
     const id = Number(movieId);
-    return list.some(item => item.id === id);
+    return this.watchlist.some(m => Number(m.id) === id);
   }
 
-  async addToWatchlist(movie) {
+  addToWatchlist(movie) {
     if (!movie || !movie.id) return false;
     const id = Number(movie.id);
 
-    if (authService.isAuthenticated()) {
-      try {
-        await apiClient.post('/api/user-movies/watchlist', { movie });
-        this.watchlistCache = null;
-        emitEvent('cinesphere:watchlist-updated', { action: 'add', movieId: id });
-        emitEvent(USER_MOVIES_EVENT, { type: 'watchlist', action: 'add', movieId: id });
-        return true;
-      } catch (e) {
-        return false;
-      }
-    }
+    if (!this.isInWatchlist(id)) {
+      const cleanMovie = {
+        id: movie.id,
+        title: movie.title || movie.name || 'Untitled',
+        poster_path: movie.poster_path || '',
+        backdrop_path: movie.backdrop_path || '',
+        vote_average: movie.vote_average || 0,
+        release_date: movie.release_date || movie.first_air_date || '',
+        genre_ids: movie.genre_ids || (movie.genres ? movie.genres.map(g => g.id) : []),
+        added_at: new Date().toISOString()
+      };
 
-    // Guest fallback
-    const list = storageService.get(CONFIG.STORAGE_KEYS.WATCHLIST, []);
-    if (!list.some(m => m.id === id)) {
-      list.unshift(movie);
-      storageService.set(CONFIG.STORAGE_KEYS.WATCHLIST, list);
-      emitEvent('cinesphere:watchlist-updated', { action: 'add', movieId: id, count: list.length });
+      this.watchlist.unshift(cleanMovie);
+      this.saveToStorage();
+
+      emitEvent('cinesphere:watchlist-updated', { action: 'add', movieId: id, count: this.watchlist.length });
+      emitEvent(USER_MOVIES_EVENT, { type: 'watchlist', action: 'add', movieId: id });
+
+      if (authService.isAuthenticated()) {
+        apiClient.post('/api/user-movies/watchlist', { movie: cleanMovie }).catch(() => {});
+      }
     }
     return true;
   }
 
-  async removeFromWatchlist(movieId) {
+  removeFromWatchlist(movieId) {
     const id = Number(movieId);
+    this.watchlist = this.watchlist.filter(m => Number(m.id) !== id);
+    this.saveToStorage();
+
+    emitEvent('cinesphere:watchlist-updated', { action: 'remove', movieId: id, count: this.watchlist.length });
+    emitEvent(USER_MOVIES_EVENT, { type: 'watchlist', action: 'remove', movieId: id });
 
     if (authService.isAuthenticated()) {
-      try {
-        await apiClient.delete(`/api/user-movies/watchlist/${id}`);
-        this.watchlistCache = null;
-        emitEvent('cinesphere:watchlist-updated', { action: 'remove', movieId: id });
-        emitEvent(USER_MOVIES_EVENT, { type: 'watchlist', action: 'remove', movieId: id });
-        return true;
-      } catch (e) {
-        return false;
-      }
+      apiClient.delete(`/api/user-movies/watchlist/${id}`).catch(() => {});
     }
-
-    // Guest fallback
-    let list = storageService.get(CONFIG.STORAGE_KEYS.WATCHLIST, []);
-    list = list.filter(m => m.id !== id);
-    storageService.set(CONFIG.STORAGE_KEYS.WATCHLIST, list);
-    emitEvent('cinesphere:watchlist-updated', { action: 'remove', movieId: id, count: list.length });
     return true;
   }
 
-  async toggleWatchlist(movie) {
-    const isSaved = await this.isInWatchlist(movie.id);
-    if (isSaved) {
-      await this.removeFromWatchlist(movie.id);
+  toggleWatchlist(movie) {
+    if (this.isInWatchlist(movie.id)) {
+      this.removeFromWatchlist(movie.id);
       return false;
     } else {
-      await this.addToWatchlist(movie);
+      this.addToWatchlist(movie);
       return true;
     }
   }
 
-  async clearWatchlist() {
-    if (authService.isAuthenticated()) {
-      await apiClient.delete('/api/user-movies/watchlist');
-      this.watchlistCache = [];
-    } else {
-      storageService.set(CONFIG.STORAGE_KEYS.WATCHLIST, []);
-    }
+  clearWatchlist() {
+    this.watchlist = [];
+    this.saveToStorage();
+
     emitEvent('cinesphere:watchlist-updated', { action: 'clear', count: 0 });
     emitEvent(USER_MOVIES_EVENT, { type: 'watchlist', action: 'clear' });
+
+    if (authService.isAuthenticated()) {
+      apiClient.delete('/api/user-movies/watchlist').catch(() => {});
+    }
     return true;
   }
 
@@ -132,95 +180,78 @@ class UserMovieService {
   // FAVORITES
   // ==========================================
 
-  async getFavorites() {
-    if (authService.isAuthenticated()) {
-      if (this.favoritesCache) return this.favoritesCache;
-      try {
-        const res = await apiClient.get('/api/user-movies/favorites');
-        this.favoritesCache = res.data || [];
-        return this.favoritesCache;
-      } catch (e) {
-        return [];
-      }
-    }
-    return storageService.get(CONFIG.STORAGE_KEYS.FAVORITES, []);
+  getFavorites() {
+    return Array.isArray(this.favorites) ? [...this.favorites] : [];
   }
 
-  async isFavorite(movieId) {
-    const list = await this.getFavorites();
+  isFavorite(movieId) {
     const id = Number(movieId);
-    return list.some(item => item.id === id);
+    return this.favorites.some(m => Number(m.id) === id);
   }
 
-  async addToFavorites(movie) {
+  addToFavorites(movie) {
     if (!movie || !movie.id) return false;
     const id = Number(movie.id);
 
-    if (authService.isAuthenticated()) {
-      try {
-        await apiClient.post('/api/user-movies/favorites', { movie });
-        this.favoritesCache = null;
-        emitEvent('cinesphere:favorites-updated', { action: 'add', movieId: id });
-        emitEvent(USER_MOVIES_EVENT, { type: 'favorites', action: 'add', movieId: id });
-        return true;
-      } catch (e) {
-        return false;
-      }
-    }
+    if (!this.isFavorite(id)) {
+      const cleanMovie = {
+        id: movie.id,
+        title: movie.title || movie.name || 'Untitled',
+        poster_path: movie.poster_path || '',
+        backdrop_path: movie.backdrop_path || '',
+        vote_average: movie.vote_average || 0,
+        release_date: movie.release_date || movie.first_air_date || '',
+        genre_ids: movie.genre_ids || (movie.genres ? movie.genres.map(g => g.id) : []),
+        added_at: new Date().toISOString()
+      };
 
-    // Guest fallback
-    const list = storageService.get(CONFIG.STORAGE_KEYS.FAVORITES, []);
-    if (!list.some(m => m.id === id)) {
-      list.unshift(movie);
-      storageService.set(CONFIG.STORAGE_KEYS.FAVORITES, list);
-      emitEvent('cinesphere:favorites-updated', { action: 'add', movieId: id, count: list.length });
+      this.favorites.unshift(cleanMovie);
+      this.saveToStorage();
+
+      emitEvent('cinesphere:favorites-updated', { action: 'add', movieId: id, count: this.favorites.length });
+      emitEvent(USER_MOVIES_EVENT, { type: 'favorites', action: 'add', movieId: id });
+
+      if (authService.isAuthenticated()) {
+        apiClient.post('/api/user-movies/favorites', { movie: cleanMovie }).catch(() => {});
+      }
     }
     return true;
   }
 
-  async removeFromFavorites(movieId) {
+  removeFromFavorites(movieId) {
     const id = Number(movieId);
+    this.favorites = this.favorites.filter(m => Number(m.id) !== id);
+    this.saveToStorage();
+
+    emitEvent('cinesphere:favorites-updated', { action: 'remove', movieId: id, count: this.favorites.length });
+    emitEvent(USER_MOVIES_EVENT, { type: 'favorites', action: 'remove', movieId: id });
 
     if (authService.isAuthenticated()) {
-      try {
-        await apiClient.delete(`/api/user-movies/favorites/${id}`);
-        this.favoritesCache = null;
-        emitEvent('cinesphere:favorites-updated', { action: 'remove', movieId: id });
-        emitEvent(USER_MOVIES_EVENT, { type: 'favorites', action: 'remove', movieId: id });
-        return true;
-      } catch (e) {
-        return false;
-      }
+      apiClient.delete(`/api/user-movies/favorites/${id}`).catch(() => {});
     }
-
-    // Guest fallback
-    let list = storageService.get(CONFIG.STORAGE_KEYS.FAVORITES, []);
-    list = list.filter(m => m.id !== id);
-    storageService.set(CONFIG.STORAGE_KEYS.FAVORITES, list);
-    emitEvent('cinesphere:favorites-updated', { action: 'remove', movieId: id, count: list.length });
     return true;
   }
 
-  async toggleFavorite(movie) {
-    const isFav = await this.isFavorite(movie.id);
-    if (isFav) {
-      await this.removeFromFavorites(movie.id);
+  toggleFavorite(movie) {
+    if (this.isFavorite(movie.id)) {
+      this.removeFromFavorites(movie.id);
       return false;
     } else {
-      await this.addToFavorites(movie);
+      this.addToFavorites(movie);
       return true;
     }
   }
 
-  async clearFavorites() {
-    if (authService.isAuthenticated()) {
-      await apiClient.delete('/api/user-movies/favorites');
-      this.favoritesCache = [];
-    } else {
-      storageService.set(CONFIG.STORAGE_KEYS.FAVORITES, []);
-    }
+  clearFavorites() {
+    this.favorites = [];
+    this.saveToStorage();
+
     emitEvent('cinesphere:favorites-updated', { action: 'clear', count: 0 });
     emitEvent(USER_MOVIES_EVENT, { type: 'favorites', action: 'clear' });
+
+    if (authService.isAuthenticated()) {
+      apiClient.delete('/api/user-movies/favorites').catch(() => {});
+    }
     return true;
   }
 
@@ -228,61 +259,62 @@ class UserMovieService {
   // WATCHED MOVIES
   // ==========================================
 
-  async getWatched() {
-    if (authService.isAuthenticated()) {
-      if (this.watchedCache) return this.watchedCache;
-      try {
-        const res = await apiClient.get('/api/user-movies/watched');
-        this.watchedCache = res.data || [];
-        return this.watchedCache;
-      } catch (e) {
-        return [];
-      }
-    }
-    return storageService.get('cinesphere_watched_v1', []);
+  getWatched() {
+    return Array.isArray(this.watched) ? [...this.watched] : [];
   }
 
-  async isWatched(movieId) {
-    const list = await this.getWatched();
+  isWatched(movieId) {
     const id = Number(movieId);
-    return list.some(item => item.id === id);
+    return this.watched.some(m => Number(m.id) === id);
   }
 
-  async markAsWatched(movie) {
+  markAsWatched(movie) {
     if (!movie || !movie.id) return false;
     const id = Number(movie.id);
 
-    if (authService.isAuthenticated()) {
-      try {
-        await apiClient.post('/api/user-movies/watched', { movie });
-        this.watchedCache = null;
-        emitEvent(USER_MOVIES_EVENT, { type: 'watched', action: 'add', movieId: id });
-        return true;
-      } catch (e) {
-        return false;
-      }
-    }
+    if (!this.isWatched(id)) {
+      const cleanMovie = {
+        id: movie.id,
+        title: movie.title || movie.name || 'Untitled',
+        poster_path: movie.poster_path || '',
+        backdrop_path: movie.backdrop_path || '',
+        vote_average: movie.vote_average || 0,
+        release_date: movie.release_date || movie.first_air_date || '',
+        genre_ids: movie.genre_ids || (movie.genres ? movie.genres.map(g => g.id) : []),
+        watched_at: new Date().toISOString()
+      };
 
-    const list = storageService.get('cinesphere_watched_v1', []);
-    if (!list.some(m => m.id === id)) {
-      list.unshift(movie);
-      storageService.set('cinesphere_watched_v1', list);
+      this.watched.unshift(cleanMovie);
+      this.saveToStorage();
+      emitEvent(USER_MOVIES_EVENT, { type: 'watched', action: 'add', movieId: id });
+
+      if (authService.isAuthenticated()) {
+        apiClient.post('/api/user-movies/watched', { movie: cleanMovie }).catch(() => {});
+      }
     }
     return true;
   }
 
-  async removeFromWatched(movieId) {
+  removeFromWatched(movieId) {
     const id = Number(movieId);
-    if (authService.isAuthenticated()) {
-      await apiClient.delete(`/api/user-movies/watched/${id}`);
-      this.watchedCache = null;
-      emitEvent(USER_MOVIES_EVENT, { type: 'watched', action: 'remove', movieId: id });
-      return true;
-    }
+    this.watched = this.watched.filter(m => Number(m.id) !== id);
+    this.saveToStorage();
+    emitEvent(USER_MOVIES_EVENT, { type: 'watched', action: 'remove', movieId: id });
 
-    let list = storageService.get('cinesphere_watched_v1', []);
-    list = list.filter(m => m.id !== id);
-    storageService.set('cinesphere_watched_v1', list);
+    if (authService.isAuthenticated()) {
+      apiClient.delete(`/api/user-movies/watched/${id}`).catch(() => {});
+    }
+    return true;
+  }
+
+  clearWatched() {
+    this.watched = [];
+    this.saveToStorage();
+    emitEvent(USER_MOVIES_EVENT, { type: 'watched', action: 'clear' });
+
+    if (authService.isAuthenticated()) {
+      apiClient.delete('/api/user-movies/watched').catch(() => {});
+    }
     return true;
   }
 
@@ -290,29 +322,48 @@ class UserMovieService {
   // RECENTLY VIEWED
   // ==========================================
 
-  async getRecentlyViewed() {
-    if (authService.isAuthenticated()) {
-      try {
-        const res = await apiClient.get('/api/user-movies/recent');
-        return res.data || [];
-      } catch (e) {
-        return [];
-      }
-    }
-    return storageService.get('cinesphere_recent_v1', []);
+  getRecentlyViewed() {
+    return Array.isArray(this.recentlyViewed) ? [...this.recentlyViewed] : [];
   }
 
-  async addRecentlyViewed(movie) {
+  addRecentlyViewed(movie) {
     if (!movie || !movie.id) return;
+    const id = Number(movie.id);
+
+    const cleanMovie = {
+      id: movie.id,
+      title: movie.title || movie.name || 'Untitled',
+      poster_path: movie.poster_path || '',
+      backdrop_path: movie.backdrop_path || '',
+      vote_average: movie.vote_average || 0,
+      release_date: movie.release_date || movie.first_air_date || '',
+      genre_ids: movie.genre_ids || (movie.genres ? movie.genres.map(g => g.id) : [])
+    };
+
+    this.recentlyViewed = this.recentlyViewed.filter(m => Number(m.id) !== id);
+    this.recentlyViewed.unshift(cleanMovie);
+    this.recentlyViewed = this.recentlyViewed.slice(0, 16);
+    this.saveToStorage();
+
     if (authService.isAuthenticated()) {
-      try {
-        await apiClient.post('/api/user-movies/recent', { movie });
-      } catch (e) {}
-    } else {
-      let list = storageService.get('cinesphere_recent_v1', []);
-      list = list.filter(m => m.id !== Number(movie.id));
-      list.unshift(movie);
-      storageService.set('cinesphere_recent_v1', list.slice(0, 15));
+      apiClient.post('/api/user-movies/recent', { movie: cleanMovie }).catch(() => {});
+    }
+  }
+
+  removeRecentlyViewed(movieId) {
+    const id = Number(movieId);
+    this.recentlyViewed = this.recentlyViewed.filter(m => Number(m.id) !== id);
+    this.saveToStorage();
+    if (authService.isAuthenticated()) {
+      apiClient.delete(`/api/user-movies/recent/${id}`).catch(() => {});
+    }
+  }
+
+  clearRecentlyViewed() {
+    this.recentlyViewed = [];
+    this.saveToStorage();
+    if (authService.isAuthenticated()) {
+      apiClient.delete('/api/user-movies/recent').catch(() => {});
     }
   }
 
@@ -320,73 +371,63 @@ class UserMovieService {
   // RATINGS (1–10)
   // ==========================================
 
-  async getRatings() {
-    if (authService.isAuthenticated()) {
-      if (this.ratingsCache) return this.ratingsCache;
-      try {
-        const res = await apiClient.get('/api/user-movies/ratings');
-        this.ratingsCache = res.data || [];
-        return this.ratingsCache;
-      } catch (e) {
-        return [];
-      }
-    }
-    return storageService.get('cinesphere_ratings_v1', []);
+  getRatings() {
+    return Array.isArray(this.ratings) ? [...this.ratings] : [];
   }
 
-  async getMovieRating(movieId) {
+  getMovieRating(movieId) {
     const id = Number(movieId);
-    if (authService.isAuthenticated()) {
-      try {
-        const res = await apiClient.get(`/api/user-movies/ratings/${id}`);
-        return res.rating || null;
-      } catch (e) {
-        return null;
-      }
-    }
-    const list = storageService.get('cinesphere_ratings_v1', []);
-    const found = list.find(r => r.movieId === id);
+    const found = this.ratings.find(r => Number(r.movieId) === id);
     return found ? found.rating : null;
   }
 
-  async rateMovie(movieId, rating, movieData = {}) {
+  rateMovie(movieId, rating, movieData = {}) {
     const id = Number(movieId);
     const score = Number(rating);
 
-    if (authService.isAuthenticated()) {
-      const res = await apiClient.post('/api/user-movies/ratings', {
+    const cleanData = {
+      id: movieData.id || id,
+      title: movieData.title || movieData.name || 'Movie',
+      poster_path: movieData.poster_path || '',
+      release_date: movieData.release_date || '',
+      genre_ids: movieData.genre_ids || []
+    };
+
+    const existingIndex = this.ratings.findIndex(r => Number(r.movieId) === id);
+    if (existingIndex >= 0) {
+      this.ratings[existingIndex].rating = score;
+      this.ratings[existingIndex].updatedAt = new Date().toISOString();
+    } else {
+      this.ratings.unshift({
         movieId: id,
         rating: score,
-        movieData
+        movieData: cleanData,
+        createdAt: new Date().toISOString()
       });
-      this.ratingsCache = null;
-      emitEvent(USER_MOVIES_EVENT, { type: 'rating', movieId: id, rating: score });
-      return res.rating;
     }
 
-    let list = storageService.get('cinesphere_ratings_v1', []);
-    const existing = list.find(r => r.movieId === id);
-    if (existing) {
-      existing.rating = score;
-    } else {
-      list.push({ movieId: id, rating: score, movieData });
-    }
-    storageService.set('cinesphere_ratings_v1', list);
+    this.saveToStorage();
     emitEvent(USER_MOVIES_EVENT, { type: 'rating', movieId: id, rating: score });
+
+    if (authService.isAuthenticated()) {
+      apiClient.post('/api/user-movies/ratings', {
+        movieId: id,
+        rating: score,
+        movieData: cleanData
+      }).catch(() => {});
+    }
     return score;
   }
 
-  async removeRating(movieId) {
+  removeRating(movieId) {
     const id = Number(movieId);
+    this.ratings = this.ratings.filter(r => Number(r.movieId) !== id);
+    this.saveToStorage();
+    emitEvent(USER_MOVIES_EVENT, { type: 'rating', movieId: id, rating: null });
+
     if (authService.isAuthenticated()) {
-      await apiClient.delete(`/api/user-movies/ratings/${id}`);
-      this.ratingsCache = null;
-      emitEvent(USER_MOVIES_EVENT, { type: 'rating', movieId: id, rating: null });
-      return true;
+      apiClient.delete(`/api/user-movies/ratings/${id}`).catch(() => {});
     }
-    let list = storageService.get('cinesphere_ratings_v1', []);
-    list = list.filter(r => r.movieId !== id);
-    storageService.set('cinesphere_ratings_v1', list);
     return true;
   }
 
@@ -394,47 +435,37 @@ class UserMovieService {
   // SEARCH HISTORY
   // ==========================================
 
-  async getSearchHistory() {
-    if (authService.isAuthenticated()) {
-      try {
-        const res = await apiClient.get('/api/user-movies/search-history');
-        return res.data || [];
-      } catch (e) {
-        return [];
-      }
-    }
-    return storageService.get(CONFIG.STORAGE_KEYS.SEARCH_HISTORY, []);
+  getSearchHistory() {
+    return Array.isArray(this.searchHistory) ? [...this.searchHistory] : [];
   }
 
-  async addSearchHistory(query) {
-    if (!query) return;
+  addSearchHistory(query) {
+    if (!query || !query.trim()) return;
+    const clean = query.trim();
+
+    this.searchHistory = this.searchHistory.filter(q => q.toLowerCase() !== clean.toLowerCase());
+    this.searchHistory.unshift(clean);
+    this.searchHistory = this.searchHistory.slice(0, CONFIG.MAX_SEARCH_HISTORY);
+    this.saveToStorage();
+
     if (authService.isAuthenticated()) {
-      try {
-        await apiClient.post('/api/user-movies/search-history', { query });
-      } catch (e) {}
-    } else {
-      let list = storageService.get(CONFIG.STORAGE_KEYS.SEARCH_HISTORY, []);
-      list = list.filter(q => q.toLowerCase() !== query.toLowerCase());
-      list.unshift(query);
-      storageService.set(CONFIG.STORAGE_KEYS.SEARCH_HISTORY, list.slice(0, 8));
+      apiClient.post('/api/user-movies/search-history', { query: clean }).catch(() => {});
     }
   }
 
-  async removeSearchHistory(query) {
+  removeSearchHistory(query) {
+    this.searchHistory = this.searchHistory.filter(q => q.toLowerCase() !== query.toLowerCase());
+    this.saveToStorage();
     if (authService.isAuthenticated()) {
-      await apiClient.delete(`/api/user-movies/search-history/${encodeURIComponent(query)}`);
-    } else {
-      let list = storageService.get(CONFIG.STORAGE_KEYS.SEARCH_HISTORY, []);
-      list = list.filter(q => q.toLowerCase() !== query.toLowerCase());
-      storageService.set(CONFIG.STORAGE_KEYS.SEARCH_HISTORY, list);
+      apiClient.delete(`/api/user-movies/search-history/${encodeURIComponent(query)}`).catch(() => {});
     }
   }
 
-  async clearSearchHistory() {
+  clearSearchHistory() {
+    this.searchHistory = [];
+    this.saveToStorage();
     if (authService.isAuthenticated()) {
-      await apiClient.delete('/api/user-movies/search-history');
-    } else {
-      storageService.set(CONFIG.STORAGE_KEYS.SEARCH_HISTORY, []);
+      apiClient.delete('/api/user-movies/search-history').catch(() => {});
     }
   }
 }

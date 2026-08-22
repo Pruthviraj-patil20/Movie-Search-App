@@ -1,6 +1,6 @@
 /**
  * Favorites Service
- * Connected directly to UserMovieService for multi-user isolation
+ * Connected directly to UserMovieService for multi-user isolation & synchronous state
  */
 
 import { userMovieService } from './userMovieService.js';
@@ -8,32 +8,31 @@ import { userMovieService } from './userMovieService.js';
 export const FAVORITES_EVENT = 'cinesphere:favorites-updated';
 
 export const favoriteService = {
-  async getFavorites() {
+  getFavorites() {
     return userMovieService.getFavorites();
   },
 
-  async isFavorite(movieId) {
+  isFavorite(movieId) {
     return userMovieService.isFavorite(movieId);
   },
 
-  async addToFavorites(movie) {
+  addToFavorites(movie) {
     return userMovieService.addToFavorites(movie);
   },
 
-  async removeFromFavorites(movieId) {
+  removeFromFavorites(movieId) {
     return userMovieService.removeFromFavorites(movieId);
   },
 
-  async toggleFavorite(movie) {
+  toggleFavorite(movie) {
     return userMovieService.toggleFavorite(movie);
   },
 
-  async getCount() {
-    const list = await this.getFavorites();
-    return list.length;
+  getCount() {
+    return userMovieService.getFavorites().length;
   },
 
-  async clearFavorites() {
+  clearFavorites() {
     return userMovieService.clearFavorites();
   }
 };

@@ -18,12 +18,12 @@ import { initWatchlistPage } from './pages/watchlist.js';
 import { authService } from './services/authService.js';
 import { themeService } from './services/themeService.js';
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize Theme (Dark / Light)
   themeService.initTheme();
 
-  // 2. Initialize Auth State
-  await authService.init();
+  // 2. Initialize Auth State (Async in background)
+  authService.init();
 
   // 3. Initialize Navigation Bar & User Profile Dropdown
   initNavbar();

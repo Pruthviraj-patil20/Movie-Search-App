@@ -3,7 +3,6 @@
  */
 
 import { getGenreMap } from '../api/genres.js';
-import { requireAuth } from '../components/authGuard.js';
 import { createMovieCarousel } from '../components/carousel.js';
 import { createEmptyState } from '../components/emptyState.js';
 import { loader } from '../components/loader.js';
@@ -14,15 +13,16 @@ import { recommendationService } from '../services/recommendationService.js';
 import { userMovieService } from '../services/userMovieService.js';
 
 export async function initDashboardPage() {
-  const isAuth = await requireAuth();
-  if (!isAuth) return;
+  await authService.init();
 
   const user = authService.getUser();
-  if (!user) return;
+  const isAuth = authService.isAuthenticated();
 
   // Header Elements
   const greetingEl = document.querySelector('#dashboard-user-name');
-  if (greetingEl) greetingEl.textContent = user.name.split(' ')[0];
+  if (greetingEl) {
+    greetingEl.textContent = isAuth && user ? user.name.split(' ')[0] : 'Film Lover';
+  }
 
   // Carousel Mounts
   const recentMount = document.querySelector('#dashboard-recent-mount');
@@ -47,21 +47,50 @@ export async function initDashboardPage() {
   loader.start();
 
   try {
-    // 1. Fetch User Stats
-    analyticsService.getUserStats().then(stats => {
-      if (statWatched) statWatched.textContent = stats.totalWatched;
-      if (statFavorites) statFavorites.textContent = stats.totalFavorites;
-      if (statWatchlist) statWatchlist.textContent = stats.totalWatchlist;
-      if (statRating) statRating.textContent = stats.averageRating > 0 ? `${stats.averageRating} ★` : 'NR';
+    // 1. Calculate & Render Stats
+    if (isAuth) {
+      analyticsService.getUserStats().then(stats => {
+        if (statWatched) statWatched.textContent = stats.totalWatched;
+        if (statFavorites) statFavorites.textContent = stats.totalFavorites;
+        if (statWatchlist) statWatchlist.textContent = stats.totalWatchlist;
+        if (statRating) statRating.textContent = stats.averageRating > 0 ? `${stats.averageRating} ★` : 'NR';
 
-      // Render Genre Preferences Breakdown
-      if (genreAnalyticsMount && stats.genreCounts) {
-        renderGenreAnalytics(genreAnalyticsMount, stats.genreCounts);
+        if (genreAnalyticsMount && stats.genreCounts) {
+          renderGenreAnalytics(genreAnalyticsMount, stats.genreCounts);
+        }
+      });
+    } else {
+      // Local Guest Stats Calculation
+      const localWatched = userMovieService.getWatched();
+      const localFavs = userMovieService.getFavorites();
+      const localWatchlist = userMovieService.getWatchlist();
+      const localRatings = userMovieService.getRatings();
+
+      const avgScore = localRatings.length > 0
+        ? (localRatings.reduce((sum, r) => sum + (r.rating || 0), 0) / localRatings.length).toFixed(1)
+        : 0;
+
+      if (statWatched) statWatched.textContent = localWatched.length;
+      if (statFavorites) statFavorites.textContent = localFavs.length;
+      if (statWatchlist) statWatchlist.textContent = localWatchlist.length;
+      if (statRating) statRating.textContent = Number(avgScore) > 0 ? `${avgScore} ★` : 'NR';
+
+      // Local Genre Breakdown
+      const genreCounts = {};
+      [...localFavs, ...localWatched, ...localWatchlist].forEach(m => {
+        const gids = m.genre_ids || (m.genres ? m.genres.map(g => g.id) : []);
+        gids.forEach(gid => {
+          genreCounts[gid] = (genreCounts[gid] || 0) + 1;
+        });
+      });
+
+      if (genreAnalyticsMount) {
+        renderGenreAnalytics(genreAnalyticsMount, genreCounts);
       }
-    });
+    }
 
     // 2. Load Recently Viewed & Continue Watching
-    const recentMovies = await userMovieService.getRecentlyViewed();
+    const recentMovies = userMovieService.getRecentlyViewed();
     if (recentMount) {
       recentMount.innerHTML = '';
       if (recentMovies.length > 0) {
@@ -88,7 +117,7 @@ export async function initDashboardPage() {
     });
 
     // 4. Load Watchlist
-    const watchlistMovies = await userMovieService.getWatchlist();
+    const watchlistMovies = userMovieService.getWatchlist();
     if (watchlistMount) {
       watchlistMount.innerHTML = '';
       if (watchlistMovies.length > 0) {
@@ -109,7 +138,7 @@ export async function initDashboardPage() {
     }
 
     // 5. Load Favorites
-    const favoriteMovies = await userMovieService.getFavorites();
+    const favoriteMovies = userMovieService.getFavorites();
     if (favoritesMount) {
       favoritesMount.innerHTML = '';
       if (favoriteMovies.length > 0) {
@@ -141,7 +170,7 @@ async function renderGenreAnalytics(container, genreCounts) {
   const entries = Object.entries(genreCounts);
 
   if (entries.length === 0) {
-    container.innerHTML = `<p style="font-size: 0.85rem; color: var(--text-muted);">Watch and rate more movies to see your personalized genre breakdown.</p>`;
+    container.innerHTML = `<p style="font-size: 0.85rem; color: var(--text-muted); padding: 0.5rem 0;">Rate or favorite movies to see your personalized genre breakdown.</p>`;
     return;
   }
 
@@ -149,7 +178,7 @@ async function renderGenreAnalytics(container, genreCounts) {
   const maxCount = sorted[0][1] || 1;
 
   container.innerHTML = sorted.map(([gid, count]) => {
-    const genreName = genreMap.get(Number(gid)) || 'Genre';
+    const genreName = genreMap.get(Number(gid)) || 'Cinema';
     const percent = Math.round((count / maxCount) * 100);
 
     return `

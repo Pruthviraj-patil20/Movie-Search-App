@@ -1,6 +1,6 @@
 /**
  * Watchlist Service
- * Connected directly to UserMovieService for multi-user isolation
+ * Connected directly to UserMovieService for multi-user isolation & synchronous state
  */
 
 import { userMovieService } from './userMovieService.js';
@@ -8,32 +8,31 @@ import { userMovieService } from './userMovieService.js';
 export const WATCHLIST_EVENT = 'cinesphere:watchlist-updated';
 
 export const watchlistService = {
-  async getWatchlist() {
+  getWatchlist() {
     return userMovieService.getWatchlist();
   },
 
-  async isInWatchlist(movieId) {
+  isInWatchlist(movieId) {
     return userMovieService.isInWatchlist(movieId);
   },
 
-  async addToWatchlist(movie) {
+  addToWatchlist(movie) {
     return userMovieService.addToWatchlist(movie);
   },
 
-  async removeFromWatchlist(movieId) {
+  removeFromWatchlist(movieId) {
     return userMovieService.removeFromWatchlist(movieId);
   },
 
-  async toggleWatchlist(movie) {
+  toggleWatchlist(movie) {
     return userMovieService.toggleWatchlist(movie);
   },
 
-  async getCount() {
-    const list = await this.getWatchlist();
-    return list.length;
+  getCount() {
+    return userMovieService.getWatchlist().length;
   },
 
-  async clearWatchlist() {
+  clearWatchlist() {
     return userMovieService.clearWatchlist();
   }
 };
