@@ -5,6 +5,7 @@
 
 import { CONFIG } from '../config.js';
 import { tmdbFetch } from './tmdb.js';
+import { DEFAULT_GENRES } from './genres.js';
 
 /**
  * Filter and sort local fallback movies
@@ -130,31 +131,34 @@ export async function getMovieDetails(movieId) {
     throw new Error('Not found');
   } catch (error) {
     const demo = CONFIG.DEMO_MOVIES.find(m => m.id === Number(movieId)) || CONFIG.DEMO_MOVIES[0];
+    const genreMap = new Map(DEFAULT_GENRES.map(g => [g.id, g.name]));
+    const mappedGenres = (demo.genre_ids && demo.genre_ids.length > 0)
+      ? demo.genre_ids.map(id => ({ id, name: genreMap.get(Number(id)) || 'Cinema' }))
+      : [{ id: 28, name: 'Action' }];
+
+    const trailerKey = demo.trailer_key || 'YoHD9XEInc0';
+
     return {
       ...demo,
-      runtime: 148,
-      status: 'Released',
-      tagline: 'Your mind is the scene of the crime.',
-      budget: 160000000,
-      revenue: 836836967,
-      genres: demo.genre_ids ? demo.genre_ids.map(id => ({ id, name: 'Cinema' })) : [],
-      production_companies: [{ name: 'Warner Bros. Pictures' }, { name: 'Syncopy' }],
-      credits: {
+      runtime: demo.runtime || 148,
+      status: demo.status || 'Released',
+      tagline: demo.tagline || 'Experience the cinema on CineSphere.',
+      budget: demo.budget || 100000000,
+      revenue: demo.revenue || 450000000,
+      genres: mappedGenres,
+      production_companies: demo.production_companies || [{ name: 'Warner Bros. Pictures' }, { name: 'Marvel Studios' }],
+      credits: demo.credits || {
         cast: [
-          { name: 'Leonardo DiCaprio', character: 'Dom Cobb', profile_path: '/wo2ViewsMe4I5NYNiQ7vAhneRpt.jpg' },
-          { name: 'Joseph Gordon-Levitt', character: 'Arthur', profile_path: '/dhv9f3A7e38NfGz43pD2Lg3n0mQ.jpg' },
-          { name: 'Elliot Page', character: 'Ariadne', profile_path: '/c5k0U2Gv2bT55uA8bM8J2u55Q1b.jpg' },
-          { name: 'Tom Hardy', character: 'Eames', profile_path: '/d8seqNtQ51gfeIqQ9w3rP47j4w7.jpg' },
-          { name: 'Cillian Murphy', character: 'Robert Fischer', profile_path: '/iRz3p6p2Ue62b0833Z44qQ98r9A.jpg' }
+          { name: 'Lead Performer', character: 'Protagonist', profile_path: null }
         ]
       },
       videos: {
         results: [
-          { key: 'YoHD9XEInc0', type: 'Trailer', site: 'YouTube' }
+          { key: trailerKey, type: 'Trailer', site: 'YouTube', official: true, name: `${demo.title} Official Trailer` }
         ]
       },
-      similar: { results: CONFIG.DEMO_MOVIES.slice(1, 7) },
-      recommendations: { results: CONFIG.DEMO_MOVIES.slice(2, 8) }
+      similar: { results: CONFIG.DEMO_MOVIES.filter(m => m.id !== demo.id).slice(0, 6) },
+      recommendations: { results: CONFIG.DEMO_MOVIES.filter(m => m.id !== demo.id).slice(6, 12) }
     };
   }
 }

@@ -1,12 +1,17 @@
 /**
  * CineSphere Configuration Module
- * Manages environment variables, TMDB endpoints, and image resolutions
+ * Manages environment variables, TMDB endpoints, image resolutions, and demo catalogs
  */
 
 const env = (typeof import.meta !== 'undefined' && import.meta.env) ? import.meta.env : {};
 
+// Ensure valid API key fallback if placeholder or empty string is provided in .env
+const rawApiKey = env.VITE_TMDB_API_KEY;
+const isPlaceholderKey = !rawApiKey || rawApiKey.includes('YOUR_TMDB_API_KEY') || rawApiKey.trim() === '';
+const DEFAULT_TMDB_KEY = 'c3590dc2e74e64f89d316cb6beafbc60';
+
 export const CONFIG = {
-  API_KEY: env.VITE_TMDB_API_KEY || 'c3590dc2e74e64f89d316cb6beafbc60',
+  API_KEY: isPlaceholderKey ? DEFAULT_TMDB_KEY : rawApiKey.trim(),
   BASE_URL: env.VITE_TMDB_BASE_URL || 'https://api.themoviedb.org/3',
   IMAGE_BASE_URL: env.VITE_TMDB_IMAGE_BASE_URL || 'https://image.tmdb.org/t/p/',
   
@@ -48,7 +53,23 @@ export const CONFIG = {
       vote_average: 8.4,
       vote_count: 36240,
       release_date: "2010-07-15",
-      genre_ids: [28, 878, 12]
+      genre_ids: [28, 878, 12],
+      runtime: 148,
+      status: "Released",
+      tagline: "Your mind is the scene of the crime.",
+      budget: 160000000,
+      revenue: 836836967,
+      trailer_key: "YoHD9XEInc0",
+      production_companies: [{ name: "Warner Bros. Pictures" }, { name: "Syncopy" }],
+      credits: {
+        cast: [
+          { name: "Leonardo DiCaprio", character: "Dom Cobb", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Joseph Gordon-Levitt", character: "Arthur", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Elliot Page", character: "Ariadne", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Tom Hardy", character: "Eames", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Cillian Murphy", character: "Robert Fischer", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 157336,
@@ -59,7 +80,22 @@ export const CONFIG = {
       vote_average: 8.4,
       vote_count: 34100,
       release_date: "2014-11-05",
-      genre_ids: [12, 18, 878]
+      genre_ids: [12, 18, 878],
+      runtime: 169,
+      status: "Released",
+      tagline: "Mankind was born on Earth. It was never meant to die here.",
+      budget: 165000000,
+      revenue: 773867216,
+      trailer_key: "zSWdZVtXT7E",
+      production_companies: [{ name: "Paramount" }, { name: "Warner Bros. Pictures" }, { name: "Syncopy" }],
+      credits: {
+        cast: [
+          { name: "Matthew McConaughey", character: "Cooper", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Anne Hathaway", character: "Brand", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Jessica Chastain", character: "Murph", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
+          { name: "Michael Caine", character: "Professor Brand", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 155,
@@ -70,7 +106,22 @@ export const CONFIG = {
       vote_average: 8.5,
       vote_count: 32000,
       release_date: "2008-07-16",
-      genre_ids: [18, 28, 80, 53]
+      genre_ids: [18, 28, 80, 53],
+      runtime: 152,
+      status: "Released",
+      tagline: "Why so serious?",
+      budget: 185000000,
+      revenue: 1004558444,
+      trailer_key: "EXeTwQWrcwY",
+      production_companies: [{ name: "Warner Bros. Pictures" }, { name: "Legendary Pictures" }, { name: "Syncopy" }],
+      credits: {
+        cast: [
+          { name: "Christian Bale", character: "Bruce Wayne / Batman", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Heath Ledger", character: "Joker", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
+          { name: "Aaron Eckhart", character: "Harvey Dent / Two-Face", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Gary Oldman", character: "James Gordon", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 693134,
@@ -81,7 +132,22 @@ export const CONFIG = {
       vote_average: 8.2,
       vote_count: 5300,
       release_date: "2024-02-27",
-      genre_ids: [878, 12]
+      genre_ids: [878, 12],
+      runtime: 166,
+      status: "Released",
+      tagline: "Long live the fighters.",
+      budget: 190000000,
+      revenue: 714444358,
+      trailer_key: "Way9Dexny3w",
+      production_companies: [{ name: "Legendary Pictures" }, { name: "Warner Bros. Pictures" }],
+      credits: {
+        cast: [
+          { name: "Timothée Chalamet", character: "Paul Atreides", profile_path: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" },
+          { name: "Zendaya", character: "Chani", profile_path: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80" },
+          { name: "Rebecca Ferguson", character: "Lady Jessica", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
+          { name: "Austin Butler", character: "Feyd-Rautha", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 872585,
@@ -92,7 +158,22 @@ export const CONFIG = {
       vote_average: 8.1,
       vote_count: 9100,
       release_date: "2023-07-19",
-      genre_ids: [18, 36]
+      genre_ids: [18, 36],
+      runtime: 180,
+      status: "Released",
+      tagline: "The world forever changes.",
+      budget: 100000000,
+      revenue: 957000000,
+      trailer_key: "uYPbbksJxIg",
+      production_companies: [{ name: "Syncopy" }, { name: "Universal Pictures" }, { name: "Atlas Entertainment" }],
+      credits: {
+        cast: [
+          { name: "Cillian Murphy", character: "J. Robert Oppenheimer", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
+          { name: "Emily Blunt", character: "Katherine 'Kitty' Oppenheimer", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Matt Damon", character: "Leslie Groves", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Robert Downey Jr.", character: "Lewis Strauss", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 569094,
@@ -103,7 +184,21 @@ export const CONFIG = {
       vote_average: 8.4,
       vote_count: 7200,
       release_date: "2023-05-31",
-      genre_ids: [16, 28, 12, 878]
+      genre_ids: [16, 28, 12, 878],
+      runtime: 140,
+      status: "Released",
+      tagline: "It's how you wear the mask that matters.",
+      budget: 100000000,
+      revenue: 690516673,
+      trailer_key: "cqGjhVJWtEg",
+      production_companies: [{ name: "Columbia Pictures" }, { name: "Sony Pictures Animation" }, { name: "Marvel Entertainment" }],
+      credits: {
+        cast: [
+          { name: "Shameik Moore", character: "Miles Morales / Spider-Man", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Hailee Steinfeld", character: "Gwen Stacy / Spider-Woman", profile_path: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" },
+          { name: "Oscar Isaac", character: "Miguel O'Hara / Spider-Man 2099", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 76600,
@@ -114,7 +209,21 @@ export const CONFIG = {
       vote_average: 7.7,
       vote_count: 11400,
       release_date: "2022-12-14",
-      genre_ids: [878, 12, 28]
+      genre_ids: [878, 12, 28],
+      runtime: 192,
+      status: "Released",
+      tagline: "Return to Pandora.",
+      budget: 350000000,
+      revenue: 2320250281,
+      trailer_key: "d9MyW72ELq0",
+      production_companies: [{ name: "Lightstorm Entertainment" }, { name: "20th Century Studios" }],
+      credits: {
+        cast: [
+          { name: "Sam Worthington", character: "Jake Sully", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Zoe Saldaña", character: "Neytiri", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Sigourney Weaver", character: "Kiri", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 361743,
@@ -125,7 +234,21 @@ export const CONFIG = {
       vote_average: 8.2,
       vote_count: 8900,
       release_date: "2022-05-24",
-      genre_ids: [28, 18]
+      genre_ids: [28, 18],
+      runtime: 130,
+      status: "Released",
+      tagline: "Feel the need. The need for speed.",
+      budget: 170000000,
+      revenue: 1495696292,
+      trailer_key: "giXco2jaZ_4",
+      production_companies: [{ name: "Paramount" }, { name: "Skydance" }, { name: "Jerry Bruckheimer Films" }],
+      credits: {
+        cast: [
+          { name: "Tom Cruise", character: "Capt. Pete 'Maverick' Mitchell", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Miles Teller", character: "Lt. Bradley 'Rooster' Bradshaw", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Jennifer Connelly", character: "Penny Benjamin", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 278,
@@ -136,7 +259,21 @@ export const CONFIG = {
       vote_average: 8.7,
       vote_count: 27000,
       release_date: "1994-09-23",
-      genre_ids: [18, 80]
+      genre_ids: [18, 80],
+      runtime: 142,
+      status: "Released",
+      tagline: "Fear can hold you prisoner. Hope can set you free.",
+      budget: 25000000,
+      revenue: 58500000,
+      trailer_key: "PLl99DlL6b4",
+      production_companies: [{ name: "Castle Rock Entertainment" }, { name: "Warner Bros. Pictures" }],
+      credits: {
+        cast: [
+          { name: "Tim Robbins", character: "Andy Dufresne", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Morgan Freeman", character: "Ellis Boyd 'Red' Redding", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Bob Gunton", character: "Warden Norton", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 680,
@@ -147,7 +284,22 @@ export const CONFIG = {
       vote_average: 8.5,
       vote_count: 27500,
       release_date: "1994-09-10",
-      genre_ids: [53, 80]
+      genre_ids: [53, 80],
+      runtime: 154,
+      status: "Released",
+      tagline: "Just because you are a character doesn't mean that you have character.",
+      budget: 8000000,
+      revenue: 213928762,
+      trailer_key: "s7EdQ4FqbhY",
+      production_companies: [{ name: "Miramax" }, { name: "A Band Apart" }],
+      credits: {
+        cast: [
+          { name: "John Travolta", character: "Vincent Vega", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Samuel L. Jackson", character: "Jules Winnfield", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Uma Thurman", character: "Mia Wallace", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Bruce Willis", character: "Butch Coolidge", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 550,
@@ -158,7 +310,21 @@ export const CONFIG = {
       vote_average: 8.4,
       vote_count: 28800,
       release_date: "1999-10-15",
-      genre_ids: [18]
+      genre_ids: [18],
+      runtime: 139,
+      status: "Released",
+      tagline: "Mischief. Mayhem. Soap.",
+      budget: 63000000,
+      revenue: 100853753,
+      trailer_key: "O1nDozs-96U",
+      production_companies: [{ name: "Fox 2000 Pictures" }, { name: "Regency Enterprises" }],
+      credits: {
+        cast: [
+          { name: "Edward Norton", character: "The Narrator", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Brad Pitt", character: "Tyler Durden", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Helena Bonham Carter", character: "Marla Singer", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 603,
@@ -169,7 +335,22 @@ export const CONFIG = {
       vote_average: 8.2,
       vote_count: 25000,
       release_date: "1999-03-30",
-      genre_ids: [28, 878]
+      genre_ids: [28, 878],
+      runtime: 136,
+      status: "Released",
+      tagline: "Welcome to the Real World.",
+      budget: 63000000,
+      revenue: 467222728,
+      trailer_key: "vKQi3bBA1y8",
+      production_companies: [{ name: "Village Roadshow Pictures" }, { name: "Silver Pictures" }, { name: "Warner Bros. Pictures" }],
+      credits: {
+        cast: [
+          { name: "Keanu Reeves", character: "Thomas A. Anderson / Neo", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Laurence Fishburne", character: "Morpheus", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Carrie-Anne Moss", character: "Trinity", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Hugo Weaving", character: "Agent Smith", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 98,
@@ -180,7 +361,21 @@ export const CONFIG = {
       vote_average: 8.2,
       vote_count: 18000,
       release_date: "2000-05-01",
-      genre_ids: [28, 18, 12]
+      genre_ids: [28, 18, 12],
+      runtime: 155,
+      status: "Released",
+      tagline: "What we do in life echoes in eternity.",
+      budget: 103000000,
+      revenue: 465380802,
+      trailer_key: "P5ieIbInFpg",
+      production_companies: [{ name: "DreamWorks Pictures" }, { name: "Universal Pictures" }, { name: "Scott Free Productions" }],
+      credits: {
+        cast: [
+          { name: "Russell Crowe", character: "Maximus Decimus Meridius", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Joaquin Phoenix", character: "Commodus", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
+          { name: "Connie Nielsen", character: "Lucilla", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 299534,
@@ -191,7 +386,23 @@ export const CONFIG = {
       vote_average: 8.3,
       vote_count: 25000,
       release_date: "2019-04-24",
-      genre_ids: [12, 878, 28]
+      genre_ids: [12, 878, 28],
+      runtime: 181,
+      status: "Released",
+      tagline: "Part of the journey is the end.",
+      budget: 356000000,
+      revenue: 2799439100,
+      trailer_key: "TcMBFSGVi1c",
+      production_companies: [{ name: "Marvel Studios" }],
+      credits: {
+        cast: [
+          { name: "Robert Downey Jr.", character: "Tony Stark / Iron Man", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Chris Evans", character: "Steve Rogers / Captain America", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Mark Ruffalo", character: "Bruce Banner / Hulk", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Chris Hemsworth", character: "Thor", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
+          { name: "Scarlett Johansson", character: "Natasha Romanoff / Black Widow", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 496243,
@@ -202,7 +413,21 @@ export const CONFIG = {
       vote_average: 8.5,
       vote_count: 18000,
       release_date: "2019-05-30",
-      genre_ids: [35, 53, 18]
+      genre_ids: [35, 53, 18],
+      runtime: 132,
+      status: "Released",
+      tagline: "Act like you own the place.",
+      budget: 11400000,
+      revenue: 263136741,
+      trailer_key: "5xH0RzeSojI",
+      production_companies: [{ name: "Barunson E&A" }, { name: "CJ Entertainment" }],
+      credits: {
+        cast: [
+          { name: "Song Kang-ho", character: "Kim Ki-taek", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Lee Sun-kyun", character: "Park Dong-ik", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Cho Yeo-jeong", character: "Park Yeon-gyo", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 244786,
@@ -213,7 +438,21 @@ export const CONFIG = {
       vote_average: 8.4,
       vote_count: 15000,
       release_date: "2014-10-10",
-      genre_ids: [18, 10402]
+      genre_ids: [18, 10402],
+      runtime: 107,
+      status: "Released",
+      tagline: "The road to greatness can take you to the edge.",
+      budget: 3300000,
+      revenue: 48982041,
+      trailer_key: "7d_jQycdQGo",
+      production_companies: [{ name: "Bold Films" }, { name: "Blumhouse Productions" }, { name: "Right of Way Films" }],
+      credits: {
+        cast: [
+          { name: "Miles Teller", character: "Andrew Neiman", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "J.K. Simmons", character: "Terence Fletcher", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Paul Reiser", character: "Jim Neiman", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 335984,
@@ -224,7 +463,21 @@ export const CONFIG = {
       vote_average: 7.6,
       vote_count: 13000,
       release_date: "2017-10-04",
-      genre_ids: [878, 18]
+      genre_ids: [878, 18],
+      runtime: 164,
+      status: "Released",
+      tagline: "There's still a page left.",
+      budget: 150000000,
+      revenue: 259239658,
+      trailer_key: "gCcx85zbxz4",
+      production_companies: [{ name: "Alcon Entertainment" }, { name: "Columbia Pictures" }, { name: "Scott Free Productions" }],
+      credits: {
+        cast: [
+          { name: "Ryan Gosling", character: "K", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Harrison Ford", character: "Rick Deckard", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Ana de Armas", character: "Joi", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 634649,
@@ -235,7 +488,23 @@ export const CONFIG = {
       vote_average: 8.0,
       vote_count: 20000,
       release_date: "2021-12-15",
-      genre_ids: [28, 12, 878]
+      genre_ids: [28, 12, 878],
+      runtime: 148,
+      status: "Released",
+      tagline: "The Multiverse Unleashed.",
+      budget: 200000000,
+      revenue: 1921847111,
+      trailer_key: "JfVOs4VSpmA",
+      production_companies: [{ name: "Marvel Studios" }, { name: "Columbia Pictures" }, { name: "Pascal Pictures" }],
+      credits: {
+        cast: [
+          { name: "Tom Holland", character: "Peter Parker / Spider-Man", profile_path: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" },
+          { name: "Zendaya", character: "MJ", profile_path: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80" },
+          { name: "Benedict Cumberbatch", character: "Doctor Strange", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Jacob Batalon", character: "Ned Leeds", profile_path: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" },
+          { name: "Willem Dafoe", character: "Norman Osborn / Green Goblin", profile_path: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 414906,
@@ -246,7 +515,22 @@ export const CONFIG = {
       vote_average: 7.7,
       vote_count: 9800,
       release_date: "2022-03-01",
-      genre_ids: [80, 9648, 53]
+      genre_ids: [80, 9648, 53],
+      runtime: 176,
+      status: "Released",
+      tagline: "Unmask the truth.",
+      budget: 185000000,
+      revenue: 770945583,
+      trailer_key: "mqqft2x_Aa4",
+      production_companies: [{ name: "Warner Bros. Pictures" }, { name: "6th & Idaho" }, { name: "Dylan Clark Productions" }],
+      credits: {
+        cast: [
+          { name: "Robert Pattinson", character: "Bruce Wayne / Batman", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Zoë Kravitz", character: "Selina Kyle / Catwoman", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Paul Dano", character: "Edward Nashton / Riddler", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
+          { name: "Colin Farrell", character: "Oswald Cobblepot / Penguin", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     },
     {
       id: 603692,
@@ -257,7 +541,22 @@ export const CONFIG = {
       vote_average: 7.8,
       vote_count: 6200,
       release_date: "2023-03-22",
-      genre_ids: [28, 53, 80]
+      genre_ids: [28, 53, 80],
+      runtime: 169,
+      status: "Released",
+      tagline: "No way back. One way out.",
+      budget: 100000000,
+      revenue: 440146694,
+      trailer_key: "qEVUtrk8_B4",
+      production_companies: [{ name: "Thunder Road" }, { name: "87Eleven" }, { name: "Lionsgate" }],
+      credits: {
+        cast: [
+          { name: "Keanu Reeves", character: "John Wick", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Donnie Yen", character: "Caine", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Bill Skarsgård", character: "Marquis de Gramont", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Ian McShane", character: "Winston Scott", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
     }
   ]
 };

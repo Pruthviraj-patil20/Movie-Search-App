@@ -381,28 +381,41 @@ function renderCast(container, castList) {
     return;
   }
 
+  const sec = document.querySelector('#cast-section');
+  if (sec) sec.style.display = 'block';
+
   container.innerHTML = '';
   const slider = document.createElement('div');
   slider.className = 'cast-slider';
 
   castList.forEach(member => {
-    const photoUrl = member.profile_path
-      ? `${CONFIG.IMAGE_BASE_URL}${CONFIG.IMAGE_SIZES.PROFILE_MEDIUM}${member.profile_path}`
-      : CONFIG.FALLBACK_AVATAR;
+    const name = member.name || 'Cast Member';
+    const cleanName = encodeURIComponent(name.trim());
+    const initialsAvatar = `https://ui-avatars.com/api/?name=${cleanName}&background=1e293b&color=38bdf8&size=200&bold=true&font-size=0.4`;
+
+    let photoUrl = initialsAvatar;
+    if (member.profile_path) {
+      if (member.profile_path.startsWith('http://') || member.profile_path.startsWith('https://')) {
+        photoUrl = member.profile_path;
+      } else {
+        photoUrl = `${CONFIG.IMAGE_BASE_URL}${CONFIG.IMAGE_SIZES.PROFILE_MEDIUM}${member.profile_path}`;
+      }
+    }
 
     const card = document.createElement('div');
     card.className = 'cast-card';
     card.innerHTML = `
       <div class="cast-photo-wrap">
-        <img src="${photoUrl}" alt="${member.name}" class="cast-photo" loading="lazy" />
+        <img src="${photoUrl}" alt="${name}" class="cast-photo" loading="lazy" />
       </div>
-      <span class="cast-name">${member.name}</span>
+      <span class="cast-name">${name}</span>
       <span class="cast-character">${member.character || 'Cast'}</span>
     `;
 
     const img = card.querySelector('.cast-photo');
     img.addEventListener('error', () => {
-      img.src = CONFIG.FALLBACK_AVATAR;
+      img.onerror = null;
+      img.src = initialsAvatar;
     });
 
     slider.appendChild(card);
