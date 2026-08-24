@@ -144,7 +144,12 @@ async function renderShowcase(container, movie) {
       <div class="details-container">
         <!-- Left: Poster -->
         <div class="details-poster-wrap">
-          <img src="${posterUrl}" alt="${title} Poster" class="details-poster-img" />
+          <img 
+            src="${posterUrl}" 
+            alt="${title} Poster" 
+            class="details-poster-img"
+            onerror="this.onerror=null;this.src='${CONFIG.FALLBACK_POSTER}'"
+          />
         </div>
 
         <!-- Right: Info -->

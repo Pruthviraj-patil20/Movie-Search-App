@@ -37,6 +37,7 @@ export function createMovieCard(movie, options = {}) {
         alt="${title} Poster"
         class="movie-card-poster"
         loading="lazy"
+        onerror="this.onerror=null;this.src='${CONFIG.FALLBACK_POSTER}'"
       />
       <div class="movie-card-overlay"></div>
       

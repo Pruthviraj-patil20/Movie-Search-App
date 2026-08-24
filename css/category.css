@@ -1,0 +1,266 @@
+/* ==========================================================================
+   CineSphere Categories Page Styles
+   ========================================================================== */
+
+.category-page-header {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: var(--space-8);
+  background: radial-gradient(circle at 50% -20%, rgba(229, 9, 20, 0.12) 0%, transparent 60%);
+}
+
+.category-page-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.category-badge-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.category-tagline {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-primary);
+}
+
+.category-total-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: var(--accent-subtle);
+  color: var(--accent-primary);
+  border: 1px solid rgba(229, 9, 20, 0.3);
+}
+
+.category-page-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.category-page-description {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+/* Category Navigation Filter Pills */
+.category-filter-wrapper {
+  margin-bottom: var(--space-8);
+  position: relative;
+}
+
+.category-filter-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  overflow-x: auto;
+  padding-bottom: var(--space-3);
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-medium) transparent;
+}
+
+.category-filter-nav::-webkit-scrollbar {
+  height: 4px;
+}
+
+.category-filter-nav::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: var(--radius-full);
+}
+
+.category-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.category-pill-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+  border-color: var(--border-medium);
+  transform: translateY(-2px);
+}
+
+.category-pill-btn.active {
+  background: var(--accent-gradient);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 18px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.category-pill-count {
+  font-size: 0.7rem;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.15);
+  color: inherit;
+}
+
+.category-pill-btn.active .category-pill-count {
+  background: rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+}
+
+/* Category Toolbar (Search & Sort) */
+.category-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.category-search-box {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+}
+
+.category-search-input {
+  width: 100%;
+  padding: 0.65rem 1rem 0.65rem 2.4rem;
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.category-search-input:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--accent-subtle);
+}
+
+.category-search-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.category-controls-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.category-sort-select {
+  padding: 0.65rem 1.25rem;
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.category-sort-select:focus {
+  border-color: var(--border-focus);
+}
+
+.category-sort-select option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Status / Results Info Row */
+.category-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.category-status-highlight {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Movie Grid */
+.category-movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-6);
+  min-height: 350px;
+}
+
+@media (max-width: 640px) {
+  .category-movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+/* Empty State */
+.category-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-16) var(--space-4);
+  background: var(--bg-glass-card);
+  border: 1px dashed var(--border-medium);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.category-empty-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.category-empty-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.category-empty-text {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  max-width: 420px;
+}

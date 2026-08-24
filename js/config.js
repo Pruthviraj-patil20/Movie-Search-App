@@ -532,7 +532,7 @@ export const CONFIG = {
         ]
       }
     },
-{
+    {
       id: 603692,
       title: "John Wick: Chapter 4",
       overview: "With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table.",
@@ -551,10 +551,10 @@ export const CONFIG = {
       production_companies: [{ name: "Thunder Road" }, { name: "87Eleven" }, { name: "Lionsgate" }],
       credits: {
         cast: [
-          { name: "Keanu Reeves", character: "John Wick", profile_path: "/wo2ViewsMe4I5NYNiQ7vAhneRpt.jpg" },
-          { name: "Donnie Yen", character: "Caine", profile_path: "/dhv9f3A7e38NfGz43pD2Lg3n0mQ.jpg" },
-          { name: "Bill Skarsgård", character: "Marquis de Gramont", profile_path: "/5Y9HnYYa9jF4D92TeIPDrq5zoGi.jpg" },
-          { name: "Ian McShane", character: "Winston Scott", profile_path: "/bVVRdVZ5JkG6m49G4bT3x6NqGv4.jpg" }
+          { name: "Keanu Reeves", character: "John Wick", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Donnie Yen", character: "Caine", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Bill Skarsgård", character: "Marquis de Gramont", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Ian McShane", character: "Winston Scott", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -564,8 +564,8 @@ export const CONFIG = {
       id: 975069,
       title: "Dangal",
       overview: "Mahavir Singh Phogat and his two daughters struggle and make their way to the wrestling arena where they train and win gold medals at the Commonwealth Games and the Asian Games.",
-      poster_path: "/ruaN8QSLwole2IB4tLPm5mg5Ta0.jpg",
-      backdrop_path: "/8qo4LkX2r8R2q8q1q2q3q4q5q6.jpg",
+      poster_path: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1920&q=80",
       vote_average: 8.1,
       vote_count: 21000,
       release_date: "2016-12-23",
@@ -575,13 +575,13 @@ export const CONFIG = {
       tagline: "Champions are made, not born.",
       budget: 250000000,
       revenue: 2100000000,
-      trailer_key: "X learnt3JbGM",
+      trailer_key: "x_7YlGv9u1g",
       production_companies: [{ name: "Walt Disney Pictures India" }, { name: "Upendra Bhagat Productions" }],
       credits: {
         cast: [
-          { name: "Aamir Khan", character: "Mahavir Singh Phogat", profile_path: "/oSy1q45lqL2rw61lXRyEa6y3tO.jpg" },
-          { name: "Fatima Sana Shaikh", character: "Baby Sakshi", profile_path: "/a1b2c3d4e5f6.jpg" },
-          { name: "Sanya Malhotra", character: "Baby Geeta", profile_path: "/g7h8i9j0k l.jpg" }
+          { name: "Aamir Khan", character: "Mahavir Singh Phogat", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Fatima Sana Shaikh", character: "Baby Sakshi", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Sanya Malhotra", character: "Baby Geeta", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -589,8 +589,8 @@ export const CONFIG = {
       id: 346428,
       title: "Sanju",
       overview: "The biography of Sanjay Dutt, one of the most successful actors of the Indian film industry.",
-      poster_path: "/71incomega875l.jpg",
-      backdrop_path: "/backdrop_sanju.jpg",
+      poster_path: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=80",
       vote_average: 7.6,
       vote_count: 15000,
       release_date: "2018-06-29",
@@ -600,12 +600,12 @@ export const CONFIG = {
       tagline: "The real story of a common man.",
       budget: 65000000,
       revenue: 520000000,
-      trailer_key: "tgbDuvDettess",
+      trailer_key: "1J76wN0TPI4",
       production_companies: [{ name: "Vidhu Vinod Chopra Films" }],
       credits: {
         cast: [
-          { name: "Ranbir Kapoor", character: "Sanjay Dutt", profile_path: "/runningshera.jpg" },
-          { name: "Paresh Rawal", character: "Sunil Dutt", profile_path: "/fghjkl.jpg" }
+          { name: "Ranbir Kapoor", character: "Sanjay Dutt", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Paresh Rawal", character: "Sunil Dutt", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -613,8 +613,8 @@ export const CONFIG = {
       id: 181498,
       title: "Padmaavat",
       overview: "Queen Padmavati, the wife of a royal king, is caught between the rivalry of two kings who want to possess her beauty and valour.",
-      poster_path: "/tjBj6I3AIB5Ll06qVYIA5F.jpg",
-      backdrop_path: "/backdrop_padmaavat.jpg",
+      poster_path: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1920&q=80",
       vote_average: 7.3,
       vote_count: 12000,
       release_date: "2018-01-25",
@@ -624,12 +624,12 @@ export const CONFIG = {
       tagline: "One queen. Many stories.",
       budget: 180000000,
       revenue: 580000000,
-      trailer_key: "TÜcI5IQY7GY",
+      trailer_key: "X_5_BLtIj9k",
       production_companies: [{ name: "Pen Studios" }],
       credits: {
         cast: [
-          { name: "Deepika Padukone", character: "Padmavati", profile_path: "/deepika.jpg" },
-          { name: "Ranveer Singh", character: "Alauddin Khilji", profile_path: "/ranveer.jpg" }
+          { name: "Deepika Padukone", character: "Padmavati", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Ranveer Singh", character: "Alauddin Khilji", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -637,23 +637,23 @@ export const CONFIG = {
       id: 155,
       title: "Bajrangi Bhaijaan",
       overview: "A simpleton gets separated from his Pakistani friend at a young age and strives to reunite her with her family across the border.",
-      poster_path: "/8qo4LkX2r8R2q8q1q2q3q4q5q6.jpg",
-      backdrop_path: "/backdrop_bajrangi.jpg",
+      poster_path: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?auto=format&fit=crop&w=1920&q=80",
       vote_average: 8.1,
       vote_count: 18000,
-      release_date: "2015-07_30",
+      release_date: "2015-07-30",
       genre_ids: [18, 14, 36],
       runtime: 165,
       status: "Released",
       tagline: "An emotional journey for the whole family.",
       budget: 55000000,
       revenue: 960000000,
-      trailer_key: "K_F9W_-oadM",
+      trailer_key: "4nwAra0mz_Q",
       production_companies: [{ name: "Salman Khan Films" }],
       credits: {
         cast: [
-          { name: "Salman Khan", character: "Pawan Kumar Chaturvedi", profile_path: "/salman.jpg" },
-          { name: "Harshaali Malhotra", character: "Munni", profile_path: "/harshaali.jpg" }
+          { name: "Salman Khan", character: "Pawan Kumar Chaturvedi", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Harshaali Malhotra", character: "Munni", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -678,8 +678,8 @@ export const CONFIG = {
       production_companies: [{ name: "Syncopy" }, { name: "Universal Pictures" }, { name: "Atlas Entertainment" }],
       credits: {
         cast: [
-          { name: "Cillian Murphy", character: "J. Robert Oppenheimer", profile_path: "/iRz3p6p2Ue62b0833Z44qQ98r9A.jpg" },
-          { name: "Emily Blunt", character: "Katherine 'Kitty' Oppenheimer", profile_path: "/hZkgoQYus5vegHoetLkCJzb17zJ.jpg" }
+          { name: "Cillian Murphy", character: "J. Robert Oppenheimer", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
+          { name: "Emily Blunt", character: "Katherine 'Kitty' Oppenheimer", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -687,8 +687,8 @@ export const CONFIG = {
       id: 667538,
       title: "Barbie",
       overview: "Barbie land is fantastic until Stereotypical Barbie starts having a crisis that leads her and Ken on an unexpected journey into the real world.",
-      poster_path: "/o8ZQ3O6XG0Q0yQ8D6RukqOw.jpg",
-      backdrop_path: "/backdrop_barbie.jpg",
+      poster_path: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1920&q=80",
       vote_average: 7.4,
       vote_count: 8500,
       release_date: "2023-07-21",
@@ -702,8 +702,8 @@ export const CONFIG = {
       production_companies: [{ name: "Warner Bros. Pictures" }],
       credits: {
         cast: [
-          { name: "Margot Robbie", character: "Barbie", profile_path: "/margot.jpg" },
-          { name: "Ryan Gosling", character: "Ken", profile_path: "/ryan.jpg" }
+          { name: "Margot Robbie", character: "Barbie", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Ryan Gosling", character: "Ken", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -712,9 +712,9 @@ export const CONFIG = {
     {
       id: 721814,
       title: "RRR",
-      overview: "Two freedom fighters fighting for independence from the British Raj and their fight for their respective societies.",
-      poster_path: "/xQ5u6y3m5l0Q0yQ8D6RukqOw.jpg",
-      backdrop_path: "/backdrop_rrr.jpg",
+      overview: "Two legendary revolutionaries fight for independence from the British Raj in 1920s India.",
+      poster_path: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1920&q=80",
       vote_average: 8.2,
       vote_count: 25000,
       release_date: "2022-03-24",
@@ -724,12 +724,12 @@ export const CONFIG = {
       tagline: "Friendship is a weapon.",
       budget: 400000000,
       revenue: 1300000000,
-      trailer_key: "dQw4w9WgXcQ",
+      trailer_key: "f_vbAtFSEc0",
       production_companies: [{ name: "DVV Entertainment" }],
       credits: {
         cast: [
-          { name: "Jr. NTR", character: "Komaram Bheem", profile_path: "/ntr.jpg" },
-          { name: "Ram Charan", character: "Rama Raju", profile_path: "/ramcharan.jpg" }
+          { name: "Jr. NTR", character: "Komaram Bheem", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Ram Charan", character: "Rama Raju", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -737,8 +737,8 @@ export const CONFIG = {
       id: 763419,
       title: "Pushpa: The Rise",
       overview: "A labourer smuggles red sandalwood from the Seshachalam hills and rises to the top of the hierarchy.",
-      poster_path: "/s16H6tpK2utvwDtzZIMQn06qjwn.jpg",
-      backdrop_path: "/backdrop_pushpa.jpg",
+      poster_path: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
       vote_average: 7.6,
       vote_count: 14000,
       release_date: "2021-12-17",
@@ -748,12 +748,12 @@ export const CONFIG = {
       tagline: "Pushpa, The Rise.",
       budget: 150000000,
       revenue: 360000000,
-      trailer_key: "JRSvW9oAG7Y",
+      trailer_key: "pKctjlpbqpQ",
       production_companies: [{ name: "Mythri Movie Makers" }],
       credits: {
         cast: [
-          { name: "Allu Arjun", character: "Pushpa Raj", profile_path: "/alluarjun.jpg" },
-          { name: "Rashmika Mandanna", character: "Srivalli", profile_path: "/rashmika.jpg" }
+          { name: "Allu Arjun", character: "Pushpa Raj", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Rashmika Mandanna", character: "Srivalli", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -763,8 +763,8 @@ export const CONFIG = {
       id: 828601,
       title: "Kantara",
       overview: "A village in Karnataka experiences unexplained events while a cop tries to solve the mystery of the missing people.",
-      poster_path: "/kantara_poster.jpg",
-      backdrop_path: "/backdrop_kantara.jpg",
+      poster_path: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
       vote_average: 8.2,
       vote_count: 16000,
       release_date: "2022-09-30",
@@ -774,12 +774,12 @@ export const CONFIG = {
       tagline: "The forest has its own laws.",
       budget: 16000000,
       revenue: 400000000,
-      trailer_key: "kantara_trailer_key",
+      trailer_key: "8mrVmf239GU",
       production_companies: [{ name: "Hombale Films" }],
       credits: {
         cast: [
-          { name: "Rishab Shetty", character: "Vikrant Rona", profile_path: "/rishab.jpg" },
-          { name: "Sapthami Gowda", character: "Myna", profile_path: "/sapthami.jpg" }
+          { name: "Rishab Shetty", character: "Vikrant Rona", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Sapthami Gowda", character: "Myna", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -787,8 +787,8 @@ export const CONFIG = {
       id: 692644,
       title: "Vikram Vedha",
       overview: "A cop and a gangster play a dangerous game of cat and mouse, each convinced they are the hero and the villain of the story.",
-      poster_path: "/vikram_vedha_poster.jpg",
-      backdrop_path: "/backdrop_vikram.jpg",
+      poster_path: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=80",
       vote_average: 8.0,
       vote_count: 12000,
       release_date: "2017-09-28",
@@ -798,12 +798,12 @@ export const CONFIG = {
       tagline: "Truth vs. Justice.",
       budget: 6000000,
       revenue: 80000000,
-      trailer_key: "vikram_vedha_key",
+      trailer_key: "1sNrC1o1bUU",
       production_companies: [{ name: "Y Not Studios" }],
       credits: {
         cast: [
-          { name: "R. Madhavan", character: "Vikram", profile_path: "/madhavan.jpg" },
-          { name: "Vijay Sethupathi", character: "Vedha", profile_path: "/vijay.jpg" }
+          { name: "R. Madhavan", character: "Vikram", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Vijay Sethupathi", character: "Vedha", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -813,8 +813,8 @@ export const CONFIG = {
       id: 597135,
       title: "Drishyam",
       overview: "A man goes to great lengths to protect his family after they commit an unintentional crime.",
-      poster_path: "/drishyam_poster.jpg",
-      backdrop_path: "/backdrop_drishyam.jpg",
+      poster_path: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1920&q=80",
       vote_average: 8.4,
       vote_count: 19000,
       release_date: "2013-10-06",
@@ -824,12 +824,12 @@ export const CONFIG = {
       tagline: "The truth is in the details.",
       budget: 3500000,
       revenue: 50000000,
-      trailer_key: "drishyam_trailer_key",
+      trailer_key: "A_v6Z4u_T_k",
       production_companies: [{ name: "Aashirvad Cinemas" }],
       credits: {
         cast: [
-          { name: "Mohanlal", character: "Georgekutty", profile_path: "/mohanlal.jpg" },
-          { name: "Meena", character: "Radha", profile_path: "/meena.jpg" }
+          { name: "Mohanlal", character: "Georgekutty", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Meena", character: "Radha", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -839,8 +839,8 @@ export const CONFIG = {
       id: 458,
       title: "Carry On Jatta",
       overview: "A hilarious comedy of errors surrounding a young man trying to hide his first marriage from his second love.",
-      poster_path: "/carry_on_jatta_poster.jpg",
-      backdrop_path: "/backdrop_punjabi.jpg",
+      poster_path: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?auto=format&fit=crop&w=1920&q=80",
       vote_average: 7.8,
       vote_count: 8000,
       release_date: "2012-06-29",
@@ -850,12 +850,12 @@ export const CONFIG = {
       tagline: "Laugh your heart out.",
       budget: 1000000,
       revenue: 25000000,
-      trailer_key: "punjabi_trailer_key",
+      trailer_key: "xGqT_g_y49c",
       production_companies: [{ name: "White Hill Films" }],
       credits: {
         cast: [
-          { name: "Gippy Grewal", character: "Jaswinder Singh", profile_path: "/punjabi_actor.jpg" },
-          { name: "Patralekhaa", character: "Anita", profile_path: "/punjabi_actress.jpg" }
+          { name: "Gippy Grewal", character: "Jaswinder Singh", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Patralekhaa", character: "Anita", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -865,8 +865,8 @@ export const CONFIG = {
       id: 299835,
       title: "Choker Bali",
       overview: "A deep exploration of relationships, desires, and societal norms through the lives of two women and the men in their lives.",
-      poster_path: "/bengali_poster.jpg",
-      backdrop_path: "/backdrop_bengali.jpg",
+      poster_path: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1920&q=80",
       vote_average: 7.5,
       vote_count: 5000,
       release_date: "2000-10-06",
@@ -876,12 +876,12 @@ export const CONFIG = {
       tagline: "A classic tale of love and longing.",
       budget: 2000000,
       revenue: 8000000,
-      trailer_key: "bengali_trailer_key",
+      trailer_key: "7r4s4nK9a3g",
       production_companies: [{ name: "Shree Venkatesh Films" }],
       credits: {
         cast: [
-          { name: "Aparna Sen", character: "Binodini", profile_path: "/bengali_cast.jpg" },
-          { name: "Prosenjit Chatterjee", character: "Mahendra", profile_path: "/bengali_actor.jpg" }
+          { name: "Aparna Sen", character: "Binodini", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Prosenjit Chatterjee", character: "Mahendra", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -891,8 +891,8 @@ export const CONFIG = {
       id: 346574,
       title: "Kavyann",
       overview: "A heartwarming story of a young couple navigating the complexities of modern relationships.",
-      poster_path: "/gujarati_poster.jpg",
-      backdrop_path: "/backdrop_gujarati.jpg",
+      poster_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=80",
       vote_average: 7.2,
       vote_count: 3000,
       release_date: "2019-01-01",
@@ -902,12 +902,12 @@ export const CONFIG = {
       tagline: "Love in the time of chaos.",
       budget: 1500000,
       revenue: 6000000,
-      trailer_key: "gujarati_trailer_key",
+      trailer_key: "YoHD9XEInc0",
       production_companies: [{ name: "Rupam Entertainment" }],
       credits: {
         cast: [
-          { name: "Monali Thakur", character: "Kavya", profile_path: "/gujarati_cast.jpg" },
-          { name: "Malhar Thakar", character: "Viraj", profile_path: "/gujarati_actor.jpg" }
+          { name: "Monali Thakur", character: "Kavya", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
+          { name: "Malhar Thakar", character: "Viraj", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -932,8 +932,8 @@ export const CONFIG = {
       production_companies: [{ name: "Barunson E&A" }, { name: "CJ Entertainment" }],
       credits: {
         cast: [
-          { name: "Song Kang-ho", character: "Kim Ki-taek", profile_path: "/wo2ViewsMe4I5NYNiQ7vAhneRpt.jpg" },
-          { name: "Lee Sun-kyun", character: "Park Dong-ik", profile_path: "/dhv9f3A7e38NfGz43pD2Lg3n0mQ.jpg" }
+          { name: "Song Kang-ho", character: "Kim Ki-taek", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Lee Sun-kyun", character: "Park Dong-ik", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
@@ -956,8 +956,8 @@ export const CONFIG = {
       production_companies: [{ name: "Marvel Studios" }, { name: "Columbia Pictures" }, { name: "Pascal Pictures" }],
       credits: {
         cast: [
-          { name: "Tom Holland", character: "Peter Parker / Spider-Man", profile_path: "/wo2ViewsMe4I5NYNiQ7vAhneRpt.jpg" },
-          { name: "Zendaya", character: "MJ", profile_path: "/tLpq59apRslPwhnIkeaq6hgZ6F5.jpg" }
+          { name: "Tom Holland", character: "Peter Parker / Spider-Man", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Zendaya", character: "MJ", profile_path: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     }

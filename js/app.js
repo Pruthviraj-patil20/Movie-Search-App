@@ -3,6 +3,7 @@
  */
 
 import { initNavbar } from './components/navbar.js';
+import { initCategoryPage } from './pages/category.js';
 import { initDashboardPage } from './pages/dashboard.js';
 import { initFavoritesPage } from './pages/favorites.js';
 import { initForgotPasswordPage } from './pages/forgotPassword.js';
@@ -31,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. Page-Specific Dispatcher
   if (document.querySelector('#hero-mount')) {
     initHomePage();
+  } else if (document.querySelector('#category-movies-grid') || document.querySelector('#categorySection')) {
+    initCategoryPage();
   } else if (document.querySelector('#search-results-grid')) {
     initSearchPage();
   } else if (document.querySelector('#movie-details-mount')) {

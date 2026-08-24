@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Movie Details - CineSphere</title>
-  <meta name="description" content="View complete movie details, trailers, cast info, ratings, and similar recommendations on CineSphere." />
+  <title>Movie Categories & Regions - CineSphere</title>
+  <meta name="description" content="Explore Bollywood, Hollywood, South Indian, and curated movie categories on CineSphere." />
   
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="alternate icon" href="favicon.ico" />
@@ -19,14 +19,14 @@
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/navbar.css" />
   <link rel="stylesheet" href="css/movie-card.css" />
-  <link rel="stylesheet" href="css/movie-details.css" />
+  <link rel="stylesheet" href="css/category.css" />
   <link rel="stylesheet" href="css/skeleton.css" />
   <link rel="stylesheet" href="css/modal.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
   <div class="app-wrapper">
-    <!-- Navbar -->
+    <!-- Floating Glass Navbar -->
     <header class="navbar">
       <div class="navbar-container">
         <a href="index.html" class="brand-logo" aria-label="CineSphere Home">
@@ -41,7 +41,7 @@
         <nav class="navbar-nav" aria-label="Main Navigation">
           <a href="index.html" class="nav-link">Home</a>
           <a href="search.html" class="nav-link">Discover</a>
-          <a href="category.html" class="nav-link">Categories</a>
+          <a href="category.html" class="nav-link active">Categories</a>
           <a href="watchlist.html" class="nav-link">
             Watchlist
             <span class="nav-badge watchlist-count-badge" data-count="0"></span>
@@ -103,7 +103,7 @@
       <nav class="mobile-nav-links">
         <a href="index.html" class="mobile-nav-link"><span>Home</span></a>
         <a href="search.html" class="mobile-nav-link"><span>Discover Movies</span></a>
-        <a href="category.html" class="mobile-nav-link"><span>Categories</span></a>
+        <a href="category.html" class="mobile-nav-link active"><span>Categories</span></a>
         <a href="watchlist.html" class="mobile-nav-link">
           <span>Watchlist</span>
           <span class="nav-badge watchlist-count-badge" data-count="0"></span>
@@ -116,47 +116,62 @@
     </aside>
 
     <!-- Main Content -->
-    <main>
-      <!-- Movie Details Hero Mount -->
-      <div id="movie-details-mount"></div>
-
-      <!-- Top Cast Section -->
-      <section id="cast-section" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <span class="section-tagline">Performances</span>
-              <h2 class="section-title">Top Cast Members</h2>
-            </div>
+    <main class="container section">
+      <!-- Category Page Header -->
+      <section class="category-page-header">
+        <div class="category-page-header-content">
+          <div class="category-badge-row">
+            <span class="category-tagline">Browse Collections</span>
+            <span class="category-total-badge" id="category-total-badge">All Categories</span>
           </div>
-          <div id="cast-slider-mount"></div>
+          <h1 class="category-page-title">Explore by Category & Region</h1>
+          <p class="category-page-description">
+            Discover handpicked films across Bollywood, Hollywood, South Indian cinema, trending releases, top-rated classics, and specific genres.
+          </p>
         </div>
       </section>
 
-      <!-- Similar Movies Section -->
-      <section id="similar-section" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <span class="section-tagline">More Like This</span>
-              <h2 class="section-title">Similar Movies</h2>
-            </div>
-          </div>
-          <div id="similar-carousel-mount"></div>
+      <!-- Category Filter Pills Navigation -->
+      <section class="category-filter-wrapper">
+        <div class="category-filter-nav" id="category-filter-nav">
+          <!-- Category buttons generated dynamically via js/pages/category.js -->
         </div>
       </section>
 
-      <!-- Recommended Movies Section -->
-      <section id="recommendations-section" class="section">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <span class="section-tagline">Curated For You</span>
-              <h2 class="section-title">Recommended Movies</h2>
-            </div>
-          </div>
-          <div id="recommendations-carousel-mount"></div>
+      <!-- Category Toolbar (Search & Sort) -->
+      <section class="category-toolbar">
+        <div class="category-search-box">
+          <svg class="category-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input 
+            type="search" 
+            class="category-search-input" 
+            id="category-search-input" 
+            placeholder="Filter within category..."
+            aria-label="Filter movies within category"
+          />
         </div>
+
+        <div class="category-controls-right">
+          <select class="category-sort-select" id="category-sort-select" aria-label="Sort movies by">
+            <option value="popular">Most Popular</option>
+            <option value="rating.desc">Highest Rated ⭐</option>
+            <option value="release.desc">Newest First</option>
+            <option value="release.asc">Oldest First</option>
+            <option value="title.asc">Title (A - Z)</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Status row -->
+      <div class="category-status-row">
+        <div id="category-status-info">Loading movies...</div>
+      </div>
+
+      <!-- Movies Grid Mount -->
+      <section class="category-movies-grid" id="category-movies-grid">
+        <!-- Movie Cards rendered here -->
       </section>
     </main>
 

@@ -15,6 +15,7 @@ export default defineConfig({
       input: {
         main: 'index.html',
         search: 'search.html',
+        category: 'category.html',
         movie: 'movie.html',
         watchlist: 'watchlist.html',
         favorites: 'favorites.html',
