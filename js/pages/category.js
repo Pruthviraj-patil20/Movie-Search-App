@@ -14,8 +14,12 @@
 
 import { CONFIG } from '../config.js';
 import { createMovieCard } from '../components/movieCard.js';
+import { modal } from '../components/modal.js';
+import { toast } from '../components/toast.js';
+import { watchlistService } from '../services/watchlistService.js';
 import { getUrlParam, setUrlParam } from '../utils/urlParams.js';
 import { debounce } from '../utils/debounce.js';
+import { getImageUrl, getBackdropUrl } from '../utils/helpers.js';
 
 // ============================================================================
 // 1. Comprehensive Sample Movie Dataset (Organized by 8 Categories)
@@ -619,15 +623,156 @@ export const CATEGORY_DATA = {
         overview: 'A thief who steals corporate secrets through dream-sharing is offered a chance to have his criminal history erased.'
       }
     ]
+  },
+
+  'tamil-movies': {
+    id: 'tamil-movies',
+    title: 'Tamil Movies',
+    subtitle: 'Kollywood Powerhouses',
+    icon: '🎬',
+    bg: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80',
+    movies: [
+      {
+        id: 755566,
+        title: 'Vikram',
+        year: '2022',
+        release_date: '2022-06-03',
+        vote_average: 8.3,
+        genres: [{ id: 28, name: 'Action' }, { id: 53, name: 'Thriller' }],
+        poster_path: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80',
+        overview: 'A high-octane special black-ops squad led by Amar investigates a series of murders committed by a masked vigilante group.'
+      },
+      {
+        id: 969492,
+        title: 'Leo',
+        year: '2023',
+        release_date: '2023-10-19',
+        vote_average: 7.8,
+        genres: [{ id: 28, name: 'Action' }, { id: 80, name: 'Crime' }],
+        poster_path: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80',
+        overview: 'A calm animal rescuer and cafe owner in Himachal Pradesh becomes the target of ruthless gangsters.'
+      },
+      {
+        id: 987917,
+        title: 'Jailer',
+        year: '2023',
+        release_date: '2023-08-10',
+        vote_average: 7.7,
+        genres: [{ id: 28, name: 'Action' }, { id: 35, name: 'Comedy' }],
+        poster_path: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+        overview: 'Muthuvel Pandian, a retired strict prison warden, comes out of retirement to protect his family.'
+      },
+      {
+        id: 692644,
+        title: 'Vikram Vedha',
+        year: '2017',
+        release_date: '2017-09-28',
+        vote_average: 8.2,
+        genres: [{ id: 28, name: 'Action' }, { id: 53, name: 'Thriller' }],
+        poster_path: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
+        overview: 'A straight-arrow police officer sets out to hunt down and kill a notorious gangster, leading to moral dilemmas.'
+      },
+      {
+        id: 633190,
+        title: 'Kaithi',
+        year: '2019',
+        release_date: '2019-10-25',
+        vote_average: 8.4,
+        genres: [{ id: 28, name: 'Action' }, { id: 53, name: 'Thriller' }],
+        poster_path: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=80',
+        overview: 'A recently released prisoner drives a lorry full of poisoned cops through hostile gangster territory to meet his daughter.'
+      },
+      {
+        id: 554600,
+        title: 'Ponniyin Selvan: Part 1',
+        year: '2022',
+        release_date: '2022-09-30',
+        vote_average: 7.9,
+        genres: [{ id: 28, name: 'Action' }, { id: 18, name: 'Drama' }],
+        poster_path: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80',
+        overview: 'Vandiyathevan sets out on a perilous mission across the Chola kingdom amidst brewing conspiracies.'
+      }
+    ]
+  },
+
+  'marathi-movies': {
+    id: 'marathi-movies',
+    title: 'Marathi Movies',
+    subtitle: 'Acclaimed & Blockbusters',
+    icon: '🚩',
+    bg: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+    movies: [
+      {
+        id: 395990,
+        title: 'Sairat',
+        year: '2016',
+        release_date: '2016-04-29',
+        vote_average: 8.3,
+        genres: [{ id: 18, name: 'Drama' }, { id: 10749, name: 'Romance' }],
+        poster_path: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
+        overview: 'In rural Maharashtra, a passionate son of a fisherman falls in love with a wealthy politician daughter.'
+      },
+      {
+        id: 376288,
+        title: 'Natsamrat',
+        year: '2016',
+        release_date: '2016-01-01',
+        vote_average: 8.9,
+        genres: [{ id: 18, name: 'Drama' }],
+        poster_path: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+        overview: 'A retired Shakespearean stage actor and his devoted wife face rejection and heartbreak from their grown children.'
+      },
+      {
+        id: 367683,
+        title: 'Katyar Kaljat Ghusali',
+        year: '2015',
+        release_date: '2015-11-12',
+        vote_average: 8.5,
+        genres: [{ id: 18, name: 'Drama' }, { id: 10402, name: 'Musical' }],
+        poster_path: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80',
+        overview: 'A clash of artistic egos and classical ragas erupts between two royal court singers in a duel for prestige.'
+      },
+      {
+        id: 1148281,
+        title: 'Baipan Bhaari Deva',
+        year: '2023',
+        release_date: '2023-06-30',
+        vote_average: 8.0,
+        genres: [{ id: 35, name: 'Comedy' }, { id: 18, name: 'Drama' }],
+        poster_path: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+        overview: 'Six estranged sisters reunite to participate in a traditional dance competition, rediscovering their bond.'
+      },
+      {
+        id: 1048821,
+        title: 'Ved',
+        year: '2022',
+        release_date: '2022-12-30',
+        vote_average: 7.6,
+        genres: [{ id: 18, name: 'Drama' }, { id: 10749, name: 'Romance' }],
+        poster_path: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80',
+        overview: 'A former cricketer dealing with addiction and lost love finds hope and redemption through marriage.'
+      },
+      {
+        id: 33719,
+        title: 'Harishchandrachi Factory',
+        year: '2009',
+        release_date: '2009-10-30',
+        vote_average: 8.4,
+        genres: [{ id: 36, name: 'Biography' }, { id: 35, name: 'Comedy' }],
+        poster_path: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
+        overview: 'The inspiring story of Dadasaheb Phalke struggle and perseverance to make India first motion picture.'
+      }
+    ]
   }
 };
 
-// List of all 8 category keys in order
+// List of all category keys in order
 const CATEGORY_KEYS = [
+  'hindi-movies',
+  'tamil-movies',
+  'marathi-movies',
   'bollywood',
   'hollywood',
-  'hindi-movies',
-  'english-movies',
   'south-indian',
   'web-series',
   'trending',
@@ -783,7 +928,14 @@ export function initCategoryPage() {
       totalCountBadge.textContent = `${categoryInfo.title} (${movies.length})`;
     }
 
-    // Render Grid Cards
+    // 1. Render Featured Movie Banner
+    const bannerMount = document.querySelector('#category-banner-mount');
+    if (bannerMount && categoryInfo.movies.length > 0) {
+      const featuredMovie = movies.length > 0 ? movies[0] : categoryInfo.movies[0];
+      renderFeaturedBanner(bannerMount, featuredMovie, categoryInfo);
+    }
+
+    // 2. Render Grid Cards
     gridMount.innerHTML = '';
 
     if (movies.length === 0) {
@@ -817,5 +969,109 @@ export function initCategoryPage() {
         gridMount.appendChild(card);
       }
     });
+  }
+
+  // --------------------------------------------------------------------------
+  // Featured Movie Banner Renderer
+  // --------------------------------------------------------------------------
+  function renderFeaturedBanner(container, movie, categoryInfo) {
+    const title = movie.title || 'Featured Movie';
+    const year = movie.year || (movie.release_date ? movie.release_date.split('-')[0] : '2023');
+    const rating = movie.vote_average ? movie.vote_average.toFixed(1) : '8.0';
+    const posterUrl = getImageUrl(movie.poster_path, CONFIG.IMAGE_SIZES.POSTER_LARGE);
+    const backdropUrl = getBackdropUrl(movie.backdrop_path || movie.poster_path, CONFIG.IMAGE_SIZES.BACKDROP_MEDIUM);
+    const overview = movie.overview || 'Explore this acclaimed cinema title on CineSphere with high-definition trailers, cast insights, and ratings.';
+
+    const genresList = (movie.genres || []).map(g => `<span class="category-banner-genre-pill">${g.name || g}</span>`).join('');
+
+    container.innerHTML = `
+      <div class="category-banner-backdrop" style="background-image: url('${backdropUrl}');"></div>
+      <div class="category-banner-overlay"></div>
+
+      <div class="category-banner-container">
+        <div class="category-banner-content">
+          <div class="category-banner-badge-group">
+            <span class="category-banner-tag">${categoryInfo.icon} Featured ${categoryInfo.title}</span>
+            <span class="category-banner-rating">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              ${rating}
+            </span>
+            <span class="category-banner-year">${year}</span>
+          </div>
+
+          <h2 class="category-banner-title">${title}</h2>
+
+          ${genresList ? `<div class="category-banner-genres">${genresList}</div>` : ''}
+
+          <p class="category-banner-overview">${overview}</p>
+
+          <div class="category-banner-actions">
+            <button type="button" class="btn btn-primary" id="banner-play-trailer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              <span>Watch Trailer</span>
+            </button>
+
+            <a href="movie.html?id=${movie.id}" class="btn btn-secondary" id="banner-more-details">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              <span>Details & Cast</span>
+            </a>
+
+            <button type="button" class="btn btn-glass btn-icon" id="banner-watchlist-btn" title="Add to Watchlist" aria-label="Add to Watchlist">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="category-banner-poster-col">
+          <div class="category-banner-poster-card">
+            <img 
+              src="${posterUrl}" 
+              alt="${title} Poster" 
+              class="category-banner-poster-img"
+              onerror="this.onerror=null;this.src='${CONFIG.FALLBACK_POSTER}'"
+            />
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Attach Event Handlers
+    const trailerBtn = container.querySelector('#banner-play-trailer');
+    if (trailerBtn) {
+      trailerBtn.addEventListener('click', () => {
+        modal.openTrailer(movie.id, title);
+      });
+    }
+
+    const watchBtn = container.querySelector('#banner-watchlist-btn');
+    if (watchBtn) {
+      watchlistService.isInWatchlist(movie.id).then(inWatch => {
+        if (inWatch) {
+          watchBtn.classList.add('active');
+          const svg = watchBtn.querySelector('svg');
+          if (svg) svg.setAttribute('fill', 'currentColor');
+        }
+      });
+
+      watchBtn.addEventListener('click', async () => {
+        const added = await watchlistService.toggleWatchlist(movie);
+        watchBtn.classList.toggle('active', added);
+        const svg = watchBtn.querySelector('svg');
+        if (svg) svg.setAttribute('fill', added ? 'currentColor' : 'none');
+        if (added) {
+          toast.success(`"${title}" added to Watchlist`);
+        } else {
+          toast.info(`"${title}" removed from Watchlist`);
+        }
+      });
+    }
   }
 }

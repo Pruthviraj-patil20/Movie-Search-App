@@ -3,6 +3,7 @@
  * Manages Hero, Trending (Day/Week), Popular, Top Rated, Upcoming, and Genre discovery
  */
 
+import { CATEGORY_DATA } from './category.js';
 import { getMovieGenres } from '../api/genres.js';
 import {
   getNowPlayingMovies,
@@ -39,6 +40,9 @@ export async function initHomePage() {
   const trendingMount = document.querySelector('#trending-carousel-mount');
   const popularMount = document.querySelector('#popular-carousel-mount');
   const topRatedMount = document.querySelector('#top-rated-carousel-mount');
+  const hindiMount = document.querySelector('#hindi-carousel-mount');
+  const tamilMount = document.querySelector('#tamil-carousel-mount');
+  const marathiMount = document.querySelector('#marathi-carousel-mount');
   const upcomingMount = document.querySelector('#upcoming-carousel-mount');
   const genresMount = document.querySelector('#genres-grid-mount');
 
@@ -47,6 +51,9 @@ export async function initHomePage() {
   if (trendingMount) trendingMount.innerHTML = skeleton.carousel();
   if (popularMount) popularMount.innerHTML = skeleton.carousel();
   if (topRatedMount) topRatedMount.innerHTML = skeleton.carousel();
+  if (hindiMount) hindiMount.innerHTML = skeleton.carousel();
+  if (tamilMount) tamilMount.innerHTML = skeleton.carousel();
+  if (marathiMount) marathiMount.innerHTML = skeleton.carousel();
   if (upcomingMount) upcomingMount.innerHTML = skeleton.carousel();
 
   loader.start();
@@ -110,7 +117,34 @@ export async function initHomePage() {
       }
     });
 
-    // 5. Fetch Upcoming Releases
+    // 5. Render Hindi Movies Section
+    if (hindiMount && CATEGORY_DATA['hindi-movies']) {
+      const hindiMovies = CATEGORY_DATA['hindi-movies'].movies;
+      hindiMount.innerHTML = '';
+      hindiMount.appendChild(
+        createMovieCarousel(hindiMovies, { title: 'Hindi Movies' })
+      );
+    }
+
+    // 6. Render Tamil Movies Section
+    if (tamilMount && CATEGORY_DATA['tamil-movies']) {
+      const tamilMovies = CATEGORY_DATA['tamil-movies'].movies;
+      tamilMount.innerHTML = '';
+      tamilMount.appendChild(
+        createMovieCarousel(tamilMovies, { title: 'Tamil Movies' })
+      );
+    }
+
+    // 7. Render Marathi Movies Section
+    if (marathiMount && CATEGORY_DATA['marathi-movies']) {
+      const marathiMovies = CATEGORY_DATA['marathi-movies'].movies;
+      marathiMount.innerHTML = '';
+      marathiMount.appendChild(
+        createMovieCarousel(marathiMovies, { title: 'Marathi Movies' })
+      );
+    }
+
+    // 8. Fetch Upcoming Releases
     getUpcomingMovies(1).then(data => {
       if (upcomingMount) {
         upcomingMount.innerHTML = '';
@@ -120,7 +154,7 @@ export async function initHomePage() {
       }
     });
 
-    // 6. Fetch & Render Genre Discovery Cards
+    // 9. Fetch & Render Genre Discovery Cards
     if (genresMount) {
       getMovieGenres().then(genres => {
         genresMount.innerHTML = '';

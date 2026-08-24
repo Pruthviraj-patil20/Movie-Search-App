@@ -912,6 +912,180 @@ export const CONFIG = {
       }
     },
 
+    /* --- MARATHI MOVIES --- */
+    {
+      id: 395990,
+      title: "Sairat",
+      overview: "In rural Maharashtra, a fisherman's passionate son falls in love with the daughter of a powerful, wealthy politician, defying social barriers.",
+      poster_path: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1920&q=80",
+      vote_average: 8.3,
+      vote_count: 14000,
+      release_date: "2016-04-29",
+      genre_ids: [18, 10749],
+      runtime: 174,
+      status: "Released",
+      tagline: "Love without boundaries.",
+      budget: 40000000,
+      revenue: 1100000000,
+      trailer_key: "Sairat_Trailer",
+      production_companies: [{ name: "Zee Studios" }, { name: "Aatpat Production" }],
+      credits: {
+        cast: [
+          { name: "Rinku Rajguru", character: "Archana Patil (Archie)", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Akash Thosar", character: "Prashant Kale (Parshya)", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 376288,
+      title: "Natsamrat",
+      overview: "A retired Shakespearean stage actor and his devoted wife face rejection, harsh realities, and heartbreak from their grown children.",
+      poster_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=80",
+      vote_average: 8.9,
+      vote_count: 12000,
+      release_date: "2016-01-01",
+      genre_ids: [18],
+      runtime: 166,
+      status: "Released",
+      tagline: "To be or not to be, that is the question.",
+      budget: 90000000,
+      revenue: 500000000,
+      trailer_key: "Natsamrat_Trailer",
+      production_companies: [{ name: "Fincraft Media & Entertainment" }],
+      credits: {
+        cast: [
+          { name: "Nana Patekar", character: "Ganpat Belwalkar", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Medha Manjrekar", character: "Kaveri Belwalkar", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 367683,
+      title: "Katyar Kaljat Ghusali",
+      overview: "A clash of artistic egos and classical ragas erupts between two royal court singers in a duel for prestige.",
+      poster_path: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?auto=format&fit=crop&w=1920&q=80",
+      vote_average: 8.5,
+      vote_count: 9500,
+      release_date: "2015-11-12",
+      genre_ids: [18, 10402],
+      runtime: 162,
+      status: "Released",
+      tagline: "Music that pierces the soul.",
+      budget: 80000000,
+      revenue: 400000000,
+      trailer_key: "Katyar_Trailer",
+      production_companies: [{ name: "Zee Studios" }],
+      credits: {
+        cast: [
+          { name: "Sachin Pilgaonkar", character: "Khansaheb Aftab Hussain Bareliwale", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Subodh Bhave", character: "Sadashiv", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 1148281,
+      title: "Baipan Bhaari Deva",
+      overview: "Six estranged sisters reunite to participate in a traditional Mangala Gaur dance competition, rediscovering their sisterhood.",
+      poster_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1920&q=80",
+      vote_average: 8.0,
+      vote_count: 11000,
+      release_date: "2023-06-30",
+      genre_ids: [35, 18],
+      runtime: 140,
+      status: "Released",
+      tagline: "Celebrate the spirit of womanhood.",
+      budget: 50000000,
+      revenue: 900000000,
+      trailer_key: "Baipan_Trailer",
+      production_companies: [{ name: "Jio Studios" }],
+      credits: {
+        cast: [
+          { name: "Rohini Hattangadi", character: "Jaya", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
+          { name: "Vandana Gupte", character: "Shashi", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+
+    /* --- TAMIL MOVIES --- */
+    {
+      id: 755566,
+      title: "Vikram",
+      overview: "A high-octane special black-ops squad led by Amar investigates a series of murders committed by a masked vigilante group.",
+      poster_path: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1920&q=80",
+      vote_average: 8.3,
+      vote_count: 22000,
+      release_date: "2022-06-03",
+      genre_ids: [28, 53, 80],
+      runtime: 175,
+      status: "Released",
+      tagline: "Once upon a time, there lived a ghost.",
+      budget: 1200000000,
+      revenue: 4200000000,
+      trailer_key: "Vikram_Tamil_Trailer",
+      production_companies: [{ name: "Raaj Kamal Films International" }],
+      credits: {
+        cast: [
+          { name: "Kamal Haasan", character: "Vikram / Karnan", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Vijay Sethupathi", character: "Santhanam", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Fahadh Faasil", character: "Amar", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 969492,
+      title: "Leo",
+      overview: "A calm animal rescuer and cafe owner in Himachal Pradesh becomes the target of ruthless gangsters who claim he is a feared kingpin.",
+      poster_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
+      vote_average: 7.8,
+      vote_count: 18000,
+      release_date: "2023-10-19",
+      genre_ids: [28, 80, 53],
+      runtime: 164,
+      status: "Released",
+      tagline: "Bloody Sweet.",
+      budget: 2500000000,
+      revenue: 6200000000,
+      trailer_key: "Leo_Trailer",
+      production_companies: [{ name: "Seven Screen Studio" }],
+      credits: {
+        cast: [
+          { name: "Thalapathy Vijay", character: "Parthiban / Leo Das", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Trisha Krishnan", character: "Sathya", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Sanjay Dutt", character: "Antony Das", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 987917,
+      title: "Jailer",
+      overview: "Muthuvel Pandian, a retired strict prison warden, comes out of retirement when an antique idol smuggling ring targets his family.",
+      poster_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+      backdrop_path: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=80",
+      vote_average: 7.7,
+      vote_count: 17000,
+      release_date: "2023-08-10",
+      genre_ids: [28, 80, 35],
+      runtime: 168,
+      status: "Released",
+      tagline: "Tiger ka hukum.",
+      budget: 2000000000,
+      revenue: 6500000000,
+      trailer_key: "Jailer_Trailer",
+      production_companies: [{ name: "Sun Pictures" }],
+      credits: {
+        cast: [
+          { name: "Rajinikanth", character: "Muthuvel Pandian", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Vinayakan", character: "Varman", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+
     /* --- INTERNATIONAL --- */
     {
       id: 13,
