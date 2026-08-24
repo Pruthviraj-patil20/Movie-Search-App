@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Movie Categories & Regions - CineSphere</title>
-  <meta name="description" content="Explore Bollywood, Hollywood, South Indian, and curated movie categories on CineSphere." />
+  <title>Movie Categories - CineSphere</title>
+  <meta name="description" content="Explore Bollywood, Hollywood, Hindi Movies, English Movies, South Indian Movies, Web Series, Trending, and Top Rated movies on CineSphere." />
   
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="alternate icon" href="favicon.ico" />
 
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/main.css" />
@@ -38,6 +40,7 @@
           <span class="brand-logo-text">Cine<span>Sphere</span></span>
         </a>
 
+        <!-- Desktop Navigation -->
         <nav class="navbar-nav" aria-label="Main Navigation">
           <a href="index.html" class="nav-link">Home</a>
           <a href="search.html" class="nav-link">Discover</a>
@@ -52,6 +55,7 @@
           </a>
         </nav>
 
+        <!-- Navbar Actions -->
         <div class="navbar-actions">
           <a href="search.html" class="navbar-search-btn" aria-label="Search movies">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -115,63 +119,74 @@
       </nav>
     </aside>
 
-    <!-- Main Content -->
+    <!-- Main Page Content -->
     <main class="container section">
-      <!-- Category Page Header -->
+      <!-- 1. Header Section -->
       <section class="category-page-header">
         <div class="category-page-header-content">
           <div class="category-badge-row">
-            <span class="category-tagline">Browse Collections</span>
-            <span class="category-total-badge" id="category-total-badge">All Categories</span>
+            <span class="category-tagline">Curated Catalogs</span>
+            <span class="category-total-badge" id="category-total-badge">8 Collections</span>
           </div>
-          <h1 class="category-page-title">Explore by Category & Region</h1>
+          <h1 class="category-page-title">Movie <span>Categories</span></h1>
           <p class="category-page-description">
-            Discover handpicked films across Bollywood, Hollywood, South Indian cinema, trending releases, top-rated classics, and specific genres.
+            Explore our curated collections of Bollywood, Hollywood, Hindi, English, South Indian cinema, binge-worthy Web Series, Trending hits, and all-time Top Rated classics.
           </p>
         </div>
       </section>
 
-      <!-- Category Filter Pills Navigation -->
-      <section class="category-filter-wrapper">
-        <div class="category-filter-nav" id="category-filter-nav">
-          <!-- Category buttons generated dynamically via js/pages/category.js -->
-        </div>
-      </section>
-
-      <!-- Category Toolbar (Search & Sort) -->
-      <section class="category-toolbar">
-        <div class="category-search-box">
-          <svg class="category-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      <!-- 2. Attractive Category Cards Grid (8 Cards) -->
+      <section class="category-cards-section">
+        <div class="section-subheading">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
           </svg>
-          <input 
-            type="search" 
-            class="category-search-input" 
-            id="category-search-input" 
-            placeholder="Filter within category..."
-            aria-label="Filter movies within category"
-          />
+          Select a Category
         </div>
-
-        <div class="category-controls-right">
-          <select class="category-sort-select" id="category-sort-select" aria-label="Sort movies by">
-            <option value="popular">Most Popular</option>
-            <option value="rating.desc">Highest Rated ⭐</option>
-            <option value="release.desc">Newest First</option>
-            <option value="release.asc">Oldest First</option>
-            <option value="title.asc">Title (A - Z)</option>
-          </select>
+        <div class="category-cards-grid" id="category-cards-grid">
+          <!-- 8 Category Cards generated dynamically via JavaScript -->
         </div>
       </section>
 
-      <!-- Status row -->
-      <div class="category-status-row">
-        <div id="category-status-info">Loading movies...</div>
-      </div>
+      <!-- 3. Category Movies Display Section -->
+      <section class="category-movies-section">
+        <!-- Toolbar (Dynamic Title, Search & Sort) -->
+        <div class="category-toolbar">
+          <div class="category-active-heading-group">
+            <h2 class="category-active-title" id="category-active-title">Bollywood</h2>
+            <span class="category-active-badge" id="category-active-badge">8 Titles</span>
+          </div>
 
-      <!-- Movies Grid Mount -->
-      <section class="category-movies-grid" id="category-movies-grid">
-        <!-- Movie Cards rendered here -->
+          <div class="category-toolbar-controls">
+            <div class="category-search-box">
+              <svg class="category-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input 
+                type="search" 
+                class="category-search-input" 
+                id="category-search-input" 
+                placeholder="Filter by title..."
+                aria-label="Filter movies within active category"
+              />
+            </div>
+
+            <select class="category-sort-select" id="category-sort-select" aria-label="Sort movies by">
+              <option value="popular">Most Popular</option>
+              <option value="rating.desc">Highest Rated ⭐</option>
+              <option value="release.desc">Newest First</option>
+              <option value="release.asc">Oldest First</option>
+              <option value="title.asc">Title (A - Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Responsive Movies Grid Mount -->
+        <div class="movies-grid-container">
+          <div class="category-movies-grid" id="category-movies-grid">
+            <!-- Dynamic Movie Cards rendered here -->
+          </div>
+        </div>
       </section>
     </main>
 
