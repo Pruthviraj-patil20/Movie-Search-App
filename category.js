@@ -7,9 +7,15 @@ import { themeService } from './js/services/themeService.js';
 import { initNavbar } from './js/components/navbar.js';
 import { authService } from './js/services/authService.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+function initCategory() {
   themeService.initTheme();
   authService.init();
   initNavbar();
   initCategoryPage();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCategory);
+} else {
+  initCategory();
+}

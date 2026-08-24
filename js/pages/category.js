@@ -1053,16 +1053,15 @@ export function initCategoryPage() {
 
     const watchBtn = container.querySelector('#banner-watchlist-btn');
     if (watchBtn) {
-      watchlistService.isInWatchlist(movie.id).then(inWatch => {
-        if (inWatch) {
-          watchBtn.classList.add('active');
-          const svg = watchBtn.querySelector('svg');
-          if (svg) svg.setAttribute('fill', 'currentColor');
-        }
-      });
+      const inWatch = Boolean(watchlistService.isInWatchlist(movie.id));
+      if (inWatch) {
+        watchBtn.classList.add('active');
+        const svg = watchBtn.querySelector('svg');
+        if (svg) svg.setAttribute('fill', 'currentColor');
+      }
 
-      watchBtn.addEventListener('click', async () => {
-        const added = await watchlistService.toggleWatchlist(movie);
+      watchBtn.addEventListener('click', () => {
+        const added = watchlistService.toggleWatchlist(movie);
         watchBtn.classList.toggle('active', added);
         const svg = watchBtn.querySelector('svg');
         if (svg) svg.setAttribute('fill', added ? 'currentColor' : 'none');
