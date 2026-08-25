@@ -5,12 +5,20 @@
 import { CONFIG } from '../config.js';
 
 /**
- * Construct full TMDB image URL with fallback
+ * Construct full TMDB or local image URL with fallback
  */
 export function getImageUrl(path, size = CONFIG.IMAGE_SIZES.POSTER_MEDIUM, fallback = CONFIG.FALLBACK_POSTER) {
   if (!path) return fallback;
-  if (path.startsWith('http')) return path;
-  return `${CONFIG.IMAGE_BASE_URL}${size}${path}`;
+  if (typeof path !== 'string') return fallback;
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:') || path.startsWith('blob:')) {
+    return path;
+  }
+  // Local project assets in public directory (e.g. images/bollywood/...)
+  if (path.startsWith('images/') || path.startsWith('/images/') || path.startsWith('./images/') || path.startsWith('assets/') || path.startsWith('/assets/')) {
+    return path.startsWith('/') ? path : `/${path.replace(/^\.\//, '')}`;
+  }
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  return `${CONFIG.IMAGE_BASE_URL}${size}${cleanPath}`;
 }
 
 /**
@@ -18,8 +26,16 @@ export function getImageUrl(path, size = CONFIG.IMAGE_SIZES.POSTER_MEDIUM, fallb
  */
 export function getBackdropUrl(path, size = CONFIG.IMAGE_SIZES.BACKDROP_MEDIUM, fallback = CONFIG.FALLBACK_BACKDROP) {
   if (!path) return fallback;
-  if (path.startsWith('http')) return path;
-  return `${CONFIG.IMAGE_BASE_URL}${size}${path}`;
+  if (typeof path !== 'string') return fallback;
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:') || path.startsWith('blob:')) {
+    return path;
+  }
+  // Local project assets in public directory (e.g. images/bollywood/...)
+  if (path.startsWith('images/') || path.startsWith('/images/') || path.startsWith('./images/') || path.startsWith('assets/') || path.startsWith('/assets/')) {
+    return path.startsWith('/') ? path : `/${path.replace(/^\.\//, '')}`;
+  }
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  return `${CONFIG.IMAGE_BASE_URL}${size}${cleanPath}`;
 }
 
 /**

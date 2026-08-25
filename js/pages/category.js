@@ -283,7 +283,7 @@ export const CATEGORY_DATA = {
         vote_average: 8.4,
         genres: [{ id: 18, name: 'Drama' }, { id: 10751, name: 'Family' }],
         poster_path: 'images/bollywood/tzp_poster.jpg',
-        backdrop_path: 'images/bollywood/3idiots_banner.jpg',
+        backdrop_path: 'images/bollywood/tzp_banner.jpg',
         overview: 'An unconventional art teacher helps an eight-year-old boy with dyslexia uncover his true potential and inner spark.'
       },
       {
@@ -294,7 +294,7 @@ export const CATEGORY_DATA = {
         vote_average: 8.2,
         genres: [{ id: 53, name: 'Thriller' }, { id: 35, name: 'Comedy' }],
         poster_path: 'images/bollywood/andhadhun_poster.jpg',
-        backdrop_path: 'images/bollywood/pk_banner.jpg',
+        backdrop_path: 'images/bollywood/andhadhun_banner.jpg',
         overview: 'A series of mysterious events unfold in the life of a blind pianist who must report a murder he never saw.'
       },
       {
@@ -327,7 +327,7 @@ export const CATEGORY_DATA = {
         vote_average: 8.2,
         genres: [{ id: 28, name: 'Action' }, { id: 80, name: 'Crime' }, { id: 18, name: 'Drama' }],
         poster_path: 'images/bollywood/gow_poster.jpg',
-        backdrop_path: 'images/bollywood/sholay_banner.jpg',
+        backdrop_path: 'images/bollywood/gow_banner.jpg',
         overview: 'A generational blood feud between three crime families erupts over coal mining dominance and political power in Wasseypur.'
       },
       {
@@ -338,7 +338,7 @@ export const CATEGORY_DATA = {
         vote_average: 8.2,
         genres: [{ id: 18, name: 'Drama' }],
         poster_path: 'images/bollywood/swades_poster.jpg',
-        backdrop_path: 'images/bollywood/lagaan_banner.jpg',
+        backdrop_path: 'images/bollywood/swades_banner.jpg',
         overview: 'A successful NASA scientist returns to an Indian village to find his childhood nanny and rediscovers his roots.'
       },
       {
@@ -349,7 +349,7 @@ export const CATEGORY_DATA = {
         vote_average: 7.8,
         genres: [{ id: 18, name: 'Drama' }, { id: 10749, name: 'Romance' }],
         poster_path: 'images/bollywood/devdas_poster.jpg',
-        backdrop_path: 'images/bollywood/ddlj_banner.jpg',
+        backdrop_path: 'images/bollywood/devdas_banner.jpg',
         overview: 'After his wealthy family prohibits him from marrying his childhood love Paro, Devdas descends into alcohol and despair.'
       }
     ]

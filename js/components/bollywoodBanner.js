@@ -103,19 +103,19 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="5 3 19 12 5 21 5 3"/>
                 </svg>
-                Watch Trailer
+                <span>Watch Trailer</span>
               </button>
 
-              <a href="movie.html?id=${movie.id}" class="btn btn-glass" id="bollywood-banner-details">
+              <a href="movie.html?id=${movie.id}" class="bollywood-btn-details" id="bollywood-banner-details">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
                 </svg>
-                View Details
+                <span>View Details</span>
               </a>
 
               <button 
                 type="button" 
-                class="btn btn-secondary ${isWatch ? 'active' : ''}" 
+                class="bollywood-btn-watchlist ${isWatch ? 'active' : ''}" 
                 id="bollywood-banner-watchlist"
                 title="${isWatch ? 'In Watchlist' : 'Add to Watchlist'}"
               >
