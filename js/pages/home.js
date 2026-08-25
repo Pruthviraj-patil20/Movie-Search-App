@@ -14,6 +14,7 @@ import {
 } from '../api/movies.js';
 import { createMovieCarousel } from '../components/carousel.js';
 import { renderHeroBanner } from '../components/hero.js';
+import { renderBollywoodBanner } from '../components/bollywoodBanner.js';
 import { loader } from '../components/loader.js';
 import { skeleton } from '../components/skeleton.js';
 
@@ -40,6 +41,7 @@ export async function initHomePage() {
   const trendingMount = document.querySelector('#trending-carousel-mount');
   const popularMount = document.querySelector('#popular-carousel-mount');
   const topRatedMount = document.querySelector('#top-rated-carousel-mount');
+  const hindiBannerMount = document.querySelector('#hindi-banner-mount');
   const hindiMount = document.querySelector('#hindi-carousel-mount');
   const tamilMount = document.querySelector('#tamil-carousel-mount');
   const marathiMount = document.querySelector('#marathi-carousel-mount');
@@ -51,6 +53,7 @@ export async function initHomePage() {
   if (trendingMount) trendingMount.innerHTML = skeleton.carousel();
   if (popularMount) popularMount.innerHTML = skeleton.carousel();
   if (topRatedMount) topRatedMount.innerHTML = skeleton.carousel();
+  if (hindiBannerMount) hindiBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
   if (hindiMount) hindiMount.innerHTML = skeleton.carousel();
   if (tamilMount) tamilMount.innerHTML = skeleton.carousel();
   if (marathiMount) marathiMount.innerHTML = skeleton.carousel();
@@ -117,13 +120,27 @@ export async function initHomePage() {
       }
     });
 
-    // 5. Render Hindi Movies Section
-    if (hindiMount && CATEGORY_DATA['hindi-movies']) {
+    // 5. Render Bollywood & Hindi Movies Banner + Carousel
+    if (CATEGORY_DATA['hindi-movies']) {
       const hindiMovies = CATEGORY_DATA['hindi-movies'].movies;
-      hindiMount.innerHTML = '';
-      hindiMount.appendChild(
-        createMovieCarousel(hindiMovies, { title: 'Hindi Movies' })
-      );
+      
+      // Render Actual Featured Movie Banner for Bollywood & Classics
+      let bannerController = null;
+      if (hindiBannerMount) {
+        hindiBannerMount.innerHTML = '';
+        bannerController = renderBollywoodBanner(hindiBannerMount, hindiMovies, {
+          tagline: '🇮🇳 Bollywood & Classics Spotlight',
+          autoplayInterval: 8000
+        });
+      }
+
+      // Render Carousel
+      if (hindiMount) {
+        hindiMount.innerHTML = '';
+        hindiMount.appendChild(
+          createMovieCarousel(hindiMovies, { title: 'Hindi Blockbusters & Masterpieces' })
+        );
+      }
     }
 
     // 6. Render Tamil Movies Section

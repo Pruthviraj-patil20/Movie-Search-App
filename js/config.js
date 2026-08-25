@@ -559,101 +559,204 @@ export const CONFIG = {
       }
     },
 
-    /* --- BOLLYWOOD --- */
+    /* --- BOLLYWOOD & CLASSICS --- */
+    {
+      id: 111101,
+      title: "Sholay",
+      overview: "After his family is murdered by a ruthless bandit, a former police officer enlists the help of two convicts to capture him.",
+      poster_path: "images/bollywood/sholay_poster.jpg",
+      backdrop_path: "images/bollywood/sholay_banner.jpg",
+      vote_average: 8.3,
+      vote_count: 35000,
+      release_date: "1975-08-15",
+      genre_ids: [28, 12, 18],
+      runtime: 204,
+      status: "Released",
+      tagline: "The Greatest Star Cast Ever Assembled! The Greatest Story Ever Told!",
+      budget: 30000000,
+      revenue: 500000000,
+      trailer_key: "qL3XQk7w7H8",
+      production_companies: [{ name: "Sippy Films" }],
+      credits: {
+        cast: [
+          { name: "Amitabh Bachchan", character: "Jai", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Dharmendra", character: "Veeru", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Amjad Khan", character: "Gabbar Singh", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Hema Malini", character: "Basanti", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 20453,
+      title: "3 Idiots",
+      overview: "Two friends search for their long-lost companion Rancho while reminiscing about their innovative student days at an elite engineering institute.",
+      poster_path: "images/bollywood/3idiots_poster.jpg",
+      backdrop_path: "images/bollywood/3idiots_banner.jpg",
+      vote_average: 8.5,
+      vote_count: 42000,
+      release_date: "2009-12-25",
+      genre_ids: [35, 18],
+      runtime: 170,
+      status: "Released",
+      tagline: "Don't chase success, chase excellence, and success will follow.",
+      budget: 55000000,
+      revenue: 4000000000,
+      trailer_key: "xvszmNXdM4w",
+      production_companies: [{ name: "Vinod Chopra Films" }],
+      credits: {
+        cast: [
+          { name: "Aamir Khan", character: "Rancho", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "R. Madhavan", character: "Farhan", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Sharman Joshi", character: "Raju", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Kareena Kapoor", character: "Pia", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
     {
       id: 975069,
       title: "Dangal",
-      overview: "Mahavir Singh Phogat and his two daughters struggle and make their way to the wrestling arena where they train and win gold medals at the Commonwealth Games and the Asian Games.",
-      poster_path: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80",
-      backdrop_path: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1920&q=80",
-      vote_average: 8.1,
-      vote_count: 21000,
+      overview: "Mahavir Singh Phogat, a former wrestler, decides to fulfill his dream of winning a gold medal for India by training his daughters Geeta and Babita for the Commonwealth Games.",
+      poster_path: "images/bollywood/dangal_poster.jpg",
+      backdrop_path: "images/bollywood/dangal_banner.jpg",
+      vote_average: 8.4,
+      vote_count: 28000,
       release_date: "2016-12-23",
       genre_ids: [28, 18, 36],
-      runtime: 180,
+      runtime: 161,
       status: "Released",
-      tagline: "Champions are made, not born.",
-      budget: 250000000,
-      revenue: 2100000000,
+      tagline: "Mhari chhoriyan chhoron se kam hain ke?",
+      budget: 70000000,
+      revenue: 20000000000,
       trailer_key: "x_7YlGv9u1g",
-      production_companies: [{ name: "Walt Disney Pictures India" }, { name: "Upendra Bhagat Productions" }],
+      production_companies: [{ name: "Aamir Khan Productions" }, { name: "Walt Disney Pictures" }],
       credits: {
         cast: [
           { name: "Aamir Khan", character: "Mahavir Singh Phogat", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Fatima Sana Shaikh", character: "Baby Sakshi", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Sanya Malhotra", character: "Baby Geeta", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+          { name: "Fatima Sana Shaikh", character: "Geeta Phogat", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Sanya Malhotra", character: "Babita Kumari", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 111102,
+      title: "Lagaan: Once Upon a Time in India",
+      overview: "In 1893 Victorian India, the people of a small village stake their future on a high-stakes cricket match against British officers to escape oppressive land taxes.",
+      poster_path: "images/bollywood/lagaan_poster.jpg",
+      backdrop_path: "images/bollywood/lagaan_banner.jpg",
+      vote_average: 8.1,
+      vote_count: 22000,
+      release_date: "2001-06-15",
+      genre_ids: [18, 12],
+      runtime: 224,
+      status: "Released",
+      tagline: "A film by Ashutosh Gowariker.",
+      budget: 25000000,
+      revenue: 659000000,
+      trailer_key: "oSIGJ347Jsw",
+      production_companies: [{ name: "Aamir Khan Productions" }],
+      credits: {
+        cast: [
+          { name: "Aamir Khan", character: "Bhuvan", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Gracy Singh", character: "Gauri", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 111107,
+      title: "Dilwale Dulhania Le Jayenge",
+      overview: "Raj and Simran fall in love during a vacation through Europe. To marry Simran, Raj travels to Punjab to win over her conservative father before her arranged marriage.",
+      poster_path: "images/bollywood/ddlj_poster.jpg",
+      backdrop_path: "images/bollywood/ddlj_banner.jpg",
+      vote_average: 8.6,
+      vote_count: 31000,
+      release_date: "1995-10-20",
+      genre_ids: [10749, 18, 35],
+      runtime: 189,
+      status: "Released",
+      tagline: "Come... fall in love all over again.",
+      budget: 40000000,
+      revenue: 2000000000,
+      trailer_key: "c25GKl5VNeY",
+      production_companies: [{ name: "Yash Raj Films" }],
+      credits: {
+        cast: [
+          { name: "Shah Rukh Khan", character: "Raj Malhotra", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Kajol", character: "Simran Singh", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 872906,
+      title: "Jawan",
+      overview: "A prison warden recruits inmates to commit outrageous acts of vigilante justice that expose deep-seated corruption across the nation.",
+      poster_path: "images/bollywood/jawan_poster.jpg",
+      backdrop_path: "images/bollywood/jawan_banner.jpg",
+      vote_average: 7.9,
+      vote_count: 24000,
+      release_date: "2023-09-07",
+      genre_ids: [28, 53],
+      runtime: 169,
+      status: "Released",
+      tagline: "Ready or Not, here he comes.",
+      budget: 3000000000,
+      revenue: 11500000000,
+      trailer_key: "MWOlnZSnXWE",
+      production_companies: [{ name: "Red Chillies Entertainment" }],
+      credits: {
+        cast: [
+          { name: "Shah Rukh Khan", character: "Vikram Rathore / Azad", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Nayanthara", character: "Narmada Rai", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Vijay Sethupathi", character: "Kalee Gaikwad", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
     {
       id: 346428,
       title: "Sanju",
-      overview: "The biography of Sanjay Dutt, one of the most successful actors of the Indian film industry.",
-      poster_path: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80",
-      backdrop_path: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=80",
+      overview: "The compelling biography of film star Sanjay Dutt, exploring his rise to stardom, battle with addiction, imprisonment, and redemption.",
+      poster_path: "images/bollywood/sanju_poster.jpg",
+      backdrop_path: "images/bollywood/dangal_banner.jpg",
       vote_average: 7.6,
       vote_count: 15000,
       release_date: "2018-06-29",
-      genre_ids: [18],
+      genre_ids: [18, 36],
       runtime: 157,
       status: "Released",
-      tagline: "The real story of a common man.",
-      budget: 65000000,
-      revenue: 520000000,
-      trailer_key: "1J76wN0TPI4",
-      production_companies: [{ name: "Vidhu Vinod Chopra Films" }],
+      tagline: "The real story of a star.",
+      budget: 1000000000,
+      revenue: 5860000000,
+      trailer_key: "rRr1QIoxnGQ",
+      production_companies: [{ name: "Rajkumar Hirani Films" }, { name: "Vinod Chopra Films" }],
       credits: {
         cast: [
           { name: "Ranbir Kapoor", character: "Sanjay Dutt", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Paresh Rawal", character: "Sunil Dutt", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Paresh Rawal", character: "Sunil Dutt", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Vicky Kaushal", character: "Kamlesh", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },
     {
-      id: 181498,
-      title: "Padmaavat",
-      overview: "Queen Padmavati, the wife of a royal king, is caught between the rivalry of two kings who want to possess her beauty and valour.",
-      poster_path: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
-      backdrop_path: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1920&q=80",
-      vote_average: 7.3,
-      vote_count: 12000,
-      release_date: "2018-01-25",
-      genre_ids: [18, 12, 28],
-      runtime: 153,
-      status: "Released",
-      tagline: "One queen. Many stories.",
-      budget: 180000000,
-      revenue: 580000000,
-      trailer_key: "X_5_BLtIj9k",
-      production_companies: [{ name: "Pen Studios" }],
-      credits: {
-        cast: [
-          { name: "Deepika Padukone", character: "Padmavati", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Ranveer Singh", character: "Alauddin Khilji", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
-        ]
-      }
-    },
-    {
-      id: 155,
+      id: 15501,
       title: "Bajrangi Bhaijaan",
-      overview: "A simpleton gets separated from his Pakistani friend at a young age and strives to reunite her with her family across the border.",
-      poster_path: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=600&q=80",
-      backdrop_path: "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?auto=format&fit=crop&w=1920&q=80",
+      overview: "A compassionate Indian man embarks on a heartfelt mission to reunite a mute Pakistani girl with her family across the border.",
+      poster_path: "images/bollywood/bajrangi_poster.jpg",
+      backdrop_path: "images/bollywood/dangal_banner.jpg",
       vote_average: 8.1,
       vote_count: 18000,
-      release_date: "2015-07-30",
-      genre_ids: [18, 14, 36],
-      runtime: 165,
+      release_date: "2015-07-17",
+      genre_ids: [18, 12, 35],
+      runtime: 163,
       status: "Released",
-      tagline: "An emotional journey for the whole family.",
-      budget: 55000000,
-      revenue: 960000000,
+      tagline: "Stories of compassion know no borders.",
+      budget: 900000000,
+      revenue: 9690000000,
       trailer_key: "4nwAra0mz_Q",
-      production_companies: [{ name: "Salman Khan Films" }],
+      production_companies: [{ name: "Salman Khan Films" }, { name: "Kabir Khan Films" }],
       credits: {
         cast: [
           { name: "Salman Khan", character: "Pawan Kumar Chaturvedi", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Harshaali Malhotra", character: "Munni", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+          { name: "Harshaali Malhotra", character: "Shahida (Munni)", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
+          { name: "Nawazuddin Siddiqui", character: "Chand Nawab", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
         ]
       }
     },

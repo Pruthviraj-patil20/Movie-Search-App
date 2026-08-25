@@ -34,7 +34,38 @@ const CURATED_TRAILERS = {
   385687: 'odM92ap8_c0',  // Fast X
   934433: 'bK6ldnjMO61',  // Scream VI
   677179: 'jPRz2qX4Jk4',  // Creed III
-  346698: 'pBk4NYhWNMM'   // Barbie
+  346698: 'pBk4NYhWNMM',  // Barbie
+  // Bollywood & Hindi Classics
+  975069: 'x_7YlGv9u1g',  // Dangal
+  360814: 'x_7YlGv9u1g',  // Dangal
+  20453: 'xvszmNXdM4w',   // 3 Idiots
+  10839: 'qL3XQk7w7H8',   // Sholay
+  111101: 'qL3XQk7w7H8',  // Sholay
+  1966: 'oSIGJ347Jsw',    // Lagaan
+  111102: 'oSIGJ347Jsw',  // Lagaan
+  19404: 'c25GKl5VNeY',   // Dilwale Dulhania Le Jayenge
+  111107: 'c25GKl5VNeY',  // DDLJ
+  872906: 'MWOlnZSnXWE',  // Jawan
+  864692: 'vqu4zBiMX4k',  // Pathaan
+  297222: 'SOXw33Oamyw',  // PK
+  111105: 'SOXw33Oamyw',  // PK
+  74534: 'FJrpcDgC3zU',   // ZNMD
+  111106: 'FJrpcDgC3zU',  // ZNMD
+  7508: 'tn_2Ie_jtNY',    // Taare Zameen Par
+  111103: 'tn_2Ie_jtNY',  // Taare Zameen Par
+  534780: '2iVYI99VGaw',  // Andhadhun
+  111104: '2iVYI99VGaw',  // Andhadhun
+  84175: 'j-KEb1ePffQ',   // Gangs of Wasseypur
+  111108: 'j-KEb1ePffQ',  // Gangs of Wasseypur
+  15478: 'NC7GY_ZfH7Y',   // Swades
+  111109: 'NC7GY_ZfH7Y',  // Swades
+  348892: '4nwAra0mz_Q',  // Bajrangi Bhaijaan
+  15501: '4nwAra0mz_Q',   // Bajrangi Bhaijaan
+  346428: 'rRr1QIoxnGQ',  // Sanju
+  181498: 'X_5_BLtZx6c',  // Padmaavat
+  493529: 'V5Z7ycT_6m0',  // Brahmastra
+  9819: 'b5pYgSg31Yg',    // Devdas
+  111110: 'b5pYgSg31Yg'   // Devdas
 };
 
 // Title-based fallback normalized lookup
@@ -61,7 +92,29 @@ const TITLE_TRAILERS = {
   'blade runner 2049': 'gCcx85zbxz4',
   'the batman': 'mqqft2x_Aa4',
   'john wick: chapter 4': 'qEVUtrk8_B4',
-  'barbie': 'pBk4NYhWNMM'
+  'barbie': 'pBk4NYhWNMM',
+  // Bollywood Titles
+  'dangal': 'x_7YlGv9u1g',
+  '3 idiots': 'xvszmNXdM4w',
+  'sholay': 'qL3XQk7w7H8',
+  'lagaan': 'oSIGJ347Jsw',
+  'lagaan: once upon a time in india': 'oSIGJ347Jsw',
+  'dilwale dulhania le jayenge': 'c25GKl5VNeY',
+  'ddlj': 'c25GKl5VNeY',
+  'jawan': 'MWOlnZSnXWE',
+  'pathaan': 'vqu4zBiMX4k',
+  'pk': 'SOXw33Oamyw',
+  'zindagi na milegi dobara': 'FJrpcDgC3zU',
+  'taare zameen par': 'tn_2Ie_jtNY',
+  'andhadhun': '2iVYI99VGaw',
+  'gangs of wasseypur': 'j-KEb1ePffQ',
+  'swades': 'NC7GY_ZfH7Y',
+  'bajrangi bhaijaan': '4nwAra0mz_Q',
+  'sanju': 'rRr1QIoxnGQ',
+  'padmaavat': 'X_5_BLtZx6c',
+  'brahmāstra: part one – shiva': 'V5Z7ycT_6m0',
+  'brahmastra': 'V5Z7ycT_6m0',
+  'devdas': 'b5pYgSg31Yg'
 };
 
 /**

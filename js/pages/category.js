@@ -30,7 +30,7 @@ export const CATEGORY_DATA = {
     title: 'Bollywood',
     subtitle: 'Blockbusters & Cinema',
     icon: '🇮🇳',
-    bg: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=800&q=80',
+    bg: 'images/bollywood/dangal_banner.jpg',
     movies: [
       {
         id: 975069,
@@ -38,39 +38,10 @@ export const CATEGORY_DATA = {
         year: '2016',
         release_date: '2016-12-23',
         vote_average: 8.4,
-        genres: [{ id: 28, name: 'Action' }, { id: 18, name: 'Drama' }],
-        poster_path: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80',
-        overview: 'Mahavir Singh Phogat and his two daughters struggle and make their way to wrestling glory at the Commonwealth Games.'
-      },
-      {
-        id: 346428,
-        title: 'Sanju',
-        year: '2018',
-        release_date: '2018-06-29',
-        vote_average: 7.6,
-        genres: [{ id: 18, name: 'Drama' }, { id: 36, name: 'Biography' }],
-        poster_path: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80',
-        overview: 'The compelling biography of film star Sanjay Dutt, his triumphs, controversies, and personal battles.'
-      },
-      {
-        id: 181498,
-        title: 'Padmaavat',
-        year: '2018',
-        release_date: '2018-01-25',
-        vote_average: 7.5,
-        genres: [{ id: 18, name: 'Drama' }, { id: 36, name: 'History' }],
-        poster_path: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
-        overview: 'Queen Padmavati of Mewar is caught in the midst of a fierce battle between two mighty rulers.'
-      },
-      {
-        id: 15501,
-        title: 'Bajrangi Bhaijaan',
-        year: '2015',
-        release_date: '2015-07-17',
-        vote_average: 8.1,
-        genres: [{ id: 18, name: 'Drama' }, { id: 12, name: 'Adventure' }],
-        poster_path: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=600&q=80',
-        overview: 'A compassionate Indian man embarks on a heartfelt mission to reunite a mute Pakistani girl with her family.'
+        genres: [{ id: 28, name: 'Action' }, { id: 18, name: 'Drama' }, { id: 36, name: 'Biography' }],
+        poster_path: 'images/bollywood/dangal_poster.jpg',
+        backdrop_path: 'images/bollywood/dangal_banner.jpg',
+        overview: 'Mahavir Singh Phogat, a former wrestler, decides to fulfill his dream of winning a gold medal for India by training his daughters Geeta and Babita for the Commonwealth Games.'
       },
       {
         id: 20453,
@@ -79,8 +50,9 @@ export const CATEGORY_DATA = {
         release_date: '2009-12-25',
         vote_average: 8.5,
         genres: [{ id: 35, name: 'Comedy' }, { id: 18, name: 'Drama' }],
-        poster_path: 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=600&q=80',
-        overview: 'Two college friends search for their long-lost companion while reminiscing about their innovative student days.'
+        poster_path: 'images/bollywood/3idiots_poster.jpg',
+        backdrop_path: 'images/bollywood/3idiots_banner.jpg',
+        overview: 'Two college friends search for their long-lost companion Rancho while reminiscing about their innovative student days at an elite engineering institute.'
       },
       {
         id: 872906,
@@ -89,8 +61,9 @@ export const CATEGORY_DATA = {
         release_date: '2023-09-07',
         vote_average: 7.9,
         genres: [{ id: 28, name: 'Action' }, { id: 53, name: 'Thriller' }],
-        poster_path: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80',
-        overview: 'A man driven by a personal vendetta seeks to right the wrongs in society while keeping a promise made years ago.'
+        poster_path: 'images/bollywood/jawan_poster.jpg',
+        backdrop_path: 'images/bollywood/jawan_banner.jpg',
+        overview: 'A prison warden recruits inmates to commit outrageous acts of vigilante justice that expose deep-seated corruption across the nation.'
       },
       {
         id: 864692,
@@ -99,8 +72,42 @@ export const CATEGORY_DATA = {
         release_date: '2023-01-25',
         vote_average: 7.4,
         genres: [{ id: 28, name: 'Action' }, { id: 12, name: 'Adventure' }],
-        poster_path: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80',
-        overview: 'An exiled RAW field operative teams up with an intelligence agent to take down a rogue private terror group.'
+        poster_path: 'images/bollywood/pathaan_poster.jpg',
+        backdrop_path: 'images/bollywood/jawan_banner.jpg',
+        overview: 'An exiled RAW field operative teams up with an intelligence agent to take down a rogue private terror group threatening India.'
+      },
+      {
+        id: 15501,
+        title: 'Bajrangi Bhaijaan',
+        year: '2015',
+        release_date: '2015-07-17',
+        vote_average: 8.1,
+        genres: [{ id: 18, name: 'Drama' }, { id: 12, name: 'Adventure' }, { id: 35, name: 'Comedy' }],
+        poster_path: 'images/bollywood/bajrangi_poster.jpg',
+        backdrop_path: 'images/bollywood/dangal_banner.jpg',
+        overview: 'A compassionate Indian man embarks on a heartfelt mission to reunite a mute Pakistani girl with her family across the border.'
+      },
+      {
+        id: 346428,
+        title: 'Sanju',
+        year: '2018',
+        release_date: '2018-06-29',
+        vote_average: 7.6,
+        genres: [{ id: 18, name: 'Drama' }, { id: 36, name: 'Biography' }],
+        poster_path: 'images/bollywood/sanju_poster.jpg',
+        backdrop_path: 'images/bollywood/dangal_banner.jpg',
+        overview: 'The compelling biography of film star Sanjay Dutt, exploring his rise to stardom, battle with addiction, imprisonment, and redemption.'
+      },
+      {
+        id: 181498,
+        title: 'Padmaavat',
+        year: '2018',
+        release_date: '2018-01-25',
+        vote_average: 7.5,
+        genres: [{ id: 18, name: 'Drama' }, { id: 36, name: 'History' }],
+        poster_path: 'images/bollywood/padmaavat_poster.jpg',
+        backdrop_path: 'images/bollywood/sholay_banner.jpg',
+        overview: 'In medieval India, Queen Padmavati of Mewar is caught in the midst of a fierce siege led by the ruthless Sultan Alauddin Khilji.'
       },
       {
         id: 493529,
@@ -109,8 +116,9 @@ export const CATEGORY_DATA = {
         release_date: '2022-09-09',
         vote_average: 7.2,
         genres: [{ id: 14, name: 'Fantasy' }, { id: 28, name: 'Action' }],
-        poster_path: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=80',
-        overview: 'A young man on the brink of falling in love finds his world turned upside down when he learns of his special power.'
+        poster_path: 'images/bollywood/brahmastra_poster.jpg',
+        backdrop_path: 'images/bollywood/jawan_banner.jpg',
+        overview: 'A young DJ awakens to his mystical connection with the element of fire and holds the key to awakening the greatest astral weapon of all.'
       }
     ]
   },
@@ -210,7 +218,7 @@ export const CATEGORY_DATA = {
     title: 'Hindi Movies',
     subtitle: 'Classic & Modern Cinema',
     icon: '🎭',
-    bg: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80',
+    bg: 'images/bollywood/sholay_banner.jpg',
     movies: [
       {
         id: 111101,
@@ -218,9 +226,21 @@ export const CATEGORY_DATA = {
         year: '1975',
         release_date: '1975-08-15',
         vote_average: 8.3,
-        genres: [{ id: 28, name: 'Action' }, { id: 12, name: 'Adventure' }],
-        poster_path: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80',
-        overview: 'After his family is murdered by a ruthless bandit, a former police officer enlists the help of two convicts to capture him.'
+        genres: [{ id: 28, name: 'Action' }, { id: 12, name: 'Adventure' }, { id: 18, name: 'Drama' }],
+        poster_path: 'images/bollywood/sholay_poster.jpg',
+        backdrop_path: 'images/bollywood/sholay_banner.jpg',
+        overview: 'After his family is murdered by the ruthless bandit Gabbar Singh, former police officer Thakur enlists the help of two charming outlaws, Veeru and Jai, to capture him alive.'
+      },
+      {
+        id: 20453,
+        title: '3 Idiots',
+        year: '2009',
+        release_date: '2009-12-25',
+        vote_average: 8.5,
+        genres: [{ id: 35, name: 'Comedy' }, { id: 18, name: 'Drama' }],
+        poster_path: 'images/bollywood/3idiots_poster.jpg',
+        backdrop_path: 'images/bollywood/3idiots_banner.jpg',
+        overview: 'Two college friends search for their long-lost companion Rancho while reminiscing about their innovative student days at an elite engineering institute.'
       },
       {
         id: 111102,
@@ -229,8 +249,31 @@ export const CATEGORY_DATA = {
         release_date: '2001-06-15',
         vote_average: 8.1,
         genres: [{ id: 18, name: 'Drama' }, { id: 12, name: 'Adventure' }],
-        poster_path: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80',
-        overview: 'Villagers in Victorian India stake their future on a game of cricket against ruthless British army officers.'
+        poster_path: 'images/bollywood/lagaan_poster.jpg',
+        backdrop_path: 'images/bollywood/lagaan_banner.jpg',
+        overview: 'In 1893 Victorian India, the people of a small village stake their future on an epic cricket match against British officers to escape oppressive land taxes.'
+      },
+      {
+        id: 111107,
+        title: 'Dilwale Dulhania Le Jayenge',
+        year: '1995',
+        release_date: '1995-10-20',
+        vote_average: 8.6,
+        genres: [{ id: 10749, name: 'Romance' }, { id: 18, name: 'Drama' }, { id: 35, name: 'Comedy' }],
+        poster_path: 'images/bollywood/ddlj_poster.jpg',
+        backdrop_path: 'images/bollywood/ddlj_banner.jpg',
+        overview: 'Raj and Simran fall in love on a trip through Europe. Raj then travels to Punjab to win over her traditional father before her arranged marriage.'
+      },
+      {
+        id: 975069,
+        title: 'Dangal',
+        year: '2016',
+        release_date: '2016-12-23',
+        vote_average: 8.4,
+        genres: [{ id: 28, name: 'Action' }, { id: 18, name: 'Drama' }, { id: 36, name: 'Biography' }],
+        poster_path: 'images/bollywood/dangal_poster.jpg',
+        backdrop_path: 'images/bollywood/dangal_banner.jpg',
+        overview: 'Mahavir Singh Phogat, a former wrestler, trains his daughters Geeta and Babita to become world-class champions against all social odds.'
       },
       {
         id: 111103,
@@ -239,7 +282,8 @@ export const CATEGORY_DATA = {
         release_date: '2007-12-21',
         vote_average: 8.4,
         genres: [{ id: 18, name: 'Drama' }, { id: 10751, name: 'Family' }],
-        poster_path: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+        poster_path: 'images/bollywood/tzp_poster.jpg',
+        backdrop_path: 'images/bollywood/3idiots_banner.jpg',
         overview: 'An unconventional art teacher helps an eight-year-old boy with dyslexia uncover his true potential and inner spark.'
       },
       {
@@ -249,7 +293,8 @@ export const CATEGORY_DATA = {
         release_date: '2018-10-05',
         vote_average: 8.2,
         genres: [{ id: 53, name: 'Thriller' }, { id: 35, name: 'Comedy' }],
-        poster_path: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
+        poster_path: 'images/bollywood/andhadhun_poster.jpg',
+        backdrop_path: 'images/bollywood/pk_banner.jpg',
         overview: 'A series of mysterious events unfold in the life of a blind pianist who must report a murder he never saw.'
       },
       {
@@ -258,9 +303,10 @@ export const CATEGORY_DATA = {
         year: '2014',
         release_date: '2014-12-19',
         vote_average: 8.1,
-        genres: [{ id: 35, name: 'Comedy' }, { id: 18, name: 'Drama' }],
-        poster_path: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80',
-        overview: 'An alien on Earth loses the device he can use to communicate with his spaceship and questions human beliefs.'
+        genres: [{ id: 35, name: 'Comedy' }, { id: 18, name: 'Drama' }, { id: 878, name: 'Sci-Fi' }],
+        poster_path: 'images/bollywood/pk_poster.jpg',
+        backdrop_path: 'images/bollywood/pk_banner.jpg',
+        overview: 'An alien stranded on Earth loses his communication remote and begins questioning religious dogmas and blind beliefs.'
       },
       {
         id: 111106,
@@ -268,9 +314,43 @@ export const CATEGORY_DATA = {
         year: '2011',
         release_date: '2011-07-15',
         vote_average: 8.2,
-        genres: [{ id: 35, name: 'Comedy' }, { id: 18, name: 'Drama' }],
-        poster_path: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80',
-        overview: 'Three friends embark on a three-week road trip in Spain, facing their deepest fears and discovering the joy of life.'
+        genres: [{ id: 35, name: 'Comedy' }, { id: 18, name: 'Drama' }, { id: 12, name: 'Adventure' }],
+        poster_path: 'images/bollywood/znmd_poster.jpg',
+        backdrop_path: 'images/bollywood/znmd_banner.jpg',
+        overview: 'Three childhood friends embark on a transformative road trip in Spain, facing fears and rediscovering true friendships.'
+      },
+      {
+        id: 111108,
+        title: 'Gangs of Wasseypur',
+        year: '2012',
+        release_date: '2012-06-22',
+        vote_average: 8.2,
+        genres: [{ id: 28, name: 'Action' }, { id: 80, name: 'Crime' }, { id: 18, name: 'Drama' }],
+        poster_path: 'images/bollywood/gow_poster.jpg',
+        backdrop_path: 'images/bollywood/sholay_banner.jpg',
+        overview: 'A generational blood feud between three crime families erupts over coal mining dominance and political power in Wasseypur.'
+      },
+      {
+        id: 111109,
+        title: 'Swades',
+        year: '2004',
+        release_date: '2004-12-17',
+        vote_average: 8.2,
+        genres: [{ id: 18, name: 'Drama' }],
+        poster_path: 'images/bollywood/swades_poster.jpg',
+        backdrop_path: 'images/bollywood/lagaan_banner.jpg',
+        overview: 'A successful NASA scientist returns to an Indian village to find his childhood nanny and rediscovers his roots.'
+      },
+      {
+        id: 111110,
+        title: 'Devdas',
+        year: '2002',
+        release_date: '2002-07-12',
+        vote_average: 7.8,
+        genres: [{ id: 18, name: 'Drama' }, { id: 10749, name: 'Romance' }],
+        poster_path: 'images/bollywood/devdas_poster.jpg',
+        backdrop_path: 'images/bollywood/ddlj_banner.jpg',
+        overview: 'After his wealthy family prohibits him from marrying his childhood love Paro, Devdas descends into alcohol and despair.'
       }
     ]
   },

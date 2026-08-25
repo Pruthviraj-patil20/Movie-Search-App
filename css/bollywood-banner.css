@@ -1,0 +1,355 @@
+/* ==========================================================================
+   CineSphere Bollywood & Classics Spotlight Banner Component
+   Theme: Luxurious Dark Cinematic with Indian Saffron & Ruby Accents
+   ========================================================================== */
+
+.bollywood-banner-wrapper {
+  position: relative;
+  min-height: 480px;
+  border-radius: var(--radius-2xl, 24px);
+  overflow: hidden;
+  margin-bottom: var(--space-8, 2rem);
+  border: 1px solid rgba(255, 184, 0, 0.25);
+  box-shadow: 
+    0 24px 60px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(229, 9, 20, 0.2),
+    0 0 20px rgba(255, 184, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--bg-secondary, #0D0F15);
+  transition: all 400ms ease;
+}
+
+.bollywood-banner-wrapper:hover {
+  border-color: rgba(255, 184, 0, 0.45);
+  box-shadow: 
+    0 28px 70px rgba(0, 0, 0, 0.85),
+    0 0 50px rgba(229, 9, 20, 0.3),
+    0 0 30px rgba(255, 184, 0, 0.25);
+}
+
+/* Background Backdrop with Animated Cross-fade & Ken-Burns Zoom */
+.bollywood-banner-backdrop {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  transition: transform 1400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 700ms ease;
+  transform: scale(1.02);
+  filter: brightness(0.65) saturate(1.25);
+}
+
+.bollywood-banner-wrapper:hover .bollywood-banner-backdrop {
+  transform: scale(1.06);
+}
+
+/* Cinematic Multi-Layered Lighting & Masking */
+.bollywood-banner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: 
+    linear-gradient(90deg, rgba(8, 9, 13, 0.98) 0%, rgba(8, 9, 13, 0.88) 42%, rgba(8, 9, 13, 0.45) 75%, rgba(8, 9, 13, 0.8) 100%),
+    linear-gradient(0deg, rgba(8, 9, 13, 0.98) 0%, rgba(8, 9, 13, 0.6) 20%, transparent 60%),
+    radial-gradient(circle at 85% 30%, rgba(229, 9, 20, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 15% 20%, rgba(255, 184, 0, 0.15) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+[data-theme="light"] .bollywood-banner-overlay {
+  background: 
+    linear-gradient(90deg, rgba(244, 246, 249, 0.98) 0%, rgba(244, 246, 249, 0.88) 42%, rgba(244, 246, 249, 0.45) 75%, rgba(244, 246, 249, 0.85) 100%),
+    linear-gradient(0deg, rgba(244, 246, 249, 0.95) 0%, transparent 50%);
+}
+
+/* Main Container Grid */
+.bollywood-banner-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: var(--space-8, 2.25rem) var(--space-10, 2.5rem);
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  align-items: center;
+  gap: var(--space-8, 2rem);
+}
+
+@media (max-width: 992px) {
+  .bollywood-banner-container {
+    grid-template-columns: 1fr;
+    padding: var(--space-6, 1.5rem);
+  }
+}
+
+/* Left Content Column */
+.bollywood-banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 0.85rem);
+  animation: bannerContentIn 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bannerContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Badges & Meta Tags */
+.bollywood-banner-badge-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2, 0.5rem);
+}
+
+.bollywood-banner-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #FF9933 0%, #E50914 60%, #990000 100%);
+  color: #FFFFFF;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 14px;
+  border-radius: var(--radius-full, 9999px);
+  box-shadow: 0 4px 15px rgba(255, 153, 51, 0.35);
+}
+
+.bollywood-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #FFFFFF;
+  animation: pulseDot 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.bollywood-banner-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(20, 22, 30, 0.8);
+  backdrop-filter: blur(10px);
+  color: #FFB800;
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 700;
+  border: 1px solid rgba(255, 184, 0, 0.35);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.bollywood-banner-year,
+.bollywood-banner-lang {
+  padding: 5px 12px;
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(20, 22, 30, 0.65);
+  color: var(--text-secondary, #A0A5B5);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 600;
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.1));
+}
+
+/* Movie Title */
+.bollywood-banner-title {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: var(--text-primary, #FFFFFF);
+  line-height: 1.12;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+}
+
+/* Genres Row */
+.bollywood-banner-genres {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bollywood-banner-genre-pill {
+  font-size: var(--font-size-xs, 0.75rem);
+  color: #FFD56B;
+  background: rgba(255, 184, 0, 0.12);
+  border: 1px solid rgba(255, 184, 0, 0.25);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm, 6px);
+  font-weight: 600;
+}
+
+/* Overview Synopsis */
+.bollywood-banner-overview {
+  font-size: var(--font-size-base, 1rem);
+  line-height: 1.6;
+  color: var(--text-secondary, #C8CDD8);
+  max-width: 620px;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Action Buttons */
+.bollywood-banner-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3, 0.75rem);
+  margin-top: var(--space-2, 0.5rem);
+}
+
+.bollywood-btn-play {
+  background: linear-gradient(135deg, #E50914 0%, #FF334B 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 20px rgba(229, 9, 20, 0.5) !important;
+  transition: transform 200ms ease, box-shadow 200ms ease !important;
+}
+
+.bollywood-btn-play:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 6px 25px rgba(229, 9, 20, 0.65) !important;
+}
+
+/* Right Poster Showcase */
+.bollywood-banner-poster-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+@media (max-width: 992px) {
+  .bollywood-banner-poster-col {
+    display: none;
+  }
+}
+
+.bollywood-banner-poster-card {
+  position: relative;
+  width: 220px;
+  border-radius: var(--radius-xl, 16px);
+  overflow: hidden;
+  box-shadow: 
+    0 20px 45px rgba(0, 0, 0, 0.9),
+    0 0 25px rgba(255, 184, 0, 0.3);
+  transform: rotateY(-8deg) rotateX(4deg);
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 400ms ease;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  aspect-ratio: 2/3;
+  background: #11141D;
+}
+
+.bollywood-banner-wrapper:hover .bollywood-banner-poster-card {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.04);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.95),
+    0 0 40px rgba(229, 9, 20, 0.45);
+}
+
+.bollywood-banner-poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bottom Quick-Switch Thumbnails Bar */
+.bollywood-banner-nav {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0.75rem var(--space-10, 2.5rem);
+  background: rgba(8, 9, 13, 0.85);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+@media (max-width: 992px) {
+  .bollywood-banner-nav {
+    padding: 0.75rem var(--space-6, 1.5rem);
+  }
+}
+
+.bollywood-banner-nav-label {
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-tertiary, #767B8E);
+  white-space: nowrap;
+  margin-right: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bollywood-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary, #B0B5C6);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 250ms ease;
+}
+
+.bollywood-nav-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border-color: rgba(255, 184, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.bollywood-nav-pill.active {
+  background: linear-gradient(135deg, rgba(229, 9, 20, 0.35), rgba(255, 184, 0, 0.25));
+  border-color: #FFB800;
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(255, 184, 0, 0.35);
+  font-weight: 700;
+}
+
+.bollywood-nav-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-tertiary, #767B8E);
+  transition: background 250ms ease;
+}
+
+.bollywood-nav-pill.active .bollywood-nav-pill-dot {
+  background: #FFB800;
+  box-shadow: 0 0 6px #FFB800;
+}
