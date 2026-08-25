@@ -43,7 +43,9 @@ export async function initHomePage() {
   const topRatedMount = document.querySelector('#top-rated-carousel-mount');
   const hindiBannerMount = document.querySelector('#hindi-banner-mount');
   const hindiMount = document.querySelector('#hindi-carousel-mount');
+  const tamilBannerMount = document.querySelector('#tamil-banner-mount');
   const tamilMount = document.querySelector('#tamil-carousel-mount');
+  const marathiBannerMount = document.querySelector('#marathi-banner-mount');
   const marathiMount = document.querySelector('#marathi-carousel-mount');
   const upcomingMount = document.querySelector('#upcoming-carousel-mount');
   const genresMount = document.querySelector('#genres-grid-mount');
@@ -54,6 +56,8 @@ export async function initHomePage() {
   if (popularMount) popularMount.innerHTML = skeleton.carousel();
   if (topRatedMount) topRatedMount.innerHTML = skeleton.carousel();
   if (hindiBannerMount) hindiBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
+  if (tamilBannerMount) tamilBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
+  if (marathiBannerMount) marathiBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
   if (hindiMount) hindiMount.innerHTML = skeleton.carousel();
   if (tamilMount) tamilMount.innerHTML = skeleton.carousel();
   if (marathiMount) marathiMount.innerHTML = skeleton.carousel();
@@ -125,11 +129,12 @@ export async function initHomePage() {
       const hindiMovies = CATEGORY_DATA['hindi-movies'].movies;
       
       // Render Actual Featured Movie Banner for Bollywood & Classics
-      let bannerController = null;
       if (hindiBannerMount) {
         hindiBannerMount.innerHTML = '';
-        bannerController = renderBollywoodBanner(hindiBannerMount, hindiMovies, {
+        renderBollywoodBanner(hindiBannerMount, hindiMovies, {
           tagline: '🇮🇳 Bollywood & Classics Spotlight',
+          languageLabel: 'Hindi • UHD',
+          idPrefix: 'hindi',
           autoplayInterval: 8000
         });
       }
@@ -143,22 +148,52 @@ export async function initHomePage() {
       }
     }
 
-    // 6. Render Tamil Movies Section
-    if (tamilMount && CATEGORY_DATA['tamil-movies']) {
+    // 6. Render Tamil Movies Spotlight Banner + Carousel
+    if (CATEGORY_DATA['tamil-movies']) {
       const tamilMovies = CATEGORY_DATA['tamil-movies'].movies;
-      tamilMount.innerHTML = '';
-      tamilMount.appendChild(
-        createMovieCarousel(tamilMovies, { title: 'Tamil Movies' })
-      );
+
+      // Render Spotlight Banner for Kollywood Blockbusters
+      if (tamilBannerMount) {
+        tamilBannerMount.innerHTML = '';
+        renderBollywoodBanner(tamilBannerMount, tamilMovies, {
+          tagline: '⚡ Kollywood Blockbusters Spotlight',
+          languageLabel: 'Tamil • UHD',
+          idPrefix: 'tamil',
+          autoplayInterval: 8500
+        });
+      }
+
+      // Render Carousel
+      if (tamilMount) {
+        tamilMount.innerHTML = '';
+        tamilMount.appendChild(
+          createMovieCarousel(tamilMovies, { title: 'Kollywood Action & Hits' })
+        );
+      }
     }
 
-    // 7. Render Marathi Movies Section
-    if (marathiMount && CATEGORY_DATA['marathi-movies']) {
+    // 7. Render Marathi Movies Spotlight Banner + Carousel
+    if (CATEGORY_DATA['marathi-movies']) {
       const marathiMovies = CATEGORY_DATA['marathi-movies'].movies;
-      marathiMount.innerHTML = '';
-      marathiMount.appendChild(
-        createMovieCarousel(marathiMovies, { title: 'Marathi Movies' })
-      );
+
+      // Render Spotlight Banner for Marathi Cinema Gems
+      if (marathiBannerMount) {
+        marathiBannerMount.innerHTML = '';
+        renderBollywoodBanner(marathiBannerMount, marathiMovies, {
+          tagline: '🚩 Marathi Cinema Gems Spotlight',
+          languageLabel: 'Marathi • UHD',
+          idPrefix: 'marathi',
+          autoplayInterval: 9000
+        });
+      }
+
+      // Render Carousel
+      if (marathiMount) {
+        marathiMount.innerHTML = '';
+        marathiMount.appendChild(
+          createMovieCarousel(marathiMovies, { title: 'Acclaimed Marathi Cinema' })
+        );
+      }
     }
 
     // 8. Fetch Upcoming Releases

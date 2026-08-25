@@ -710,27 +710,18 @@ export const CATEGORY_DATA = {
     title: 'Tamil Movies',
     subtitle: 'Kollywood Powerhouses',
     icon: '🎬',
-    bg: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80',
+    bg: 'images/tamil/leo_banner.jpg',
     movies: [
-      {
-        id: 755566,
-        title: 'Vikram',
-        year: '2022',
-        release_date: '2022-06-03',
-        vote_average: 8.3,
-        genres: [{ id: 28, name: 'Action' }, { id: 53, name: 'Thriller' }],
-        poster_path: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80',
-        overview: 'A high-octane special black-ops squad led by Amar investigates a series of murders committed by a masked vigilante group.'
-      },
       {
         id: 969492,
         title: 'Leo',
         year: '2023',
         release_date: '2023-10-19',
         vote_average: 7.8,
-        genres: [{ id: 28, name: 'Action' }, { id: 80, name: 'Crime' }],
-        poster_path: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80',
-        overview: 'A calm animal rescuer and cafe owner in Himachal Pradesh becomes the target of ruthless gangsters.'
+        genres: [{ id: 28, name: 'Action' }, { id: 80, name: 'Crime' }, { id: 53, name: 'Thriller' }],
+        poster_path: 'images/tamil/leo_poster.jpg',
+        backdrop_path: 'images/tamil/leo_banner.jpg',
+        overview: 'Parthiban, a mild-mannered cafe owner in Himachal Pradesh, is pursued by dangerous drug cartels who believe he is a legendary gangster named Leo Das.'
       },
       {
         id: 987917,
@@ -738,29 +729,21 @@ export const CATEGORY_DATA = {
         year: '2023',
         release_date: '2023-08-10',
         vote_average: 7.7,
-        genres: [{ id: 28, name: 'Action' }, { id: 35, name: 'Comedy' }],
-        poster_path: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
-        overview: 'Muthuvel Pandian, a retired strict prison warden, comes out of retirement to protect his family.'
+        genres: [{ id: 28, name: 'Action' }, { id: 35, name: 'Comedy' }, { id: 80, name: 'Crime' }],
+        poster_path: 'images/tamil/jailer_poster.jpg',
+        backdrop_path: 'images/tamil/jailer_banner.jpg',
+        overview: 'Muthuvel Pandian, a retired prison warden known as Tiger Muthuvel, unleashes his lethal past to protect his family against an idol smuggling kingpin.'
       },
       {
-        id: 692644,
-        title: 'Vikram Vedha',
-        year: '2017',
-        release_date: '2017-09-28',
-        vote_average: 8.2,
-        genres: [{ id: 28, name: 'Action' }, { id: 53, name: 'Thriller' }],
-        poster_path: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
-        overview: 'A straight-arrow police officer sets out to hunt down and kill a notorious gangster, leading to moral dilemmas.'
-      },
-      {
-        id: 633190,
-        title: 'Kaithi',
-        year: '2019',
-        release_date: '2019-10-25',
-        vote_average: 8.4,
-        genres: [{ id: 28, name: 'Action' }, { id: 53, name: 'Thriller' }],
-        poster_path: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=600&q=80',
-        overview: 'A recently released prisoner drives a lorry full of poisoned cops through hostile gangster territory to meet his daughter.'
+        id: 755566,
+        title: 'Vikram',
+        year: '2022',
+        release_date: '2022-06-03',
+        vote_average: 8.3,
+        genres: [{ id: 28, name: 'Action' }, { id: 53, name: 'Thriller' }, { id: 80, name: 'Crime' }],
+        poster_path: 'images/tamil/vikram_poster.jpg',
+        backdrop_path: 'images/tamil/vikram_banner.jpg',
+        overview: 'A high-octane special black-ops squad led by Amar investigates a series of murders committed by a masked vigilante group led by Commander Vikram.'
       },
       {
         id: 554600,
@@ -768,9 +751,54 @@ export const CATEGORY_DATA = {
         year: '2022',
         release_date: '2022-09-30',
         vote_average: 7.9,
-        genres: [{ id: 28, name: 'Action' }, { id: 18, name: 'Drama' }],
-        poster_path: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80',
-        overview: 'Vandiyathevan sets out on a perilous mission across the Chola kingdom amidst brewing conspiracies.'
+        genres: [{ id: 28, name: 'Action' }, { id: 18, name: 'Drama' }, { id: 12, name: 'Adventure' }],
+        poster_path: 'images/tamil/ps1_poster.jpg',
+        backdrop_path: 'images/tamil/ps1_banner.jpg',
+        overview: 'Vandiyathevan sets out to cross the Chola kingdom with messages between crown prince Aditha Karikalan and princess Kundavai amidst brewing royal conspiracies.'
+      },
+      {
+        id: 585244,
+        title: 'Master',
+        year: '2021',
+        release_date: '2021-01-13',
+        vote_average: 7.8,
+        genres: [{ id: 28, name: 'Action' }, { id: 53, name: 'Thriller' }],
+        poster_path: 'images/tamil/master_poster.jpg',
+        backdrop_path: 'images/tamil/master_banner.jpg',
+        overview: 'An alcoholic professor is sent to a juvenile correction facility, where he clashes with a ruthless gangster using inmates for crimes.'
+      },
+      {
+        id: 633190,
+        title: 'Kaithi',
+        year: '2019',
+        release_date: '2019-10-25',
+        vote_average: 8.4,
+        genres: [{ id: 28, name: 'Action' }, { id: 53, name: 'Thriller' }, { id: 80, name: 'Crime' }],
+        poster_path: 'images/tamil/kaithi_poster.jpg',
+        backdrop_path: 'images/tamil/kaithi_banner.jpg',
+        overview: 'A recently released convict drives a truck full of poisoned police officers across drug cartel-controlled terrain to earn a chance to see his daughter.'
+      },
+      {
+        id: 692644,
+        title: 'Vikram Vedha',
+        year: '2017',
+        release_date: '2017-09-28',
+        vote_average: 8.2,
+        genres: [{ id: 28, name: 'Action' }, { id: 53, name: 'Thriller' }, { id: 80, name: 'Crime' }],
+        poster_path: 'images/tamil/vikram_vedha_poster.jpg',
+        backdrop_path: 'images/tamil/vikram_vedha_banner.jpg',
+        overview: 'A principled police inspector engages in a cat-and-mouse duel with an enigmatic gangster who challenges his moral compass through cryptic riddles.'
+      },
+      {
+        id: 653574,
+        title: 'Soorarai Pottru',
+        year: '2020',
+        release_date: '2020-11-12',
+        vote_average: 8.4,
+        genres: [{ id: 18, name: 'Drama' }, { id: 28, name: 'Action' }],
+        poster_path: 'images/tamil/soorarai_pottru_poster.jpg',
+        backdrop_path: 'images/tamil/soorarai_banner.jpg',
+        overview: 'Nedumaaran Rajangam sets out to make the common man fly and takes on the most capital-intensive aviation industry with the help of his friends.'
       }
     ]
   },
@@ -780,7 +808,7 @@ export const CATEGORY_DATA = {
     title: 'Marathi Movies',
     subtitle: 'Acclaimed & Blockbusters',
     icon: '🚩',
-    bg: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+    bg: 'images/marathi/sairat_banner.jpg',
     movies: [
       {
         id: 395990,
@@ -789,8 +817,9 @@ export const CATEGORY_DATA = {
         release_date: '2016-04-29',
         vote_average: 8.3,
         genres: [{ id: 18, name: 'Drama' }, { id: 10749, name: 'Romance' }],
-        poster_path: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
-        overview: 'In rural Maharashtra, a passionate son of a fisherman falls in love with a wealthy politician daughter.'
+        poster_path: 'images/marathi/sairat_poster.jpg',
+        backdrop_path: 'images/marathi/sairat_banner.jpg',
+        overview: 'In rural Maharashtra, a passionate love story between Prashant and Archie defies traditional caste and societal boundaries, triggering profound repercussions.'
       },
       {
         id: 376288,
@@ -799,8 +828,9 @@ export const CATEGORY_DATA = {
         release_date: '2016-01-01',
         vote_average: 8.9,
         genres: [{ id: 18, name: 'Drama' }],
-        poster_path: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
-        overview: 'A retired Shakespearean stage actor and his devoted wife face rejection and heartbreak from their grown children.'
+        poster_path: 'images/marathi/natsamrat_poster.jpg',
+        backdrop_path: 'images/marathi/natsamrat_banner.jpg',
+        overview: 'A legendary Shakespearean theatre actor and his devoted wife face bitter rejection, abandonment, and heartbreak from their ungrateful children in his sunset years.'
       },
       {
         id: 367683,
@@ -809,8 +839,9 @@ export const CATEGORY_DATA = {
         release_date: '2015-11-12',
         vote_average: 8.5,
         genres: [{ id: 18, name: 'Drama' }, { id: 10402, name: 'Musical' }],
-        poster_path: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80',
-        overview: 'A clash of artistic egos and classical ragas erupts between two royal court singers in a duel for prestige.'
+        poster_path: 'images/marathi/katyar_poster.jpg',
+        backdrop_path: 'images/marathi/katyar_banner.jpg',
+        overview: 'A duel of artistic mastery, vocal ragas, and profound pride erupts between two royal court singers in the princely state of Vishrampur.'
       },
       {
         id: 1148281,
@@ -819,8 +850,9 @@ export const CATEGORY_DATA = {
         release_date: '2023-06-30',
         vote_average: 8.0,
         genres: [{ id: 35, name: 'Comedy' }, { id: 18, name: 'Drama' }],
-        poster_path: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
-        overview: 'Six estranged sisters reunite to participate in a traditional dance competition, rediscovering their bond.'
+        poster_path: 'images/marathi/baipan_poster.jpg',
+        backdrop_path: 'images/marathi/baipan_banner.jpg',
+        overview: 'Six estranged sisters unite to enter a prestigious traditional Mangalagaur dance competition, healing emotional wounds and celebrating sisterhood.'
       },
       {
         id: 1048821,
@@ -829,8 +861,9 @@ export const CATEGORY_DATA = {
         release_date: '2022-12-30',
         vote_average: 7.6,
         genres: [{ id: 18, name: 'Drama' }, { id: 10749, name: 'Romance' }],
-        poster_path: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80',
-        overview: 'A former cricketer dealing with addiction and lost love finds hope and redemption through marriage.'
+        poster_path: 'images/marathi/ved_poster.jpg',
+        backdrop_path: 'images/marathi/ved_banner.jpg',
+        overview: 'Satya, a former cricketer shattered by heartbreak and addiction, discovers unconditional devotion, second chances, and redemption in marriage.'
       },
       {
         id: 33719,
@@ -838,9 +871,32 @@ export const CATEGORY_DATA = {
         year: '2009',
         release_date: '2009-10-30',
         vote_average: 8.4,
-        genres: [{ id: 36, name: 'Biography' }, { id: 35, name: 'Comedy' }],
-        poster_path: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
-        overview: 'The inspiring story of Dadasaheb Phalke struggle and perseverance to make India first motion picture.'
+        genres: [{ id: 36, name: 'Biography' }, { id: 35, name: 'Comedy' }, { id: 18, name: 'Drama' }],
+        poster_path: 'images/marathi/harishchandra_poster.jpg',
+        backdrop_path: 'images/marathi/harishchandra_banner.jpg',
+        overview: 'The joyous, inspiring true story of Dadasaheb Phalke struggle, passion, and indomitable courage to produce India very first motion picture in 1913.'
+      },
+      {
+        id: 284277,
+        title: 'Lai Bhaari',
+        year: '2014',
+        release_date: '2014-07-11',
+        vote_average: 7.5,
+        genres: [{ id: 28, name: 'Action' }, { id: 18, name: 'Drama' }],
+        poster_path: 'images/marathi/laibhaari_poster.jpg',
+        backdrop_path: 'images/marathi/laibhaari_banner.jpg',
+        overview: 'An action extravaganza about two lookalike brothers fighting evil landlords and honoring family legacy in Pandharpur.'
+      },
+      {
+        id: 293310,
+        title: 'Court',
+        year: '2014',
+        release_date: '2014-09-04',
+        vote_average: 8.0,
+        genres: [{ id: 18, name: 'Drama' }],
+        poster_path: 'images/marathi/katyar_poster.jpg',
+        backdrop_path: 'images/marathi/court_banner.jpg',
+        overview: 'An aging folk singer is put on trial in a Mumbai magistrates court on trumped-up charges, exposing the quirks and delays of the legal system.'
       }
     ]
   }

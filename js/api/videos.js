@@ -65,7 +65,24 @@ const CURATED_TRAILERS = {
   181498: 'X_5_BLtZx6c',  // Padmaavat
   493529: 'V5Z7ycT_6m0',  // Brahmastra
   9819: 'b5pYgSg31Yg',    // Devdas
-  111110: 'b5pYgSg31Yg'   // Devdas
+  111110: 'b5pYgSg31Yg',  // Devdas
+  // Tamil Blockbusters
+  969492: 'Po3jStA673E',  // Leo
+  987917: 'Y5BeWdODPqo',  // Jailer
+  755566: 'OKBMCLpJqk8',  // Vikram
+  554600: 'K_5a3hnN6j8',  // Ponniyin Selvan: Part 1
+  633190: 'g6nkq2r9G_s',  // Kaithi
+  692644: '1sNr-WU46W4',  // Vikram Vedha
+  585244: 'UTiXQJ404bM',  // Master
+  653574: 'faG8RiaGQek',  // Soorarai Pottru
+  // Marathi Cinema Gems
+  395990: 'wMrMKnoW4L4',  // Sairat
+  376288: 'K_5d4Wn6j1A',  // Natsamrat
+  367683: 'tq4R3yH6h3k',  // Katyar Kaljat Ghusali
+  1148281: 'n9r5YF40K30', // Baipan Bhaari Deva
+  1048821: 'i1N4pQG9QZk', // Ved
+  33719: 'zL8x2yBqC9Q',   // Harishchandrachi Factory
+  284277: 'qY6y5XhB2Q8'   // Lai Bhaari
 };
 
 // Title-based fallback normalized lookup
@@ -98,7 +115,6 @@ const TITLE_TRAILERS = {
   '3 idiots': 'xvszmNXdM4w',
   'sholay': 'qL3XQk7w7H8',
   'lagaan': 'oSIGJ347Jsw',
-  'lagaan: once upon a time in india': 'oSIGJ347Jsw',
   'dilwale dulhania le jayenge': 'c25GKl5VNeY',
   'ddlj': 'c25GKl5VNeY',
   'jawan': 'MWOlnZSnXWE',
@@ -112,9 +128,29 @@ const TITLE_TRAILERS = {
   'bajrangi bhaijaan': '4nwAra0mz_Q',
   'sanju': 'rRr1QIoxnGQ',
   'padmaavat': 'X_5_BLtZx6c',
-  'brahmāstra: part one – shiva': 'V5Z7ycT_6m0',
   'brahmastra': 'V5Z7ycT_6m0',
-  'devdas': 'b5pYgSg31Yg'
+  'devdas': 'b5pYgSg31Yg',
+  // Tamil Blockbusters
+  'leo': 'Po3jStA673E',
+  'jailer': 'Y5BeWdODPqo',
+  'vikram': 'OKBMCLpJqk8',
+  'ponniyin selvan: part 1': 'K_5a3hnN6j8',
+  'ponniyin selvan: i': 'K_5a3hnN6j8',
+  'ponniyin selvan': 'K_5a3hnN6j8',
+  'kaithi': 'g6nkq2r9G_s',
+  'vikram vedha': '1sNr-WU46W4',
+  'master': 'UTiXQJ404bM',
+  'soorarai pottru': 'faG8RiaGQek',
+  // Marathi Cinema
+  'sairat': 'wMrMKnoW4L4',
+  'natsamrat': 'K_5d4Wn6j1A',
+  'katyar kaljat ghusali': 'tq4R3yH6h3k',
+  'baipan bhaari deva': 'n9r5YF40K30',
+  'ved': 'i1N4pQG9QZk',
+  'harishchandrachi factory': 'zL8x2yBqC9Q',
+  'lai bhaari': 'qY6y5XhB2Q8',
+  'lagaan: once upon a time in india': 'oSIGJ347Jsw',
+  'brahmāstra: part one – shiva': 'V5Z7ycT_6m0'
 };
 
 /**

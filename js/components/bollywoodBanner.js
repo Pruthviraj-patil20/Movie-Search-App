@@ -17,6 +17,8 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
 
   const {
     tagline = '🇮🇳 Bollywood & Classics Spotlight',
+    languageLabel = 'Hindi • UHD',
+    idPrefix = 'bollywood',
     autoplayInterval = 9000,
     onMovieChange = null
   } = options;
@@ -35,14 +37,14 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
     const title = movie.title || movie.name || 'Featured Movie';
     const year = formatYear(movie.release_date || movie.year || movie.first_air_date);
     const rating = formatRating(movie.vote_average || 8.2);
-    const overview = movie.overview || 'Experience one of the greatest masterpieces of Indian Cinema, celebrating timeless storytelling, unforgettable performances, and iconic music.';
+    const overview = movie.overview || 'Experience one of the acclaimed masterpieces of Indian Cinema, celebrating timeless storytelling, unforgettable performances, and iconic music.';
 
     const genresList = (movie.genres || []).map(g => {
       const gName = typeof g === 'object' ? g.name : g;
       return `<span class="bollywood-banner-genre-pill">${gName}</span>`;
     }).join('');
 
-    // Generate switcher pills for top curated classics
+    // Generate switcher pills for top curated titles
     const pillsHtml = movies.slice(0, 8).map((m, idx) => {
       const mTitle = m.title || m.name || 'Movie';
       const mYear = formatYear(m.release_date || m.year);
@@ -62,7 +64,7 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
     }).join('');
 
     container.innerHTML = `
-      <div class="bollywood-banner-wrapper" id="bollywood-spotlight-banner">
+      <div class="bollywood-banner-wrapper" id="${idPrefix}-spotlight-banner">
         <!-- Dynamic Backdrop -->
         <div class="bollywood-banner-backdrop" style="background-image: url('${backdropUrl}');"></div>
         <div class="bollywood-banner-overlay"></div>
@@ -83,14 +85,14 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
                 ${rating} / 10
               </span>
               <span class="bollywood-banner-year">${year}</span>
-              <span class="bollywood-banner-lang">Hindi • UHD</span>
+              <span class="bollywood-banner-lang">${languageLabel}</span>
             </div>
 
             <!-- Title -->
             <h3 class="bollywood-banner-title">${title}</h3>
 
             <!-- Genres -->
-            <div class="bollywood-banner-genres" id="bollywood-banner-genres">
+            <div class="bollywood-banner-genres" id="${idPrefix}-banner-genres">
               ${genresList || '<span class="bollywood-banner-genre-pill">Action</span><span class="bollywood-banner-genre-pill">Drama</span>'}
             </div>
 
@@ -99,14 +101,14 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
 
             <!-- Action Buttons -->
             <div class="bollywood-banner-actions">
-              <button type="button" class="btn btn-primary bollywood-btn-play" id="bollywood-banner-trailer">
+              <button type="button" class="btn btn-primary bollywood-btn-play" id="${idPrefix}-banner-trailer">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="5 3 19 12 5 21 5 3"/>
                 </svg>
                 <span>Watch Trailer</span>
               </button>
 
-              <a href="movie.html?id=${movie.id}" class="bollywood-btn-details" id="bollywood-banner-details">
+              <a href="movie.html?id=${movie.id}" class="bollywood-btn-details" id="${idPrefix}-banner-details">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
                 </svg>
@@ -116,7 +118,7 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
               <button 
                 type="button" 
                 class="bollywood-btn-watchlist ${isWatch ? 'active' : ''}" 
-                id="bollywood-banner-watchlist"
+                id="${idPrefix}-banner-watchlist"
                 title="${isWatch ? 'In Watchlist' : 'Add to Watchlist'}"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="${isWatch ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2">
@@ -156,7 +158,7 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
     // Fetch genres if movie has genre_ids but no populated genres
     if (!genresList && movie.genre_ids && movie.genre_ids.length > 0) {
       formatGenreNames(movie.genre_ids, 3).then(formatted => {
-        const genresEl = container.querySelector('#bollywood-banner-genres');
+        const genresEl = container.querySelector(`#${idPrefix}-banner-genres`);
         if (genresEl && formatted) {
           genresEl.innerHTML = formatted.split(', ').map(g => `<span class="bollywood-banner-genre-pill">${g}</span>`).join('');
         }
@@ -164,18 +166,14 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
     }
 
     // Attach Event Handlers
-    const bannerWrapper = container.querySelector('#bollywood-spotlight-banner');
-    
-    // Pause autoplay on mouse enter
-    bannerWrapper.addEventListener('mouseenter', () => {
-      isHovered = true;
-    });
-    bannerWrapper.addEventListener('mouseleave', () => {
-      isHovered = false;
-    });
+    const bannerWrapper = container.querySelector(`#${idPrefix}-spotlight-banner`);
+    if (bannerWrapper) {
+      bannerWrapper.addEventListener('mouseenter', () => { isHovered = true; });
+      bannerWrapper.addEventListener('mouseleave', () => { isHovered = false; });
+    }
 
     // Trailer Play
-    const trailerBtn = container.querySelector('#bollywood-banner-trailer');
+    const trailerBtn = container.querySelector(`#${idPrefix}-banner-trailer`);
     if (trailerBtn) {
       trailerBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -184,7 +182,7 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
     }
 
     // Watchlist Toggle
-    const watchBtn = container.querySelector('#bollywood-banner-watchlist');
+    const watchBtn = container.querySelector(`#${idPrefix}-banner-watchlist`);
     if (watchBtn) {
       watchBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -253,3 +251,5 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
     }
   };
 }
+
+export const renderSpotlightBanner = renderBollywoodBanner;

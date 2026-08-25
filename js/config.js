@@ -761,6 +761,184 @@ export const CONFIG = {
       }
     },
 
+    /* --- TAMIL MOVIES (KOLLYWOOD) --- */
+    {
+      id: 969492,
+      title: "Leo",
+      overview: "Parthiban, a mild-mannered cafe owner in Himachal Pradesh, is pursued by dangerous drug cartels who believe he is a legendary gangster named Leo Das.",
+      poster_path: "images/tamil/leo_poster.jpg",
+      backdrop_path: "images/tamil/leo_banner.jpg",
+      vote_average: 7.8,
+      vote_count: 21000,
+      release_date: "2023-10-19",
+      genre_ids: [28, 80, 53],
+      runtime: 164,
+      status: "Released",
+      tagline: "Bloody Sweet.",
+      budget: 3000000000,
+      revenue: 6200000000,
+      trailer_key: "Po3jStA673E",
+      production_companies: [{ name: "Seven Screen Studio" }],
+      credits: {
+        cast: [
+          { name: "Thalapathy Vijay", character: "Parthiban / Leo Das", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Sanjay Dutt", character: "Antony Das", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Trisha Krishnan", character: "Sathya", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 987917,
+      title: "Jailer",
+      overview: "Muthuvel Pandian, a retired prison warden known as Tiger Muthuvel, unleashes his lethal past to protect his family against an idol smuggling kingpin.",
+      poster_path: "images/tamil/jailer_poster.jpg",
+      backdrop_path: "images/tamil/jailer_banner.jpg",
+      vote_average: 7.7,
+      vote_count: 19000,
+      release_date: "2023-08-10",
+      genre_ids: [28, 35, 80],
+      runtime: 168,
+      status: "Released",
+      tagline: "Superstar Rajinikanth in and as Jailer.",
+      budget: 2000000000,
+      revenue: 6500000000,
+      trailer_key: "Y5BeWdODPqo",
+      production_companies: [{ name: "Sun Pictures" }],
+      credits: {
+        cast: [
+          { name: "Rajinikanth", character: "Tiger Muthuvel Pandian", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Vinayakan", character: "Varman", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Mohanlal", character: "Mathew (Cameo)", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 755566,
+      title: "Vikram",
+      overview: "A high-octane special black-ops squad led by Amar investigates a series of murders committed by a masked vigilante group led by Commander Vikram.",
+      poster_path: "images/tamil/vikram_poster.jpg",
+      backdrop_path: "images/tamil/vikram_banner.jpg",
+      vote_average: 8.3,
+      vote_count: 26000,
+      release_date: "2022-06-03",
+      genre_ids: [28, 53, 80],
+      runtime: 175,
+      status: "Released",
+      tagline: "Once upon a time there lived a ghost...",
+      budget: 1500000000,
+      revenue: 4500000000,
+      trailer_key: "OKBMCLpJqk8",
+      production_companies: [{ name: "Raaj Kamal Films International" }],
+      credits: {
+        cast: [
+          { name: "Kamal Haasan", character: "Commander Arun Kumar Vikram", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Fahadh Faasil", character: "Amar", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Vijay Sethupathi", character: "Sandhanam", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 554600,
+      title: "Ponniyin Selvan: Part 1",
+      overview: "Vandiyathevan sets out to cross the Chola kingdom with messages between crown prince Aditha Karikalan and princess Kundavai amidst brewing royal conspiracies.",
+      poster_path: "images/tamil/ps1_poster.jpg",
+      backdrop_path: "images/tamil/ps1_banner.jpg",
+      vote_average: 7.9,
+      vote_count: 17000,
+      release_date: "2022-09-30",
+      genre_ids: [28, 18, 12],
+      runtime: 167,
+      status: "Released",
+      tagline: "The Cholas are coming.",
+      budget: 2500000000,
+      revenue: 5000000000,
+      trailer_key: "K_5a3hnN6j8",
+      production_companies: [{ name: "Madras Talkies" }, { name: "Lyca Productions" }],
+      credits: {
+        cast: [
+          { name: "Vikram", character: "Aditha Karikalan", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Aishwarya Rai Bachchan", character: "Nandini / Mandakini", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Karthi", character: "Vallavaraiyan Vandiyadevan", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+
+    /* --- MARATHI MOVIES (GEMS) --- */
+    {
+      id: 395990,
+      title: "Sairat",
+      overview: "In rural Maharashtra, a passionate love story between Prashant and Archie defies traditional caste and societal boundaries, triggering profound repercussions.",
+      poster_path: "images/marathi/sairat_poster.jpg",
+      backdrop_path: "images/marathi/sairat_banner.jpg",
+      vote_average: 8.3,
+      vote_count: 25000,
+      release_date: "2016-04-29",
+      genre_ids: [18, 10749],
+      runtime: 174,
+      status: "Released",
+      tagline: "Zing Zing Zingat!",
+      budget: 40000000,
+      revenue: 1100000000,
+      trailer_key: "wMrMKnoW4L4",
+      production_companies: [{ name: "Aatpat Production" }, { name: "Zee Studios" }],
+      credits: {
+        cast: [
+          { name: "Rinku Rajguru", character: "Archana 'Archie' Patil", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Somnath Awghade", character: "Prashant 'Parshya' Kale", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 376288,
+      title: "Natsamrat",
+      overview: "A legendary Shakespearean theatre actor and his devoted wife face bitter rejection, abandonment, and heartbreak from their ungrateful children in his sunset years.",
+      poster_path: "images/marathi/natsamrat_poster.jpg",
+      backdrop_path: "images/marathi/natsamrat_banner.jpg",
+      vote_average: 8.9,
+      vote_count: 18000,
+      release_date: "2016-01-01",
+      genre_ids: [18],
+      runtime: 166,
+      status: "Released",
+      tagline: "Kuni ghar deta ka ghar?",
+      budget: 90000000,
+      revenue: 500000000,
+      trailer_key: "K_5d4Wn6j1A",
+      production_companies: [{ name: "Fincraft Media" }, { name: "Zee Studios" }],
+      credits: {
+        cast: [
+          { name: "Nana Patekar", character: "Ganpatrao Ramchandra Belwalkar", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Medha Manjrekar", character: "Kaveri Belwalkar", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Vikram Gokhale", character: "Rambhau", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
+      id: 367683,
+      title: "Katyar Kaljat Ghusali",
+      overview: "A duel of artistic mastery, vocal ragas, and profound pride erupts between two royal court singers in the princely state of Vishrampur.",
+      poster_path: "images/marathi/katyar_poster.jpg",
+      backdrop_path: "images/marathi/katyar_banner.jpg",
+      vote_average: 8.5,
+      vote_count: 12000,
+      release_date: "2015-11-12",
+      genre_ids: [18, 10402],
+      runtime: 162,
+      status: "Released",
+      tagline: "Sur Niragas Ho...",
+      budget: 60000000,
+      revenue: 400000000,
+      trailer_key: "tq4R3yH6h3k",
+      production_companies: [{ name: "Essel Vision Productions" }],
+      credits: {
+        cast: [
+          { name: "Sachin Pilgaonkar", character: "Khan Saheb Aftab Hussain", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Subodh Bhave", character: "Sadashiv", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Shankar Mahadevan", character: "Pandit Bhanu Shankar Shastri", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+
     /* --- HOLLYWOOD (Recent) --- */
     {
       id: 615685,
