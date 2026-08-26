@@ -1726,7 +1726,7 @@ export const ALL_LANGUAGES_DATA = {
     "title": "Upcoming Movies",
     "subtitle": "In Theaters 2025 - 2026",
     "icon": "🚀",
-    "bg": "images/bollywood/dangal_banner.jpg",
+    "bg": "images/upcoming/upcoming_banner.jpg",
     "movies": [
       {
         "id": 999101,
@@ -1735,13 +1735,22 @@ export const ALL_LANGUAGES_DATA = {
         "release_date": "2025-12-19",
         "vote_average": 8.8,
         "genres": [
-          { "id": 878, "name": "Sci-Fi" },
-          { "id": 12, "name": "Adventure" },
-          { "id": 28, "name": "Action" }
+          {
+            "id": 878,
+            "name": "Sci-Fi"
+          },
+          {
+            "id": 12,
+            "name": "Adventure"
+          },
+          {
+            "id": 28,
+            "name": "Action"
+          }
         ],
-        "poster_path": "images/bollywood/brahmastra_poster.jpg",
-        "backdrop_path": "images/bollywood/brahmastra_banner.jpg",
-        "overview": "Jake Sully and Neytiri journey across Pandora to discover the Ash People, an aggressive volcanic clan of Na'vi who challenge their peaceful existence in a fight for the planet's destiny.",
+        "poster_path": "images/upcoming/avatar3_poster.jpg",
+        "backdrop_path": "images/upcoming/avatar3_banner.jpg",
+        "overview": "Jake Sully and Neytiri journey across Pandora to discover the Ash People, an aggressive volcanic clan of Na'vi who challenge their peaceful existence.",
         "trailer_key": "d9MyW72ELq0",
         "language": "English"
       },
@@ -1752,13 +1761,22 @@ export const ALL_LANGUAGES_DATA = {
         "release_date": "2025-07-11",
         "vote_average": 8.5,
         "genres": [
-          { "id": 28, "name": "Action" },
-          { "id": 878, "name": "Sci-Fi" },
-          { "id": 12, "name": "Adventure" }
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 878,
+            "name": "Sci-Fi"
+          },
+          {
+            "id": 12,
+            "name": "Adventure"
+          }
         ],
-        "poster_path": "images/bollywood/pk_poster.jpg",
-        "backdrop_path": "images/bollywood/swades_banner.jpg",
-        "overview": "Clark Kent reconciles his noble Kryptonian heritage with his human upbringing in Smallville as he steps forward to be the beacon of hope and justice in a cynical world.",
+        "poster_path": "images/upcoming/superman_poster.jpg",
+        "backdrop_path": "images/upcoming/superman_banner.jpg",
+        "overview": "Clark Kent reconciles his noble Kryptonian heritage with his human upbringing in Smallville as he steps forward to be the beacon of hope in a cynical world.",
         "trailer_key": "uhUht6vAsMY",
         "language": "English"
       },
@@ -1769,12 +1787,21 @@ export const ALL_LANGUAGES_DATA = {
         "release_date": "2025-05-23",
         "vote_average": 8.7,
         "genres": [
-          { "id": 28, "name": "Action" },
-          { "id": 53, "name": "Thriller" },
-          { "id": 12, "name": "Adventure" }
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          },
+          {
+            "id": 12,
+            "name": "Adventure"
+          }
         ],
-        "poster_path": "images/bollywood/pathaan_poster.jpg",
-        "backdrop_path": "images/bollywood/pathaan_banner.jpg",
+        "poster_path": "images/upcoming/mission_impossible_poster.jpg",
+        "backdrop_path": "images/upcoming/mission_impossible_banner.jpg",
         "overview": "Ethan Hunt and the IMF team embark on their definitive and most dangerous mission yet, racing across continents to destroy the sentient AI known as the Entity.",
         "trailer_key": "NOhDyFRx4nk",
         "language": "English"
@@ -1786,12 +1813,18 @@ export const ALL_LANGUAGES_DATA = {
         "release_date": "2025-08-14",
         "vote_average": 8.4,
         "genres": [
-          { "id": 28, "name": "Action" },
-          { "id": 53, "name": "Thriller" }
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          }
         ],
-        "poster_path": "images/bollywood/jawan_poster.jpg",
-        "backdrop_path": "images/bollywood/jawan_banner.jpg",
-        "overview": "Major Kabir Dhaliwal crosses paths with a lethal international operative in the YRF Spy Universe in an adrenaline-pumping global game of wits, guns, and warfare.",
+        "poster_path": "images/upcoming/war2_poster.jpg",
+        "backdrop_path": "images/upcoming/war2_banner.jpg",
+        "overview": "Major Kabir Dhaliwal crosses paths with a lethal international operative in the YRF Spy Universe in an adrenaline-pumping global game of wits and warfare.",
         "trailer_key": "MWOlnZSnXWE",
         "language": "Hindi"
       },
@@ -1802,13 +1835,22 @@ export const ALL_LANGUAGES_DATA = {
         "release_date": "2026-10-02",
         "vote_average": 8.6,
         "genres": [
-          { "id": 80, "name": "Crime" },
-          { "id": 18, "name": "Drama" },
-          { "id": 9648, "name": "Mystery" }
+          {
+            "id": 80,
+            "name": "Crime"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 9648,
+            "name": "Mystery"
+          }
         ],
-        "poster_path": "images/bollywood/gow_poster.jpg",
-        "backdrop_path": "images/bollywood/gow_banner.jpg",
-        "overview": "Bruce Wayne delves further into the corrupt criminal underworld of Gotham City as new villains step into the power vacuum left by Carmine Falcone.",
+        "poster_path": "images/upcoming/batman2_poster.jpg",
+        "backdrop_path": "images/upcoming/batman2_banner.jpg",
+        "overview": "Bruce Wayne delves further into the corrupt criminal underworld of Gotham City as new villains step into the vacuum left by Carmine Falcone.",
         "trailer_key": "mqqft2x_Aa4",
         "language": "English"
       },
@@ -1819,13 +1861,22 @@ export const ALL_LANGUAGES_DATA = {
         "release_date": "2026-05-01",
         "vote_average": 8.9,
         "genres": [
-          { "id": 28, "name": "Action" },
-          { "id": 878, "name": "Sci-Fi" },
-          { "id": 12, "name": "Adventure" }
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 878,
+            "name": "Sci-Fi"
+          },
+          {
+            "id": 12,
+            "name": "Adventure"
+          }
         ],
-        "poster_path": "images/bollywood/padmaavat_poster.jpg",
-        "backdrop_path": "images/bollywood/padmaavat_banner.jpg",
-        "overview": "Earth's mightiest heroes from across timelines and alternate dimensions unite to confront the multiversal conqueror Doctor Victor Von Doom.",
+        "poster_path": "images/upcoming/avengers_doomsday_poster.jpg",
+        "backdrop_path": "images/upcoming/avengers_doomsday_banner.jpg",
+        "overview": "Earth's mightiest heroes from across timelines and alternate dimensions unite to confront the multi-versal conqueror Doctor Victor Von Doom.",
         "trailer_key": "eOrNdBpGMv8",
         "language": "English"
       },
@@ -1836,12 +1887,21 @@ export const ALL_LANGUAGES_DATA = {
         "release_date": "2025-10-02",
         "vote_average": 8.6,
         "genres": [
-          { "id": 28, "name": "Action" },
-          { "id": 14, "name": "Fantasy" },
-          { "id": 18, "name": "Drama" }
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 14,
+            "name": "Fantasy"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
         ],
-        "poster_path": "images/tamil/ps1_poster.jpg",
-        "backdrop_path": "images/tamil/ps1_banner.jpg",
+        "poster_path": "images/upcoming/kantara_chapter1_poster.jpg",
+        "backdrop_path": "images/upcoming/kantara_chapter1_banner.jpg",
         "overview": "The ancient origin story set during the reign of the Kadamba dynasty, exploring the spiritual union between humanity, forest deities, and the divine spirit.",
         "trailer_key": "8MR_xQv1y9k",
         "language": "Kannada"
@@ -1853,13 +1913,22 @@ export const ALL_LANGUAGES_DATA = {
         "release_date": "2025-04-10",
         "vote_average": 8.5,
         "genres": [
-          { "id": 28, "name": "Action" },
-          { "id": 80, "name": "Crime" },
-          { "id": 53, "name": "Thriller" }
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 80,
+            "name": "Crime"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          }
         ],
-        "poster_path": "images/tamil/jailer_poster.jpg",
-        "backdrop_path": "images/tamil/jailer_banner.jpg",
-        "overview": "A stylized high-octane noir action drama exploring the dark corridors of the international drug cartel, underworld crime, and retribution.",
+        "poster_path": "images/upcoming/toxic_poster.jpg",
+        "backdrop_path": "images/upcoming/toxic_banner.jpg",
+        "overview": "A stylized high-octane noir action drama exploring the dark corridors of the international drug cartel and retribution.",
         "trailer_key": "JKa05nyUmuQ",
         "language": "Kannada"
       },
@@ -1870,12 +1939,18 @@ export const ALL_LANGUAGES_DATA = {
         "release_date": "2025-03-30",
         "vote_average": 8.1,
         "genres": [
-          { "id": 28, "name": "Action" },
-          { "id": 18, "name": "Drama" }
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
         ],
-        "poster_path": "images/bollywood/bajrangi_poster.jpg",
-        "backdrop_path": "images/bollywood/bajrangi_banner.jpg",
-        "overview": "A courageous man with a fiery past stands up against an entrenched mafia network to protect an innocent community and fight for justice.",
+        "poster_path": "images/upcoming/sikandar_poster.jpg",
+        "backdrop_path": "images/upcoming/sikandar_banner.jpg",
+        "overview": "A courageous man with a fiery past stands up against an entrenched mafia network to protect an innocent community.",
         "trailer_key": "qL3XQk7w7H8",
         "language": "Hindi"
       }
