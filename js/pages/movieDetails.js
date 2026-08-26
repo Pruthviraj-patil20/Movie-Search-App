@@ -22,6 +22,7 @@ import {
   formatYear
 } from '../utils/formatters.js';
 import { getBackdropUrl, getImageUrl, onEvent } from '../utils/helpers.js';
+import { getActorProfile } from '../data/actorProfiles.js';
 import { getUrlParam } from '../utils/urlParams.js';
 import { isValidMovieId } from '../utils/validators.js';
 
@@ -399,9 +400,16 @@ function renderCast(container, castList) {
     const initialsAvatar = `https://ui-avatars.com/api/?name=${cleanName}&background=1e293b&color=38bdf8&size=200&bold=true&font-size=0.4`;
 
     let photoUrl = initialsAvatar;
-    if (member.profile_path) {
+    const verifiedProfile = getActorProfile(member.name);
+
+    if (verifiedProfile) {
+      photoUrl = verifiedProfile;
+    } else if (member.profile_path) {
       if (member.profile_path.startsWith('http://') || member.profile_path.startsWith('https://')) {
-        photoUrl = member.profile_path;
+        // Only use external URL if not an unverified generic unsplash photo
+        if (!member.profile_path.includes('images.unsplash.com')) {
+          photoUrl = member.profile_path;
+        }
       } else {
         photoUrl = `${CONFIG.IMAGE_BASE_URL}${CONFIG.IMAGE_SIZES.PROFILE_MEDIUM}${member.profile_path}`;
       }
@@ -418,7 +426,25 @@ function renderCast(container, castList) {
     `;
 
     const img = card.querySelector('.cast-photo');
-    img.addEventListener('error', () => {
+    let hasTriedWiki = false;
+
+    img.addEventListener('error', async () => {
+      // If photo fails and we haven't tried dynamic Wikipedia lookup, try once
+      if (!hasTriedWiki && name && name !== 'Cast Member') {
+        hasTriedWiki = true;
+        try {
+          const wikiQuery = name.trim().replace(/ /g, '_');
+          const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikiQuery)}`);
+          const data = await res.json();
+          const dynamicSrc = data.thumbnail?.source || data.originalimage?.source;
+          if (dynamicSrc) {
+            img.src = dynamicSrc;
+            return;
+          }
+        } catch (err) {
+          // Fall through to initials avatar
+        }
+      }
       img.onerror = null;
       img.src = initialsAvatar;
     });

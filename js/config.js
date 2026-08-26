@@ -63,11 +63,11 @@ export const CONFIG = {
       production_companies: [{ name: "Warner Bros. Pictures" }, { name: "Syncopy" }],
       credits: {
         cast: [
-          { name: "Leonardo DiCaprio", character: "Dom Cobb", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Joseph Gordon-Levitt", character: "Arthur", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Elliot Page", character: "Ariadne", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Tom Hardy", character: "Eames", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Cillian Murphy", character: "Robert Fischer", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" }
+          { name: "Leonardo DiCaprio", character: "Dom Cobb", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/LeoPTABFI191125-28_%28cropped%29.jpg/330px-LeoPTABFI191125-28_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Joseph Gordon-Levitt", character: "Arthur", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Joseph_Gordon_Levitt_Sundance_Film_Festival_2026_%28cropped%29.jpg/330px-Joseph_Gordon_Levitt_Sundance_Film_Festival_2026_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Elliot Page", character: "Ariadne", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Elliot_Page_2026.jpg/330px-Elliot_Page_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Tom Hardy", character: "Eames", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tom_Hardy_%2841869508740%29.jpg/330px-Tom_Hardy_%2841869508740%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Cillian Murphy", character: "Robert Fischer", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_%28cropped%29.jpg/330px-Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -90,10 +90,10 @@ export const CONFIG = {
       production_companies: [{ name: "Paramount" }, { name: "Warner Bros. Pictures" }, { name: "Syncopy" }],
       credits: {
         cast: [
-          { name: "Matthew McConaughey", character: "Cooper", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Anne Hathaway", character: "Brand", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Jessica Chastain", character: "Murph", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
-          { name: "Michael Caine", character: "Professor Brand", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Matthew McConaughey", character: "Cooper", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Matthew_McConaughey_at_the_2025_Toronto_Film_Festival_%28Cropped%29.jpg/330px-Matthew_McConaughey_at_the_2025_Toronto_Film_Festival_%28Cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Anne Hathaway", character: "Brand", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Anne_Hathaway-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194764955_%28cropped%29.jpg/330px-Anne_Hathaway-_Press_conference_for_the_film_%22The_Devil_Wears_Prada_2%22_-_55194764955_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Jessica Chastain", character: "Murph", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Jessica_Chastain-64631_%28cropped%29.jpg/330px-Jessica_Chastain-64631_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Michael Caine", character: "Professor Brand", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Michael_Caine_-_Viennale_2012_g_%28cropped%29.jpg/330px-Michael_Caine_-_Viennale_2012_g_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -116,10 +116,10 @@ export const CONFIG = {
       production_companies: [{ name: "Warner Bros. Pictures" }, { name: "Legendary Pictures" }, { name: "Syncopy" }],
       credits: {
         cast: [
-          { name: "Christian Bale", character: "Bruce Wayne / Batman", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Heath Ledger", character: "Joker", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
-          { name: "Aaron Eckhart", character: "Harvey Dent / Two-Face", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Gary Oldman", character: "James Gordon", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Christian Bale", character: "Bruce Wayne / Batman", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Christian_Bale-7837.jpg/330px-Christian_Bale-7837.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Heath Ledger", character: "Joker", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Heath_Ledger_%282%29.jpg/330px-Heath_Ledger_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Aaron Eckhart", character: "Harvey Dent / Two-Face", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Aaron_Eckhart_%2829830286295%29_%28cropped%29.jpg/330px-Aaron_Eckhart_%2829830286295%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Gary Oldman", character: "James Gordon", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Gary_Oldman_%2813925515511%29_%28cropped%29.jpg/330px-Gary_Oldman_%2813925515511%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -142,10 +142,10 @@ export const CONFIG = {
       production_companies: [{ name: "Legendary Pictures" }, { name: "Warner Bros. Pictures" }],
       credits: {
         cast: [
-          { name: "Timothée Chalamet", character: "Paul Atreides", profile_path: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" },
-          { name: "Zendaya", character: "Chani", profile_path: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80" },
-          { name: "Rebecca Ferguson", character: "Lady Jessica", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
-          { name: "Austin Butler", character: "Feyd-Rautha", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
+          { name: "Timothée Chalamet", character: "Paul Atreides", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Timoth%C3%A9e_Chalamet-63482_%28cropped%29.jpg/330px-Timoth%C3%A9e_Chalamet-63482_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Zendaya", character: "Chani", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Zendaya-byPhilipRomano.jpg/330px-Zendaya-byPhilipRomano.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Rebecca Ferguson", character: "Lady Jessica", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Rebecca_Ferguson_A_House_of_Dynamite-67_%28cropped2%29.jpg/330px-Rebecca_Ferguson_A_House_of_Dynamite-67_%28cropped2%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Austin Butler", character: "Feyd-Rautha", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Austin_Butler_at_the_2025_Cannes_Film_Festival_02.jpg/330px-Austin_Butler_at_the_2025_Cannes_Film_Festival_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -168,10 +168,10 @@ export const CONFIG = {
       production_companies: [{ name: "Syncopy" }, { name: "Universal Pictures" }, { name: "Atlas Entertainment" }],
       credits: {
         cast: [
-          { name: "Cillian Murphy", character: "J. Robert Oppenheimer", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
-          { name: "Emily Blunt", character: "Katherine 'Kitty' Oppenheimer", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Matt Damon", character: "Leslie Groves", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Robert Downey Jr.", character: "Lewis Strauss", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
+          { name: "Cillian Murphy", character: "J. Robert Oppenheimer", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_%28cropped%29.jpg/330px-Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Emily Blunt", character: "Katherine 'Kitty' Oppenheimer", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Emily_Blunt_at_WWD_Style_Awards_2026-02.jpg/330px-Emily_Blunt_at_WWD_Style_Awards_2026-02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Matt Damon", character: "Leslie Groves", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/MattDamon-byPhilipRomano2.jpg/330px-MattDamon-byPhilipRomano2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Robert Downey Jr.", character: "Lewis Strauss", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/RobertDowneyJr-byPhilipRomano7_%28cropped%29.jpg/330px-RobertDowneyJr-byPhilipRomano7_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -194,9 +194,9 @@ export const CONFIG = {
       production_companies: [{ name: "Columbia Pictures" }, { name: "Sony Pictures Animation" }, { name: "Marvel Entertainment" }],
       credits: {
         cast: [
-          { name: "Shameik Moore", character: "Miles Morales / Spider-Man", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Hailee Steinfeld", character: "Gwen Stacy / Spider-Woman", profile_path: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" },
-          { name: "Oscar Isaac", character: "Miguel O'Hara / Spider-Man 2099", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Shameik Moore", character: "Miles Morales / Spider-Man", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Shameik_Moore_Photo_Op_GalaxyCon_Raleigh_2023.jpg/330px-Shameik_Moore_Photo_Op_GalaxyCon_Raleigh_2023.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Hailee Steinfeld", character: "Gwen Stacy / Spider-Woman", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Hailee_Steinfeld_by_Gage_Skidmore.jpg/330px-Hailee_Steinfeld_by_Gage_Skidmore.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Oscar Isaac", character: "Miguel O'Hara / Spider-Man 2099", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Oscar_Isaac_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg/330px-Oscar_Isaac_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -219,9 +219,9 @@ export const CONFIG = {
       production_companies: [{ name: "Lightstorm Entertainment" }, { name: "20th Century Studios" }],
       credits: {
         cast: [
-          { name: "Sam Worthington", character: "Jake Sully", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Zoe Saldaña", character: "Neytiri", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Sigourney Weaver", character: "Kiri", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+          { name: "Sam Worthington", character: "Jake Sully", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg/330px-Avatar_The_Way_of_Water_Tokyo_Press_Conference_Sam_Worthington_%2852563252594%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Zoe Saldaña", character: "Neytiri", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Zoe_Salda%C3%B1a_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg/330px-Zoe_Salda%C3%B1a_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Sigourney Weaver", character: "Kiri", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Sigourney_Weaver_at_the_2025_Toronto_International_Film_Festival_%28cropped%29.jpg/330px-Sigourney_Weaver_at_the_2025_Toronto_International_Film_Festival_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -244,9 +244,9 @@ export const CONFIG = {
       production_companies: [{ name: "Paramount" }, { name: "Skydance" }, { name: "Jerry Bruckheimer Films" }],
       credits: {
         cast: [
-          { name: "Tom Cruise", character: "Capt. Pete 'Maverick' Mitchell", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Miles Teller", character: "Lt. Bradley 'Rooster' Bradshaw", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Jennifer Connelly", character: "Penny Benjamin", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Tom Cruise", character: "Capt. Pete 'Maverick' Mitchell", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Tom_Cruise_at_53rd_Saturn_Awards_2026-01.jpg/330px-Tom_Cruise_at_53rd_Saturn_Awards_2026-01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Miles Teller", character: "Lt. Bradley 'Rooster' Bradshaw", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Miles_Teller_TIFF_2025_%283x4_cropped%29.png/330px-Miles_Teller_TIFF_2025_%283x4_cropped%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Jennifer Connelly", character: "Penny Benjamin", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Jennifer_Connelly_2019_2.png/330px-Jennifer_Connelly_2019_2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -269,9 +269,9 @@ export const CONFIG = {
       production_companies: [{ name: "Castle Rock Entertainment" }, { name: "Warner Bros. Pictures" }],
       credits: {
         cast: [
-          { name: "Tim Robbins", character: "Andy Dufresne", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Morgan Freeman", character: "Ellis Boyd 'Red' Redding", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Bob Gunton", character: "Warden Norton", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
+          { name: "Tim Robbins", character: "Andy Dufresne", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Tim_Robbins_%28Berlin_Film_Festival_2013%29.jpg/330px-Tim_Robbins_%28Berlin_Film_Festival_2013%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Morgan Freeman", character: "Ellis Boyd 'Red' Redding", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Morgan_Freeman_at_The_Pentagon_on_2_August_2023_-_230802-D-PM193-3363_%28cropped%29.jpg/330px-Morgan_Freeman_at_The_Pentagon_on_2_August_2023_-_230802-D-PM193-3363_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Bob Gunton", character: "Warden Norton", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Bob_Gunton%2C_1963_senior_photo.jpg/330px-Bob_Gunton%2C_1963_senior_photo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -294,10 +294,10 @@ export const CONFIG = {
       production_companies: [{ name: "Miramax" }, { name: "A Band Apart" }],
       credits: {
         cast: [
-          { name: "John Travolta", character: "Vincent Vega", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Samuel L. Jackson", character: "Jules Winnfield", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Uma Thurman", character: "Mia Wallace", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Bruce Willis", character: "Butch Coolidge", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+          { name: "John Travolta", character: "Vincent Vega", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/John_Travolta_in_2024_%28cropped%29.jpg/330px-John_Travolta_in_2024_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Samuel L. Jackson", character: "Jules Winnfield", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/SamuelLJackson.jpg/330px-SamuelLJackson.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Uma Thurman", character: "Mia Wallace", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/UmaThurman-byPhilipRomano.jpg/330px-UmaThurman-byPhilipRomano.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Bruce Willis", character: "Butch Coolidge", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Bruce_Willis_by_Gage_Skidmore_3.jpg/330px-Bruce_Willis_by_Gage_Skidmore_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -320,9 +320,9 @@ export const CONFIG = {
       production_companies: [{ name: "Fox 2000 Pictures" }, { name: "Regency Enterprises" }],
       credits: {
         cast: [
-          { name: "Edward Norton", character: "The Narrator", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Brad Pitt", character: "Tyler Durden", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Helena Bonham Carter", character: "Marla Singer", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+          { name: "Edward Norton", character: "The Narrator", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Ed_Norton_and_Shauna_Robertson_TIFF_2025_%28cropped%29.jpg/330px-Ed_Norton_and_Shauna_Robertson_TIFF_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Brad Pitt", character: "Tyler Durden", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Brad_Pitt-69858.jpg/330px-Brad_Pitt-69858.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Helena Bonham Carter", character: "Marla Singer", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/MerchantIvoryCurzMayfair201124_%2816_of_28%29_%2854154554145%29_%28cropped%29.jpg/330px-MerchantIvoryCurzMayfair201124_%2816_of_28%29_%2854154554145%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -345,10 +345,10 @@ export const CONFIG = {
       production_companies: [{ name: "Village Roadshow Pictures" }, { name: "Silver Pictures" }, { name: "Warner Bros. Pictures" }],
       credits: {
         cast: [
-          { name: "Keanu Reeves", character: "Thomas A. Anderson / Neo", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Laurence Fishburne", character: "Morpheus", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Carrie-Anne Moss", character: "Trinity", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Hugo Weaving", character: "Agent Smith", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Keanu Reeves", character: "Thomas A. Anderson / Neo", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Keanu_Reeves_at_TIFF_2025_02_%28Cropped%29.jpg/330px-Keanu_Reeves_at_TIFF_2025_02_%28Cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Laurence Fishburne", character: "Morpheus", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Laurence_Fishburne_at_53rd_Saturn_Awards_2026.jpg/330px-Laurence_Fishburne_at_53rd_Saturn_Awards_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Carrie-Anne Moss", character: "Trinity", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Carrie-Anne_Moss_May_2016.jpg/330px-Carrie-Anne_Moss_May_2016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Hugo Weaving", character: "Agent Smith", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Hugo_Weaving_2014.jpg/330px-Hugo_Weaving_2014.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -371,9 +371,9 @@ export const CONFIG = {
       production_companies: [{ name: "DreamWorks Pictures" }, { name: "Universal Pictures" }, { name: "Scott Free Productions" }],
       credits: {
         cast: [
-          { name: "Russell Crowe", character: "Maximus Decimus Meridius", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Joaquin Phoenix", character: "Commodus", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
-          { name: "Connie Nielsen", character: "Lucilla", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+          { name: "Russell Crowe", character: "Maximus Decimus Meridius", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Russell_Crowe_on_the_Green_Carpet_at_the_2025_Zurich_Film_Festival_06_%28cropped%29.jpg/330px-Russell_Crowe_on_the_Green_Carpet_at_the_2025_Zurich_Film_Festival_06_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Joaquin Phoenix", character: "Commodus", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Joaquin_Phoenix-64908_%28cropped%29.jpg/330px-Joaquin_Phoenix-64908_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Connie Nielsen", character: "Lucilla", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Connie_Nielsen_by_Gage_Skidmore.jpg/330px-Connie_Nielsen_by_Gage_Skidmore.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -396,11 +396,11 @@ export const CONFIG = {
       production_companies: [{ name: "Marvel Studios" }],
       credits: {
         cast: [
-          { name: "Robert Downey Jr.", character: "Tony Stark / Iron Man", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Robert Downey Jr.", character: "Tony Stark / Iron Man", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/RobertDowneyJr-byPhilipRomano7_%28cropped%29.jpg/330px-RobertDowneyJr-byPhilipRomano7_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
           { name: "Chris Evans", character: "Steve Rogers / Captain America", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Mark Ruffalo", character: "Bruce Banner / Hulk", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Chris Hemsworth", character: "Thor", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
-          { name: "Scarlett Johansson", character: "Natasha Romanoff / Black Widow", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Mark Ruffalo", character: "Bruce Banner / Hulk", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Mark_Ruffalo_%2836201774756%29_%28cropped%29.jpg/330px-Mark_Ruffalo_%2836201774756%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Chris Hemsworth", character: "Thor", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chris_Hemsworth_-_Crime_101.jpg/330px-Chris_Hemsworth_-_Crime_101.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Scarlett Johansson", character: "Natasha Romanoff / Black Widow", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Scarlett_Johansson-8588.jpg/330px-Scarlett_Johansson-8588.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -423,9 +423,9 @@ export const CONFIG = {
       production_companies: [{ name: "Barunson E&A" }, { name: "CJ Entertainment" }],
       credits: {
         cast: [
-          { name: "Song Kang-ho", character: "Kim Ki-taek", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Lee Sun-kyun", character: "Park Dong-ik", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Cho Yeo-jeong", character: "Park Yeon-gyo", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Song Kang-ho", character: "Kim Ki-taek", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Song_Gangho_2016.jpg/330px-Song_Gangho_2016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Lee Sun-kyun", character: "Park Dong-ik", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Lee_Seon-gun_in_Oct_2018.png/330px-Lee_Seon-gun_in_Oct_2018.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Cho Yeo-jeong", character: "Park Yeon-gyo", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Cho_Yeo-jeong.jpg/330px-Cho_Yeo-jeong.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -448,9 +448,9 @@ export const CONFIG = {
       production_companies: [{ name: "Bold Films" }, { name: "Blumhouse Productions" }, { name: "Right of Way Films" }],
       credits: {
         cast: [
-          { name: "Miles Teller", character: "Andrew Neiman", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "J.K. Simmons", character: "Terence Fletcher", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Paul Reiser", character: "Jim Neiman", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Miles Teller", character: "Andrew Neiman", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Miles_Teller_TIFF_2025_%283x4_cropped%29.png/330px-Miles_Teller_TIFF_2025_%283x4_cropped%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "J.K. Simmons", character: "Terence Fletcher", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/JK_Simmons_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg/330px-JK_Simmons_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Paul Reiser", character: "Jim Neiman", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Paul_Reiser_by_Gage_Skidmore_2.jpg/330px-Paul_Reiser_by_Gage_Skidmore_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -473,9 +473,9 @@ export const CONFIG = {
       production_companies: [{ name: "Alcon Entertainment" }, { name: "Columbia Pictures" }, { name: "Scott Free Productions" }],
       credits: {
         cast: [
-          { name: "Ryan Gosling", character: "K", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Harrison Ford", character: "Rick Deckard", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Ana de Armas", character: "Joi", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Ryan Gosling", character: "K", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/GoslingBFI081223_%2822_of_30%29_%2853388157347%29_%28cropped%29.jpg/330px-GoslingBFI081223_%2822_of_30%29_%2853388157347%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Harrison Ford", character: "Rick Deckard", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Harrison_Ford_-_Televerse_2025-03.jpg/330px-Harrison_Ford_-_Televerse_2025-03.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Ana de Armas", character: "Joi", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Ana_de_Armas_%2854462619561%29_%28cropped_3%29.jpg/330px-Ana_de_Armas_%2854462619561%29_%28cropped_3%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -498,11 +498,11 @@ export const CONFIG = {
       production_companies: [{ name: "Marvel Studios" }, { name: "Columbia Pictures" }, { name: "Pascal Pictures" }],
       credits: {
         cast: [
-          { name: "Tom Holland", character: "Peter Parker / Spider-Man", profile_path: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80" },
-          { name: "Zendaya", character: "MJ", profile_path: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80" },
-          { name: "Benedict Cumberbatch", character: "Doctor Strange", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Jacob Batalon", character: "Ned Leeds", profile_path: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" },
-          { name: "Willem Dafoe", character: "Norman Osborn / Green Goblin", profile_path: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=300&q=80" }
+          { name: "Tom Holland", character: "Peter Parker / Spider-Man", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/TomHolland-byPhilipRomano.jpg/330px-TomHolland-byPhilipRomano.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Zendaya", character: "MJ", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Zendaya-byPhilipRomano.jpg/330px-Zendaya-byPhilipRomano.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Benedict Cumberbatch", character: "Doctor Strange", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Benedict_Cumberbatch-67555.jpg/330px-Benedict_Cumberbatch-67555.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Jacob Batalon", character: "Ned Leeds", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Jacob_Batalon_%2828035642754%29_%28cropped%29.jpg/330px-Jacob_Batalon_%2828035642754%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Willem Dafoe", character: "Norman Osborn / Green Goblin", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Willem_Dafoe-63668_%28cropped%29.jpg/330px-Willem_Dafoe-63668_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -525,10 +525,10 @@ export const CONFIG = {
       production_companies: [{ name: "Warner Bros. Pictures" }, { name: "6th & Idaho" }, { name: "Dylan Clark Productions" }],
       credits: {
         cast: [
-          { name: "Robert Pattinson", character: "Bruce Wayne / Batman", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Zoë Kravitz", character: "Selina Kyle / Catwoman", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Paul Dano", character: "Edward Nashton / Riddler", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
-          { name: "Colin Farrell", character: "Oswald Cobblepot / Penguin", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Robert Pattinson", character: "Bruce Wayne / Batman", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Robert_Pattinson_at_Berlinale_2025.jpg/330px-Robert_Pattinson_at_Berlinale_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Zoë Kravitz", character: "Selina Kyle / Catwoman", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Zoe_Kravitz_2020_dvna_studio.jpg/330px-Zoe_Kravitz_2020_dvna_studio.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Paul Dano", character: "Edward Nashton / Riddler", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Paul_Dano_at_Berlinale_2024_Ausschnitt.jpg/330px-Paul_Dano_at_Berlinale_2024_Ausschnitt.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Colin Farrell", character: "Oswald Cobblepot / Penguin", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/2025_Colin_Farrell_-_2_%28cropped%29.jpg/330px-2025_Colin_Farrell_-_2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -551,10 +551,10 @@ export const CONFIG = {
       production_companies: [{ name: "Thunder Road" }, { name: "87Eleven" }, { name: "Lionsgate" }],
       credits: {
         cast: [
-          { name: "Keanu Reeves", character: "John Wick", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Donnie Yen", character: "Caine", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Bill Skarsgård", character: "Marquis de Gramont", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Ian McShane", character: "Winston Scott", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Keanu Reeves", character: "John Wick", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Keanu_Reeves_at_TIFF_2025_02_%28Cropped%29.jpg/330px-Keanu_Reeves_at_TIFF_2025_02_%28Cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Donnie Yen", character: "Caine", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Donnie_Yen_20250323.jpg/330px-Donnie_Yen_20250323.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Bill Skarsgård", character: "Marquis de Gramont", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Bill_Skarsg%C3%A5rd_%2843573067882%29_%28cropped%29.jpg/330px-Bill_Skarsg%C3%A5rd_%2843573067882%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Ian McShane", character: "Winston Scott", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/McShaneTamLinRio311022_%281_of_21%29_%2852470810951%29_%28cropped_3%C3%974%29.jpg/330px-McShaneTamLinRio311022_%281_of_21%29_%2852470810951%29_%28cropped_3%C3%974%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -579,11 +579,11 @@ export const CONFIG = {
       production_companies: [{ name: "Rajkumar Hirani Films" }, { name: "Vinod Chopra Films" }],
       credits: {
         cast: [
-          { name: "Aamir Khan", character: "PK", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Anushka Sharma", character: "Jagat Janani (Jaggu)", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Sushant Singh Rajput", character: "Sarfaraz Yousuf", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Saurabh Shukla", character: "Tapasvi Maharaj", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Boman Irani", character: "Cherry Bajwa", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" }
+          { name: "Aamir Khan", character: "PK", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Aamir_Khan_at_the_success_bash_of_Secret_Superstar.jpg/330px-Aamir_Khan_at_the_success_bash_of_Secret_Superstar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Anushka Sharma", character: "Jagat Janani (Jaggu)", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Anushka_Sharma_promoting_Zero.jpg/330px-Anushka_Sharma_promoting_Zero.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Sushant Singh Rajput", character: "Sarfaraz Yousuf", profile_path: "https://upload.wikimedia.org/wikipedia/commons/9/96/Sushant_Singh_Rajput_snapped_at_the_promotions_of_%27M.S._Dhoni_-_The_Untold_Story%27_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" },
+          { name: "Saurabh Shukla", character: "Tapasvi Maharaj", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Saurabh_Shukla_graces_the_screening_of_Sonata.jpg/330px-Saurabh_Shukla_graces_the_screening_of_Sonata.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Boman Irani", character: "Cherry Bajwa", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/IIFA_2017_Green_Carpet_%2836349841166%29_%28cropped%29.jpg/330px-IIFA_2017_Green_Carpet_%2836349841166%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -606,10 +606,10 @@ export const CONFIG = {
       production_companies: [{ name: "Sippy Films" }],
       credits: {
         cast: [
-          { name: "Amitabh Bachchan", character: "Jai", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Dharmendra", character: "Veeru", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Amjad Khan", character: "Gabbar Singh", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Hema Malini", character: "Basanti", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Amitabh Bachchan", character: "Jai", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Indian_actor_Amitabh_Bachchan.jpg/330px-Indian_actor_Amitabh_Bachchan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Dharmendra", character: "Veeru", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Shri_Dharmendra_Deol_on_April_04%2C_2012.jpg/330px-Shri_Dharmendra_Deol_on_April_04%2C_2012.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Amjad Khan", character: "Gabbar Singh", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Amjad_Khan_in_1985.jpg/330px-Amjad_Khan_in_1985.jpg" },
+          { name: "Hema Malini", character: "Basanti", profile_path: "https://upload.wikimedia.org/wikipedia/commons/3/39/Hema_Malini%27s_75th_birthday_celebration.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" }
         ]
       }
     },
@@ -632,10 +632,10 @@ export const CONFIG = {
       production_companies: [{ name: "Vinod Chopra Films" }],
       credits: {
         cast: [
-          { name: "Aamir Khan", character: "Rancho", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "R. Madhavan", character: "Farhan", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Sharman Joshi", character: "Raju", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Kareena Kapoor", character: "Pia", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Aamir Khan", character: "Rancho", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Aamir_Khan_at_the_success_bash_of_Secret_Superstar.jpg/330px-Aamir_Khan_at_the_success_bash_of_Secret_Superstar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "R. Madhavan", character: "Farhan", profile_path: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Madhavan_Saala_Khadoos_2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" },
+          { name: "Sharman Joshi", character: "Raju", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sharman_Joshi_at_Trailer_launch_of_Hate_Story_3.jpg/330px-Sharman_Joshi_at_Trailer_launch_of_Hate_Story_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Kareena Kapoor", character: "Pia", profile_path: "https://upload.wikimedia.org/wikipedia/commons/2/29/Kareena_Kapoor_Khan_in_2023_%281%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" }
         ]
       }
     },
@@ -658,9 +658,9 @@ export const CONFIG = {
       production_companies: [{ name: "Aamir Khan Productions" }, { name: "Walt Disney Pictures" }],
       credits: {
         cast: [
-          { name: "Aamir Khan", character: "Mahavir Singh Phogat", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Fatima Sana Shaikh", character: "Geeta Phogat", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Sanya Malhotra", character: "Babita Kumari", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+          { name: "Aamir Khan", character: "Mahavir Singh Phogat", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Aamir_Khan_at_the_success_bash_of_Secret_Superstar.jpg/330px-Aamir_Khan_at_the_success_bash_of_Secret_Superstar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Fatima Sana Shaikh", character: "Geeta Phogat", profile_path: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Fatima_Sana_Shaikh_at_the_launch_of_Netflix_Slate_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" },
+          { name: "Sanya Malhotra", character: "Babita Kumari", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Sanya_Malhotra_at_the_launch_of_Netflix_Slate_2025_%28cropped%29.jpg/330px-Sanya_Malhotra_at_the_launch_of_Netflix_Slate_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -683,8 +683,8 @@ export const CONFIG = {
       production_companies: [{ name: "Aamir Khan Productions" }],
       credits: {
         cast: [
-          { name: "Aamir Khan", character: "Bhuvan", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Gracy Singh", character: "Gauri", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Aamir Khan", character: "Bhuvan", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Aamir_Khan_at_the_success_bash_of_Secret_Superstar.jpg/330px-Aamir_Khan_at_the_success_bash_of_Secret_Superstar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Gracy Singh", character: "Gauri", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Gracy_singh_dangerous_ishq.jpg/330px-Gracy_singh_dangerous_ishq.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -707,8 +707,8 @@ export const CONFIG = {
       production_companies: [{ name: "Yash Raj Films" }],
       credits: {
         cast: [
-          { name: "Shah Rukh Khan", character: "Raj Malhotra", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Kajol", character: "Simran Singh", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Shah Rukh Khan", character: "Raj Malhotra", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Shah_Rukh_Khan_graces_the_launch_of_the_new_Santro.jpg/330px-Shah_Rukh_Khan_graces_the_launch_of_the_new_Santro.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Kajol", character: "Simran Singh", profile_path: "https://upload.wikimedia.org/wikipedia/commons/4/41/Kajol_snapped_promoting_Maa_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" }
         ]
       }
     },
@@ -731,9 +731,9 @@ export const CONFIG = {
       production_companies: [{ name: "Red Chillies Entertainment" }],
       credits: {
         cast: [
-          { name: "Shah Rukh Khan", character: "Vikram Rathore / Azad", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Nayanthara", character: "Narmada Rai", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Vijay Sethupathi", character: "Kalee Gaikwad", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Shah Rukh Khan", character: "Vikram Rathore / Azad", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Shah_Rukh_Khan_graces_the_launch_of_the_new_Santro.jpg/330px-Shah_Rukh_Khan_graces_the_launch_of_the_new_Santro.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Nayanthara", character: "Narmada Rai", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Nayanthara_during_toxic_album_launch_event.jpg/330px-Nayanthara_during_toxic_album_launch_event.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Vijay Sethupathi", character: "Kalee Gaikwad", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Vijay_Sethupathi_at_the_premiere_of_Merry_Christmas_2_%28cropped%29.jpg/330px-Vijay_Sethupathi_at_the_premiere_of_Merry_Christmas_2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -756,9 +756,9 @@ export const CONFIG = {
       production_companies: [{ name: "Rajkumar Hirani Films" }, { name: "Vinod Chopra Films" }],
       credits: {
         cast: [
-          { name: "Ranbir Kapoor", character: "Sanjay Dutt", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Paresh Rawal", character: "Sunil Dutt", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Vicky Kaushal", character: "Kamlesh", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
+          { name: "Ranbir Kapoor", character: "Sanjay Dutt", profile_path: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Ranbir_Kapoor_snapped_at_Kalina_airport.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" },
+          { name: "Paresh Rawal", character: "Sunil Dutt", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Paresh_Rawal_February_2015.jpg/330px-Paresh_Rawal_February_2015.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Vicky Kaushal", character: "Kamlesh", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Vicky_Kaushal_snapped_promoting_Zara_Hatke_Zara_Bach_Ke_on_the_sets_of_The_Kapil_Sharma_Show_%28cropped%29.jpg/330px-Vicky_Kaushal_snapped_promoting_Zara_Hatke_Zara_Bach_Ke_on_the_sets_of_The_Kapil_Sharma_Show_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -781,9 +781,9 @@ export const CONFIG = {
       production_companies: [{ name: "Salman Khan Films" }, { name: "Kabir Khan Films" }],
       credits: {
         cast: [
-          { name: "Salman Khan", character: "Pawan Kumar Chaturvedi", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Harshaali Malhotra", character: "Shahida (Munni)", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
-          { name: "Nawazuddin Siddiqui", character: "Chand Nawab", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Salman Khan", character: "Pawan Kumar Chaturvedi", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Salman_Khan_snapped_at_the_Angry_Young_Men_trailer_launch.jpg/330px-Salman_Khan_snapped_at_the_Angry_Young_Men_trailer_launch.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Harshaali Malhotra", character: "Shahida (Munni)", profile_path: "https://upload.wikimedia.org/wikipedia/commons/6/60/Harshaali_Malhotra_at_the_premiere_of_Salaam_Venky_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" },
+          { name: "Nawazuddin Siddiqui", character: "Chand Nawab", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Nawazuddin_Siddiqui_at_IFFK_2021_4_%28cropped%29.jpg/330px-Nawazuddin_Siddiqui_at_IFFK_2021_4_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -808,9 +808,9 @@ export const CONFIG = {
       production_companies: [{ name: "Seven Screen Studio" }],
       credits: {
         cast: [
-          { name: "Thalapathy Vijay", character: "Parthiban / Leo Das", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Sanjay Dutt", character: "Antony Das", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Trisha Krishnan", character: "Sathya", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Thalapathy Vijay", character: "Parthiban / Leo Das", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/JosephVijay.jpg/330px-JosephVijay.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Sanjay Dutt", character: "Antony Das", profile_path: "https://upload.wikimedia.org/wikipedia/commons/1/13/Sanjay_Dutt_at_Mumbai_Airport%2C_2018_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" },
+          { name: "Trisha Krishnan", character: "Sathya", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Trisha_Krishnan_at_PS1_pre_release_event_%283%29_%28cropped%29.jpg/330px-Trisha_Krishnan_at_PS1_pre_release_event_%283%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -833,9 +833,9 @@ export const CONFIG = {
       production_companies: [{ name: "Sun Pictures" }],
       credits: {
         cast: [
-          { name: "Rajinikanth", character: "Tiger Muthuvel Pandian", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Vinayakan", character: "Varman", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Mohanlal", character: "Mathew (Cameo)", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Rajinikanth", character: "Tiger Muthuvel Pandian", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Rajinikanth_in_2019.jpg/330px-Rajinikanth_in_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Vinayakan", character: "Varman", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Vinayakan.jpg/330px-Vinayakan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Mohanlal", character: "Mathew (Cameo)", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Mohanlal_%28cropped%29.jpg/330px-Mohanlal_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -858,9 +858,9 @@ export const CONFIG = {
       production_companies: [{ name: "Raaj Kamal Films International" }],
       credits: {
         cast: [
-          { name: "Kamal Haasan", character: "Commander Arun Kumar Vikram", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Fahadh Faasil", character: "Amar", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Vijay Sethupathi", character: "Sandhanam", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Kamal Haasan", character: "Commander Arun Kumar Vikram", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Kamal_Haasan_at_2023_San_Diego_Comic-Con_International_by_Gage_Skidmore%2C_005_%28cropped%29.jpg/330px-Kamal_Haasan_at_2023_San_Diego_Comic-Con_International_by_Gage_Skidmore%2C_005_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Fahadh Faasil", character: "Amar", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Fahadh_Faasil_2019.jpg/330px-Fahadh_Faasil_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Vijay Sethupathi", character: "Sandhanam", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Vijay_Sethupathi_at_the_premiere_of_Merry_Christmas_2_%28cropped%29.jpg/330px-Vijay_Sethupathi_at_the_premiere_of_Merry_Christmas_2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -884,8 +884,8 @@ export const CONFIG = {
       credits: {
         cast: [
           { name: "Vikram", character: "Aditha Karikalan", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Aishwarya Rai Bachchan", character: "Nandini / Mandakini", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Karthi", character: "Vallavaraiyan Vandiyadevan", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Aishwarya Rai Bachchan", character: "Nandini / Mandakini", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Aishwarya_Rai_Cannes_2017.jpg/330px-Aishwarya_Rai_Cannes_2017.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Karthi", character: "Vallavaraiyan Vandiyadevan", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Karthi_Sivakumar_at_Nenjil_Thunivirunthal_Audio_Launch_%28cropped%29.jpg/330px-Karthi_Sivakumar_at_Nenjil_Thunivirunthal_Audio_Launch_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -910,8 +910,8 @@ export const CONFIG = {
       production_companies: [{ name: "Aatpat Production" }, { name: "Zee Studios" }],
       credits: {
         cast: [
-          { name: "Rinku Rajguru", character: "Archana 'Archie' Patil", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Somnath Awghade", character: "Prashant 'Parshya' Kale", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
+          { name: "Rinku Rajguru", character: "Archana 'Archie' Patil", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Rinku_Rajguru_2024.jpg/330px-Rinku_Rajguru_2024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Somnath Awghade", character: "Prashant 'Parshya' Kale", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Pranab_Mukherjee_presenting_the_Rajat_Kamal_Award_for_Best_Child_Artist_%28Shared%29_Fandry_Meengal_%28Marathi%29_to_Somnath_Avghade%2C_at_the_61st_National_Film_Awards_function%2C_in_New_Delhi._The_Secretary.jpg/330px-thumbnail.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -934,9 +934,9 @@ export const CONFIG = {
       production_companies: [{ name: "Fincraft Media" }, { name: "Zee Studios" }],
       credits: {
         cast: [
-          { name: "Nana Patekar", character: "Ganpatrao Ramchandra Belwalkar", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Medha Manjrekar", character: "Kaveri Belwalkar", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Vikram Gokhale", character: "Rambhau", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Nana Patekar", character: "Ganpatrao Ramchandra Belwalkar", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Nana_Patekar_2025.jpg/330px-Nana_Patekar_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Medha Manjrekar", character: "Kaveri Belwalkar", profile_path: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Medha_Manjrekar_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" },
+          { name: "Vikram Gokhale", character: "Rambhau", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Vikram_Gokhale_at_the_TV_show_launch.jpg/330px-Vikram_Gokhale_at_the_TV_show_launch.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -959,9 +959,9 @@ export const CONFIG = {
       production_companies: [{ name: "Essel Vision Productions" }],
       credits: {
         cast: [
-          { name: "Sachin Pilgaonkar", character: "Khan Saheb Aftab Hussain", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Subodh Bhave", character: "Sadashiv", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Shankar Mahadevan", character: "Pandit Bhanu Shankar Shastri", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Sachin Pilgaonkar", character: "Khan Saheb Aftab Hussain", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/SachinPilgaonkar.jpg/330px-SachinPilgaonkar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Subodh Bhave", character: "Sadashiv", profile_path: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Subodh_Bhave_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" },
+          { name: "Shankar Mahadevan", character: "Pandit Bhanu Shankar Shastri", profile_path: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Shankar_Mahadevan_01_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" }
         ]
       }
     },
@@ -986,8 +986,8 @@ export const CONFIG = {
       production_companies: [{ name: "Syncopy" }, { name: "Universal Pictures" }, { name: "Atlas Entertainment" }],
       credits: {
         cast: [
-          { name: "Cillian Murphy", character: "J. Robert Oppenheimer", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" },
-          { name: "Emily Blunt", character: "Katherine 'Kitty' Oppenheimer", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Cillian Murphy", character: "J. Robert Oppenheimer", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_%28cropped%29.jpg/330px-Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Emily Blunt", character: "Katherine 'Kitty' Oppenheimer", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Emily_Blunt_at_WWD_Style_Awards_2026-02.jpg/330px-Emily_Blunt_at_WWD_Style_Awards_2026-02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1010,8 +1010,8 @@ export const CONFIG = {
       production_companies: [{ name: "Warner Bros. Pictures" }],
       credits: {
         cast: [
-          { name: "Margot Robbie", character: "Barbie", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Ryan Gosling", character: "Ken", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Margot Robbie", character: "Barbie", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Margot_Robbie_at_the_Paris_premiere_of_%22Wuthering_Heights%22.jpg/330px-Margot_Robbie_at_the_Paris_premiere_of_%22Wuthering_Heights%22.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Ryan Gosling", character: "Ken", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/GoslingBFI081223_%2822_of_30%29_%2853388157347%29_%28cropped%29.jpg/330px-GoslingBFI081223_%2822_of_30%29_%2853388157347%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1036,8 +1036,8 @@ export const CONFIG = {
       production_companies: [{ name: "DVV Entertainment" }],
       credits: {
         cast: [
-          { name: "Jr. NTR", character: "Komaram Bheem", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Ram Charan", character: "Rama Raju", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
+          { name: "Jr. NTR", character: "Komaram Bheem", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/NTR_Jr._%282026%29.jpg/330px-NTR_Jr._%282026%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Ram Charan", character: "Rama Raju", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Ram_Charan_at_Game_Changer_trailer_launch.jpg/330px-Ram_Charan_at_Game_Changer_trailer_launch.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1060,8 +1060,8 @@ export const CONFIG = {
       production_companies: [{ name: "Mythri Movie Makers" }],
       credits: {
         cast: [
-          { name: "Allu Arjun", character: "Pushpa Raj", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Rashmika Mandanna", character: "Srivalli", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Allu Arjun", character: "Pushpa Raj", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Allu_Arjun_at_Pushpa_2_The_Rule_meet.jpg/330px-Allu_Arjun_at_Pushpa_2_The_Rule_meet.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Rashmika Mandanna", character: "Srivalli", profile_path: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Rashmika-Mandanna_at_the_music_launch_of_Chhaava_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" }
         ]
       }
     },
@@ -1086,8 +1086,8 @@ export const CONFIG = {
       production_companies: [{ name: "Hombale Films" }],
       credits: {
         cast: [
-          { name: "Rishab Shetty", character: "Vikrant Rona", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Sapthami Gowda", character: "Myna", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+          { name: "Rishab Shetty", character: "Vikrant Rona", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Rishab_Shetty.jpg/330px-Rishab_Shetty.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Sapthami Gowda", character: "Myna", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Kantara-Success-Meet-21b323d.jpg/330px-Kantara-Success-Meet-21b323d.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1110,8 +1110,8 @@ export const CONFIG = {
       production_companies: [{ name: "Y Not Studios" }],
       credits: {
         cast: [
-          { name: "R. Madhavan", character: "Vikram", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Vijay Sethupathi", character: "Vedha", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
+          { name: "R. Madhavan", character: "Vikram", profile_path: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Madhavan_Saala_Khadoos_2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" },
+          { name: "Vijay Sethupathi", character: "Vedha", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Vijay_Sethupathi_at_the_premiere_of_Merry_Christmas_2_%28cropped%29.jpg/330px-Vijay_Sethupathi_at_the_premiere_of_Merry_Christmas_2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1136,8 +1136,8 @@ export const CONFIG = {
       production_companies: [{ name: "Aashirvad Cinemas" }],
       credits: {
         cast: [
-          { name: "Mohanlal", character: "Georgekutty", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Meena", character: "Radha", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Mohanlal", character: "Georgekutty", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Mohanlal_%28cropped%29.jpg/330px-Mohanlal_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Meena", character: "Radha", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/EMuseumPlus_%282%29.jpg/330px-EMuseumPlus_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1162,8 +1162,8 @@ export const CONFIG = {
       production_companies: [{ name: "White Hill Films" }],
       credits: {
         cast: [
-          { name: "Gippy Grewal", character: "Jaswinder Singh", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Patralekhaa", character: "Anita", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+          { name: "Gippy Grewal", character: "Jaswinder Singh", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Gippy_Grewal_grace_the_premiere_of_Jatt_Nuu_Chudail_Takri_%28Cropped%29.jpg/330px-Gippy_Grewal_grace_the_premiere_of_Jatt_Nuu_Chudail_Takri_%28Cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Patralekhaa", character: "Anita", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Patralekha_snapped_attending_the_Lakme_Fashion_Week_2018.jpg/330px-Patralekha_snapped_attending_the_Lakme_Fashion_Week_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1188,8 +1188,8 @@ export const CONFIG = {
       production_companies: [{ name: "Shree Venkatesh Films" }],
       credits: {
         cast: [
-          { name: "Aparna Sen", character: "Binodini", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Prosenjit Chatterjee", character: "Mahendra", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
+          { name: "Aparna Sen", character: "Binodini", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Aparna_Sen_-_Kolkata_2014-01-31_8137.JPG/330px-Aparna_Sen_-_Kolkata_2014-01-31_8137.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Prosenjit Chatterjee", character: "Mahendra", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Prosenjit_Chatterjee_during_the_promotion_of_Vijaynagar%27er_Hirey.jpg/330px-Prosenjit_Chatterjee_during_the_promotion_of_Vijaynagar%27er_Hirey.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1214,8 +1214,8 @@ export const CONFIG = {
       production_companies: [{ name: "Rupam Entertainment" }],
       credits: {
         cast: [
-          { name: "Monali Thakur", character: "Kavya", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
-          { name: "Malhar Thakar", character: "Viraj", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Monali Thakur", character: "Kavya", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Monali_Thakur_at_the_Kelvinator_Stree_Shakti_Women_Awards_2014.jpg/330px-Monali_Thakur_at_the_Kelvinator_Stree_Shakti_Women_Awards_2014.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Malhar Thakar", character: "Viraj", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Malhar_Thakar_%28cropped%29.jpg/330px-Malhar_Thakar_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1240,8 +1240,8 @@ export const CONFIG = {
       production_companies: [{ name: "Zee Studios" }, { name: "Aatpat Production" }],
       credits: {
         cast: [
-          { name: "Rinku Rajguru", character: "Archana Patil (Archie)", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Akash Thosar", character: "Prashant Kale (Parshya)", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
+          { name: "Rinku Rajguru", character: "Archana Patil (Archie)", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Rinku_Rajguru_2024.jpg/330px-Rinku_Rajguru_2024.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Akash Thosar", character: "Prashant Kale (Parshya)", profile_path: "https://upload.wikimedia.org/wikipedia/commons/8/81/Akash_Thosar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" }
         ]
       }
     },
@@ -1264,8 +1264,8 @@ export const CONFIG = {
       production_companies: [{ name: "Fincraft Media & Entertainment" }],
       credits: {
         cast: [
-          { name: "Nana Patekar", character: "Ganpat Belwalkar", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Medha Manjrekar", character: "Kaveri Belwalkar", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" }
+          { name: "Nana Patekar", character: "Ganpat Belwalkar", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Nana_Patekar_2025.jpg/330px-Nana_Patekar_2025.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Medha Manjrekar", character: "Kaveri Belwalkar", profile_path: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Medha_Manjrekar_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" }
         ]
       }
     },
@@ -1288,8 +1288,8 @@ export const CONFIG = {
       production_companies: [{ name: "Zee Studios" }],
       credits: {
         cast: [
-          { name: "Sachin Pilgaonkar", character: "Khansaheb Aftab Hussain Bareliwale", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Subodh Bhave", character: "Sadashiv", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
+          { name: "Sachin Pilgaonkar", character: "Khansaheb Aftab Hussain Bareliwale", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/SachinPilgaonkar.jpg/330px-SachinPilgaonkar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Subodh Bhave", character: "Sadashiv", profile_path: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Subodh_Bhave_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" }
         ]
       }
     },
@@ -1312,8 +1312,8 @@ export const CONFIG = {
       production_companies: [{ name: "Jio Studios" }],
       credits: {
         cast: [
-          { name: "Rohini Hattangadi", character: "Jaya", profile_path: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" },
-          { name: "Vandana Gupte", character: "Shashi", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" }
+          { name: "Rohini Hattangadi", character: "Jaya", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Rohini_Hattangadi_in_2010.jpg/330px-Rohini_Hattangadi_in_2010.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Vandana Gupte", character: "Shashi", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Vandana_Gupte.JPG/330px-Vandana_Gupte.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1338,9 +1338,9 @@ export const CONFIG = {
       production_companies: [{ name: "Raaj Kamal Films International" }],
       credits: {
         cast: [
-          { name: "Kamal Haasan", character: "Vikram / Karnan", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Vijay Sethupathi", character: "Santhanam", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Fahadh Faasil", character: "Amar", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Kamal Haasan", character: "Vikram / Karnan", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Kamal_Haasan_at_2023_San_Diego_Comic-Con_International_by_Gage_Skidmore%2C_005_%28cropped%29.jpg/330px-Kamal_Haasan_at_2023_San_Diego_Comic-Con_International_by_Gage_Skidmore%2C_005_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Vijay Sethupathi", character: "Santhanam", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Vijay_Sethupathi_at_the_premiere_of_Merry_Christmas_2_%28cropped%29.jpg/330px-Vijay_Sethupathi_at_the_premiere_of_Merry_Christmas_2_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Fahadh Faasil", character: "Amar", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Fahadh_Faasil_2019.jpg/330px-Fahadh_Faasil_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1363,9 +1363,9 @@ export const CONFIG = {
       production_companies: [{ name: "Seven Screen Studio" }],
       credits: {
         cast: [
-          { name: "Thalapathy Vijay", character: "Parthiban / Leo Das", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Trisha Krishnan", character: "Sathya", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
-          { name: "Sanjay Dutt", character: "Antony Das", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" }
+          { name: "Thalapathy Vijay", character: "Parthiban / Leo Das", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/JosephVijay.jpg/330px-JosephVijay.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Trisha Krishnan", character: "Sathya", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Trisha_Krishnan_at_PS1_pre_release_event_%283%29_%28cropped%29.jpg/330px-Trisha_Krishnan_at_PS1_pre_release_event_%283%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Sanjay Dutt", character: "Antony Das", profile_path: "https://upload.wikimedia.org/wikipedia/commons/1/13/Sanjay_Dutt_at_Mumbai_Airport%2C_2018_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled" }
         ]
       }
     },
@@ -1388,8 +1388,8 @@ export const CONFIG = {
       production_companies: [{ name: "Sun Pictures" }],
       credits: {
         cast: [
-          { name: "Rajinikanth", character: "Muthuvel Pandian", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
-          { name: "Vinayakan", character: "Varman", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" }
+          { name: "Rajinikanth", character: "Muthuvel Pandian", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Rajinikanth_in_2019.jpg/330px-Rajinikanth_in_2019.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Vinayakan", character: "Varman", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Vinayakan.jpg/330px-Vinayakan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1414,8 +1414,8 @@ export const CONFIG = {
       production_companies: [{ name: "Barunson E&A" }, { name: "CJ Entertainment" }],
       credits: {
         cast: [
-          { name: "Song Kang-ho", character: "Kim Ki-taek", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Lee Sun-kyun", character: "Park Dong-ik", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" }
+          { name: "Song Kang-ho", character: "Kim Ki-taek", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Song_Gangho_2016.jpg/330px-Song_Gangho_2016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Lee Sun-kyun", character: "Park Dong-ik", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Lee_Seon-gun_in_Oct_2018.png/330px-Lee_Seon-gun_in_Oct_2018.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     },
@@ -1438,8 +1438,8 @@ export const CONFIG = {
       production_companies: [{ name: "Marvel Studios" }, { name: "Columbia Pictures" }, { name: "Pascal Pictures" }],
       credits: {
         cast: [
-          { name: "Tom Holland", character: "Peter Parker / Spider-Man", profile_path: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80" },
-          { name: "Zendaya", character: "MJ", profile_path: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80" }
+          { name: "Tom Holland", character: "Peter Parker / Spider-Man", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/TomHolland-byPhilipRomano.jpg/330px-TomHolland-byPhilipRomano.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" },
+          { name: "Zendaya", character: "MJ", profile_path: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Zendaya-byPhilipRomano.jpg/330px-Zendaya-byPhilipRomano.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail" }
         ]
       }
     }
