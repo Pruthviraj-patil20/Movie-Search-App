@@ -5,19 +5,37 @@
 import { CONFIG } from '../config.js';
 
 /**
+ * Helper to resolve local public assets considering Vite base URL
+ */
+function resolveLocalPath(path) {
+  const clean = path.replace(/^(\.\/|\/)/, '');
+  const base = (typeof import.meta !== 'undefined' && import.meta.env && typeof import.meta.env.BASE_URL === 'string')
+    ? import.meta.env.BASE_URL
+    : './';
+
+  if (!base || base === './' || base === '') {
+    return clean;
+  }
+  return base.endsWith('/') ? `${base}${clean}` : `${base}/${clean}`;
+}
+
+/**
  * Construct full TMDB or local image URL with fallback
  */
 export function getImageUrl(path, size = CONFIG.IMAGE_SIZES.POSTER_MEDIUM, fallback = CONFIG.FALLBACK_POSTER) {
-  if (!path) return fallback;
-  if (typeof path !== 'string') return fallback;
-  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:') || path.startsWith('blob:')) {
-    return path;
+  if (!path || typeof path !== 'string' || path.trim() === '' || path === 'null' || path === 'undefined') {
+    return fallback;
+  }
+  const trimmed = path.trim();
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://') || trimmed.startsWith('data:') || trimmed.startsWith('blob:')) {
+    return trimmed;
   }
   // Local project assets in public directory (e.g. images/bollywood/...)
-  if (path.startsWith('images/') || path.startsWith('/images/') || path.startsWith('./images/') || path.startsWith('assets/') || path.startsWith('/assets/')) {
-    return path.startsWith('/') ? path : `/${path.replace(/^\.\//, '')}`;
+  if (trimmed.startsWith('images/') || trimmed.startsWith('/images/') || trimmed.startsWith('./images/') || 
+      trimmed.startsWith('assets/') || trimmed.startsWith('/assets/') || trimmed.startsWith('./assets/')) {
+    return resolveLocalPath(trimmed);
   }
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  const cleanPath = trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
   return `${CONFIG.IMAGE_BASE_URL}${size}${cleanPath}`;
 }
 
@@ -25,16 +43,19 @@ export function getImageUrl(path, size = CONFIG.IMAGE_SIZES.POSTER_MEDIUM, fallb
  * Construct full backdrop image URL with fallback
  */
 export function getBackdropUrl(path, size = CONFIG.IMAGE_SIZES.BACKDROP_MEDIUM, fallback = CONFIG.FALLBACK_BACKDROP) {
-  if (!path) return fallback;
-  if (typeof path !== 'string') return fallback;
-  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:') || path.startsWith('blob:')) {
-    return path;
+  if (!path || typeof path !== 'string' || path.trim() === '' || path === 'null' || path === 'undefined') {
+    return fallback;
+  }
+  const trimmed = path.trim();
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://') || trimmed.startsWith('data:') || trimmed.startsWith('blob:')) {
+    return trimmed;
   }
   // Local project assets in public directory (e.g. images/bollywood/...)
-  if (path.startsWith('images/') || path.startsWith('/images/') || path.startsWith('./images/') || path.startsWith('assets/') || path.startsWith('/assets/')) {
-    return path.startsWith('/') ? path : `/${path.replace(/^\.\//, '')}`;
+  if (trimmed.startsWith('images/') || trimmed.startsWith('/images/') || trimmed.startsWith('./images/') || 
+      trimmed.startsWith('assets/') || trimmed.startsWith('/assets/') || trimmed.startsWith('./assets/')) {
+    return resolveLocalPath(trimmed);
   }
-  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  const cleanPath = trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
   return `${CONFIG.IMAGE_BASE_URL}${size}${cleanPath}`;
 }
 

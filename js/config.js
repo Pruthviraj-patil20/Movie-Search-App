@@ -561,6 +561,33 @@ export const CONFIG = {
 
     /* --- BOLLYWOOD & CLASSICS --- */
     {
+      id: 111105,
+      title: "PK",
+      overview: "An alien stranded on Earth loses his communication remote and begins questioning religious dogmas and blind beliefs.",
+      poster_path: "images/bollywood/pk_poster.jpg",
+      backdrop_path: "images/bollywood/pk_banner.jpg",
+      vote_average: 8.1,
+      vote_count: 38000,
+      release_date: "2014-12-19",
+      genre_ids: [35, 18, 878],
+      runtime: 153,
+      status: "Released",
+      tagline: "An alien's honest inquiry into earthling beliefs.",
+      budget: 850000000,
+      revenue: 8540000000,
+      trailer_key: "82ZEDGPCkT8",
+      production_companies: [{ name: "Rajkumar Hirani Films" }, { name: "Vinod Chopra Films" }],
+      credits: {
+        cast: [
+          { name: "Aamir Khan", character: "PK", profile_path: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" },
+          { name: "Anushka Sharma", character: "Jagat Janani (Jaggu)", profile_path: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" },
+          { name: "Sushant Singh Rajput", character: "Sarfaraz Yousuf", profile_path: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Saurabh Shukla", character: "Tapasvi Maharaj", profile_path: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&q=80" },
+          { name: "Boman Irani", character: "Cherry Bajwa", profile_path: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" }
+        ]
+      }
+    },
+    {
       id: 111101,
       title: "Sholay",
       overview: "After his family is murdered by a ruthless bandit, a former police officer enlists the help of two convicts to capture him.",
@@ -715,7 +742,7 @@ export const CONFIG = {
       title: "Sanju",
       overview: "The compelling biography of film star Sanjay Dutt, exploring his rise to stardom, battle with addiction, imprisonment, and redemption.",
       poster_path: "images/bollywood/sanju_poster.jpg",
-      backdrop_path: "images/bollywood/dangal_banner.jpg",
+      backdrop_path: "images/bollywood/sanju_banner.jpg",
       vote_average: 7.6,
       vote_count: 15000,
       release_date: "2018-06-29",
@@ -740,7 +767,7 @@ export const CONFIG = {
       title: "Bajrangi Bhaijaan",
       overview: "A compassionate Indian man embarks on a heartfelt mission to reunite a mute Pakistani girl with her family across the border.",
       poster_path: "images/bollywood/bajrangi_poster.jpg",
-      backdrop_path: "images/bollywood/dangal_banner.jpg",
+      backdrop_path: "images/bollywood/bajrangi_banner.jpg",
       vote_average: 8.1,
       vote_count: 18000,
       release_date: "2015-07-17",

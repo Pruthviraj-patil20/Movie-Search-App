@@ -73,7 +73,7 @@ export const CATEGORY_DATA = {
         vote_average: 7.4,
         genres: [{ id: 28, name: 'Action' }, { id: 12, name: 'Adventure' }],
         poster_path: 'images/bollywood/pathaan_poster.jpg',
-        backdrop_path: 'images/bollywood/jawan_banner.jpg',
+        backdrop_path: 'images/bollywood/pathaan_banner.jpg',
         overview: 'An exiled RAW field operative teams up with an intelligence agent to take down a rogue private terror group threatening India.'
       },
       {
@@ -84,7 +84,7 @@ export const CATEGORY_DATA = {
         vote_average: 8.1,
         genres: [{ id: 18, name: 'Drama' }, { id: 12, name: 'Adventure' }, { id: 35, name: 'Comedy' }],
         poster_path: 'images/bollywood/bajrangi_poster.jpg',
-        backdrop_path: 'images/bollywood/dangal_banner.jpg',
+        backdrop_path: 'images/bollywood/bajrangi_banner.jpg',
         overview: 'A compassionate Indian man embarks on a heartfelt mission to reunite a mute Pakistani girl with her family across the border.'
       },
       {
@@ -95,7 +95,7 @@ export const CATEGORY_DATA = {
         vote_average: 7.6,
         genres: [{ id: 18, name: 'Drama' }, { id: 36, name: 'Biography' }],
         poster_path: 'images/bollywood/sanju_poster.jpg',
-        backdrop_path: 'images/bollywood/dangal_banner.jpg',
+        backdrop_path: 'images/bollywood/sanju_banner.jpg',
         overview: 'The compelling biography of film star Sanjay Dutt, exploring his rise to stardom, battle with addiction, imprisonment, and redemption.'
       },
       {
@@ -106,7 +106,7 @@ export const CATEGORY_DATA = {
         vote_average: 7.5,
         genres: [{ id: 18, name: 'Drama' }, { id: 36, name: 'History' }],
         poster_path: 'images/bollywood/padmaavat_poster.jpg',
-        backdrop_path: 'images/bollywood/sholay_banner.jpg',
+        backdrop_path: 'images/bollywood/padmaavat_banner.jpg',
         overview: 'In medieval India, Queen Padmavati of Mewar is caught in the midst of a fierce siege led by the ruthless Sultan Alauddin Khilji.'
       },
       {
@@ -117,7 +117,7 @@ export const CATEGORY_DATA = {
         vote_average: 7.2,
         genres: [{ id: 14, name: 'Fantasy' }, { id: 28, name: 'Action' }],
         poster_path: 'images/bollywood/brahmastra_poster.jpg',
-        backdrop_path: 'images/bollywood/jawan_banner.jpg',
+        backdrop_path: 'images/bollywood/brahmastra_banner.jpg',
         overview: 'A young DJ awakens to his mystical connection with the element of fire and holds the key to awakening the greatest astral weapon of all.'
       }
     ]
@@ -977,10 +977,10 @@ export function initCategoryPage() {
       card.dataset.category = key;
       card.setAttribute('role', 'button');
       card.setAttribute('tabindex', '0');
-      card.setAttribute('aria-label', `View ${data.title} category`);
+      const bgUrl = getBackdropUrl(data.bg, CONFIG.IMAGE_SIZES.BACKDROP_SMALL);
 
       card.innerHTML = `
-        <div class="category-card-bg" style="background-image: url('${data.bg}');"></div>
+        <div class="category-card-bg" style="background-image: url('${bgUrl}');"></div>
         <div class="category-card-overlay"></div>
         
         <div class="category-card-top">
