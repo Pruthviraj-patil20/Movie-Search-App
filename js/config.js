@@ -1445,3 +1445,19 @@ export const CONFIG = {
     }
   ]
 };
+
+// Merge all multilingual movies into DEMO_MOVIES
+try {
+  import('./data/allLanguagesData.js').then(({ ALL_LANGUAGES_DATA }) => {
+    if (ALL_LANGUAGES_DATA) {
+      const extra = Object.values(ALL_LANGUAGES_DATA).flatMap(cat => cat.movies || []);
+      const existingIds = new Set(CONFIG.DEMO_MOVIES.map(m => m.id));
+      extra.forEach(m => {
+        if (!existingIds.has(m.id)) {
+          CONFIG.DEMO_MOVIES.push(m);
+          existingIds.add(m.id);
+        }
+      });
+    }
+  }).catch(() => {});
+} catch (e) {}

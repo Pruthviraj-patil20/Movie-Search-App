@@ -20,11 +20,13 @@ import { watchlistService } from '../services/watchlistService.js';
 import { getUrlParam, setUrlParam } from '../utils/urlParams.js';
 import { debounce } from '../utils/debounce.js';
 import { getImageUrl, getBackdropUrl } from '../utils/helpers.js';
+import { ALL_LANGUAGES_DATA } from '../data/allLanguagesData.js';
 
 // ============================================================================
-// 1. Comprehensive Sample Movie Dataset (Organized by 8 Categories)
+// 1. Comprehensive Sample Movie Dataset (All Languages & Curated Themes)
 // ============================================================================
 export const CATEGORY_DATA = {
+  ...ALL_LANGUAGES_DATA,
   bollywood: {
     id: 'bollywood',
     title: 'Bollywood',
@@ -906,7 +908,15 @@ export const CATEGORY_DATA = {
 const CATEGORY_KEYS = [
   'hindi-movies',
   'tamil-movies',
+  'telugu-movies',
   'marathi-movies',
+  'malayalam-movies',
+  'kannada-movies',
+  'korean-movies',
+  'japanese-anime',
+  'spanish-cinema',
+  'punjabi-movies',
+  'bengali-movies',
   'bollywood',
   'hollywood',
   'south-indian',

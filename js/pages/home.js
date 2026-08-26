@@ -47,6 +47,11 @@ export async function initHomePage() {
   const tamilMount = document.querySelector('#tamil-carousel-mount');
   const marathiBannerMount = document.querySelector('#marathi-banner-mount');
   const marathiMount = document.querySelector('#marathi-carousel-mount');
+  const teluguMount = document.querySelector('#telugu-carousel-mount');
+  const malayalamMount = document.querySelector('#malayalam-carousel-mount');
+  const kannadaMount = document.querySelector('#kannada-carousel-mount');
+  const koreanMount = document.querySelector('#korean-carousel-mount');
+  const japaneseMount = document.querySelector('#japanese-carousel-mount');
   const upcomingMount = document.querySelector('#upcoming-carousel-mount');
   const genresMount = document.querySelector('#genres-grid-mount');
 
@@ -61,6 +66,11 @@ export async function initHomePage() {
   if (hindiMount) hindiMount.innerHTML = skeleton.carousel();
   if (tamilMount) tamilMount.innerHTML = skeleton.carousel();
   if (marathiMount) marathiMount.innerHTML = skeleton.carousel();
+  if (teluguMount) teluguMount.innerHTML = skeleton.carousel();
+  if (malayalamMount) malayalamMount.innerHTML = skeleton.carousel();
+  if (kannadaMount) kannadaMount.innerHTML = skeleton.carousel();
+  if (koreanMount) koreanMount.innerHTML = skeleton.carousel();
+  if (japaneseMount) japaneseMount.innerHTML = skeleton.carousel();
   if (upcomingMount) upcomingMount.innerHTML = skeleton.carousel();
 
   loader.start();
@@ -196,7 +206,47 @@ export async function initHomePage() {
       }
     }
 
-    // 8. Fetch Upcoming Releases
+    // 8. Render Telugu Movies Carousel
+    if (CATEGORY_DATA['telugu-movies'] && teluguMount) {
+      teluguMount.innerHTML = '';
+      teluguMount.appendChild(
+        createMovieCarousel(CATEGORY_DATA['telugu-movies'].movies, { title: 'Tollywood Action & Epics' })
+      );
+    }
+
+    // 9. Render Malayalam Movies Carousel
+    if (CATEGORY_DATA['malayalam-movies'] && malayalamMount) {
+      malayalamMount.innerHTML = '';
+      malayalamMount.appendChild(
+        createMovieCarousel(CATEGORY_DATA['malayalam-movies'].movies, { title: 'Mollywood Stories & Masterpieces' })
+      );
+    }
+
+    // 10. Render Kannada Movies Carousel
+    if (CATEGORY_DATA['kannada-movies'] && kannadaMount) {
+      kannadaMount.innerHTML = '';
+      kannadaMount.appendChild(
+        createMovieCarousel(CATEGORY_DATA['kannada-movies'].movies, { title: 'Sandalwood Cinematic Powerhouses' })
+      );
+    }
+
+    // 11. Render Korean Movies Carousel
+    if (CATEGORY_DATA['korean-movies'] && koreanMount) {
+      koreanMount.innerHTML = '';
+      koreanMount.appendChild(
+        createMovieCarousel(CATEGORY_DATA['korean-movies'].movies, { title: 'K-Cinema Thrillers & Dramas' })
+      );
+    }
+
+    // 12. Render Japanese & Anime Carousel
+    if (CATEGORY_DATA['japanese-anime'] && japaneseMount) {
+      japaneseMount.innerHTML = '';
+      japaneseMount.appendChild(
+        createMovieCarousel(CATEGORY_DATA['japanese-anime'].movies, { title: 'Anime & Iconic Japanese Films' })
+      );
+    }
+
+    // 13. Fetch Upcoming Releases
     getUpcomingMovies(1).then(data => {
       if (upcomingMount) {
         upcomingMount.innerHTML = '';
@@ -206,7 +256,7 @@ export async function initHomePage() {
       }
     });
 
-    // 9. Fetch & Render Genre Discovery Cards
+    // 14. Fetch & Render Genre Discovery Cards
     if (genresMount) {
       getMovieGenres().then(genres => {
         genresMount.innerHTML = '';
