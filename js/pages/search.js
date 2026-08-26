@@ -5,7 +5,8 @@
 
 import { CONFIG } from '../config.js';
 import { getMovieGenres } from '../api/genres.js';
-import { discoverMovies, searchMovies } from '../api/movies.js';
+import { discoverMovies, searchMovies, getUpcomingMovies } from '../api/movies.js';
+import { createMovieCarousel } from '../components/carousel.js';
 import { createEmptyState } from '../components/emptyState.js';
 import { loader } from '../components/loader.js';
 import { renderMovieGrid } from '../components/movieGrid.js';
@@ -53,6 +54,25 @@ export async function initSearchPage() {
     }
   } catch (e) {
     console.warn('Could not populate genres filter', e);
+  }
+
+  // 1b. Render Upcoming Movies Showcase (Side of Discover)
+  const upcomingMount = document.querySelector('#discover-upcoming-mount');
+  const upcomingSection = document.querySelector('#discover-upcoming-section');
+  if (upcomingMount) {
+    getUpcomingMovies(1).then(data => {
+      upcomingMount.innerHTML = '';
+      const movies = data.results || [];
+      if (movies.length > 0) {
+        upcomingMount.appendChild(
+          createMovieCarousel(movies.slice(0, 10), { title: 'Anticipated In Theaters' })
+        );
+      } else if (upcomingSection) {
+        upcomingSection.style.display = 'none';
+      }
+    }).catch(() => {
+      if (upcomingSection) upcomingSection.style.display = 'none';
+    });
   }
 
   // 2. Read URL Parameters

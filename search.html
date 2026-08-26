@@ -41,6 +41,7 @@
         <nav class="navbar-nav" aria-label="Main Navigation">
           <a href="index.html" class="nav-link">Home</a>
           <a href="search.html" class="nav-link active">Discover</a>
+          <a href="category.html?cat=upcoming-movies" class="nav-link">Upcoming</a>
           <a href="category.html" class="nav-link">Categories</a>
           <a href="watchlist.html" class="nav-link">
             Watchlist
@@ -95,6 +96,8 @@
       <nav class="mobile-nav-links">
         <a href="index.html" class="mobile-nav-link"><span>Home</span></a>
         <a href="search.html" class="mobile-nav-link active"><span>Discover Movies</span></a>
+        <a href="category.html?cat=upcoming-movies" class="mobile-nav-link"><span>Upcoming Releases</span></a>
+        <a href="category.html" class="mobile-nav-link"><span>Categories</span></a>
         <a href="watchlist.html" class="mobile-nav-link">
           <span>Watchlist</span>
           <span class="nav-badge watchlist-count-badge" data-count="0"></span>
@@ -230,6 +233,27 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Upcoming Movies Section Side of Discover -->
+      <section class="section upcoming-discover-section" id="discover-upcoming-section" style="padding-top: 1rem; padding-bottom: 1.5rem;">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-group">
+              <span class="section-tagline">Anticipated In Theaters</span>
+              <h2 class="section-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                Upcoming Movies (2025 - 2026)
+              </h2>
+            </div>
+            <div class="section-actions">
+              <a href="category.html?cat=upcoming-movies" class="btn btn-outline btn-sm">View All Upcoming (10+)</a>
+            </div>
+          </div>
+          <div id="discover-upcoming-mount"></div>
         </div>
       </section>
 
