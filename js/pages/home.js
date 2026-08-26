@@ -246,14 +246,25 @@ export async function initHomePage() {
       );
     }
 
-    // 13. Fetch Upcoming Releases
+    // 13. Fetch Upcoming Releases & Banner
     getUpcomingMovies(1).then(data => {
+      const curatedUpcoming = CATEGORY_DATA['upcoming-movies']?.movies || [];
+      const movies = (data.results && data.results.length >= 6)
+        ? data.results
+        : (curatedUpcoming.length > 0 ? curatedUpcoming : (data.results || []));
+
+      const upcomingBannerMount = document.querySelector('#upcoming-banner-mount');
+      if (upcomingBannerMount && movies.length > 0) {
+        upcomingBannerMount.innerHTML = '';
+        renderBollywoodBanner(upcomingBannerMount, movies[0], {
+          badge: '🚀 In Theaters Soon (2025 - 2026)',
+          title: movies[0].title,
+          accentColor: '#E50914'
+        });
+      }
+
       if (upcomingMount) {
         upcomingMount.innerHTML = '';
-        const curatedUpcoming = CATEGORY_DATA['upcoming-movies']?.movies || [];
-        const movies = (data.results && data.results.length >= 6)
-          ? data.results
-          : (curatedUpcoming.length > 0 ? curatedUpcoming : (data.results || []));
         upcomingMount.appendChild(
           createMovieCarousel(movies, { title: 'Upcoming Releases (2025 - 2026)' })
         );

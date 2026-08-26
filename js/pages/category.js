@@ -1218,6 +1218,8 @@ export function initCategoryPage() {
               alt="${title} Poster" 
               class="category-banner-poster-img"
               id="category-banner-poster-img"
+              referrerpolicy="no-referrer"
+              crossorigin="anonymous"
             />
           </div>
         </div>
