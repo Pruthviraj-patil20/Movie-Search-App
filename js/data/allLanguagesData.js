@@ -1720,5 +1720,240 @@ export const ALL_LANGUAGES_DATA = {
         "language": "Bengali"
       }
     ]
+  },
+  "upcoming-movies": {
+    "id": "upcoming-movies",
+    "title": "Upcoming Movies",
+    "subtitle": "In Theaters 2025 - 2026",
+    "icon": "🚀",
+    "bg": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1280&q=80",
+    "movies": [
+      {
+        "id": 999101,
+        "title": "Avatar: Fire and Ash",
+        "year": "2025",
+        "release_date": "2025-12-19",
+        "vote_average": 8.8,
+        "genres": [
+          {
+            "id": 878,
+            "name": "Sci-Fi"
+          },
+          {
+            "id": 12,
+            "name": "Adventure"
+          },
+          {
+            "id": 28,
+            "name": "Action"
+          }
+        ],
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Avatar_Fire_and_Ash_logo.png/330px-Avatar_Fire_and_Ash_logo.png",
+        "backdrop_path": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
+        "overview": "Jake Sully and Neytiri journey across Pandora to discover the Ash People, an aggressive volcanic clan of Na'vi who challenge their peaceful existence.",
+        "trailer_key": "d9MyW72ELq0",
+        "language": "English"
+      },
+      {
+        "id": 999102,
+        "title": "Superman",
+        "year": "2025",
+        "release_date": "2025-07-11",
+        "vote_average": 8.5,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 878,
+            "name": "Sci-Fi"
+          },
+          {
+            "id": 12,
+            "name": "Adventure"
+          }
+        ],
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Superman_%282025_film%29_poster.jpg/330px-Superman_%282025_film%29_poster.jpg",
+        "backdrop_path": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1920&q=80",
+        "overview": "Clark Kent reconciles his noble Kryptonian heritage with his human upbringing in Smallville as he steps forward to be the beacon of hope in a cynical world.",
+        "trailer_key": "uhUht6vAsMY",
+        "language": "English"
+      },
+      {
+        "id": 999103,
+        "title": "Mission: Impossible - The Final Reckoning",
+        "year": "2025",
+        "release_date": "2025-05-23",
+        "vote_average": 8.7,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          },
+          {
+            "id": 12,
+            "name": "Adventure"
+          }
+        ],
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Mission_Impossible_The_Final_Reckoning_Poster.jpg/330px-Mission_Impossible_The_Final_Reckoning_Poster.jpg",
+        "backdrop_path": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=80",
+        "overview": "Ethan Hunt and the IMF team embark on their definitive and most dangerous mission yet, racing across continents to destroy the sentient AI known as the Entity.",
+        "trailer_key": "NOhDyFRx4nk",
+        "language": "English"
+      },
+      {
+        "id": 999104,
+        "title": "War 2",
+        "year": "2025",
+        "release_date": "2025-08-14",
+        "vote_average": 8.4,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          }
+        ],
+        "poster_path": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=600&q=80",
+        "backdrop_path": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
+        "overview": "Major Kabir Dhaliwal crosses paths with a lethal international operative in the YRF Spy Universe in an adrenaline-pumping global game of wits and warfare.",
+        "trailer_key": "MWOlnZSnXWE",
+        "language": "Hindi"
+      },
+      {
+        "id": 999105,
+        "title": "The Batman: Part II",
+        "year": "2026",
+        "release_date": "2026-10-02",
+        "vote_average": 8.6,
+        "genres": [
+          {
+            "id": 80,
+            "name": "Crime"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 9648,
+            "name": "Mystery"
+          }
+        ],
+        "poster_path": "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=600&q=80",
+        "backdrop_path": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
+        "overview": "Bruce Wayne delves further into the corrupt criminal underworld of Gotham City as new villains step into the vacuum left by Carmine Falcone.",
+        "trailer_key": "mqqft2x_Aa4",
+        "language": "English"
+      },
+      {
+        "id": 999106,
+        "title": "Avengers: Doomsday",
+        "year": "2026",
+        "release_date": "2026-05-01",
+        "vote_average": 8.9,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 878,
+            "name": "Sci-Fi"
+          },
+          {
+            "id": 12,
+            "name": "Adventure"
+          }
+        ],
+        "poster_path": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+        "backdrop_path": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
+        "overview": "Earth's mightiest heroes from across timelines and alternate dimensions unite to confront the multi-versal conqueror Doctor Victor Von Doom.",
+        "trailer_key": "eOrNdBpGMv8",
+        "language": "English"
+      },
+      {
+        "id": 999107,
+        "title": "Kantara: Chapter 1",
+        "year": "2025",
+        "release_date": "2025-10-02",
+        "vote_average": 8.6,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 14,
+            "name": "Fantasy"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/8/84/Kantara_poster.jpeg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/8/84/Kantara_poster.jpeg",
+        "overview": "The ancient origin story set during the reign of the Kadamba dynasty, exploring the spiritual union between humanity, forest deities, and the divine spirit.",
+        "trailer_key": "8MR_xQv1y9k",
+        "language": "Kannada"
+      },
+      {
+        "id": 999108,
+        "title": "Toxic: A Fairy Tale for Grown-ups",
+        "year": "2025",
+        "release_date": "2025-04-10",
+        "vote_average": 8.5,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 80,
+            "name": "Crime"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          }
+        ],
+        "poster_path": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=80",
+        "backdrop_path": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
+        "overview": "A stylized high-octane noir action drama exploring the dark corridors of the international drug cartel and retribution.",
+        "trailer_key": "JKa05nyUmuQ",
+        "language": "Kannada"
+      },
+      {
+        "id": 999109,
+        "title": "Sikandar",
+        "year": "2025",
+        "release_date": "2025-03-30",
+        "vote_average": 8.1,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=600&q=80",
+        "backdrop_path": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1920&q=80",
+        "overview": "A courageous man with a fiery past stands up against an entrenched mafia network to protect an innocent community.",
+        "trailer_key": "qL3XQk7w7H8",
+        "language": "Hindi"
+      }
+    ]
   }
 };

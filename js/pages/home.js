@@ -250,8 +250,12 @@ export async function initHomePage() {
     getUpcomingMovies(1).then(data => {
       if (upcomingMount) {
         upcomingMount.innerHTML = '';
+        const curatedUpcoming = CATEGORY_DATA['upcoming-movies']?.movies || [];
+        const movies = (data.results && data.results.length >= 6)
+          ? data.results
+          : (curatedUpcoming.length > 0 ? curatedUpcoming : (data.results || []));
         upcomingMount.appendChild(
-          createMovieCarousel(data.results || [], { title: 'Upcoming Movies' })
+          createMovieCarousel(movies, { title: 'Upcoming Releases (2025 - 2026)' })
         );
       }
     });

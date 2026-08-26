@@ -906,6 +906,7 @@ export const CATEGORY_DATA = {
 
 // List of all category keys in order
 const CATEGORY_KEYS = [
+  'upcoming-movies',
   'hindi-movies',
   'tamil-movies',
   'telugu-movies',
