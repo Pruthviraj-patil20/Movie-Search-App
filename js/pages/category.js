@@ -1005,11 +1005,39 @@ export function initCategoryPage() {
         </div>
       `;
 
+      // Progressive card background fallback
+      const bgEl = card.querySelector('.category-card-bg');
+      if (bgEl && data.bg) {
+        const cleanBg = String(data.bg).replace(/^(\.\/|\/)/, '');
+        const candidates = [
+          bgUrl,
+          cleanBg,
+          `./${cleanBg}`,
+          `/${cleanBg}`,
+          `public/${cleanBg}`,
+          CONFIG.FALLBACK_BACKDROP
+        ].filter(Boolean);
+
+        function tryLoadCardBg(idx) {
+          if (idx >= candidates.length) return;
+          const candidate = candidates[idx];
+          const img = new Image();
+          img.onload = () => {
+            if (bgEl) bgEl.style.backgroundImage = `url('${candidate}')`;
+          };
+          img.onerror = () => {
+            tryLoadCardBg(idx + 1);
+          };
+          img.src = candidate;
+        }
+        tryLoadCardBg(0);
+      }
+
       // Click Event to switch category
       const selectCategory = () => {
         if (activeCategoryId === key) return;
         activeCategoryId = key;
-        setUrlParam('cat', key);
+        setUrlParam('cat', key, true);
 
         // Update active class on all cards
         cardsContainer.querySelectorAll('.category-card').forEach(c => {
@@ -1023,6 +1051,12 @@ export function initCategoryPage() {
         }
 
         renderMoviesGrid();
+
+        // Smooth scroll to the updated category banner & movies
+        const bannerMount = document.querySelector('#category-banner-mount');
+        if (bannerMount) {
+          bannerMount.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       };
 
       card.addEventListener('click', selectCategory);
