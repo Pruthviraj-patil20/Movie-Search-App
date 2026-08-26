@@ -4,6 +4,460 @@
  */
 
 export const ALL_LANGUAGES_DATA = {
+  "hindi-movies": {
+    "id": "hindi-movies",
+    "title": "Hindi Movies",
+    "subtitle": "Classic & Modern Bollywood",
+    "icon": "🇮🇳",
+    "bg": "images/bollywood/sholay_banner.jpg",
+    "movies": [
+      {
+        "id": 111101,
+        "title": "Sholay",
+        "year": "1975",
+        "release_date": "1975-08-15",
+        "vote_average": 8.3,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 12,
+            "name": "Adventure"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "images/bollywood/sholay_poster.jpg",
+        "backdrop_path": "images/bollywood/sholay_banner.jpg",
+        "overview": "After his family is murdered by the ruthless bandit Gabbar Singh, former police officer Thakur enlists the help of two charming outlaws, Veeru and Jai, to capture him alive.",
+        "trailer_key": "qL3XQk7w7H8",
+        "language": "Hindi"
+      },
+      {
+        "id": 20453,
+        "title": "3 Idiots",
+        "year": "2009",
+        "release_date": "2009-12-25",
+        "vote_average": 8.5,
+        "genres": [
+          {
+            "id": 35,
+            "name": "Comedy"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "images/bollywood/3idiots_poster.jpg",
+        "backdrop_path": "images/bollywood/3idiots_banner.jpg",
+        "overview": "Two college friends search for their long-lost companion Rancho while reminiscing about their innovative student days at an elite engineering institute.",
+        "trailer_key": "xvszmNXdM4w",
+        "language": "Hindi"
+      },
+      {
+        "id": 111105,
+        "title": "PK",
+        "year": "2014",
+        "release_date": "2014-12-19",
+        "vote_average": 8.1,
+        "genres": [
+          {
+            "id": 35,
+            "name": "Comedy"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 878,
+            "name": "Sci-Fi"
+          }
+        ],
+        "poster_path": "images/bollywood/pk_poster.jpg",
+        "backdrop_path": "images/bollywood/pk_banner.jpg",
+        "overview": "An alien stranded on Earth loses his communication remote and begins questioning religious dogmas and blind beliefs.",
+        "trailer_key": "82ZEDGPCkT8",
+        "language": "Hindi"
+      },
+      {
+        "id": 975069,
+        "title": "Dangal",
+        "year": "2016",
+        "release_date": "2016-12-23",
+        "vote_average": 8.4,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 36,
+            "name": "Biography"
+          }
+        ],
+        "poster_path": "images/bollywood/dangal_poster.jpg",
+        "backdrop_path": "images/bollywood/dangal_banner.jpg",
+        "overview": "Mahavir Singh Phogat, a former wrestler, trains his daughters Geeta and Babita to become world-class champions against all social odds.",
+        "trailer_key": "x_7YlGv9u1g",
+        "language": "Hindi"
+      },
+      {
+        "id": 111102,
+        "title": "Lagaan: Once Upon a Time in India",
+        "year": "2001",
+        "release_date": "2001-06-15",
+        "vote_average": 8.1,
+        "genres": [
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 12,
+            "name": "Adventure"
+          }
+        ],
+        "poster_path": "images/bollywood/lagaan_poster.jpg",
+        "backdrop_path": "images/bollywood/lagaan_banner.jpg",
+        "overview": "In 1893 Victorian India, the people of a small village stake their future on an epic cricket match against British officers to escape oppressive land taxes.",
+        "trailer_key": "oSIGJ347Jsw",
+        "language": "Hindi"
+      },
+      {
+        "id": 111107,
+        "title": "Dilwale Dulhania Le Jayenge",
+        "year": "1995",
+        "release_date": "1995-10-20",
+        "vote_average": 8.6,
+        "genres": [
+          {
+            "id": 10749,
+            "name": "Romance"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 35,
+            "name": "Comedy"
+          }
+        ],
+        "poster_path": "images/bollywood/ddlj_poster.jpg",
+        "backdrop_path": "images/bollywood/ddlj_banner.jpg",
+        "overview": "Raj and Simran fall in love on a trip through Europe. Raj then travels to Punjab to win over her traditional father before her arranged marriage.",
+        "trailer_key": "c25GKl5VNeY",
+        "language": "Hindi"
+      },
+      {
+        "id": 111103,
+        "title": "Taare Zameen Par",
+        "year": "2007",
+        "release_date": "2007-12-21",
+        "vote_average": 8.4,
+        "genres": [
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 10751,
+            "name": "Family"
+          }
+        ],
+        "poster_path": "images/bollywood/tzp_poster.jpg",
+        "backdrop_path": "images/bollywood/tzp_banner.jpg",
+        "overview": "An unconventional art teacher helps an eight-year-old boy with dyslexia uncover his true potential and inner spark.",
+        "trailer_key": "tn_2Ie_jtNY",
+        "language": "Hindi"
+      },
+      {
+        "id": 111104,
+        "title": "Andhadhun",
+        "year": "2018",
+        "release_date": "2018-10-05",
+        "vote_average": 8.2,
+        "genres": [
+          {
+            "id": 53,
+            "name": "Thriller"
+          },
+          {
+            "id": 35,
+            "name": "Comedy"
+          }
+        ],
+        "poster_path": "images/bollywood/andhadhun_poster.jpg",
+        "backdrop_path": "images/bollywood/andhadhun_banner.jpg",
+        "overview": "A series of mysterious events unfold in the life of a blind pianist who must report a murder he never saw.",
+        "trailer_key": "2iVYI99VGaw",
+        "language": "Hindi"
+      },
+      {
+        "id": 872906,
+        "title": "Jawan",
+        "year": "2023",
+        "release_date": "2023-09-07",
+        "vote_average": 7.9,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          }
+        ],
+        "poster_path": "images/bollywood/jawan_poster.jpg",
+        "backdrop_path": "images/bollywood/jawan_banner.jpg",
+        "overview": "A prison warden recruits inmates to commit outrageous acts of vigilante justice that expose deep-seated corruption across the nation.",
+        "trailer_key": "MWOlnZSnXWE",
+        "language": "Hindi"
+      },
+      {
+        "id": 111108,
+        "title": "Gangs of Wasseypur",
+        "year": "2012",
+        "release_date": "2012-06-22",
+        "vote_average": 8.2,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 80,
+            "name": "Crime"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "images/bollywood/gow_poster.jpg",
+        "backdrop_path": "images/bollywood/gow_banner.jpg",
+        "overview": "A generational blood feud between three crime families erupts over coal mining dominance and political power in Wasseypur.",
+        "trailer_key": "j-WNfsD_4k4",
+        "language": "Hindi"
+      }
+    ]
+  },
+  "tamil-movies": {
+    "id": "tamil-movies",
+    "title": "Tamil Movies",
+    "subtitle": "Kollywood Powerhouses",
+    "icon": "⚡",
+    "bg": "images/tamil/leo_banner.jpg",
+    "movies": [
+      {
+        "id": 822119,
+        "title": "Leo",
+        "year": "2023",
+        "release_date": "2023-10-19",
+        "vote_average": 7.6,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          }
+        ],
+        "poster_path": "images/tamil/leo_poster.jpg",
+        "backdrop_path": "images/tamil/leo_banner.jpg",
+        "overview": "A mild-mannered café owner in Himachal Pradesh becomes the target of a ruthless drug cartel who suspect he is their former enforcer Leo Das.",
+        "trailer_key": "Po3jStA673E",
+        "language": "Tamil"
+      },
+      {
+        "id": 987917,
+        "title": "Jailer",
+        "year": "2023",
+        "release_date": "2023-08-10",
+        "vote_average": 7.7,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 35,
+            "name": "Comedy"
+          },
+          {
+            "id": 80,
+            "name": "Crime"
+          }
+        ],
+        "poster_path": "images/tamil/jailer_poster.jpg",
+        "backdrop_path": "images/tamil/jailer_banner.jpg",
+        "overview": "Muthuvel Pandian, a retired prison warden known as Tiger Muthuvel, unleashes his lethal past to protect his family against an idol smuggling kingpin.",
+        "trailer_key": "Y5BeWdODPqo",
+        "language": "Tamil"
+      },
+      {
+        "id": 755566,
+        "title": "Vikram",
+        "year": "2022",
+        "release_date": "2022-06-03",
+        "vote_average": 8.3,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          },
+          {
+            "id": 80,
+            "name": "Crime"
+          }
+        ],
+        "poster_path": "images/tamil/vikram_poster.jpg",
+        "backdrop_path": "images/tamil/vikram_banner.jpg",
+        "overview": "A high-octane special black-ops squad led by Amar investigates a series of murders committed by a masked vigilante group led by Commander Vikram.",
+        "trailer_key": "OKBMCLpJqk8",
+        "language": "Tamil"
+      },
+      {
+        "id": 597890,
+        "title": "Master",
+        "year": "2021",
+        "release_date": "2021-01-13",
+        "vote_average": 7.5,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          }
+        ],
+        "poster_path": "images/tamil/master_poster.jpg",
+        "backdrop_path": "images/tamil/master_banner.jpg",
+        "overview": "An alcoholic professor is sent to a juvenile school, where he clashes with a ruthless gangster using the children for criminal activities.",
+        "trailer_key": "UTiXQcrLlv4",
+        "language": "Tamil"
+      },
+      {
+        "id": 579974,
+        "title": "Ponniyin Selvan: Part 1",
+        "year": "2022",
+        "release_date": "2022-09-30",
+        "vote_average": 7.9,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 36,
+            "name": "History"
+          }
+        ],
+        "poster_path": "images/tamil/ps1_poster.jpg",
+        "backdrop_path": "images/tamil/ps1_banner.jpg",
+        "overview": "Vandiyathevan sets out to cross the Chola land to deliver a message from Crown Prince Aditha Karikalan, uncovering a conspiracy against the throne.",
+        "trailer_key": "K-5zpPkWmJw",
+        "language": "Tamil"
+      },
+      {
+        "id": 628900,
+        "title": "Kaithi",
+        "year": "2019",
+        "release_date": "2019-10-25",
+        "vote_average": 8.5,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          },
+          {
+            "id": 80,
+            "name": "Crime"
+          }
+        ],
+        "poster_path": "images/tamil/kaithi_poster.jpg",
+        "backdrop_path": "images/tamil/kaithi_banner.jpg",
+        "overview": "Dilli, an ex-convict, endeavors to see his daughter for the first time after leaving prison. However, his attempts are interrupted by a drug raid.",
+        "trailer_key": "g6LpyUePZls",
+        "language": "Tamil"
+      },
+      {
+        "id": 424139,
+        "title": "Vikram Vedha",
+        "year": "2017",
+        "release_date": "2017-07-21",
+        "vote_average": 8.4,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 80,
+            "name": "Crime"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          }
+        ],
+        "poster_path": "images/tamil/vikram_vedha_poster.jpg",
+        "backdrop_path": "images/tamil/vikram_vedha_banner.jpg",
+        "overview": "A pragmatic police officer and a notorious gangster play a game of cat-and-mouse, blurring the lines between right and wrong with philosophical riddles.",
+        "trailer_key": "1sVk-VS-n2E",
+        "language": "Tamil"
+      },
+      {
+        "id": 653569,
+        "title": "Soorarai Pottru",
+        "year": "2020",
+        "release_date": "2020-11-12",
+        "vote_average": 8.6,
+        "genres": [
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 28,
+            "name": "Action"
+          }
+        ],
+        "poster_path": "images/tamil/soorarai_pottru_poster.jpg",
+        "backdrop_path": "images/tamil/soorarai_banner.jpg",
+        "overview": "Nedumaaran Rajangam sets out to make the common man fly and in the process takes on the world's most capital intensive industry and several enemies.",
+        "trailer_key": "fa_DIwRsa9o",
+        "language": "Tamil"
+      }
+    ]
+  },
   "telugu-movies": {
     "id": "telugu-movies",
     "title": "Telugu Movies",
@@ -27,9 +481,9 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/d/d7/RRR_Poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/d/d7/RRR_Poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "overview": "A fictional tale about two legendary Indian revolutionaries and their journey away from home before they began fighting for their country in the 1920s.",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/d/d7/RRR_Poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/d/d7/RRR_Poster.jpg",
+        "overview": "A fictional tale about two legendary Indian revolutionaries, Alluri Sitarama Raju and Komaram Bheem, fighting British colonial oppression.",
         "trailer_key": "GY4BgdUSpbE",
         "language": "Telugu"
       },
@@ -49,8 +503,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Crime"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/75/Pushpa_-_The_Rise_%282021_film%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/75/Pushpa_-_The_Rise_%282021_film%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/75/Pushpa_-_The_Rise_%282021_film%29.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/75/Pushpa_-_The_Rise_%282021_film%29.jpg",
         "overview": "The clash escalates between Pushpa Raj and SP Bhanwar Singh Shekhawat in a fiery battle for supremacy over red sandalwood smuggling networks.",
         "trailer_key": "g3JUbgZXDAU",
         "language": "Telugu"
@@ -71,9 +525,9 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Fantasy"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/9/93/Baahubali_2_The_Conclusion_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/9/93/Baahubali_2_The_Conclusion_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "overview": "When Shiva, the son of Bahubali, learns about his heritage, he begins to look for answers. His story is juxtaposed with past events in the Kingdom of Mahishmati.",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/9/93/Baahubali_2_The_Conclusion_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/9/93/Baahubali_2_The_Conclusion_poster.jpg",
+        "overview": "When Shiva, the son of Bahubali, learns about his heritage, he begins to look for answers in the glorious Kingdom of Mahishmati.",
         "trailer_key": "G62HrubdD6o",
         "language": "Telugu"
       },
@@ -97,8 +551,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Fantasy"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/4/4c/Kalki_2898_AD.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/4/4c/Kalki_2898_AD.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/4/4c/Kalki_2898_AD.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/4/4c/Kalki_2898_AD.jpg",
         "overview": "Set in a post-apocalyptic world in the year 2898 AD, a modern avatar of Vishnu is believed to have descended to protect the world from evil forces.",
         "trailer_key": "y1-w1pUGuz4",
         "language": "Telugu"
@@ -119,8 +573,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Crime"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/a/a6/Salaar_Part_1_%E2%80%93_Ceasefire.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/a/a6/Salaar_Part_1_%E2%80%93_Ceasefire.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/a/a6/Salaar_Part_1_%E2%80%93_Ceasefire.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/a/a6/Salaar_Part_1_%E2%80%93_Ceasefire.jpg",
         "overview": "A gang leader makes a promise to a dying friend and takes on other criminal gangs in the dystopian city of Khansaar.",
         "trailer_key": "4GPvYMKtrtI",
         "language": "Telugu"
@@ -141,8 +595,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Action"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/b/bb/Hanu_Man_film_Release_poster.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/b/bb/Hanu_Man_film_Release_poster.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/9/91/Hanu_Man_film_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/9/91/Hanu_Man_film_poster.jpg",
         "overview": "An ordinary petty thief in the village of Anjanadri gains the powers of Lord Hanuman to fight evil forces threatening his people.",
         "trailer_key": "3Ew9wHw0q0Y",
         "language": "Telugu"
@@ -163,8 +617,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/f/f0/Devara_Part_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/f/f0/Devara_Part_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/f/f0/Devara_Part_1.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/f/f0/Devara_Part_1.jpg",
         "overview": "A fearless chieftain defends coastal waters against ruthless smugglers, creating a legacy his son must uphold.",
         "trailer_key": "hXk0K7vFmQw",
         "language": "Telugu"
@@ -185,11 +639,192 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/1/1d/Sita_Ramam.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/1/1d/Sita_Ramam.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/0/06/Sita_Ramam.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/0/06/Sita_Ramam.jpg",
         "overview": "An orphan soldier stationed in Kashmir receives anonymous love letters from Sita Mahalakshmi, embarking on a poetic journey of love.",
         "trailer_key": "Q1NKMPhP8PY",
         "language": "Telugu"
+      }
+    ]
+  },
+  "marathi-movies": {
+    "id": "marathi-movies",
+    "title": "Marathi Movies",
+    "subtitle": "Marathi Cinema Gems",
+    "icon": "🚩",
+    "bg": "images/marathi/sairat_banner.jpg",
+    "movies": [
+      {
+        "id": 393730,
+        "title": "Sairat",
+        "year": "2016",
+        "release_date": "2016-04-29",
+        "vote_average": 8.4,
+        "genres": [
+          {
+            "id": 10749,
+            "name": "Romance"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "images/marathi/sairat_poster.jpg",
+        "backdrop_path": "images/marathi/sairat_banner.jpg",
+        "overview": "In rural Maharashtra, two young lovers from different caste backgrounds defy rigid societal norms to be together.",
+        "trailer_key": "wMrU_SmL2G0",
+        "language": "Marathi"
+      },
+      {
+        "id": 376290,
+        "title": "Natsamrat",
+        "year": "2016",
+        "release_date": "2016-01-01",
+        "vote_average": 8.6,
+        "genres": [
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "images/marathi/natsamrat_poster.jpg",
+        "backdrop_path": "images/marathi/natsamrat_banner.jpg",
+        "overview": "A legendary Shakespearean stage actor retires at the peak of his career, only to face profound emotional estrangement from his children.",
+        "trailer_key": "0V2v2hV_G-U",
+        "language": "Marathi"
+      },
+      {
+        "id": 367674,
+        "title": "Katyar Kaljat Ghusali",
+        "year": "2015",
+        "release_date": "2015-11-12",
+        "vote_average": 8.5,
+        "genres": [
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 10402,
+            "name": "Music"
+          }
+        ],
+        "poster_path": "images/marathi/katyar_poster.jpg",
+        "backdrop_path": "images/marathi/katyar_banner.jpg",
+        "overview": "A tale of musical rivalry, ego, and redemption between two legendary classical music maestros in royal Maharashtra.",
+        "trailer_key": "tq4R3yH6h3k",
+        "language": "Marathi"
+      },
+      {
+        "id": 978912,
+        "title": "Ved",
+        "year": "2022",
+        "release_date": "2022-12-30",
+        "vote_average": 7.9,
+        "genres": [
+          {
+            "id": 10749,
+            "name": "Romance"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "images/marathi/ved_poster.jpg",
+        "backdrop_path": "images/marathi/ved_banner.jpg",
+        "overview": "A former aspiring cricketer grappling with past heartbreak finds unconditional devotion and healing from his wife Shravani.",
+        "trailer_key": "0xW9qgPkW_o",
+        "language": "Marathi"
+      },
+      {
+        "id": 111112,
+        "title": "Baipan Bhaari Deva",
+        "year": "2023",
+        "release_date": "2023-06-30",
+        "vote_average": 8.3,
+        "genres": [
+          {
+            "id": 35,
+            "name": "Comedy"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "images/marathi/baipan_poster.jpg",
+        "backdrop_path": "images/marathi/baipan_banner.jpg",
+        "overview": "Six estranged sisters come together to participate in a traditional Mangalagaur competition, rediscovering their unbreakable sisterhood.",
+        "trailer_key": "R7fX1YyFq3M",
+        "language": "Marathi"
+      },
+      {
+        "id": 38479,
+        "title": "Harishchandrachi Factory",
+        "year": "2010",
+        "release_date": "2010-01-29",
+        "vote_average": 8.2,
+        "genres": [
+          {
+            "id": 35,
+            "name": "Comedy"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 36,
+            "name": "History"
+          }
+        ],
+        "poster_path": "images/marathi/harishchandra_poster.jpg",
+        "backdrop_path": "images/marathi/harishchandra_banner.jpg",
+        "overview": "The heartwarming and comedic true story of Dadasaheb Phalke as he overcomes all obstacles to create India's very first full-length motion picture.",
+        "trailer_key": "7yB7sQ0mF2o",
+        "language": "Marathi"
+      },
+      {
+        "id": 284293,
+        "title": "Court",
+        "year": "2015",
+        "release_date": "2015-04-17",
+        "vote_average": 8,
+        "genres": [
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "images/marathi/court_banner.jpg",
+        "backdrop_path": "images/marathi/court_banner.jpg",
+        "overview": "An aging folk singer is put on trial in a Mumbai magistrates court for allegedly inciting a sewage worker's death through his songs.",
+        "trailer_key": "hT8-tPzXg8Y",
+        "language": "Marathi"
+      },
+      {
+        "id": 281489,
+        "title": "Lai Bhaari",
+        "year": "2014",
+        "release_date": "2014-07-11",
+        "vote_average": 7.6,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "images/marathi/laibhaari_poster.jpg",
+        "backdrop_path": "images/marathi/laibhaari_banner.jpg",
+        "overview": "A fearless young man returns to his ancestral village to avenge his family and protect his people from a tyrant warlord.",
+        "trailer_key": "qL3XQk7w7H8",
+        "language": "Marathi"
       }
     ]
   },
@@ -216,8 +851,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/9/99/Manjummel_Boys_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/9/99/Manjummel_Boys_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/0/0b/Manjummel_Boys_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/0/0b/Manjummel_Boys_poster.jpg",
         "overview": "A group of friends from Kochi embark on a vacation to Kodaikanal, where an unexpected mishap inside the deep Guna Caves turns into a high-stakes rescue mission.",
         "trailer_key": "h0W3c8g5x4M",
         "language": "Malayalam"
@@ -238,8 +873,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Romance"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/c/c5/Premalu_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/c/c5/Premalu_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/Premalu_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/Premalu_poster.jpg",
         "overview": "Sachin pursues romance in Hyderabad while navigating the highs and lows of modern youth culture and comedic misadventures.",
         "trailer_key": "rM1PkW1m7sA",
         "language": "Malayalam"
@@ -260,8 +895,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Comedy"
           }
         ],
-        "poster_path": "images/bollywood/dangal_poster.jpg",
-        "backdrop_path": "images/bollywood/dangal_banner.jpg",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/2/22/Aavesham_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/2/22/Aavesham_poster.jpg",
         "overview": "Three college students in Bangalore befriend a charismatic eccentric local gangster named Ranga to settle a campus rivalry.",
         "trailer_key": "L0yEMl8PXnw",
         "language": "Malayalam"
@@ -282,8 +917,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/0/09/Bramayugam_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/0/09/Bramayugam_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/66/Bramayugam_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/66/Bramayugam_poster.jpg",
         "overview": "In 17th-century Kerala, a court singer escapes slavery only to seek shelter in a mysterious, crumbling mansion ruled by an enigmatic sorcerer.",
         "trailer_key": "tB0QJ8K5Q6s",
         "language": "Malayalam"
@@ -308,8 +943,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Crime"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/3/3f/Drishyam_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/3/3f/Drishyam_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/8/87/Drishyam_2_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/8/87/Drishyam_2_poster.jpg",
         "overview": "Six years after the case, Georgekutty and his family are once again scrutinized by the police as new evidence threatens to unearth the truth.",
         "trailer_key": "GRmC4J1z1wI",
         "language": "Malayalam"
@@ -330,8 +965,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Crime"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Alexandre_Cabanel_-_Fallen_Angel.jpg/330px-Alexandre_Cabanel_-_Fallen_Angel.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Alexandre_Cabanel_-_Fallen_Angel.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/4/4b/Lucifer_film_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/4/4b/Lucifer_film_poster.jpg",
         "overview": "A political Godfather dies and a lot of thieves dressed in white enter the scene to seize power, until Stephen Nedumpally steps forward.",
         "trailer_key": "y0hHkZ_wF3U",
         "language": "Malayalam"
@@ -352,8 +987,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/f/fe/2018movie.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/f/fe/2018movie.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/7b/2018_film_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/7b/2018_film_poster.jpg",
         "overview": "People from all walks of life come together during the catastrophic 2018 Kerala floods, proving the invincible power of human empathy.",
         "trailer_key": "h0W3c8g5x4M",
         "language": "Malayalam"
@@ -374,8 +1009,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Comedy"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/9/98/Kumbalangi_Nights_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/9/98/Kumbalangi_Nights_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Kumbalangi_Nights_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Kumbalangi_Nights_poster.jpg",
         "overview": "Four brothers share a love-hate relationship with each other. Their relationship matures into brotherhood as they stand up for one another.",
         "trailer_key": "L0yEMl8PXnw",
         "language": "Malayalam"
@@ -405,8 +1040,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Crime"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/d/d0/K.G.F_Chapter_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/d/d0/K.G.F_Chapter_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/d/d0/K.G.F_Chapter_2.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/d/d0/K.G.F_Chapter_2.jpg",
         "overview": "The blood-soaked land of Kolar Gold Fields has a new overlord now - Rocky, whose name strikes fear in the heart of his foes and allies alike.",
         "trailer_key": "JKa05nyUmuQ",
         "language": "Kannada"
@@ -431,9 +1066,9 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/8/84/Kantara_poster.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/8/84/Kantara_poster.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "overview": "When greed paves the way for betrayal and wrath, a young tribal man embodies the spirit of his ancestors to protect his village land and indigenous traditions.",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/8/84/Kantara_poster.jpeg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/8/84/Kantara_poster.jpeg",
+        "overview": "When greed paves the way for betrayal and wrath, a young tribal man embodies the spirit of his ancestors to protect his village land.",
         "trailer_key": "8MR_xQv1y9k",
         "language": "Kannada"
       },
@@ -457,9 +1092,9 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Comedy"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/1/19/777_Charlie_official_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/1/19/777_Charlie_official_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "overview": "Dharma is stuck in a rut with his negative and lonely lifestyle until an energetic Labrador pup named Charlie enters his life and changes it forever.",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/777_Charlie_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/777_Charlie_poster.jpg",
+        "overview": "Dharma is stuck in a rut with his lonely lifestyle until an energetic Labrador pup named Charlie enters his life and changes it forever.",
         "trailer_key": "gZ_sV7aBqCw",
         "language": "Kannada"
       },
@@ -483,10 +1118,54 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/5/51/Vikrant_Rona.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/5/51/Vikrant_Rona.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "overview": "Almost half a century ago, a remote village in the middle of a tropical rainforest starts witnessing a series of unexplainable events attributed to the supernatural.",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/4/4b/Vikrant_Rona_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/4/4b/Vikrant_Rona_poster.jpg",
+        "overview": "Almost half a century ago, a remote village in the tropical rainforest witnesses unexplainable events attributed to the supernatural.",
         "trailer_key": "PWF8kF_n-uA",
+        "language": "Kannada"
+      },
+      {
+        "id": 489999,
+        "title": "K.G.F: Chapter 1",
+        "year": "2018",
+        "release_date": "2018-12-21",
+        "vote_average": 8.3,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 80,
+            "name": "Crime"
+          }
+        ],
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/c/cc/K.G.F_Chapter_1_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/c/cc/K.G.F_Chapter_1_poster.jpg",
+        "overview": "Rocky, a fierce rebel in Bombay, rises from poverty and travels to the brutal Kolar Gold Fields to fulfill a promise to his dying mother.",
+        "trailer_key": "-KfsY-qwBS0",
+        "language": "Kannada"
+      },
+      {
+        "id": 111125,
+        "title": "Sapta Sagaradaache Ello",
+        "year": "2023",
+        "release_date": "2023-09-01",
+        "vote_average": 8.6,
+        "genres": [
+          {
+            "id": 10749,
+            "name": "Romance"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/4/4c/Sapta_Saagaradaache_Ello_-_Side_A.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/4/4c/Sapta_Saagaradaache_Ello_-_Side_A.jpg",
+        "overview": "Manu and Priya cherish their humble love and dreams of a seaside home until an unforeseen catastrophe tears their world apart.",
+        "trailer_key": "gZ_sV7aBqCw",
         "language": "Kannada"
       }
     ]
@@ -518,8 +1197,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Cymothoa_exigua_parassita_Lithognathus_mormyrus.JPG/330px-Cymothoa_exigua_parassita_Lithognathus_mormyrus.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Cymothoa_exigua_parassita_Lithognathus_mormyrus.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/5/53/Parasite_%282019_film%29.png",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/5/53/Parasite_%282019_film%29.png",
         "overview": "All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.",
         "trailer_key": "5xH0hhJ_VGE",
         "language": "Korean"
@@ -544,8 +1223,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/9/95/Train_to_Busan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/9/95/Train_to_Busan.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/9/95/Train_to_Busan.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/9/95/Train_to_Busan.jpg",
         "overview": "While a zombie virus breaks out in South Korea, passengers struggle to survive on the high-speed train from Seoul to Busan.",
         "trailer_key": "1ovgxN9xSiE",
         "language": "Korean"
@@ -566,9 +1245,9 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Romance"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/d/da/Past_Lives_film_poster.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/d/da/Past_Lives_film_poster.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "overview": "Nora and Hae Sung, two deeply connected childhood friends, are wrested apart after Nora's family emigrates from South Korea. Two decades later, they are reunited in New York for one fateful week.",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/7b/Past_Lives_%28film%29.png",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/7b/Past_Lives_%28film%29.png",
+        "overview": "Nora and Hae Sung, two deeply connected childhood friends, are reunited in New York for one fateful week as they confront notions of destiny and love.",
         "trailer_key": "kA244xewjcI",
         "language": "Korean"
       },
@@ -592,10 +1271,62 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Romance"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/8/82/Decision_to_Leave_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/8/82/Decision_to_Leave_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/0/05/Decision_to_Leave.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/0/05/Decision_to_Leave.jpg",
         "overview": "A seasoned detective falls for a mysterious widow who is the prime suspect in his latest murder investigation.",
         "trailer_key": "y0hHkZ_wF3U",
+        "language": "Korean"
+      },
+      {
+        "id": 670,
+        "title": "Oldboy",
+        "year": "2003",
+        "release_date": "2003-11-21",
+        "vote_average": 8.4,
+        "genres": [
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 9648,
+            "name": "Mystery"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          }
+        ],
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/68/Oldboy_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/68/Oldboy_poster.jpg",
+        "overview": "After being kidnapped and imprisoned for fifteen years, Oh Dae-Su is released, only to find that he must find his captor in five days.",
+        "trailer_key": "2HkjrJ6IK5E",
+        "language": "Korean"
+      },
+      {
+        "id": 290098,
+        "title": "The Handmaiden",
+        "year": "2016",
+        "release_date": "2016-06-01",
+        "vote_average": 8.3,
+        "genres": [
+          {
+            "id": 53,
+            "name": "Thriller"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          },
+          {
+            "id": 10749,
+            "name": "Romance"
+          }
+        ],
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/e/e0/The_Handmaiden_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/e/e0/The_Handmaiden_poster.jpg",
+        "overview": "A woman is hired as a handmaiden to an eccentric Japanese heiress, but secretly she is involved in a plot to defraud her.",
+        "trailer_key": "whldChqCsYk",
         "language": "Korean"
       }
     ]
@@ -627,8 +1358,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Adventure"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png",
         "overview": "A 10-year-old girl wanders into a world ruled by gods, witches, and spirits, where humans are changed into beasts.",
         "trailer_key": "ByXuk9QqQkk",
         "language": "Japanese"
@@ -653,8 +1384,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png",
         "overview": "Two teenagers share a profound, magical connection upon discovering they are swapping bodies across space and time.",
         "trailer_key": "xU47nhruN-Q",
         "language": "Japanese"
@@ -679,8 +1410,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Adventure"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/7f/Suzume_no_Tojimari_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/7f/Suzume_no_Tojimari_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/7f/Suzume_no_Tojimari_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/7f/Suzume_no_Tojimari_poster.jpg",
         "overview": "A 17-year-old girl named Suzume helps a mysterious young man close mystical doors releasing disasters all across Japan.",
         "trailer_key": "F7nQ08wJylo",
         "language": "Japanese"
@@ -705,10 +1436,32 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Fantasy"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/8/8c/Princess_Mononoke_Japanese_poster.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/8/8c/Princess_Mononoke_Japanese_poster.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "overview": "On a journey to find the cure for a Tatarigami's curse, Ashitaka finds himself in the middle of a war between the forest gods and Tatara, a mining colony.",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/8/8c/Princess_Mononoke_Japanese_poster.png",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/8/8c/Princess_Mononoke_Japanese_poster.png",
+        "overview": "On a journey to find the cure for a Tatarigami curse, Ashitaka finds himself in the middle of a war between the forest gods and a mining colony.",
         "trailer_key": "4OiMOHRDs14",
+        "language": "Japanese"
+      },
+      {
+        "id": 346,
+        "title": "Seven Samurai",
+        "year": "1954",
+        "release_date": "1954-04-26",
+        "vote_average": 8.6,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Seven_Samurai_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Seven_Samurai_poster.jpg",
+        "overview": "A poor village under attack by bandits recruits seven masterless samurai to protect them and teach them how to defend themselves.",
+        "trailer_key": "wJ1TOratCTo",
         "language": "Japanese"
       }
     ]
@@ -736,8 +1489,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Adventure"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/76/Society_of_the_Snow_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/76/Society_of_the_Snow_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/2/23/Society_of_the_Snow_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/2/23/Society_of_the_Snow_poster.jpg",
         "overview": "The flight of a rugby team crashes onto a glacier in the heart of the Andes. The survivors find themselves in one of the toughest environments on earth.",
         "trailer_key": "pDak4qLyF4M",
         "language": "Spanish"
@@ -762,8 +1515,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "War"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/67/Pan%27s_Labyrinth.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/67/Pan%27s_Labyrinth.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/67/Pan%27s_Labyrinth.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/67/Pan%27s_Labyrinth.jpg",
         "overview": "In the falangist Spain of 1944, the bookish young stepdaughter of a sadistic army officer escapes into an eerie but captivating fantasy world.",
         "trailer_key": "EqYiSlkvRuw",
         "language": "Spanish"
@@ -784,8 +1537,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/5/54/The_Platform_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/5/54/The_Platform_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/5/58/The_Platform_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/5/58/The_Platform_poster.jpg",
         "overview": "A vertical prison with one cell per level. Two people per cell. One only food platform and two minutes per day to feed.",
         "trailer_key": "RlfooqeZcdY",
         "language": "Spanish"
@@ -810,8 +1563,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/6e/Contratiempo_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/6e/Contratiempo_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/3/30/The_Invisible_Guest.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/3/30/The_Invisible_Guest.jpg",
         "overview": "A successful entrepreneur accused of murder works with a brilliant witness preparation expert to devise a defense in three hours.",
         "trailer_key": "epCg2R12TE4",
         "language": "Spanish"
@@ -841,8 +1594,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Romance"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/0/05/Carry_on_Jatta_3_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/0/05/Carry_on_Jatta_3_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/c/c5/Carry_on_Jatta_3_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/c/c5/Carry_on_Jatta_3_poster.jpg",
         "overview": "Advocate Dhillon's son Jass is in love with Meet, but her brothers get into a tussle with Dhillon, creating chaos and non-stop situational comedy.",
         "trailer_key": "pDak4qLyF4M",
         "language": "Punjabi"
@@ -863,8 +1616,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Romance"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/e/e4/Jatt_%26_Juliet_3_Official_Poster.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/e/e4/Jatt_%26_Juliet_3_Official_Poster.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/Jatt_%26_Juliet_3.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/Jatt_%26_Juliet_3.jpg",
         "overview": "Fateh and Pooja return as two Punjab police officers on a special overseas mission in the UK with hilarious twists and romance.",
         "trailer_key": "pDak4qLyF4M",
         "language": "Punjabi"
@@ -889,8 +1642,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/78/Chaar_sahibzaade_movie_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/78/Chaar_sahibzaade_movie_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/a/a2/Chaar_Sahibzaade_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/a/a2/Chaar_Sahibzaade_poster.jpg",
         "overview": "The inspiring story of the exemplary courage and supreme sacrifice of the four sons of Shri Guru Gobind Singh Ji.",
         "trailer_key": "pDak4qLyF4M",
         "language": "Punjabi"
@@ -916,8 +1669,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/77/Pather_panchali_poster_in_color_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/77/Pather_panchali_poster_in_color_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Pather_Panchali_poster.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Pather_Panchali_poster.jpg",
         "overview": "Satyajit Ray's timeless masterpiece depicting the childhood struggles and rural joys of Apu and his elder sister Durga in Bengal.",
         "trailer_key": "rM1PkW1m7sA",
         "language": "Bengali"
@@ -938,8 +1691,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Adventure"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/5/56/Sonar_Kella_book_front_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/5/56/Sonar_Kella_book_front_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/2/29/Sonar_Kella.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/2/29/Sonar_Kella.jpg",
         "overview": "Iconic sleuth Feluda travels to the deserts of Rajasthan to solve the mystery of a child's past-life visions of a golden fortress.",
         "trailer_key": "rM1PkW1m7sA",
         "language": "Bengali"
@@ -960,8 +1713,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Biography"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/4/4a/Aparajito_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/4/4a/Aparajito_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/6c/Aparajito_%282022_film%29.jpg",
+        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/6c/Aparajito_%282022_film%29.jpg",
         "overview": "A tribute to legendary auteur Satyajit Ray, tracing the triumphs and trials behind making his groundbreaking debut film.",
         "trailer_key": "rM1PkW1m7sA",
         "language": "Bengali"
