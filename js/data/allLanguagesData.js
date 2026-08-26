@@ -463,7 +463,7 @@ export const ALL_LANGUAGES_DATA = {
     "title": "Telugu Movies",
     "subtitle": "Tollywood Blockbusters",
     "icon": "🏹",
-    "bg": "https://images.unsplash.com/photo-1574267432553-4b4628081c31?auto=format&fit=crop&w=1280&q=80",
+    "bg": "images/telugu/rrr_banner.jpg",
     "movies": [
       {
         "id": 579974,
@@ -481,8 +481,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/d/d7/RRR_Poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/d/d7/RRR_Poster.jpg",
+        "poster_path": "images/telugu/rrr_poster.jpg",
+        "backdrop_path": "images/telugu/rrr_banner.jpg",
         "overview": "A fictional tale about two legendary Indian revolutionaries, Alluri Sitarama Raju and Komaram Bheem, fighting British colonial oppression.",
         "trailer_key": "GY4BgdUSpbE",
         "language": "Telugu"
@@ -503,8 +503,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Crime"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/75/Pushpa_-_The_Rise_%282021_film%29.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/75/Pushpa_-_The_Rise_%282021_film%29.jpg",
+        "poster_path": "images/telugu/pushpa2_poster.jpg",
+        "backdrop_path": "images/telugu/pushpa2_banner.jpg",
         "overview": "The clash escalates between Pushpa Raj and SP Bhanwar Singh Shekhawat in a fiery battle for supremacy over red sandalwood smuggling networks.",
         "trailer_key": "g3JUbgZXDAU",
         "language": "Telugu"
@@ -525,8 +525,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Fantasy"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/9/93/Baahubali_2_The_Conclusion_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/9/93/Baahubali_2_The_Conclusion_poster.jpg",
+        "poster_path": "images/telugu/baahubali2_poster.jpg",
+        "backdrop_path": "images/telugu/baahubali2_banner.jpg",
         "overview": "When Shiva, the son of Bahubali, learns about his heritage, he begins to look for answers in the glorious Kingdom of Mahishmati.",
         "trailer_key": "G62HrubdD6o",
         "language": "Telugu"
@@ -551,8 +551,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Fantasy"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/4/4c/Kalki_2898_AD.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/4/4c/Kalki_2898_AD.jpg",
+        "poster_path": "images/telugu/kalki_poster.jpg",
+        "backdrop_path": "images/telugu/kalki_banner.jpg",
         "overview": "Set in a post-apocalyptic world in the year 2898 AD, a modern avatar of Vishnu is believed to have descended to protect the world from evil forces.",
         "trailer_key": "y1-w1pUGuz4",
         "language": "Telugu"
@@ -573,8 +573,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Crime"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/a/a6/Salaar_Part_1_%E2%80%93_Ceasefire.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/a/a6/Salaar_Part_1_%E2%80%93_Ceasefire.jpg",
+        "poster_path": "images/telugu/salaar_poster.jpg",
+        "backdrop_path": "images/telugu/salaar_banner.jpg",
         "overview": "A gang leader makes a promise to a dying friend and takes on other criminal gangs in the dystopian city of Khansaar.",
         "trailer_key": "4GPvYMKtrtI",
         "language": "Telugu"
@@ -595,8 +595,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Action"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/9/91/Hanu_Man_film_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/9/91/Hanu_Man_film_poster.jpg",
+        "poster_path": "images/telugu/hanuman_poster.jpg",
+        "backdrop_path": "images/telugu/hanuman_banner.jpg",
         "overview": "An ordinary petty thief in the village of Anjanadri gains the powers of Lord Hanuman to fight evil forces threatening his people.",
         "trailer_key": "3Ew9wHw0q0Y",
         "language": "Telugu"
@@ -617,8 +617,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/f/f0/Devara_Part_1.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/f/f0/Devara_Part_1.jpg",
+        "poster_path": "images/telugu/devara_poster.jpg",
+        "backdrop_path": "images/telugu/devara_banner.jpg",
         "overview": "A fearless chieftain defends coastal waters against ruthless smugglers, creating a legacy his son must uphold.",
         "trailer_key": "hXk0K7vFmQw",
         "language": "Telugu"
@@ -639,8 +639,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/0/06/Sita_Ramam.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/0/06/Sita_Ramam.jpg",
+        "poster_path": "images/telugu/sitaramam_poster.jpg",
+        "backdrop_path": "images/telugu/sitaramam_banner.jpg",
         "overview": "An orphan soldier stationed in Kashmir receives anonymous love letters from Sita Mahalakshmi, embarking on a poetic journey of love.",
         "trailer_key": "Q1NKMPhP8PY",
         "language": "Telugu"
@@ -833,7 +833,7 @@ export const ALL_LANGUAGES_DATA = {
     "title": "Malayalam Movies",
     "subtitle": "Mollywood Masterpieces",
     "icon": "🌴",
-    "bg": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1280&q=80",
+    "bg": "images/malayalam/manjummel_banner.jpg",
     "movies": [
       {
         "id": 111120,
@@ -851,8 +851,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/0/0b/Manjummel_Boys_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/0/0b/Manjummel_Boys_poster.jpg",
+        "poster_path": "images/malayalam/manjummel_poster.jpg",
+        "backdrop_path": "images/malayalam/manjummel_banner.jpg",
         "overview": "A group of friends from Kochi embark on a vacation to Kodaikanal, where an unexpected mishap inside the deep Guna Caves turns into a high-stakes rescue mission.",
         "trailer_key": "h0W3c8g5x4M",
         "language": "Malayalam"
@@ -873,8 +873,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Romance"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/Premalu_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/Premalu_poster.jpg",
+        "poster_path": "images/malayalam/premalu_poster.jpg",
+        "backdrop_path": "images/malayalam/premalu_banner.jpg",
         "overview": "Sachin pursues romance in Hyderabad while navigating the highs and lows of modern youth culture and comedic misadventures.",
         "trailer_key": "rM1PkW1m7sA",
         "language": "Malayalam"
@@ -895,8 +895,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Comedy"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/2/22/Aavesham_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/2/22/Aavesham_poster.jpg",
+        "poster_path": "images/malayalam/aavesham_poster.jpg",
+        "backdrop_path": "images/malayalam/aavesham_banner.jpg",
         "overview": "Three college students in Bangalore befriend a charismatic eccentric local gangster named Ranga to settle a campus rivalry.",
         "trailer_key": "L0yEMl8PXnw",
         "language": "Malayalam"
@@ -917,8 +917,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/66/Bramayugam_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/66/Bramayugam_poster.jpg",
+        "poster_path": "images/malayalam/bramayugam_poster.jpg",
+        "backdrop_path": "images/malayalam/bramayugam_banner.jpg",
         "overview": "In 17th-century Kerala, a court singer escapes slavery only to seek shelter in a mysterious, crumbling mansion ruled by an enigmatic sorcerer.",
         "trailer_key": "tB0QJ8K5Q6s",
         "language": "Malayalam"
@@ -943,8 +943,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Crime"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/8/87/Drishyam_2_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/8/87/Drishyam_2_poster.jpg",
+        "poster_path": "images/malayalam/drishyam2_poster.jpg",
+        "backdrop_path": "images/malayalam/drishyam2_banner.jpg",
         "overview": "Six years after the case, Georgekutty and his family are once again scrutinized by the police as new evidence threatens to unearth the truth.",
         "trailer_key": "GRmC4J1z1wI",
         "language": "Malayalam"
@@ -965,8 +965,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Crime"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/4/4b/Lucifer_film_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/4/4b/Lucifer_film_poster.jpg",
+        "poster_path": "images/malayalam/lucifer_poster.jpg",
+        "backdrop_path": "images/malayalam/lucifer_banner.jpg",
         "overview": "A political Godfather dies and a lot of thieves dressed in white enter the scene to seize power, until Stephen Nedumpally steps forward.",
         "trailer_key": "y0hHkZ_wF3U",
         "language": "Malayalam"
@@ -987,8 +987,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/7b/2018_film_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/7b/2018_film_poster.jpg",
+        "poster_path": "images/malayalam/2018_poster.jpg",
+        "backdrop_path": "images/malayalam/2018_banner.jpg",
         "overview": "People from all walks of life come together during the catastrophic 2018 Kerala floods, proving the invincible power of human empathy.",
         "trailer_key": "h0W3c8g5x4M",
         "language": "Malayalam"
@@ -1009,8 +1009,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Comedy"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Kumbalangi_Nights_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Kumbalangi_Nights_poster.jpg",
+        "poster_path": "images/malayalam/kumbalangi_poster.jpg",
+        "backdrop_path": "images/malayalam/kumbalangi_banner.jpg",
         "overview": "Four brothers share a love-hate relationship with each other. Their relationship matures into brotherhood as they stand up for one another.",
         "trailer_key": "L0yEMl8PXnw",
         "language": "Malayalam"
@@ -1022,7 +1022,7 @@ export const ALL_LANGUAGES_DATA = {
     "title": "Kannada Movies",
     "subtitle": "Sandalwood Powerhouses",
     "icon": "👑",
-    "bg": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1280&q=80",
+    "bg": "images/kannada/kgf2_banner.jpg",
     "movies": [
       {
         "id": 511819,
@@ -1040,8 +1040,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Crime"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/d/d0/K.G.F_Chapter_2.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/d/d0/K.G.F_Chapter_2.jpg",
+        "poster_path": "images/kannada/kgf2_poster.jpg",
+        "backdrop_path": "images/kannada/kgf2_banner.jpg",
         "overview": "The blood-soaked land of Kolar Gold Fields has a new overlord now - Rocky, whose name strikes fear in the heart of his foes and allies alike.",
         "trailer_key": "JKa05nyUmuQ",
         "language": "Kannada"
@@ -1066,8 +1066,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/8/84/Kantara_poster.jpeg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/8/84/Kantara_poster.jpeg",
+        "poster_path": "images/kannada/kantara_poster.jpg",
+        "backdrop_path": "images/kannada/kantara_banner.jpg",
         "overview": "When greed paves the way for betrayal and wrath, a young tribal man embodies the spirit of his ancestors to protect his village land.",
         "trailer_key": "8MR_xQv1y9k",
         "language": "Kannada"
@@ -1092,8 +1092,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Comedy"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/777_Charlie_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/777_Charlie_poster.jpg",
+        "poster_path": "images/kannada/777charlie_poster.jpg",
+        "backdrop_path": "images/kannada/777charlie_banner.jpg",
         "overview": "Dharma is stuck in a rut with his lonely lifestyle until an energetic Labrador pup named Charlie enters his life and changes it forever.",
         "trailer_key": "gZ_sV7aBqCw",
         "language": "Kannada"
@@ -1118,8 +1118,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/4/4b/Vikrant_Rona_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/4/4b/Vikrant_Rona_poster.jpg",
+        "poster_path": "images/kannada/vikrant_rona_poster.jpg",
+        "backdrop_path": "images/kannada/vikrant_rona_banner.jpg",
         "overview": "Almost half a century ago, a remote village in the tropical rainforest witnesses unexplainable events attributed to the supernatural.",
         "trailer_key": "PWF8kF_n-uA",
         "language": "Kannada"
@@ -1140,8 +1140,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Crime"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/c/cc/K.G.F_Chapter_1_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/c/cc/K.G.F_Chapter_1_poster.jpg",
+        "poster_path": "images/kannada/kgf1_poster.jpg",
+        "backdrop_path": "images/kannada/kgf1_banner.jpg",
         "overview": "Rocky, a fierce rebel in Bombay, rises from poverty and travels to the brutal Kolar Gold Fields to fulfill a promise to his dying mother.",
         "trailer_key": "-KfsY-qwBS0",
         "language": "Kannada"
@@ -1162,8 +1162,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/4/4c/Sapta_Saagaradaache_Ello_-_Side_A.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/4/4c/Sapta_Saagaradaache_Ello_-_Side_A.jpg",
+        "poster_path": "images/kannada/sapta_sagara_poster.jpg",
+        "backdrop_path": "images/kannada/sapta_sagara_banner.jpg",
         "overview": "Manu and Priya cherish their humble love and dreams of a seaside home until an unforeseen catastrophe tears their world apart.",
         "trailer_key": "gZ_sV7aBqCw",
         "language": "Kannada"
@@ -1175,7 +1175,7 @@ export const ALL_LANGUAGES_DATA = {
     "title": "Korean Cinema",
     "subtitle": "K-Cinema & Thrillers",
     "icon": "🇰🇷",
-    "bg": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=1280&q=80",
+    "bg": "images/korean/parasite_banner.jpg",
     "movies": [
       {
         "id": 496243,
@@ -1197,8 +1197,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/5/53/Parasite_%282019_film%29.png",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/5/53/Parasite_%282019_film%29.png",
+        "poster_path": "images/korean/parasite_poster.jpg",
+        "backdrop_path": "images/korean/parasite_banner.jpg",
         "overview": "All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.",
         "trailer_key": "5xH0hhJ_VGE",
         "language": "Korean"
@@ -1223,8 +1223,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/9/95/Train_to_Busan.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/9/95/Train_to_Busan.jpg",
+        "poster_path": "images/korean/train_to_busan_poster.jpg",
+        "backdrop_path": "images/korean/train_to_busan_banner.jpg",
         "overview": "While a zombie virus breaks out in South Korea, passengers struggle to survive on the high-speed train from Seoul to Busan.",
         "trailer_key": "1ovgxN9xSiE",
         "language": "Korean"
@@ -1245,8 +1245,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Romance"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/7b/Past_Lives_%28film%29.png",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/7b/Past_Lives_%28film%29.png",
+        "poster_path": "images/korean/past_lives_poster.jpg",
+        "backdrop_path": "images/korean/past_lives_banner.jpg",
         "overview": "Nora and Hae Sung, two deeply connected childhood friends, are reunited in New York for one fateful week as they confront notions of destiny and love.",
         "trailer_key": "kA244xewjcI",
         "language": "Korean"
@@ -1271,8 +1271,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Romance"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/0/05/Decision_to_Leave.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/0/05/Decision_to_Leave.jpg",
+        "poster_path": "images/korean/decision_to_leave_poster.jpg",
+        "backdrop_path": "images/korean/decision_to_leave_banner.jpg",
         "overview": "A seasoned detective falls for a mysterious widow who is the prime suspect in his latest murder investigation.",
         "trailer_key": "y0hHkZ_wF3U",
         "language": "Korean"
@@ -1297,8 +1297,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/68/Oldboy_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/68/Oldboy_poster.jpg",
+        "poster_path": "images/korean/oldboy_poster.jpg",
+        "backdrop_path": "images/korean/oldboy_banner.jpg",
         "overview": "After being kidnapped and imprisoned for fifteen years, Oh Dae-Su is released, only to find that he must find his captor in five days.",
         "trailer_key": "2HkjrJ6IK5E",
         "language": "Korean"
@@ -1323,8 +1323,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Romance"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/e/e0/The_Handmaiden_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/e/e0/The_Handmaiden_poster.jpg",
+        "poster_path": "images/korean/handmaiden_poster.jpg",
+        "backdrop_path": "images/korean/handmaiden_banner.jpg",
         "overview": "A woman is hired as a handmaiden to an eccentric Japanese heiress, but secretly she is involved in a plot to defraud her.",
         "trailer_key": "whldChqCsYk",
         "language": "Korean"
@@ -1336,7 +1336,7 @@ export const ALL_LANGUAGES_DATA = {
     "title": "Japanese & Anime",
     "subtitle": "Anime & Iconic Masterpieces",
     "icon": "⛩️",
-    "bg": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1280&q=80",
+    "bg": "images/anime/spirited_away_banner.jpg",
     "movies": [
       {
         "id": 129,
@@ -1358,8 +1358,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Adventure"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png",
+        "poster_path": "images/anime/spirited_away_poster.jpg",
+        "backdrop_path": "images/anime/spirited_away_banner.jpg",
         "overview": "A 10-year-old girl wanders into a world ruled by gods, witches, and spirits, where humans are changed into beasts.",
         "trailer_key": "ByXuk9QqQkk",
         "language": "Japanese"
@@ -1384,8 +1384,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/0/0b/Your_Name_poster.png",
+        "poster_path": "images/anime/your_name_poster.jpg",
+        "backdrop_path": "images/anime/your_name_banner.jpg",
         "overview": "Two teenagers share a profound, magical connection upon discovering they are swapping bodies across space and time.",
         "trailer_key": "xU47nhruN-Q",
         "language": "Japanese"
@@ -1410,8 +1410,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Adventure"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/7/7f/Suzume_no_Tojimari_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/7/7f/Suzume_no_Tojimari_poster.jpg",
+        "poster_path": "images/anime/suzume_poster.jpg",
+        "backdrop_path": "images/anime/suzume_banner.jpg",
         "overview": "A 17-year-old girl named Suzume helps a mysterious young man close mystical doors releasing disasters all across Japan.",
         "trailer_key": "F7nQ08wJylo",
         "language": "Japanese"
@@ -1436,8 +1436,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Fantasy"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/8/8c/Princess_Mononoke_Japanese_poster.png",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/8/8c/Princess_Mononoke_Japanese_poster.png",
+        "poster_path": "images/anime/mononoke_poster.jpg",
+        "backdrop_path": "images/anime/mononoke_banner.jpg",
         "overview": "On a journey to find the cure for a Tatarigami curse, Ashitaka finds himself in the middle of a war between the forest gods and a mining colony.",
         "trailer_key": "4OiMOHRDs14",
         "language": "Japanese"
@@ -1458,8 +1458,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Seven_Samurai_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Seven_Samurai_poster.jpg",
+        "poster_path": "images/anime/seven_samurai_poster.jpg",
+        "backdrop_path": "images/anime/seven_samurai_banner.jpg",
         "overview": "A poor village under attack by bandits recruits seven masterless samurai to protect them and teach them how to defend themselves.",
         "trailer_key": "wJ1TOratCTo",
         "language": "Japanese"
@@ -1471,7 +1471,7 @@ export const ALL_LANGUAGES_DATA = {
     "title": "Spanish Cinema",
     "subtitle": "Thrills & Visual Masterpieces",
     "icon": "🇪🇸",
-    "bg": "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=1280&q=80",
+    "bg": "images/spanish/society_of_the_snow_banner.jpg",
     "movies": [
       {
         "id": 906126,
@@ -1489,8 +1489,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Adventure"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/2/23/Society_of_the_Snow_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/2/23/Society_of_the_Snow_poster.jpg",
+        "poster_path": "images/spanish/society_of_the_snow_poster.jpg",
+        "backdrop_path": "images/spanish/society_of_the_snow_banner.jpg",
         "overview": "The flight of a rugby team crashes onto a glacier in the heart of the Andes. The survivors find themselves in one of the toughest environments on earth.",
         "trailer_key": "pDak4qLyF4M",
         "language": "Spanish"
@@ -1515,8 +1515,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "War"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/67/Pan%27s_Labyrinth.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/67/Pan%27s_Labyrinth.jpg",
+        "poster_path": "images/spanish/pans_labyrinth_poster.jpg",
+        "backdrop_path": "images/spanish/pans_labyrinth_banner.jpg",
         "overview": "In the falangist Spain of 1944, the bookish young stepdaughter of a sadistic army officer escapes into an eerie but captivating fantasy world.",
         "trailer_key": "EqYiSlkvRuw",
         "language": "Spanish"
@@ -1537,8 +1537,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/5/58/The_Platform_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/5/58/The_Platform_poster.jpg",
+        "poster_path": "images/spanish/the_platform_poster.jpg",
+        "backdrop_path": "images/spanish/the_platform_banner.jpg",
         "overview": "A vertical prison with one cell per level. Two people per cell. One only food platform and two minutes per day to feed.",
         "trailer_key": "RlfooqeZcdY",
         "language": "Spanish"
@@ -1563,8 +1563,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Thriller"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/3/30/The_Invisible_Guest.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/3/30/The_Invisible_Guest.jpg",
+        "poster_path": "images/spanish/invisible_guest_poster.jpg",
+        "backdrop_path": "images/spanish/invisible_guest_banner.jpg",
         "overview": "A successful entrepreneur accused of murder works with a brilliant witness preparation expert to devise a defense in three hours.",
         "trailer_key": "epCg2R12TE4",
         "language": "Spanish"
@@ -1576,7 +1576,7 @@ export const ALL_LANGUAGES_DATA = {
     "title": "Punjabi Movies",
     "subtitle": "Pollywood Hits",
     "icon": "🪕",
-    "bg": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1280&q=80",
+    "bg": "images/kannada/kgf2_banner.jpg",
     "movies": [
       {
         "id": 111130,
@@ -1594,8 +1594,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Romance"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/c/c5/Carry_on_Jatta_3_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/c/c5/Carry_on_Jatta_3_poster.jpg",
+        "poster_path": "images/punjabi/carry_on_jatta3_poster.jpg",
+        "backdrop_path": "images/punjabi/carry_on_jatta3_banner.jpg",
         "overview": "Advocate Dhillon's son Jass is in love with Meet, but her brothers get into a tussle with Dhillon, creating chaos and non-stop situational comedy.",
         "trailer_key": "pDak4qLyF4M",
         "language": "Punjabi"
@@ -1616,8 +1616,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Romance"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/Jatt_%26_Juliet_3.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/6f/Jatt_%26_Juliet_3.jpg",
+        "poster_path": "images/punjabi/jatt_and_juliet3_poster.jpg",
+        "backdrop_path": "images/punjabi/jatt_and_juliet3_banner.jpg",
         "overview": "Fateh and Pooja return as two Punjab police officers on a special overseas mission in the UK with hilarious twists and romance.",
         "trailer_key": "pDak4qLyF4M",
         "language": "Punjabi"
@@ -1642,8 +1642,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/a/a2/Chaar_Sahibzaade_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/a/a2/Chaar_Sahibzaade_poster.jpg",
+        "poster_path": "images/punjabi/chaar_sahibzaade_poster.jpg",
+        "backdrop_path": "images/punjabi/chaar_sahibzaade_banner.jpg",
         "overview": "The inspiring story of the exemplary courage and supreme sacrifice of the four sons of Shri Guru Gobind Singh Ji.",
         "trailer_key": "pDak4qLyF4M",
         "language": "Punjabi"
@@ -1655,7 +1655,7 @@ export const ALL_LANGUAGES_DATA = {
     "title": "Bengali Cinema",
     "subtitle": "Classic & Modern Bengali",
     "icon": "🎭",
-    "bg": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1280&q=80",
+    "bg": "images/kannada/kgf2_banner.jpg",
     "movies": [
       {
         "id": 593,
@@ -1669,8 +1669,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Drama"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Pather_Panchali_poster.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/b/ba/Pather_Panchali_poster.jpg",
+        "poster_path": "images/bengali/pather_panchali_poster.jpg",
+        "backdrop_path": "images/bengali/pather_panchali_banner.jpg",
         "overview": "Satyajit Ray's timeless masterpiece depicting the childhood struggles and rural joys of Apu and his elder sister Durga in Bengal.",
         "trailer_key": "rM1PkW1m7sA",
         "language": "Bengali"
@@ -1691,8 +1691,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Adventure"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/2/29/Sonar_Kella.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/2/29/Sonar_Kella.jpg",
+        "poster_path": "images/bengali/sonar_kella_poster.jpg",
+        "backdrop_path": "images/bengali/sonar_kella_banner.jpg",
         "overview": "Iconic sleuth Feluda travels to the deserts of Rajasthan to solve the mystery of a child's past-life visions of a golden fortress.",
         "trailer_key": "rM1PkW1m7sA",
         "language": "Bengali"
@@ -1713,8 +1713,8 @@ export const ALL_LANGUAGES_DATA = {
             "name": "Biography"
           }
         ],
-        "poster_path": "https://upload.wikimedia.org/wikipedia/en/6/6c/Aparajito_%282022_film%29.jpg",
-        "backdrop_path": "https://upload.wikimedia.org/wikipedia/en/6/6c/Aparajito_%282022_film%29.jpg",
+        "poster_path": "images/bengali/aparajito_poster.jpg",
+        "backdrop_path": "images/bengali/aparajito_banner.jpg",
         "overview": "A tribute to legendary auteur Satyajit Ray, tracing the triumphs and trials behind making his groundbreaking debut film.",
         "trailer_key": "rM1PkW1m7sA",
         "language": "Bengali"
