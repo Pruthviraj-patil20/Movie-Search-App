@@ -66,7 +66,7 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
     container.innerHTML = `
       <div class="bollywood-banner-wrapper" id="${idPrefix}-spotlight-banner">
         <!-- Dynamic Backdrop -->
-        <div class="bollywood-banner-backdrop" style="background-image: url('${backdropUrl}');"></div>
+        <div class="bollywood-banner-backdrop" id="${idPrefix}-banner-backdrop" style="background-image: url('${backdropUrl}');"></div>
         <div class="bollywood-banner-overlay"></div>
 
         <!-- Main Banner Container -->
@@ -136,7 +136,7 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
                 src="${posterUrl}" 
                 alt="${title} Poster" 
                 class="bollywood-banner-poster-img"
-                onerror="this.onerror=null;this.src='${CONFIG.FALLBACK_POSTER}'"
+                id="${idPrefix}-banner-poster-img"
               />
             </div>
           </div>
@@ -154,6 +154,58 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
         </div>
       </div>
     `;
+
+    // Progressive Backdrop & Poster Multi-Path Resolution
+    const backdropEl = container.querySelector(`#${idPrefix}-banner-backdrop`);
+    if (backdropEl && movie.backdrop_path) {
+      const cleanBg = String(movie.backdrop_path).replace(/^(\.\/|\/)/, '');
+      const bgCandidates = [
+        backdropUrl,
+        cleanBg,
+        `./${cleanBg}`,
+        `/${cleanBg}`,
+        `public/${cleanBg}`,
+        CONFIG.FALLBACK_BACKDROP
+      ].filter(Boolean);
+
+      function tryLoadBackdrop(idx) {
+        if (idx >= bgCandidates.length) return;
+        const candidate = bgCandidates[idx];
+        const img = new Image();
+        img.onload = () => {
+          if (backdropEl) backdropEl.style.backgroundImage = `url('${candidate}')`;
+        };
+        img.onerror = () => {
+          tryLoadBackdrop(idx + 1);
+        };
+        img.src = candidate;
+      }
+      tryLoadBackdrop(0);
+    }
+
+    const posterImg = container.querySelector(`#${idPrefix}-banner-poster-img`);
+    if (posterImg && movie.poster_path) {
+      const cleanPoster = String(movie.poster_path).replace(/^(\.\/|\/)/, '');
+      const posterCandidates = [
+        posterUrl,
+        cleanPoster,
+        `./${cleanPoster}`,
+        `/${cleanPoster}`,
+        `public/${cleanPoster}`,
+        CONFIG.FALLBACK_POSTER
+      ].filter(Boolean);
+
+      let currentCandidateIdx = 0;
+      posterImg.onerror = function() {
+        currentCandidateIdx++;
+        if (currentCandidateIdx < posterCandidates.length) {
+          this.src = posterCandidates[currentCandidateIdx];
+        } else {
+          this.onerror = null;
+          this.src = CONFIG.FALLBACK_POSTER;
+        }
+      };
+    }
 
     // Fetch genres if movie has genre_ids but no populated genres
     if (!genresList && movie.genre_ids && movie.genre_ids.length > 0) {

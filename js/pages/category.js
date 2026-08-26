@@ -1172,12 +1172,65 @@ export function initCategoryPage() {
               src="${posterUrl}" 
               alt="${title} Poster" 
               class="category-banner-poster-img"
-              onerror="this.onerror=null;this.src='${CONFIG.FALLBACK_POSTER}'"
+              id="category-banner-poster-img"
             />
           </div>
         </div>
       </div>
     `;
+
+    // Progressive Backdrop & Poster Multi-Path Resolution
+    const backdropEl = container.querySelector('.category-banner-backdrop');
+    if (backdropEl && (movie.backdrop_path || movie.poster_path)) {
+      const bgPath = movie.backdrop_path || movie.poster_path;
+      const cleanBg = String(bgPath).replace(/^(\.\/|\/)/, '');
+      const bgCandidates = [
+        backdropUrl,
+        cleanBg,
+        `./${cleanBg}`,
+        `/${cleanBg}`,
+        `public/${cleanBg}`,
+        CONFIG.FALLBACK_BACKDROP
+      ].filter(Boolean);
+
+      function tryLoadCategoryBackdrop(idx) {
+        if (idx >= bgCandidates.length) return;
+        const candidate = bgCandidates[idx];
+        const img = new Image();
+        img.onload = () => {
+          if (backdropEl) backdropEl.style.backgroundImage = `url('${candidate}')`;
+        };
+        img.onerror = () => {
+          tryLoadCategoryBackdrop(idx + 1);
+        };
+        img.src = candidate;
+      }
+      tryLoadCategoryBackdrop(0);
+    }
+
+    const posterImg = container.querySelector('#category-banner-poster-img');
+    if (posterImg && movie.poster_path) {
+      const cleanPoster = String(movie.poster_path).replace(/^(\.\/|\/)/, '');
+      const posterCandidates = [
+        posterUrl,
+        cleanPoster,
+        `./${cleanPoster}`,
+        `/${cleanPoster}`,
+        `public/${cleanPoster}`,
+        CONFIG.FALLBACK_POSTER
+      ].filter(Boolean);
+
+      let currentCandidateIdx = 0;
+      posterImg.onerror = function() {
+        currentCandidateIdx++;
+        if (currentCandidateIdx < posterCandidates.length) {
+          this.src = posterCandidates[currentCandidateIdx];
+        } else {
+          this.onerror = null;
+          this.src = CONFIG.FALLBACK_POSTER;
+        }
+      };
+    }
 
     // Attach Event Handlers
     const trailerBtn = container.querySelector('#banner-play-trailer');
