@@ -1027,8 +1027,8 @@ export const ALL_LANGUAGES_DATA = {
       {
         "id": 999108,
         "title": "Toxic: A Fairy Tale for Grown-ups",
-        "year": "2025",
-        "release_date": "2025-04-10",
+        "year": "2026",
+        "release_date": "2026-08-26",
         "vote_average": 9.1,
         "genres": [
           {
@@ -1939,8 +1939,8 @@ export const ALL_LANGUAGES_DATA = {
       {
         "id": 999108,
         "title": "Toxic: A Fairy Tale for Grown-ups",
-        "year": "2025",
-        "release_date": "2025-04-10",
+        "year": "2026",
+        "release_date": "2026-08-26",
         "vote_average": 9.1,
         "genres": [
           {
