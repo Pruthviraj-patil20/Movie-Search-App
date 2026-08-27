@@ -10,10 +10,16 @@ const rawApiKey = env.VITE_TMDB_API_KEY;
 const isPlaceholderKey = !rawApiKey || rawApiKey.includes('YOUR_TMDB_API_KEY') || rawApiKey.trim() === '';
 const DEFAULT_TMDB_KEY = 'c3590dc2e74e64f89d316cb6beafbc60';
 
+const rawOmdbKey = env.VITE_OMDB_API_KEY;
+const isPlaceholderOmdbKey = !rawOmdbKey || rawOmdbKey.includes('YOUR_') || rawOmdbKey.trim() === '';
+const DEFAULT_OMDB_KEY = '1f6bb1be';
+
 export const CONFIG = {
   API_KEY: isPlaceholderKey ? DEFAULT_TMDB_KEY : rawApiKey.trim(),
   BASE_URL: env.VITE_TMDB_BASE_URL || 'https://api.themoviedb.org/3',
   IMAGE_BASE_URL: env.VITE_TMDB_IMAGE_BASE_URL || 'https://image.tmdb.org/t/p/',
+  OMDB_API_KEY: isPlaceholderOmdbKey ? DEFAULT_OMDB_KEY : rawOmdbKey.trim(),
+  OMDB_BASE_URL: env.VITE_OMDB_BASE_URL || 'https://www.omdbapi.com/',
   
   // Image Quality Presets
   IMAGE_SIZES: {

@@ -4,6 +4,7 @@
 
 import { CONFIG } from '../config.js';
 import { getMovieDetails, getRecommendations, getSimilarMovies } from '../api/movies.js';
+import { getOmdbMovieDetails } from '../api/omdb.js';
 import { createMovieCarousel } from '../components/carousel.js';
 import { loader } from '../components/loader.js';
 import { modal } from '../components/modal.js';
@@ -125,17 +126,60 @@ async function renderShowcase(container, movie) {
   const originalLanguage = (movie.original_language || 'en').toUpperCase();
   const companies = (movie.production_companies || []).map(c => c.name).join(', ') || 'Independent';
 
-  const [isWatch, isFav, isWatched, userRating] = await Promise.all([
+  const [isWatch, isFav, isWatched, userRating, omdb] = await Promise.all([
     watchlistService.isInWatchlist(movie.id),
     favoriteService.isFavorite(movie.id),
     userMovieService.isWatched(movie.id),
-    userMovieService.getMovieRating(movie.id)
+    userMovieService.getMovieRating(movie.id),
+    getOmdbMovieDetails({ title: movie.title, year: formatYear(movie.release_date), imdbId: movie.imdb_id })
   ]);
 
   // Genre pills HTML
   const genresHtml = (movie.genres || [])
     .map(g => `<a href="search.html?genre=${g.id}" class="genre-tag">${g.name}</a>`)
     .join('');
+
+  // OMDb Badges HTML
+  let omdbBadgesHtml = '';
+  if (omdb) {
+    const badges = [];
+    if (omdb.imdbRating) {
+      badges.push(`
+        <div class="omdb-badge omdb-badge-imdb" title="IMDb Rating (${omdb.imdbVotes || ''} votes)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>IMDb ${omdb.imdbRating}/10</span>
+        </div>
+      `);
+    }
+    if (omdb.rottenTomatoes) {
+      badges.push(`
+        <div class="omdb-badge omdb-badge-tomato" title="Rotten Tomatoes Score">
+          <span>🍅 ${omdb.rottenTomatoes} Rotten Tomatoes</span>
+        </div>
+      `);
+    }
+    if (omdb.metascore) {
+      badges.push(`
+        <div class="omdb-badge omdb-badge-metascore" title="Metacritic Metascore">
+          <span>Metascore ${omdb.metascore}/100</span>
+        </div>
+      `);
+    }
+    if (badges.length > 0) {
+      omdbBadgesHtml = `<div class="omdb-ratings-row">${badges.join('')}</div>`;
+    }
+  }
+
+  // OMDb Awards HTML
+  let omdbAwardsHtml = '';
+  if (omdb && omdb.awards && omdb.awards !== 'N/A') {
+    omdbAwardsHtml = `
+      <div class="omdb-awards-box">
+        <span class="omdb-awards-icon">🏆</span>
+        <span>${omdb.awards}</span>
+      </div>
+    `;
+  }
 
   container.innerHTML = `
     <div class="movie-details-hero">
@@ -205,6 +249,8 @@ async function renderShowcase(container, movie) {
             </div>
           </div>
 
+          ${omdbBadgesHtml}
+
           <div class="details-genres">
             ${genresHtml}
           </div>
@@ -253,9 +299,11 @@ async function renderShowcase(container, movie) {
             </button>
           </div>
 
+          ${omdbAwardsHtml}
+
           <div class="details-overview-section">
             <h3 class="details-section-heading">Overview</h3>
-            <p class="details-overview-text">${movie.overview || 'No overview has been provided for this title.'}</p>
+            <p class="details-overview-text">${movie.overview || (omdb && omdb.plot) || 'No overview has been provided for this title.'}</p>
           </div>
 
           <div class="details-meta-grid">
@@ -269,12 +317,24 @@ async function renderShowcase(container, movie) {
             </div>
             <div class="meta-block">
               <span class="meta-label">Box Office</span>
-              <span class="meta-value">${revenue}</span>
+              <span class="meta-value">${(omdb && omdb.boxOffice) ? omdb.boxOffice : revenue}</span>
             </div>
             <div class="meta-block">
               <span class="meta-label">Production</span>
               <span class="meta-value" title="${companies}">${companies}</span>
             </div>
+            ${(omdb && omdb.director && omdb.director !== 'N/A') ? `
+              <div class="meta-block">
+                <span class="meta-label">Director</span>
+                <span class="meta-value">${omdb.director}</span>
+              </div>
+            ` : ''}
+            ${(omdb && omdb.writer && omdb.writer !== 'N/A') ? `
+              <div class="meta-block">
+                <span class="meta-label">Writer</span>
+                <span class="meta-value" title="${omdb.writer}">${omdb.writer.split(',')[0]}</span>
+              </div>
+            ` : ''}
           </div>
         </div>
       </div>
