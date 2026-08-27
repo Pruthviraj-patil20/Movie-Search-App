@@ -1051,7 +1051,7 @@ export const ALL_LANGUAGES_DATA = {
         "poster_path": "images/kannada/toxic_poster.jpg",
         "backdrop_path": "images/kannada/toxic_banner.jpg",
         "overview": "Rocking Star Yash headlines a stylized noir action extravaganza exploring the dangerous underworld of international cartels and retribution, directed by Geetu Mohandas.",
-        "trailer_key": "V45Y50s33c0",
+        "trailer_key": "6bg5tM2jmUU",
         "language": "Kannada"
       },
       {
@@ -1785,7 +1785,7 @@ export const ALL_LANGUAGES_DATA = {
         "poster_path": "images/upcoming/toxic_poster.jpg",
         "backdrop_path": "images/upcoming/toxic_banner.jpg",
         "overview": "Rocking Star Yash headlines a stylized noir action extravaganza exploring the dangerous underworld of international cartels and retribution, directed by Geetu Mohandas.",
-        "trailer_key": "V45Y50s33c0",
+        "trailer_key": "6bg5tM2jmUU",
         "language": "Kannada"
       },
       {

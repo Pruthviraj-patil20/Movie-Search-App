@@ -118,7 +118,7 @@ export const modal = {
           <div class="modal-video-wrapper">
             <iframe
               class="modal-video-iframe"
-              src="https://www.youtube-nocookie.com/embed/${trailer.key}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1"
+              src="https://www.youtube.com/embed/${trailer.key}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1"
               title="${cleanTitle} Trailer"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
@@ -130,7 +130,7 @@ export const modal = {
           <div class="modal-video-wrapper">
             <iframe
               class="modal-video-iframe"
-              src="https://www.youtube-nocookie.com/embed?listType=search&list=${encodeURIComponent(trailer.searchQuery)}&autoplay=1&rel=0&modestbranding=1"
+              src="https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(trailer.searchQuery)}&autoplay=1&rel=0&modestbranding=1"
               title="${cleanTitle} Trailer"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
@@ -235,7 +235,7 @@ export const modal = {
         <div class="modal-video-wrapper">
           <iframe
             class="modal-video-iframe"
-            src="https://www.youtube-nocookie.com/embed/${videoKey}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1"
+            src="https://www.youtube.com/embed/${videoKey}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1"
             title="${cleanTitle} Full Streaming Experience"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
