@@ -1022,8 +1022,38 @@ export const ALL_LANGUAGES_DATA = {
     "title": "Kannada Movies",
     "subtitle": "Sandalwood Powerhouses",
     "icon": "👑",
-    "bg": "images/kannada/kgf2_banner.jpg",
+    "bg": "images/kannada/toxic_banner.jpg",
     "movies": [
+      {
+        "id": 999108,
+        "title": "Toxic: A Fairy Tale for Grown-ups",
+        "year": "2025",
+        "release_date": "2025-04-10",
+        "vote_average": 9.1,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 80,
+            "name": "Crime"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "images/kannada/toxic_poster.jpg",
+        "backdrop_path": "images/kannada/toxic_banner.jpg",
+        "overview": "Rocking Star Yash headlines a stylized noir action extravaganza exploring the dangerous underworld of international cartels and retribution, directed by Geetu Mohandas.",
+        "trailer_key": "V45Y50s33c0",
+        "language": "Kannada"
+      },
       {
         "id": 511819,
         "title": "K.G.F: Chapter 2",
@@ -1911,7 +1941,7 @@ export const ALL_LANGUAGES_DATA = {
         "title": "Toxic: A Fairy Tale for Grown-ups",
         "year": "2025",
         "release_date": "2025-04-10",
-        "vote_average": 8.5,
+        "vote_average": 9.1,
         "genres": [
           {
             "id": 28,
@@ -1924,12 +1954,16 @@ export const ALL_LANGUAGES_DATA = {
           {
             "id": 53,
             "name": "Thriller"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
           }
         ],
         "poster_path": "images/upcoming/toxic_poster.jpg",
         "backdrop_path": "images/upcoming/toxic_banner.jpg",
-        "overview": "A stylized high-octane noir action drama exploring the dark corridors of the international drug cartel and retribution.",
-        "trailer_key": "JKa05nyUmuQ",
+        "overview": "Rocking Star Yash headlines a stylized noir action extravaganza exploring the dangerous underworld of international cartels and retribution, directed by Geetu Mohandas.",
+        "trailer_key": "V45Y50s33c0",
         "language": "Kannada"
       },
       {

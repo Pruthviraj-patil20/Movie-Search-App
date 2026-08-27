@@ -4,6 +4,8 @@
  */
 
 export const ACTOR_PROFILES = {
+  "Yash": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Yash_during_toxic_trailer_launch_event.jpg/960px-Yash_during_toxic_trailer_launch_event.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "Rocking Star Yash": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Yash_during_toxic_trailer_launch_event.jpg/960px-Yash_during_toxic_trailer_launch_event.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Leonardo DiCaprio": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/LeoPTABFI191125-28_%28cropped%29.jpg/330px-LeoPTABFI191125-28_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Joseph Gordon-Levitt": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Joseph_Gordon_Levitt_Sundance_Film_Festival_2026_%28cropped%29.jpg/330px-Joseph_Gordon_Levitt_Sundance_Film_Festival_2026_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Elliot Page": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Elliot_Page_2026.jpg/330px-Elliot_Page_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
