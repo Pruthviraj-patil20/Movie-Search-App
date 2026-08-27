@@ -82,11 +82,15 @@ const CURATED_TRAILERS = {
   1148281: 'n9r5YF40K30', // Baipan Bhaari Deva
   1048821: 'i1N4pQG9QZk', // Ved
   33719: 'zL8x2yBqC9Q',   // Harishchandrachi Factory
-  284277: 'qY6y5XhB2Q8'   // Lai Bhaari
+  284277: 'qY6y5XhB2Q8',  // Lai Bhaari
+  999108: 'V45Y50s33c0'   // Toxic (Rocking Star Yash)
 };
 
 // Title-based fallback normalized lookup
 const TITLE_TRAILERS = {
+  'toxic': 'V45Y50s33c0',
+  'toxic: a fairy tale for grown-ups': 'V45Y50s33c0',
+  'toxic: a fairy tale for grown ups': 'V45Y50s33c0',
   'spider-man: no way home': 'JfVOs4VSpmA',
   'spiderman no way home': 'JfVOs4VSpmA',
   'spider-man across the spider-verse': 'cqGjhVJWtEg',

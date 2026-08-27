@@ -85,9 +85,12 @@ export async function initHomePage() {
     const trendingMovies = trendingData.results || [];
 
     if (trendingMovies.length > 0) {
-      // Hero Spotlight
+      // Hero Spotlight: Feature Toxic (Rocking Star Yash)
       if (heroMount) {
-        renderHeroBanner(heroMount, trendingMovies[0]);
+        const toxicHero = CATEGORY_DATA['kannada-movies']?.movies.find(m => m.id === 999108) ||
+                          CATEGORY_DATA['upcoming-movies']?.movies.find(m => m.id === 999108) ||
+                          trendingMovies[0];
+        renderHeroBanner(heroMount, toxicHero);
       }
 
       // Trending Carousel
