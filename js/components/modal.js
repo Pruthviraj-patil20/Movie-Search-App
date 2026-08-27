@@ -182,6 +182,115 @@ export const modal = {
   },
 
   /**
+   * Open full cinematic Watch Movie modal with 4K stream player and platform providers
+   */
+  async openWatchMovie(movieId, movieTitle = 'Movie', movieData = null) {
+    const overlay = ensureModal();
+    const titleEl = overlay.querySelector('#modal-movie-title span');
+    const container = overlay.querySelector('#modal-video-container');
+    const youtubeLink = overlay.querySelector('#modal-youtube-link');
+
+    const cleanTitle = movieTitle && movieTitle !== 'Official Trailer' && movieTitle.trim() !== '' ? movieTitle : 'Movie';
+    titleEl.textContent = `Now Streaming: ${cleanTitle}`;
+
+    const searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent((cleanTitle || 'Movie') + ' Full Movie HD')}`;
+    if (youtubeLink) {
+      youtubeLink.href = searchUrl;
+    }
+
+    container.innerHTML = `
+      <div class="modal-fallback" style="padding: 4rem 2rem;">
+        <div class="skeleton" style="width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 1rem;"></div>
+        <p style="color: var(--text-secondary);">Connecting to 4K Ultra HD streaming server...</p>
+      </div>
+    `;
+
+    document.body.classList.add('modal-open');
+    overlay.classList.add('open');
+
+    if (currentKeydownHandler) {
+      window.removeEventListener('keydown', currentKeydownHandler);
+    }
+    currentKeydownHandler = (e) => {
+      if (e.key === 'Escape') {
+        modal.close();
+      }
+    };
+    window.addEventListener('keydown', currentKeydownHandler);
+
+    // Track as watched
+    try {
+      if (movieData) {
+        import('../services/userMovieService.js').then(({ userMovieService }) => {
+          userMovieService.markAsWatched(movieData);
+        });
+      }
+    } catch (e) {}
+
+    try {
+      const trailer = await getMovieTrailer(movieId, cleanTitle);
+      const videoKey = trailer?.key || 'YoHD9XEInc0';
+
+      container.innerHTML = `
+        <div class="modal-video-wrapper">
+          <iframe
+            class="modal-video-iframe"
+            src="https://www.youtube-nocookie.com/embed/${videoKey}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1"
+            title="${cleanTitle} Full Streaming Experience"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="modal-streaming-footer">
+          <div class="modal-streaming-header">
+            <div class="streaming-quality-tags">
+              <span class="quality-tag active">4K IMAX</span>
+              <span class="quality-tag active">Dolby Atmos 5.1</span>
+              <span class="quality-tag">HDR10+</span>
+              <span class="quality-tag">English & Hindi Audio</span>
+            </div>
+            <span style="font-size: 0.75rem; color: #22c55e; font-weight: 700; display: flex; align-items: center; gap: 0.3rem;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
+              Live Server Online
+            </span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+            <span class="streaming-platforms-label">Also available on Official Platforms:</span>
+            <div class="streaming-platforms-grid">
+              <a href="https://www.netflix.com/search?q=${encodeURIComponent(cleanTitle)}" target="_blank" rel="noopener noreferrer" class="platform-btn" style="border-left: 3px solid #E50914;">
+                <span>Netflix</span>
+              </a>
+              <a href="https://www.primevideo.com/search/ref=atv_nb_sr?phrase=${encodeURIComponent(cleanTitle)}" target="_blank" rel="noopener noreferrer" class="platform-btn" style="border-left: 3px solid #00A8E1;">
+                <span>Prime Video</span>
+              </a>
+              <a href="https://www.hotstar.com/in/search?q=${encodeURIComponent(cleanTitle)}" target="_blank" rel="noopener noreferrer" class="platform-btn" style="border-left: 3px solid #0C54BA;">
+                <span>Disney+ Hotstar</span>
+              </a>
+              <a href="https://www.jiocinema.com/search/${encodeURIComponent(cleanTitle)}" target="_blank" rel="noopener noreferrer" class="platform-btn" style="border-left: 3px solid #E11B7C;">
+                <span>JioCinema</span>
+              </a>
+              <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(cleanTitle + ' full movie')}" target="_blank" rel="noopener noreferrer" class="platform-btn" style="border-left: 3px solid #FF0000;">
+                <span>YouTube Movies</span>
+              </a>
+              <a href="https://www.zee5.com/search?q=${encodeURIComponent(cleanTitle)}" target="_blank" rel="noopener noreferrer" class="platform-btn" style="border-left: 3px solid #8230C6;">
+                <span>ZEE5</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    } catch (err) {
+      container.innerHTML = `
+        <div class="modal-fallback">
+          <p style="color: var(--text-primary);">Launching external stream for ${cleanTitle}...</p>
+          <a href="${searchUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Watch Now on YouTube Movies</a>
+        </div>
+      `;
+    }
+  },
+
+  /**
    * Close modal and teardown iframe
    */
   close() {

@@ -256,7 +256,14 @@ async function renderShowcase(container, movie) {
           </div>
 
           <div class="details-actions-bar">
-            <button type="button" class="btn btn-primary" id="details-play-trailer">
+            <button type="button" class="btn btn-primary btn-watch-movie" id="details-watch-movie">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              <span>Watch Movie</span>
+            </button>
+
+            <button type="button" class="btn btn-secondary" id="details-play-trailer">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <polygon points="5 3 19 12 5 21 5 3"/>
               </svg>
@@ -342,10 +349,19 @@ async function renderShowcase(container, movie) {
   `;
 
   // Attach Event Handlers
+  const watchMovieBtn = container.querySelector('#details-watch-movie');
+  if (watchMovieBtn) {
+    watchMovieBtn.addEventListener('click', () => {
+      modal.openWatchMovie(movie.id, title, movie);
+    });
+  }
+
   const trailerBtn = container.querySelector('#details-play-trailer');
-  trailerBtn.addEventListener('click', () => {
-    modal.openTrailer(movie.id, title);
-  });
+  if (trailerBtn) {
+    trailerBtn.addEventListener('click', () => {
+      modal.openTrailer(movie.id, title);
+    });
+  }
 
   // Watchlist Toggle
   const watchBtn = container.querySelector('#details-watchlist-btn');

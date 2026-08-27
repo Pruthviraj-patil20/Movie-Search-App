@@ -101,7 +101,14 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
 
             <!-- Action Buttons -->
             <div class="bollywood-banner-actions">
-              <button type="button" class="btn btn-primary bollywood-btn-play" id="${idPrefix}-banner-trailer">
+              <button type="button" class="btn btn-primary btn-watch-movie" id="${idPrefix}-banner-watch-movie">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+                <span>Watch Movie</span>
+              </button>
+
+              <button type="button" class="btn btn-secondary bollywood-btn-play" id="${idPrefix}-banner-trailer">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="5 3 19 12 5 21 5 3"/>
                 </svg>
@@ -222,6 +229,15 @@ export function renderBollywoodBanner(container, movies = [], options = {}) {
     if (bannerWrapper) {
       bannerWrapper.addEventListener('mouseenter', () => { isHovered = true; });
       bannerWrapper.addEventListener('mouseleave', () => { isHovered = false; });
+    }
+
+    // Watch Movie Stream Play
+    const watchMovieBtn = container.querySelector(`#${idPrefix}-banner-watch-movie`);
+    if (watchMovieBtn) {
+      watchMovieBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.openWatchMovie(movie.id, `${movie.title} (${year})`, movie);
+      });
     }
 
     // Trailer Play

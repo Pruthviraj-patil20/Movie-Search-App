@@ -61,7 +61,14 @@ export function renderHeroBanner(container, movie) {
           <p class="hero-overview">${movie.overview || 'Experience this cinematic masterpiece on CineSphere.'}</p>
 
           <div class="hero-actions">
-            <button type="button" class="btn btn-primary hero-trailer-btn" id="hero-play-trailer">
+            <button type="button" class="btn btn-primary btn-watch-movie hero-watch-movie-btn" id="hero-watch-movie">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              Watch Movie
+            </button>
+
+            <button type="button" class="btn btn-secondary hero-trailer-btn" id="hero-play-trailer">
               <svg class="play-icon-pulse" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <polygon points="5 3 19 12 5 21 5 3"/>
               </svg>
@@ -101,6 +108,14 @@ export function renderHeroBanner(container, movie) {
     const genreEl = container.querySelector('.hero-genres-text');
     if (genreEl) genreEl.textContent = genres;
   });
+
+  // Watch Movie Button Click
+  const watchMovieBtn = container.querySelector('#hero-watch-movie');
+  if (watchMovieBtn) {
+    watchMovieBtn.addEventListener('click', () => {
+      modal.openWatchMovie(movie.id, title, movie);
+    });
+  }
 
   // Watch Trailer Button Click
   const trailerBtn = container.querySelector('#hero-play-trailer');
