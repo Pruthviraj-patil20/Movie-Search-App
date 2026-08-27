@@ -17,6 +17,7 @@ import { formatRating, formatYear } from '../utils/formatters.js';
 import { getImageUrl } from '../utils/helpers.js';
 import { getAllUrlParams, updateUrlParams } from '../utils/urlParams.js';
 import { sanitizeQuery } from '../utils/validators.js';
+import { ALL_LANGUAGES_DATA } from '../data/allLanguagesData.js';
 
 let currentPage = 1;
 let totalPages = 1;
@@ -60,19 +61,15 @@ export async function initSearchPage() {
   const upcomingMount = document.querySelector('#discover-upcoming-mount');
   const upcomingSection = document.querySelector('#discover-upcoming-section');
   if (upcomingMount) {
-    getUpcomingMovies(1).then(data => {
+    const curatedUpcoming = ALL_LANGUAGES_DATA['upcoming-movies']?.movies || [];
+    if (curatedUpcoming.length > 0) {
       upcomingMount.innerHTML = '';
-      const movies = data.results || [];
-      if (movies.length > 0) {
-        upcomingMount.appendChild(
-          createMovieCarousel(movies.slice(0, 10), { title: 'Anticipated In Theaters' })
-        );
-      } else if (upcomingSection) {
-        upcomingSection.style.display = 'none';
-      }
-    }).catch(() => {
-      if (upcomingSection) upcomingSection.style.display = 'none';
-    });
+      upcomingMount.appendChild(
+        createMovieCarousel(curatedUpcoming, { title: 'Anticipated In Theaters (2025 - 2026)' })
+      );
+    } else if (upcomingSection) {
+      upcomingSection.style.display = 'none';
+    }
   }
 
   // 2. Read URL Parameters

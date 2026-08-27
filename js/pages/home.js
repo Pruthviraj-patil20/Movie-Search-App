@@ -52,6 +52,7 @@ export async function initHomePage() {
   const kannadaMount = document.querySelector('#kannada-carousel-mount');
   const koreanMount = document.querySelector('#korean-carousel-mount');
   const japaneseMount = document.querySelector('#japanese-carousel-mount');
+  const upcomingBannerMount = document.querySelector('#upcoming-banner-mount');
   const upcomingMount = document.querySelector('#upcoming-carousel-mount');
   const genresMount = document.querySelector('#genres-grid-mount');
 
@@ -63,6 +64,7 @@ export async function initHomePage() {
   if (hindiBannerMount) hindiBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
   if (tamilBannerMount) tamilBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
   if (marathiBannerMount) marathiBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
+  if (upcomingBannerMount) upcomingBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
   if (hindiMount) hindiMount.innerHTML = skeleton.carousel();
   if (tamilMount) tamilMount.innerHTML = skeleton.carousel();
   if (marathiMount) marathiMount.innerHTML = skeleton.carousel();
@@ -246,19 +248,23 @@ export async function initHomePage() {
       );
     }
 
-    // 13. Fetch Upcoming Releases
-    getUpcomingMovies(1).then(data => {
+    // 13. Render Upcoming Releases Spotlight Banner & Carousel
+    const upcomingMovies = CATEGORY_DATA['upcoming-movies']?.movies || [];
+    if (upcomingMovies.length > 0) {
+      if (upcomingBannerMount) {
+        renderBollywoodBanner(upcomingBannerMount, upcomingMovies, {
+          tagline: '🚀 Upcoming Releases (2025 - 2026)',
+          languageLabel: 'In Theaters Soon • 4K IMAX',
+          idPrefix: 'upcoming'
+        });
+      }
       if (upcomingMount) {
         upcomingMount.innerHTML = '';
-        const curatedUpcoming = CATEGORY_DATA['upcoming-movies']?.movies || [];
-        const movies = (data.results && data.results.length >= 6)
-          ? data.results
-          : (curatedUpcoming.length > 0 ? curatedUpcoming : (data.results || []));
         upcomingMount.appendChild(
-          createMovieCarousel(movies, { title: 'Upcoming Releases (2025 - 2026)' })
+          createMovieCarousel(upcomingMovies, { title: 'Upcoming Releases (2025 - 2026)' })
         );
       }
-    });
+    }
 
     // 14. Fetch & Render Genre Discovery Cards
     if (genresMount) {
