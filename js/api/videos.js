@@ -67,30 +67,63 @@ const CURATED_TRAILERS = {
   9819: 'b5pYgSg31Yg',    // Devdas
   111110: 'b5pYgSg31Yg',  // Devdas
   // Tamil Blockbusters
-  969492: 'Po3jStA673E',  // Leo
-  987917: 'Y5BeWdODPqo',  // Jailer
+  // Kannada Blockbusters
+  999108: '6bg5tM2jmUU',  // Toxic (Rocking Star Yash, KVN Productions)
+  511819: 'JKa05nyUmuQ',  // KGF Chapter 2
+  489999: '-KfsY-qwBS0',  // KGF Chapter 1
+  1018597: 'MTECjlKUgEE', // Kantara
+  999107: 'Frp0zC4643U',  // Kantara: Chapter 1
+  791402: 'lzr2PJXeHww',  // 777 Charlie
+  618451: 'VV9SfpGRVFw',  // Vikrant Rona
+  // Telugu Blockbusters
+  579974: 'GY4BgdUSpbE',  // RRR
+  1078423: '1kVK0MZlbI4', // Pushpa 2: The Rule
+  1001311: 'kQDd1AhGIHk', // Kalki 2898 AD
+  980489: 'bUR_FKt7Iso',  // Salaar: Part 1
+  // Tamil Blockbusters
+  969492: '3P-t4WRoW5c',  // Leo
+  987917: 'xenOE1Tma0A',  // Jailer
   755566: 'OKBMCLpJqk8',  // Vikram
   554600: 'K_5a3hnN6j8',  // Ponniyin Selvan: Part 1
   633190: 'g6nkq2r9G_s',  // Kaithi
   692644: '1sNr-WU46W4',  // Vikram Vedha
   585244: 'UTiXQJ404bM',  // Master
   653574: 'faG8RiaGQek',  // Soorarai Pottru
+  // Bollywood & Hindi
+  872906: 'COv52Qyctws',  // Jawan
+  864692: 'vqu4z34wENw',  // Pathaan
   // Marathi Cinema Gems
-  395990: 'wMrMKnoW4L4',  // Sairat
+  395990: 'iShPI_JF524',  // Sairat
   376288: 'K_5d4Wn6j1A',  // Natsamrat
   367683: 'tq4R3yH6h3k',  // Katyar Kaljat Ghusali
   1148281: 'n9r5YF40K30', // Baipan Bhaari Deva
   1048821: 'i1N4pQG9QZk', // Ved
   33719: 'zL8x2yBqC9Q',   // Harishchandrachi Factory
-  284277: 'qY6y5XhB2Q8',  // Lai Bhaari
-  999108: 'V45Y50s33c0'   // Toxic (Rocking Star Yash)
+  284277: 'qY6y5XhB2Q8'   // Lai Bhaari
 };
 
 // Title-based fallback normalized lookup
 const TITLE_TRAILERS = {
-  'toxic': 'V45Y50s33c0',
-  'toxic: a fairy tale for grown-ups': 'V45Y50s33c0',
-  'toxic: a fairy tale for grown ups': 'V45Y50s33c0',
+  'toxic': '6bg5tM2jmUU',
+  'toxic: a fairy tale for grown-ups': '6bg5tM2jmUU',
+  'toxic: a fairy tale for grown ups': '6bg5tM2jmUU',
+  'kgf': 'JKa05nyUmuQ',
+  'kgf 2': 'JKa05nyUmuQ',
+  'kgf chapter 2': 'JKa05nyUmuQ',
+  'k.g.f: chapter 2': 'JKa05nyUmuQ',
+  'kgf 1': '-KfsY-qwBS0',
+  'kgf chapter 1': '-KfsY-qwBS0',
+  'k.g.f: chapter 1': '-KfsY-qwBS0',
+  'kantara': 'MTECjlKUgEE',
+  'kantara chapter 1': 'Frp0zC4643U',
+  'kantara: chapter 1': 'Frp0zC4643U',
+  '777 charlie': 'lzr2PJXeHww',
+  'vikrant rona': 'VV9SfpGRVFw',
+  'rrr': 'GY4BgdUSpbE',
+  'pushpa 2': '1kVK0MZlbI4',
+  'pushpa 2: the rule': '1kVK0MZlbI4',
+  'kalki 2898 ad': 'kQDd1AhGIHk',
+  'salaar': 'bUR_FKt7Iso',
   'spider-man: no way home': 'JfVOs4VSpmA',
   'spiderman no way home': 'JfVOs4VSpmA',
   'spider-man across the spider-verse': 'cqGjhVJWtEg',
@@ -121,8 +154,8 @@ const TITLE_TRAILERS = {
   'lagaan': 'oSIGJ347Jsw',
   'dilwale dulhania le jayenge': 'c25GKl5VNeY',
   'ddlj': 'c25GKl5VNeY',
-  'jawan': 'MWOlnZSnXWE',
-  'pathaan': 'vqu4zBiMX4k',
+  'jawan': 'COv52Qyctws',
+  'pathaan': 'vqu4z34wENw',
   'pk': 'SOXw33Oamyw',
   'zindagi na milegi dobara': 'FJrpcDgC3zU',
   'taare zameen par': 'tn_2Ie_jtNY',
@@ -135,8 +168,8 @@ const TITLE_TRAILERS = {
   'brahmastra': 'V5Z7ycT_6m0',
   'devdas': 'b5pYgSg31Yg',
   // Tamil Blockbusters
-  'leo': 'Po3jStA673E',
-  'jailer': 'Y5BeWdODPqo',
+  'leo': '3P-t4WRoW5c',
+  'jailer': 'xenOE1Tma0A',
   'vikram': 'OKBMCLpJqk8',
   'ponniyin selvan: part 1': 'K_5a3hnN6j8',
   'ponniyin selvan: i': 'K_5a3hnN6j8',
@@ -146,7 +179,7 @@ const TITLE_TRAILERS = {
   'master': 'UTiXQJ404bM',
   'soorarai pottru': 'faG8RiaGQek',
   // Marathi Cinema
-  'sairat': 'wMrMKnoW4L4',
+  'sairat': 'iShPI_JF524',
   'natsamrat': 'K_5d4Wn6j1A',
   'katyar kaljat ghusali': 'tq4R3yH6h3k',
   'baipan bhaari deva': 'n9r5YF40K30',
