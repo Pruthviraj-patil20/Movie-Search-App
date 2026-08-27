@@ -58,11 +58,11 @@ export async function initMovieDetailsPage() {
     userMovieService.addRecentlyViewed(movie);
 
     // 1. Render Main Showcase Details
-    await renderShowcase(mountEl, movie);
+    const omdb = await renderShowcase(mountEl, movie);
 
     // 2. Render Cast Members Slider
-    if (castMount && movie.credits && movie.credits.cast) {
-      renderCast(castMount, movie.credits.cast.slice(0, 15));
+    if (castMount) {
+      renderCast(castMount, movie, omdb);
     }
 
     // 3. Render Similar Movies Carousel
@@ -438,9 +438,123 @@ async function renderShowcase(container, movie) {
       toast.info('Could not copy link.');
     }
   });
+
+  return omdb;
 }
 
-function renderCast(container, castList) {
+const CURATED_CAST_MAP = {
+  999108: [
+    { name: "Yash", character: "Lead / Underworld Kingpin" },
+    { name: "Kiara Advani", character: "Lead Protagonist" },
+    { name: "Nayanthara", character: "Crucial Lead" },
+    { name: "Huma Qureshi", character: "Underworld Queen" },
+    { name: "Tara Sutaria", character: "Key Role" },
+    { name: "Shruti Haasan", character: "Special Appearance" }
+  ],
+  511819: [
+    { name: "Yash", character: "Rocky Bhai" },
+    { name: "Sanjay Dutt", character: "Adheera" },
+    { name: "Raveena Tandon", character: "Ramika Sen" },
+    { name: "Srinidhi Shetty", character: "Reena Desai" },
+    { name: "Prakash Raj", character: "Vijayendra Ingalagi" }
+  ],
+  489999: [
+    { name: "Yash", character: "Raja Krishnappa Bairya / Rocky" },
+    { name: "Srinidhi Shetty", character: "Reena" },
+    { name: "Anant Nag", character: "Anand Ingalagi" },
+    { name: "Ramachandra Raju", character: "Garuda" }
+  ],
+  1018597: [
+    { name: "Rishab Shetty", character: "Kaadubettu Shiva" },
+    { name: "Sapthami Gowda", character: "Leela" },
+    { name: "Kishore", character: "Muralidhar" },
+    { name: "Achyuth Kumar", character: "Devendra Suttooru" }
+  ],
+  791402: [
+    { name: "Rakshit Shetty", character: "Dharma" },
+    { name: "Sangeetha Sringeri", character: "Devika" },
+    { name: "Raj B. Shetty", character: "Dr. Ashwin Kumar" },
+    { name: "Danish Sait", character: "Karshan Roy" }
+  ],
+  618451: [
+    { name: "Kichcha Sudeep", character: "Vikrant Rona" },
+    { name: "Nirup Bhandari", character: "Sanjeev Gambhira" },
+    { name: "Neetha Ashok", character: "Aparna Ballal" },
+    { name: "Jacqueline Fernandez", character: "Gadang Rakkamma" }
+  ],
+  111125: [
+    { name: "Rakshit Shetty", character: "Manu" },
+    { name: "Rukmini Vasanth", character: "Priya" },
+    { name: "Chaithra J. Achar", character: "Surabhi" },
+    { name: "Achyuth Kumar", character: "Prabhu" }
+  ],
+  999101: [
+    { name: "Sam Worthington", character: "Jake Sully" },
+    { name: "Zoe Saldaña", character: "Neytiri" },
+    { name: "Sigourney Weaver", character: "Kiri" },
+    { name: "Stephen Lang", character: "Miles Quaritch" }
+  ],
+  999102: [
+    { name: "David Corenswet", character: "Clark Kent / Superman" },
+    { name: "Rachel Brosnahan", character: "Lois Lane" },
+    { name: "Nicholas Hoult", character: "Lex Luthor" },
+    { name: "Edi Gathegi", character: "Mister Terrific" }
+  ],
+  999103: [
+    { name: "Tom Cruise", character: "Ethan Hunt" },
+    { name: "Hayley Atwell", character: "Grace" },
+    { name: "Ving Rhames", character: "Luther Stickell" },
+    { name: "Simon Pegg", character: "Benji Dunn" }
+  ],
+  999104: [
+    { name: "Hrithik Roshan", character: "Major Kabir Dhaliwal" },
+    { name: "Jr. NTR", character: "Agent Vikram" },
+    { name: "Kiara Advani", character: "Lead Female" }
+  ],
+  999105: [
+    { name: "Robert Pattinson", character: "Bruce Wayne / Batman" },
+    { name: "Colin Farrell", character: "Oswald Cobblepot / Penguin" },
+    { name: "Jeffrey Wright", character: "Jim Gordon" }
+  ],
+  999106: [
+    { name: "Robert Downey Jr.", character: "Victor Von Doom / Doctor Doom" },
+    { name: "Pedro Pascal", character: "Reed Richards / Mr. Fantastic" },
+    { name: "Vanessa Kirby", character: "Sue Storm" },
+    { name: "Anthony Mackie", character: "Captain America" }
+  ],
+  999107: [
+    { name: "Rishab Shetty", character: "Ancient Forest Warrior" },
+    { name: "Sapthami Gowda", character: "Goddess Priestess" }
+  ],
+  999109: [
+    { name: "Salman Khan", character: "Sikandar" },
+    { name: "Rashmika Mandanna", character: "Lead Role" },
+    { name: "Sathyaraj", character: "Antagonist" }
+  ]
+};
+
+function renderCast(container, movieOrCast, omdb) {
+  let castList = [];
+  const movie = (typeof movieOrCast === 'object' && movieOrCast.title) ? movieOrCast : null;
+
+  if (movie) {
+    const titleLower = (movie.title || '').toLowerCase();
+    if (CURATED_CAST_MAP[movie.id]) {
+      castList = CURATED_CAST_MAP[movie.id];
+    } else if (titleLower.includes('toxic')) {
+      castList = CURATED_CAST_MAP[999108];
+    } else if (movie.credits && movie.credits.cast && movie.credits.cast.length > 0 && movie.credits.cast[0].name !== 'Lead Performer') {
+      castList = movie.credits.cast.slice(0, 15);
+    } else if (omdb && omdb.actors && omdb.actors !== 'N/A') {
+      castList = omdb.actors.split(',').map((name, idx) => ({
+        name: name.trim(),
+        character: idx === 0 ? 'Lead Performer' : 'Key Role'
+      }));
+    }
+  } else if (Array.isArray(movieOrCast)) {
+    castList = movieOrCast;
+  }
+
   if (!castList || castList.length === 0) {
     const sec = document.querySelector('#cast-section');
     if (sec) sec.style.display = 'none';

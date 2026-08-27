@@ -148,8 +148,24 @@ export async function getMovieDetails(movieId) {
       genres: mappedGenres,
       production_companies: demo.production_companies || [{ name: 'Warner Bros. Pictures' }, { name: 'Marvel Studios' }],
       credits: demo.credits || {
-        cast: [
-          { name: 'Lead Performer', character: 'Protagonist', profile_path: null }
+        cast: (demo.title?.toLowerCase().includes('toxic') || Number(movieId) === 999108) ? [
+          { name: 'Yash', character: 'Lead / Underworld Kingpin' },
+          { name: 'Kiara Advani', character: 'Lead Female' },
+          { name: 'Nayanthara', character: 'Crucial Protagonist' },
+          { name: 'Huma Qureshi', character: 'Key Role' },
+          { name: 'Tara Sutaria', character: 'Important Role' },
+          { name: 'Shruti Haasan', character: 'Special Appearance' }
+        ] : (demo.title?.toLowerCase().includes('kgf') || demo.title?.toLowerCase().includes('k.g.f')) ? [
+          { name: 'Yash', character: 'Rocky Bhai' },
+          { name: 'Sanjay Dutt', character: 'Adheera' },
+          { name: 'Srinidhi Shetty', character: 'Reena Desai' },
+          { name: 'Raveena Tandon', character: 'Ramika Sen' }
+        ] : (demo.title?.toLowerCase().includes('kantara')) ? [
+          { name: 'Rishab Shetty', character: 'Kaadubettu Shiva' },
+          { name: 'Sapthami Gowda', character: 'Leela' },
+          { name: 'Achyuth Kumar', character: 'Devendra' }
+        ] : [
+          { name: (demo.credits?.cast?.[0]?.name || 'Yash'), character: 'Protagonist' }
         ]
       },
       videos: {
