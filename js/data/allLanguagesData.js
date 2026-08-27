@@ -1759,6 +1759,36 @@ export const ALL_LANGUAGES_DATA = {
     "bg": "images/upcoming/upcoming_banner.jpg",
     "movies": [
       {
+        "id": 999108,
+        "title": "Toxic: A Fairy Tale for Grown-ups",
+        "year": "2026",
+        "release_date": "2026-08-26",
+        "vote_average": 9.1,
+        "genres": [
+          {
+            "id": 28,
+            "name": "Action"
+          },
+          {
+            "id": 80,
+            "name": "Crime"
+          },
+          {
+            "id": 53,
+            "name": "Thriller"
+          },
+          {
+            "id": 18,
+            "name": "Drama"
+          }
+        ],
+        "poster_path": "images/upcoming/toxic_poster.jpg",
+        "backdrop_path": "images/upcoming/toxic_banner.jpg",
+        "overview": "Rocking Star Yash headlines a stylized noir action extravaganza exploring the dangerous underworld of international cartels and retribution, directed by Geetu Mohandas.",
+        "trailer_key": "V45Y50s33c0",
+        "language": "Kannada"
+      },
+      {
         "id": 999101,
         "title": "Avatar: Fire and Ash",
         "year": "2025",
@@ -1934,36 +1964,6 @@ export const ALL_LANGUAGES_DATA = {
         "backdrop_path": "images/upcoming/kantara_chapter1_banner.jpg",
         "overview": "The ancient origin story set during the reign of the Kadamba dynasty, exploring the spiritual union between humanity, forest deities, and the divine spirit.",
         "trailer_key": "8MR_xQv1y9k",
-        "language": "Kannada"
-      },
-      {
-        "id": 999108,
-        "title": "Toxic: A Fairy Tale for Grown-ups",
-        "year": "2026",
-        "release_date": "2026-08-26",
-        "vote_average": 9.1,
-        "genres": [
-          {
-            "id": 28,
-            "name": "Action"
-          },
-          {
-            "id": 80,
-            "name": "Crime"
-          },
-          {
-            "id": 53,
-            "name": "Thriller"
-          },
-          {
-            "id": 18,
-            "name": "Drama"
-          }
-        ],
-        "poster_path": "images/upcoming/toxic_poster.jpg",
-        "backdrop_path": "images/upcoming/toxic_banner.jpg",
-        "overview": "Rocking Star Yash headlines a stylized noir action extravaganza exploring the dangerous underworld of international cartels and retribution, directed by Geetu Mohandas.",
-        "trailer_key": "V45Y50s33c0",
         "language": "Kannada"
       },
       {

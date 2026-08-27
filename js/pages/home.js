@@ -49,6 +49,7 @@ export async function initHomePage() {
   const marathiMount = document.querySelector('#marathi-carousel-mount');
   const teluguMount = document.querySelector('#telugu-carousel-mount');
   const malayalamMount = document.querySelector('#malayalam-carousel-mount');
+  const kannadaBannerMount = document.querySelector('#kannada-banner-mount');
   const kannadaMount = document.querySelector('#kannada-carousel-mount');
   const koreanMount = document.querySelector('#korean-carousel-mount');
   const japaneseMount = document.querySelector('#japanese-carousel-mount');
@@ -64,6 +65,7 @@ export async function initHomePage() {
   if (hindiBannerMount) hindiBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
   if (tamilBannerMount) tamilBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
   if (marathiBannerMount) marathiBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
+  if (kannadaBannerMount) kannadaBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
   if (upcomingBannerMount) upcomingBannerMount.innerHTML = `<div class="skeleton" style="height: 480px; border-radius: 24px; margin-bottom: 2rem;"></div>`;
   if (hindiMount) hindiMount.innerHTML = skeleton.carousel();
   if (tamilMount) tamilMount.innerHTML = skeleton.carousel();
@@ -224,12 +226,24 @@ export async function initHomePage() {
       );
     }
 
-    // 10. Render Kannada Movies Carousel
-    if (CATEGORY_DATA['kannada-movies'] && kannadaMount) {
-      kannadaMount.innerHTML = '';
-      kannadaMount.appendChild(
-        createMovieCarousel(CATEGORY_DATA['kannada-movies'].movies, { title: 'Sandalwood Cinematic Powerhouses' })
-      );
+    // 10. Render Kannada Movies Spotlight Banner & Carousel
+    if (CATEGORY_DATA['kannada-movies']) {
+      const kannadaMovies = CATEGORY_DATA['kannada-movies'].movies;
+      if (kannadaBannerMount) {
+        kannadaBannerMount.innerHTML = '';
+        renderBollywoodBanner(kannadaBannerMount, kannadaMovies, {
+          tagline: '👑 Sandalwood Spotlight • Rocking Star Yash',
+          languageLabel: 'Kannada • 4K IMAX',
+          idPrefix: 'kannada',
+          autoplayInterval: 8000
+        });
+      }
+      if (kannadaMount) {
+        kannadaMount.innerHTML = '';
+        kannadaMount.appendChild(
+          createMovieCarousel(kannadaMovies, { title: 'Sandalwood Cinematic Powerhouses' })
+        );
+      }
     }
 
     // 11. Render Korean Movies Carousel
