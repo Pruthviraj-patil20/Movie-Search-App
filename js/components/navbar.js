@@ -16,18 +16,32 @@ export function initNavbar() {
 
   // 1. Highlight Active Page Link
   const currentPath = window.location.pathname.toLowerCase();
+  const currentSearch = window.location.search.toLowerCase();
   const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
+    const lowerHref = href.toLowerCase();
 
     if (
       (currentPath.endsWith('index.html') || currentPath === '/' || currentPath.endsWith('/')) &&
-      (href === 'index.html' || href === './' || href === '/')
+      (lowerHref === 'index.html' || lowerHref === './' || lowerHref === '/')
     ) {
       link.classList.add('active');
-    } else if (href !== 'index.html' && href !== './' && href !== '/' && currentPath.includes(href)) {
+    } else if (lowerHref.includes('cat=upcoming-movies')) {
+      if (currentPath.includes('category.html') && currentSearch.includes('upcoming-movies')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    } else if (lowerHref === 'category.html') {
+      if (currentPath.includes('category.html') && !currentSearch.includes('upcoming-movies')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    } else if (lowerHref !== 'index.html' && lowerHref !== './' && lowerHref !== '/' && currentPath.includes(lowerHref.split('?')[0])) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');

@@ -972,6 +972,38 @@ export function initCategoryPage() {
   // 5. Initial Render of Selected Category
   renderMoviesGrid();
 
+  // 6. Handle Popstate & In-page Nav Link clicks to switch categories dynamically
+  window.addEventListener('popstate', () => {
+    const param = (getUrlParam('cat') || getUrlParam('category') || 'bollywood').toLowerCase();
+    if (CATEGORY_DATA[param] && param !== activeCategoryId) {
+      activeCategoryId = param;
+      renderCategoryCards();
+      renderMoviesGrid();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href*="category.html?cat="]');
+    if (link && window.location.pathname.includes('category.html')) {
+      const href = link.getAttribute('href');
+      try {
+        const url = new URL(href, window.location.origin);
+        const cat = (url.searchParams.get('cat') || url.searchParams.get('category') || '').toLowerCase();
+        if (cat && CATEGORY_DATA[cat]) {
+          e.preventDefault();
+          activeCategoryId = cat;
+          setUrlParam('cat', cat);
+          renderCategoryCards();
+          renderMoviesGrid();
+          const bannerMount = document.querySelector('#category-banner-mount');
+          if (bannerMount) {
+            bannerMount.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      } catch (err) {}
+    }
+  });
+
   // --------------------------------------------------------------------------
   // Category Cards Generator
   // --------------------------------------------------------------------------
